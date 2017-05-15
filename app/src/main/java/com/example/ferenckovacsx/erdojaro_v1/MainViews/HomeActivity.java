@@ -1,14 +1,19 @@
-package com.example.ferenckovacsx.erdojaro_v1;
+package com.example.ferenckovacsx.erdojaro_v1.MainViews;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 
-public class HomeActivity extends AppCompatActivity {
+import com.example.ferenckovacsx.erdojaro_v1.BottomNavigationViewHelper;
+import com.example.ferenckovacsx.erdojaro_v1.R;
+
+public class HomeActivity extends AppCompatActivity implements DiscoverFragment.OnFragmentInteractionListener, DiscoverPOI.OnFragmentInteractionListener, DiscoverTrips.OnFragmentInteractionListener, DiscoverPrograms.OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +21,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.navigation);
+        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
 
         bottomNavigationView.setOnNavigationItemSelectedListener
                 (new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -24,17 +30,23 @@ public class HomeActivity extends AppCompatActivity {
                         Fragment selectedFragment = null;
                         switch (item.getItemId()) {
                             case R.id.navigation_home:
-                                selectedFragment = HomeFragment.newInstance();
+                                selectedFragment = new HomeFragment();
                                 break;
                             case R.id.navigation_discover:
-                                selectedFragment = DiscoverFragment.newInstance();
+                                selectedFragment = new DiscoverFragment();
                                 break;
                             case R.id.navigation_map:
-                                selectedFragment = MapFragment.newInstance();
+                                selectedFragment = new MapFragment();
+                                break;
+                            case R.id.navigation_favorites:
+                                selectedFragment = new FavoritesFragment();
+                                break;
+                            case R.id.navigation_more_options:
+                                selectedFragment = new MoreOptionsFragment();
                                 break;
                         }
                         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                        transaction.replace(R.id.content, selectedFragment);
+                        transaction.replace(R.id.fragment_container, selectedFragment);
                         transaction.commit();
                         return true;
                     }
@@ -42,11 +54,25 @@ public class HomeActivity extends AppCompatActivity {
 
         //Manually displaying the first fragment - one time only
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.content, HomeFragment.newInstance());
+        transaction.replace(R.id.fragment_container, HomeFragment.newInstance());
         transaction.commit();
 
         //Used to select an item programmatically
         //bottomNavigationView.getMenu().getItem(2).setChecked(true);
     }
 
+    @Override
+    public void messageFromParentFragment(Uri uri) {
+        Log.i("TAG", "received communication from parent fragment");
+    }
+
+    @Override
+    public void messageFromChildFragment(Uri uri) {
+        Log.i("TAG", "received communication from child fragment");
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
 }

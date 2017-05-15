@@ -1,4 +1,4 @@
-package com.example.ferenckovacsx.erdojaro_v1;
+package com.example.ferenckovacsx.erdojaro_v1.MainViews;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -6,7 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.ferenckovacsx.erdojaro_v1.R;
+
 public class HomeFragment extends Fragment {
+
     public static HomeFragment newInstance() {
         HomeFragment fragment = new HomeFragment();
         return fragment;
