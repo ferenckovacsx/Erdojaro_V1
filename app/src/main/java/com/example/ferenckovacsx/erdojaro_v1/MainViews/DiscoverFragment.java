@@ -49,7 +49,7 @@ public class DiscoverFragment extends Fragment {
                     replaceFragment(new DiscoverPOI());
                 } else if (tab.getPosition() == 1) {
                     replaceFragment(new DiscoverTrips());
-                } else {
+                } else if (tab.getPosition() == 2){
                     replaceFragment(new DiscoverPrograms());
                 }
             }
@@ -90,7 +90,7 @@ public class DiscoverFragment extends Fragment {
     }
 
     private void replaceFragment(Fragment fragment) {
-        FragmentManager fragmentManager = getFragmentManager();
+        FragmentManager fragmentManager = getChildFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.child_fragment_container, fragment);
 
