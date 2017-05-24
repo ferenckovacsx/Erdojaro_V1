@@ -1,7 +1,6 @@
 package com.example.ferenckovacsx.erdojaro_v1;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.ferenckovacsx.erdojaro_v1.JavaBeans.POI;
+import com.example.ferenckovacsx.erdojaro_v1.JavaBeans.Trip;
 
 import java.util.ArrayList;
 
@@ -17,19 +16,29 @@ import java.util.ArrayList;
  * Created by ferenckovacsx on 2017-05-18.
  */
 
-public class POIListAdapter extends ArrayAdapter<POI> implements View.OnClickListener {
+public class TripListAdapter
+        extends ArrayAdapter<Trip> implements View.OnClickListener {
 
-    private ArrayList<POI> dataSet;
+    private ArrayList<Trip> dataSet;
     Context mContext;
 
     // View lookup cache
     private static class ViewHolder {
 
-        ImageView POIimage;
+        ImageView TripImage;
+        ImageView TripCyclingIcon;
+        ImageView TripHikingIcon;
+        ImageView TanosvenyIcon;
+        ImageView FullHeartIcon;
+        ImageView EmptyHeartIcon;
+        TextView TripTitle;
+        TextView TripDistance;
+        TextView TripFavoriteCount;
+
     }
 
-    public POIListAdapter(ArrayList<POI> data, Context context) {
-        super(context, R.layout.custom_poi_listitem, data);
+    public TripListAdapter(ArrayList<Trip> data, Context context) {
+        super(context, R.layout.custom_trip_listitem, data);
         this.dataSet = data;
         this.mContext = context;
 
@@ -46,7 +55,7 @@ public class POIListAdapter extends ArrayAdapter<POI> implements View.OnClickLis
     public View getView(int position, View convertView, ViewGroup parent) {
 
         // Get the data item for this position
-        POI POIitem = getItem(position);
+        Trip TripItem = getItem(position);
 
         // Check if an existing view is being reused, otherwise inflate the view
         ViewHolder viewHolder; // view lookup cache stored in tag
@@ -57,8 +66,11 @@ public class POIListAdapter extends ArrayAdapter<POI> implements View.OnClickLis
 
             viewHolder = new ViewHolder();
             LayoutInflater inflater = LayoutInflater.from(getContext());
-            convertView = inflater.inflate(R.layout.custom_poi_listitem, parent, false);
-            viewHolder.POIimage = (ImageView) convertView.findViewById(R.id.poi_listitem_image);
+            convertView = inflater.inflate(R.layout.custom_trip_listitem, parent, false);
+            viewHolder.TripImage = (ImageView) convertView.findViewById(R.id.trip_listitem_image);
+            viewHolder.TripTitle = (TextView) convertView.findViewById(R.id.trip_listitem_title);
+            viewHolder.TripDistance = (TextView) convertView.findViewById(R.id.trip_distance);
+            viewHolder.TripFavoriteCount = (TextView) convertView.findViewById(R.id.trip_saved_count);
 
             result = convertView;
 
@@ -70,9 +82,9 @@ public class POIListAdapter extends ArrayAdapter<POI> implements View.OnClickLis
 
         lastPosition = position;
 
-        viewHolder.POIimage.setImageResource(POIitem.getImageID());
-        viewHolder.POIimage.setOnClickListener(this);
-        viewHolder.POIimage.setTag(position);
+        viewHolder.TripImage.setImageResource(TripItem.getImageID());
+        viewHolder.TripTitle.setText(TripItem.getName());
+
 
         // Return the completed view to render on screen
         return convertView;

@@ -10,7 +10,6 @@ public class POI {
 
     public String name;
     public int imageID;
-    //public ImageView image;
     public String gpsCoord;
     public boolean favorited;
     public String description;
@@ -18,7 +17,6 @@ public class POI {
     public POI(String name, int imageID,  String gpsCoord, boolean favorited, String description) {
         this.name = name;
         this.imageID = imageID;
-        //this.image = image;
         this.gpsCoord = gpsCoord;
         this.favorited = favorited;
         this.description = description;

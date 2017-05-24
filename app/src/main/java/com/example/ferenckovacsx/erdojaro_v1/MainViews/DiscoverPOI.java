@@ -52,30 +52,6 @@ public class DiscoverPOI extends Fragment {
 
     }
 
-
-//    @Override
-//    public void onViewCreated(View view, Bundle savedInstanceState) {
-//
-//        poiListView = (ListView) view.findViewById(R.id.POI_listview);
-//
-//        POIList = new ArrayList<>();
-//        POIList.add(new POI("Nagymező", R.drawable.poi_nagymezo, "123456", false, "Ez itt a nagymezo" ));
-//
-//        adapter = new POIListAdapter(POIList, getContext());
-//
-//        poiListView.setAdapter(adapter);
-//        poiListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//
-////                DataModel dataModel= dataModels.get(position);
-////
-////                Snackbar.make(view, dataModel.getName()+"\n"+dataModel.getType()+" API: "+dataModel.getVersion_number(), Snackbar.LENGTH_LONG)
-////                        .setAction("No action", null).show();
-//            }
-//        });
-//    }
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
