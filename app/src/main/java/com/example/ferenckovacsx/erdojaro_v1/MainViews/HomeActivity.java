@@ -13,7 +13,15 @@ import android.view.MenuItem;
 import com.example.ferenckovacsx.erdojaro_v1.BottomNavigationViewHelper;
 import com.example.ferenckovacsx.erdojaro_v1.R;
 
-public class HomeActivity extends AppCompatActivity implements DiscoverFragment.OnFragmentInteractionListener, DiscoverPOI.OnFragmentInteractionListener, DiscoverTrips.OnFragmentInteractionListener, DiscoverPrograms.OnFragmentInteractionListener {
+public class HomeActivity
+        extends AppCompatActivity
+        implements
+        DiscoverFragment.OnFragmentInteractionListener,
+        DiscoverPOI.OnFragmentInteractionListener,
+        DiscoverTrips.OnFragmentInteractionListener,
+        DiscoverPrograms.OnFragmentInteractionListener,
+        MoreOptionsFragment.OnFragmentInteractionListener,
+        WildlifeFragment.OnFragmentInteractionListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
