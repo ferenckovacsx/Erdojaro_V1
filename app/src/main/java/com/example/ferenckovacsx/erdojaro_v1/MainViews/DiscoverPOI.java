@@ -77,17 +77,10 @@ public class DiscoverPOI extends Fragment {
                 transaction.replace(R.id.fragment_container, poiFragment);
                 transaction.addToBackStack(null);
                 transaction.commit();
-
-
-                //String value = (String)adapter.getItemAtPosition(position);
-                // assuming string and if you want to get the value on click of list item
-                // do what you intend to do on click of listview row
             }
         });
 
         poiListView.setAdapter(adapter);
-
-
         return poiView;
 
     }

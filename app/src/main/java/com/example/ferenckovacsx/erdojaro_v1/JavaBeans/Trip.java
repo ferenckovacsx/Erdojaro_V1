@@ -10,15 +10,17 @@ public class Trip {
     public int imageID;
     public String gpsCoord;
     public int distance;
+    public int favoriteCount;
     public boolean isItHard;
     public boolean favorited;
     public String description;
 
-    public Trip(String name, int imageID, String gpsCoord, int distance, boolean isItHard, boolean favorited, String description) {
+    public Trip(String name, int imageID, String gpsCoord, int distance, int favoriteCount, boolean isItHard, boolean favorited, String description) {
         this.name = name;
         this.imageID = imageID;
         this.gpsCoord = gpsCoord;
         this.distance = distance;
+        this.favoriteCount = favoriteCount;
         this.isItHard = isItHard;
         this.favorited = favorited;
         this.description = description;
@@ -56,6 +58,14 @@ public class Trip {
         this.distance = distance;
     }
 
+    public int getFavoriteCount() {
+        return favoriteCount;
+    }
+
+    public void setFavoriteCount(int favoriteCount) {
+        this.favoriteCount = favoriteCount;
+    }
+
     public boolean isItHard() {
         return isItHard;
     }
@@ -87,6 +97,7 @@ public class Trip {
                 ", imageID=" + imageID +
                 ", gpsCoord='" + gpsCoord + '\'' +
                 ", distance=" + distance +
+                ", favoriteCount=" + favoriteCount +
                 ", isItHard=" + isItHard +
                 ", favorited=" + favorited +
                 ", description='" + description + '\'' +
