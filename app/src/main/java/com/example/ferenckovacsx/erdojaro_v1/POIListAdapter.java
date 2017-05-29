@@ -17,7 +17,7 @@ import java.util.ArrayList;
  * Created by ferenckovacsx on 2017-05-18.
  */
 
-public class POIListAdapter extends ArrayAdapter<POI> implements View.OnClickListener {
+public class POIListAdapter extends ArrayAdapter<POI> {
 
     private ArrayList<POI> dataSet;
     Context mContext;
@@ -35,10 +35,7 @@ public class POIListAdapter extends ArrayAdapter<POI> implements View.OnClickLis
 
     }
 
-    @Override
-    public void onClick(View v) {
 
-    }
 
     private int lastPosition = -1;
 
@@ -71,7 +68,6 @@ public class POIListAdapter extends ArrayAdapter<POI> implements View.OnClickLis
         lastPosition = position;
 
         viewHolder.POIimage.setImageResource(POIitem.getImageID());
-        viewHolder.POIimage.setOnClickListener(this);
         viewHolder.POIimage.setTag(position);
 
         // Return the completed view to render on screen
