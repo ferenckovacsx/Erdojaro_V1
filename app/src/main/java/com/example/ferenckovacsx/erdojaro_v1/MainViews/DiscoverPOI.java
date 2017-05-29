@@ -3,11 +3,8 @@ package com.example.ferenckovacsx.erdojaro_v1.MainViews;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.app.ListFragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,12 +46,10 @@ public class DiscoverPOI extends Fragment {
 
         adapter = new POIListAdapter(POIList, getActivity().getApplicationContext());
 
-        poiListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
-        {
+        poiListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapter, View v, int position,
-                                    long arg3)
-            {
+                                    long arg3) {
 
                 Object POIrawObject = adapter.getAdapter().getItem(position);
                 POI poiItem = (POI) POIrawObject;
@@ -77,9 +72,10 @@ public class DiscoverPOI extends Fragment {
 
                 POIFragment poiFragment = new POIFragment();
                 poiFragment.setArguments(fragmentArgs);
-                FragmentManager fragmentManager = getFragmentManager();
-                FragmentTransaction transaction = fragmentManager.beginTransaction();
-                transaction.replace(R.id.child_fragment_container, poiFragment);
+
+                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container, poiFragment);
+                transaction.addToBackStack(null);
                 transaction.commit();
 
 
@@ -112,7 +108,6 @@ public class DiscoverPOI extends Fragment {
         super.onDetach();
         mListener = null;
     }
-
 
 
     public interface OnFragmentInteractionListener {

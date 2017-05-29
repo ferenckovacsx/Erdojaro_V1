@@ -58,7 +58,6 @@ public class MoreOptionsFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
 
-                // Create new fragment and transaction
                 if (position == 0) {
 
                     Fragment wildlifeFragment = new WildlifeFragment();

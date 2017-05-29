@@ -22,7 +22,8 @@ public class HomeActivity
         DiscoverPrograms.OnFragmentInteractionListener,
         MoreOptionsFragment.OnFragmentInteractionListener,
         WildlifeFragment.OnFragmentInteractionListener,
-        WildlifeFloraFragment.OnFragmentInteractionListener {
+        WildlifeFloraFragment.OnFragmentInteractionListener,
+        POIFragment.OnFragmentInteractionListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,5 +1,6 @@
 package com.example.ferenckovacsx.erdojaro_v1.MainViews;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -20,6 +21,8 @@ public class POIFragment extends Fragment {
     TextView POITitleTextview;
     TextView POICoordinateTextview;
     TextView POIDescriptionTextview;
+
+    private OnFragmentInteractionListener mListener;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,6 +48,11 @@ public class POIFragment extends Fragment {
         POIDescriptionTextview.setText(poiDescription);
 
         return POIView;
+    }
+
+    public interface OnFragmentInteractionListener {
+        // TODO: Update argument type and name
+        void messageFromChildFragment(Uri uri);
     }
 
 
