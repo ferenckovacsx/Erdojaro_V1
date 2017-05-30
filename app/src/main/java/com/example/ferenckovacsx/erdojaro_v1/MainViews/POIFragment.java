@@ -41,7 +41,7 @@ public class POIFragment extends Fragment {
 
         Bundle POIbundle = getArguments();
         int poiImageID = POIbundle.getInt("poi_imageid");
-        String poiTitle = POIbundle.getString("poi_title");
+        final String poiTitle = POIbundle.getString("poi_title");
         final double poiLat = POIbundle.getDouble("poi_lat");
         final double poiLong = POIbundle.getDouble("poi_long");
         String poiDescription = POIbundle.getString("poi_description");
@@ -55,6 +55,7 @@ public class POIFragment extends Fragment {
             public void onClick(View v) {
 
                 Bundle fragmentArgs = new Bundle();
+                fragmentArgs.putString("poi_title", poiTitle);
                 fragmentArgs.putDouble("poi_lat", poiLat);
                 fragmentArgs.putDouble("poi_long", poiLong);
 
