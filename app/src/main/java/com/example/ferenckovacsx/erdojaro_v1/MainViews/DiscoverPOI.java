@@ -36,9 +36,9 @@ public class DiscoverPOI extends Fragment {
         poiListView = (ListView) poiView.findViewById(R.id.POI_listview);
 
         POIList = new ArrayList<>();
-        POIList.add(new POI("Nagymező", R.drawable.poi_nagymezo, "123456", false, "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."));
-        POIList.add(new POI("blabla", R.drawable.fauna, "123456", true, "Pelda kep"));
-        POIList.add(new POI("blabla", R.drawable.trek, "123456", true, "Pelda kep"));
+        POIList.add(new POI("Nagymező", R.drawable.poi_nagymezo, 48.0791, 20.4981, false, "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."));
+        POIList.add(new POI("blabla", R.drawable.fauna, 48.0791, 20.4981, true, "Pelda kep"));
+        POIList.add(new POI("blabla", R.drawable.trek, 48.0791, 20.4981, true, "Pelda kep"));
 
 
         Log.i("POIFragment", "megtortent");
@@ -56,18 +56,21 @@ public class DiscoverPOI extends Fragment {
 
                 int POIimageID = poiItem.getImageID();
                 String POItitle = poiItem.getName();
-                String POIcoord = poiItem.getGpsCoord();
+                double POIcoordLat = poiItem.getGpsCoordLat();
+                double POIcoordLong = poiItem.getGpsCoordLong();
                 String POIdescription = poiItem.getDescription();
 
                 Log.i("POIclickListener", "imageID: " + POIimageID);
                 Log.i("POIclickListener", "title: " + POItitle);
-                Log.i("POIclickListener", "gps coordinates: " + POIcoord);
+                Log.i("POIclickListener", "gps latitude: " + POIcoordLat);
+                Log.i("POIclickListener", "gps longiuted: " + POIcoordLong);
                 Log.i("POIclickListener", "description: " + POIdescription);
 
                 Bundle fragmentArgs = new Bundle();
                 fragmentArgs.putInt("poi_imageid", POIimageID);
                 fragmentArgs.putString("poi_title", POItitle);
-                fragmentArgs.putString("poi_coord", POIcoord);
+                fragmentArgs.putDouble("poi_lat", POIcoordLat);
+                fragmentArgs.putDouble("poi_long", POIcoordLong);
                 fragmentArgs.putString("poi_description", POIdescription);
 
                 POIFragment poiFragment = new POIFragment();

@@ -1,7 +1,5 @@
 package com.example.ferenckovacsx.erdojaro_v1.JavaBeans;
 
-import android.widget.ImageView;
-
 /**
  * Created by ferenckovacsx on 2017-05-15.
  */
@@ -10,14 +8,16 @@ public class POI {
 
     public String name;
     public int imageID;
-    public String gpsCoord;
+    public double gpsCoordLat;
+    public double gpsCoordLong;
     public boolean favorited;
     public String description;
 
-    public POI(String name, int imageID,  String gpsCoord, boolean favorited, String description) {
+    public POI(String name, int imageID, double gpsCoordLat, double gpsCoordLong, boolean favorited, String description) {
         this.name = name;
         this.imageID = imageID;
-        this.gpsCoord = gpsCoord;
+        this.gpsCoordLat = gpsCoordLat;
+        this.gpsCoordLong = gpsCoordLong;
         this.favorited = favorited;
         this.description = description;
     }
@@ -38,12 +38,20 @@ public class POI {
         this.imageID = imageID;
     }
 
-    public String getGpsCoord() {
-        return gpsCoord;
+    public double getGpsCoordLong() {
+        return gpsCoordLong;
     }
 
-    public void setGpsCoord(String gpsCoord) {
-        this.gpsCoord = gpsCoord;
+    public void setGpsCoordLong(double gpsCoordLong) {
+        this.gpsCoordLong = gpsCoordLong;
+    }
+
+    public double getGpsCoordLat() {
+        return gpsCoordLat;
+    }
+
+    public void setGpsCoordLat(double gpsCoordLat) {
+        this.gpsCoordLat = gpsCoordLat;
     }
 
     public boolean isFavorited() {
@@ -67,7 +75,8 @@ public class POI {
         return "POI{" +
                 "name='" + name + '\'' +
                 ", imageID=" + imageID +
-                ", gpsCoord='" + gpsCoord + '\'' +
+                ", gpsCoordLong=" + gpsCoordLong +
+                ", gpsCoordLat=" + gpsCoordLat +
                 ", favorited=" + favorited +
                 ", description='" + description + '\'' +
                 '}';
