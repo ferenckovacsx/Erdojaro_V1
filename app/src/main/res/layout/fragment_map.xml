@@ -1,22 +1,29 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.ferenckovacsx.erdojaro_v1.MainViews.MapFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <!--<TextView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:text="@string/title_map" />-->
+    <com.mapbox.mapboxsdk.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        mapbox:mapbox_cameraTargetLat="48.0485"
+        mapbox:mapbox_cameraTargetLng="20.4937"
+        mapbox:mapbox_cameraZoom="10"
+        mapbox:mapbox_styleUrl="mapbox://styles/mapbox/outdoors-v9" />
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-        <org.osmdroid.views.MapView android:id="@+id/map"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent" />
-    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/location_toggle_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        app:srcCompat="@drawable/ic_show_location"
+        tools:ignore="VectorDrawableCompat"
+        app:backgroundTint="@color/colorAccent"/>
 
 </FrameLayout>

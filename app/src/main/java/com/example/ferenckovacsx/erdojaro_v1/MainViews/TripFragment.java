@@ -3,6 +3,7 @@ package com.example.ferenckovacsx.erdojaro_v1.MainViews;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import com.example.ferenckovacsx.erdojaro_v1.R;
 public class TripFragment extends Fragment {
 
     ImageView tripImageView;
+    TextView tripShowOnMap;
     TextView tripTitleTextview;
     TextView tripDistanceTextview;
     TextView tripFavoritesCountTextview;
@@ -37,6 +39,7 @@ public class TripFragment extends Fragment {
         tripDistanceTextview = (TextView) tripView.findViewById(R.id.trip_distance);
         tripFavoritesCountTextview = (TextView) tripView.findViewById(R.id.trip_saved_count);
         tripDescriptionTextview = (TextView) tripView.findViewById(R.id.trip_description);
+        tripShowOnMap = (TextView) tripView.findViewById(R.id.text_show_on_map);
 
         Bundle tripBundle = getArguments();
         int tripImageID = tripBundle.getInt("trip_imageid");
@@ -50,6 +53,24 @@ public class TripFragment extends Fragment {
         tripDistanceTextview.setText(String.valueOf(tripDistance) + " km");
         tripFavoritesCountTextview.setText(String.valueOf(tripFavoriteCount));
         tripDescriptionTextview.setText(tripDescription);
+
+        tripShowOnMap.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+//                Bundle fragmentArgs = new Bundle();
+//                fragmentArgs.putString("poi_title", poiTitle);
+//                fragmentArgs.putDouble("poi_lat", poiLat);
+//                fragmentArgs.putDouble("poi_long", poiLong);
+//
+//                MapFragment mapFragment = new MapFragment();
+//                mapFragment.setArguments(fragmentArgs);
+//
+//                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+//                transaction.replace(R.id.fragment_container, mapFragment);
+//                transaction.addToBackStack(null);
+//                transaction.commit();
+            }
+        });
 
         return tripView;
     }

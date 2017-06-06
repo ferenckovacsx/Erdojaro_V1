@@ -5,6 +5,7 @@
     <string name="title_map">Térkép</string>
     <string name="title_favorites">Kedvencek</string>
     <string name="title_more_options">Továbbiak</string>
+    <string name="access_token">pk.eyJ1IjoiZmVyZW5ja292YWNzeCIsImEiOiJjajNsbGhoajYwMDc5MnFucmJseGRhNnZkIn0.0EXL-Id4VsQ6PAxK0p5lFg</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

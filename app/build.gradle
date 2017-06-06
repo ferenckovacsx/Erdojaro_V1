@@ -31,5 +31,9 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:support-v4:25.3.1'
     compile 'org.osmdroid:osmdroid-android:5.6.4'
+    compile 'com.github.MKergall:osmbonuspack:6.3'
+    compile('com.mapbox.mapboxsdk:mapbox-android-sdk:5.0.2@aar') {
+        transitive = true
+    }
     testCompile 'junit:junit:4.12'
 }
