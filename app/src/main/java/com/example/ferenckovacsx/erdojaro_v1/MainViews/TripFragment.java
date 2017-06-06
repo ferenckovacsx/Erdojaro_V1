@@ -4,6 +4,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.ferenckovacsx.erdojaro_v1.R;
+import com.mapbox.mapboxsdk.geometry.LatLng;
+
+import java.util.ArrayList;
 
 /**
  * Created by ferenckovacsx on 2017-05-28.
@@ -43,10 +47,14 @@ public class TripFragment extends Fragment {
 
         Bundle tripBundle = getArguments();
         int tripImageID = tripBundle.getInt("trip_imageid");
-        String tripTitle = tripBundle.getString("trip_title");
+        final String tripTitle = tripBundle.getString("trip_title");
         int tripDistance = tripBundle.getInt("trip_distance");
         int tripFavoriteCount = tripBundle.getInt("trip_favorite_count");
         String tripDescription = tripBundle.getString("trip_description");
+        final ArrayList<LatLng> tripWaypoints = tripBundle.getParcelableArrayList("trip_waypoints");
+
+
+        Log.i("tripwaypoints", " from bundle: " + tripWaypoints);
 
         tripImageView.setImageResource(tripImageID);
         tripTitleTextview.setText(tripTitle);
@@ -57,18 +65,18 @@ public class TripFragment extends Fragment {
         tripShowOnMap.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-//                Bundle fragmentArgs = new Bundle();
-//                fragmentArgs.putString("poi_title", poiTitle);
-//                fragmentArgs.putDouble("poi_lat", poiLat);
-//                fragmentArgs.putDouble("poi_long", poiLong);
-//
-//                MapFragment mapFragment = new MapFragment();
-//                mapFragment.setArguments(fragmentArgs);
-//
-//                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-//                transaction.replace(R.id.fragment_container, mapFragment);
-//                transaction.addToBackStack(null);
-//                transaction.commit();
+                Bundle fragmentArgs = new Bundle();
+                fragmentArgs.putString("bundle_type", "trip");
+                fragmentArgs.putString("trip_title", tripTitle);
+                fragmentArgs.putParcelableArrayList("trip_waypoints", tripWaypoints);
+
+                MapFragment mapFragment = new MapFragment();
+                mapFragment.setArguments(fragmentArgs);
+
+                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container, mapFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
             }
         });
 

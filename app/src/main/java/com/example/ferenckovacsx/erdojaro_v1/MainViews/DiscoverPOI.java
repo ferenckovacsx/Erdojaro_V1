@@ -15,6 +15,7 @@ import android.widget.ListView;
 import com.example.ferenckovacsx.erdojaro_v1.JavaBeans.POI;
 import com.example.ferenckovacsx.erdojaro_v1.POIListAdapter;
 import com.example.ferenckovacsx.erdojaro_v1.R;
+import com.mapbox.mapboxsdk.geometry.LatLng;
 
 import java.util.ArrayList;
 
@@ -59,6 +60,7 @@ public class DiscoverPOI extends Fragment {
                 double POIcoordLat = poiItem.getGpsCoordLat();
                 double POIcoordLong = poiItem.getGpsCoordLong();
                 String POIdescription = poiItem.getDescription();
+                LatLng latlong = new LatLng(POIcoordLat, POIcoordLong);
 
                 Log.i("POIclickListener", "imageID: " + POIimageID);
                 Log.i("POIclickListener", "title: " + POItitle);

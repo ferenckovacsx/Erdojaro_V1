@@ -55,6 +55,7 @@ public class POIFragment extends Fragment {
             public void onClick(View v) {
 
                 Bundle fragmentArgs = new Bundle();
+                fragmentArgs.putString("bundle_type", "poi");
                 fragmentArgs.putString("poi_title", poiTitle);
                 fragmentArgs.putDouble("poi_lat", poiLat);
                 fragmentArgs.putDouble("poi_long", poiLong);

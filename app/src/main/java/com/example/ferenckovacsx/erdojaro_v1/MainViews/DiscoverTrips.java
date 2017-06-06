@@ -16,8 +16,12 @@ import com.example.ferenckovacsx.erdojaro_v1.JavaBeans.POI;
 import com.example.ferenckovacsx.erdojaro_v1.JavaBeans.Trip;
 import com.example.ferenckovacsx.erdojaro_v1.R;
 import com.example.ferenckovacsx.erdojaro_v1.TripListAdapter;
+import com.mapbox.mapboxsdk.geometry.LatLng;
+
+import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class DiscoverTrips extends Fragment {
@@ -36,9 +40,42 @@ public class DiscoverTrips extends Fragment {
 
         tripListView = (ListView) tripView.findViewById(R.id.TRIP_listview);
 
+        ArrayList<Double> waypointsLong = new ArrayList<>();
+        waypointsLong.add(20.630893093);
+        waypointsLong.add(20.631957762);
+        waypointsLong.add(20.632141661);
+        waypointsLong.add(20.632624207);
+        waypointsLong.add(20.632034624);
+        waypointsLong.add(20.632068990);
+        waypointsLong.add(20.631936388);
+        waypointsLong.add(20.631772103);
+        waypointsLong.add(20.632852782);
+        waypointsLong.add(20.632847585);
+
+
+        ArrayList<Double> waypointsLat = new ArrayList<>();
+        waypointsLat.add(48.057708638);
+        waypointsLat.add(48.058386482);
+        waypointsLat.add(48.058727039);
+        waypointsLat.add(48.058723267);
+        waypointsLat.add(48.058644729);
+        waypointsLat.add(48.058961732);
+        waypointsLat.add(48.059180500);
+        waypointsLat.add(48.059986252);
+        waypointsLat.add(48.059534635);
+        waypointsLat.add(48.059557518);
+
+
+        ArrayList<LatLng> wayPointList = new ArrayList<>();
+
+        for (int i = 0; i < waypointsLat.size(); i++) {
+                wayPointList.add(new LatLng(waypointsLat.get(i), waypointsLong.get(i)));
+            }
+
+        Log.i("waypoint", "list: " + wayPointList);
+
         TripList = new ArrayList<>();
-        TripList.add(new Trip("Bükkszentkereszt - \nHoldviola Tanösvény", R.drawable.holdviola, "123456", 3, 26, false, true, "Ez itt a nagymezo"));
-        TripList.add(new Trip("blabla", R.drawable.fauna, "123456", 5, 42, true, false, "Pelda kep"));
+        TripList.add(new Trip("Bükkszentkereszt - \nHoldviola Tanösvény", R.drawable.holdviola, "123456", 3, 26, false, true, "Ez itt a nagymezo", wayPointList));
 
         Log.i("TripFragment", "launched");
         Log.i("TripFragment", "lista: " + TripList.toString());
@@ -58,6 +95,7 @@ public class DiscoverTrips extends Fragment {
                 int tripDistance = tripItem.getDistance();
                 int tripFavoriteCount = tripItem.getFavoriteCount();
                 String tripDescription = tripItem.getDescription();
+                ArrayList<LatLng> tripWaypoints = tripItem.getTripWaypoints();
 
                 Log.i("TripClickListener", "imageID: " + tripImageID);
                 Log.i("TripClickListener", "title: " + tripTitle);
@@ -70,6 +108,7 @@ public class DiscoverTrips extends Fragment {
                 fragmentArgs.putInt("trip_distance", tripDistance);
                 fragmentArgs.putInt("trip_favorite_count", tripFavoriteCount);
                 fragmentArgs.putString("trip_description", tripDescription);
+                fragmentArgs.putParcelableArrayList("trip_waypoints", tripWaypoints);
 
                 TripFragment tripFragment = new TripFragment();
                 tripFragment.setArguments(fragmentArgs);

@@ -1,5 +1,9 @@
 package com.example.ferenckovacsx.erdojaro_v1.JavaBeans;
 
+import com.mapbox.mapboxsdk.geometry.LatLng;
+
+import java.util.ArrayList;
+
 /**
  * Created by ferenckovacsx on 2017-05-15.
  */
@@ -14,8 +18,9 @@ public class Trip {
     public boolean isItHard;
     public boolean favorited;
     public String description;
+    public ArrayList<LatLng> tripWaypoints;
 
-    public Trip(String name, int imageID, String gpsCoord, int distance, int favoriteCount, boolean isItHard, boolean favorited, String description) {
+    public Trip(String name, int imageID, String gpsCoord, int distance, int favoriteCount, boolean isItHard, boolean favorited, String description, ArrayList<LatLng> tripWaypoints) {
         this.name = name;
         this.imageID = imageID;
         this.gpsCoord = gpsCoord;
@@ -24,6 +29,7 @@ public class Trip {
         this.isItHard = isItHard;
         this.favorited = favorited;
         this.description = description;
+        this.tripWaypoints = tripWaypoints;
     }
 
     public String getName() {
@@ -90,6 +96,14 @@ public class Trip {
         this.description = description;
     }
 
+    public ArrayList<LatLng> getTripWaypoints() {
+        return tripWaypoints;
+    }
+
+    public void setTripWaypoints(ArrayList<LatLng> tripWaypoints) {
+        this.tripWaypoints = tripWaypoints;
+    }
+
     @Override
     public String toString() {
         return "Trip{" +
@@ -101,6 +115,7 @@ public class Trip {
                 ", isItHard=" + isItHard +
                 ", favorited=" + favorited +
                 ", description='" + description + '\'' +
+                ", tripWaypoints=" + tripWaypoints +
                 '}';
     }
 }

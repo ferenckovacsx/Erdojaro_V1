@@ -2,6 +2,7 @@ package com.example.ferenckovacsx.erdojaro_v1.MainViews;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -25,11 +26,21 @@ import com.mapbox.mapboxsdk.location.LocationSource;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
+import com.mapbox.mapboxsdk.style.layers.LineLayer;
+import com.mapbox.mapboxsdk.style.layers.Property;
+import com.mapbox.mapboxsdk.style.layers.PropertyFactory;
+import com.mapbox.mapboxsdk.style.sources.GeoJsonSource;
+import com.mapbox.mapboxsdk.style.sources.Source;
 import com.mapbox.services.android.telemetry.location.LocationEngine;
 import com.mapbox.services.android.telemetry.location.LocationEngineListener;
 import com.mapbox.services.android.telemetry.permissions.PermissionsListener;
 import com.mapbox.services.android.telemetry.permissions.PermissionsManager;
+import com.mapbox.services.commons.geojson.Feature;
+import com.mapbox.services.commons.geojson.FeatureCollection;
+import com.mapbox.services.commons.geojson.LineString;
+import com.mapbox.services.commons.models.Position;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -42,6 +53,8 @@ public class MapFragment extends Fragment implements PermissionsListener {
     private LocationEngine locationEngine;
     private LocationEngineListener locationEngineListener;
     private PermissionsManager permissionsManager;
+
+    private List<Position> routeCoordinates;
 
     View convertView;
 
@@ -68,29 +81,91 @@ public class MapFragment extends Fragment implements PermissionsListener {
         //check if bundle has any elements
         if (mapBundle != null) {
 
-            final String poiName = mapBundle.getString("poi_title");
-            final double latitude = mapBundle.getDouble("poi_lat");
-            final double longitude = mapBundle.getDouble("poi_long");
+            final String bundleType = mapBundle.getString("bundle_type");
 
-            mapView.getMapAsync(new OnMapReadyCallback() {
-                @Override
-                public void onMapReady(MapboxMap mapboxMap) {
-                    map = mapboxMap;
-                    mapboxMap.addMarker(new MarkerOptions()
-                            .position(new LatLng(latitude, longitude))
-                            .title(poiName)
-                            .snippet("Welcome to my marker."));
+            if (bundleType != null && bundleType.equals("poi")) {
 
-                    mapboxMap.moveCamera(CameraUpdateFactory.newCameraPosition(
-                            new CameraPosition.Builder()
-                                    .target(new LatLng(latitude, longitude))  // set the camera's center position
-                                    .zoom(15)  // set the camera's zoom level
-                                    .tilt(20)  // set the camera's tilt
-                                    .build()));
+                Log.i("bundle type", "poi");
+                final String poiName = mapBundle.getString("poi_title");
+                final double latitude = mapBundle.getDouble("poi_lat");
+                final double longitude = mapBundle.getDouble("poi_long");
 
+                mapView.getMapAsync(new OnMapReadyCallback() {
+                    @Override
+                    public void onMapReady(MapboxMap mapboxMap) {
+                        map = mapboxMap;
 
+                        mapboxMap.addMarker(new MarkerOptions()
+                                .position(new LatLng(latitude, longitude))
+                                .title(poiName)
+                                .snippet("Welcome to my marker."));
+
+                        mapboxMap.moveCamera(CameraUpdateFactory.newCameraPosition(
+                                new CameraPosition.Builder()
+                                        .target(new LatLng(latitude, longitude))  // set the camera's center position
+                                        .zoom(15)  // set the camera's zoom level
+                                        .tilt(20)  // set the camera's tilt
+                                        .build()));
+                    }
+                });
+
+            } else if (bundleType != null && bundleType.equals("trip")){
+
+                final ArrayList<LatLng> tripWaypoints = mapBundle.getParcelableArrayList("trip_waypoints");
+
+                Log.i("waypoints debug", "long" + tripWaypoints.get(1).getLatitude());
+
+                routeCoordinates = new ArrayList<Position>();
+
+                for (int i = 0; i < tripWaypoints.size(); i++) {
+                    routeCoordinates.add(Position.fromCoordinates(tripWaypoints.get(i).getLongitude(), tripWaypoints.get(i).getLatitude()));
                 }
-            });
+
+                Log.i("routeCoord", "mapfragment" + routeCoordinates.toString());
+
+
+                mapView.getMapAsync(new OnMapReadyCallback() {
+                    @Override
+                    public void onMapReady(MapboxMap mapboxMap) {
+
+                        map = mapboxMap;
+
+                        // Create the LineString from the list of coordinates and then make a GeoJSON
+                        // FeatureCollection so we can add the line to our map as a layer.
+                        LineString lineString = LineString.fromCoordinates(routeCoordinates);
+
+                        FeatureCollection featureCollection =
+                                FeatureCollection.fromFeatures(new Feature[]{Feature.fromGeometry(lineString)});
+
+                        Source geoJsonSource = new GeoJsonSource("line-source", featureCollection);
+
+                        mapboxMap.addSource(geoJsonSource);
+
+                        LineLayer lineLayer = new LineLayer("linelayer", "line-source");
+
+                        // The layer properties for our line. This is where we make the line dotted, set the
+                        // color, etc.
+                        lineLayer.setProperties(
+                                PropertyFactory.lineDasharray(new Float[]{0.01f, 2f}),
+                                PropertyFactory.lineCap(Property.LINE_CAP_ROUND),
+                                PropertyFactory.lineJoin(Property.LINE_JOIN_ROUND),
+                                PropertyFactory.lineWidth(5f),
+                                PropertyFactory.lineColor(Color.parseColor("#e55e5e"))
+                        );
+
+                        mapboxMap.addLayer(lineLayer);
+
+                        //move camera to trip start point
+                        mapboxMap.moveCamera(CameraUpdateFactory.newCameraPosition(
+                                new CameraPosition.Builder()
+                                        .target(new LatLng(tripWaypoints.get(1).getLatitude(), tripWaypoints.get(1).getLongitude()))  // set the camera's center position
+                                        .zoom(15)  // set the camera's zoom level
+                                        .tilt(20)  // set the camera's tilt
+                                        .build()));
+                    }
+                });
+            }
+
         } else {
 
             mapView.getMapAsync(new OnMapReadyCallback() {
@@ -106,11 +181,9 @@ public class MapFragment extends Fragment implements PermissionsListener {
             @Override
             public void onClick(View view) {
 
-                Log.i("toggle GPS", "click");
-//                if (map != null) {
+                if (map != null) {
                 toggleGps(!map.isMyLocationEnabled());
-                Log.i("locationenabled", "" + map.isMyLocationEnabled());
-//                }
+                }
             }
         });
 
@@ -120,21 +193,16 @@ public class MapFragment extends Fragment implements PermissionsListener {
 
     private void toggleGps(boolean enableGps) {
 
-        Log.i("location permissions", "toggleGPS");
-
         if (enableGps) {
             // Check if user has granted location permission
             permissionsManager = new PermissionsManager(this);
             if (!PermissionsManager.areLocationPermissionsGranted(getActivity())) {
                 permissionsManager.requestLocationPermissions(getActivity());
             } else {
-                Log.i("location permissions", "granted");
                 enableLocation(true);
             }
         } else {
             enableLocation(false);
-            Log.i("location permissions", "denied");
-
         }
     }
 
@@ -146,7 +214,6 @@ public class MapFragment extends Fragment implements PermissionsListener {
                 ActivityCompat.requestPermissions(getActivity(), new String[]{android.Manifest.permission.ACCESS_COARSE_LOCATION},
                         11);
             }
-
 
             if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
@@ -209,273 +276,3 @@ public class MapFragment extends Fragment implements PermissionsListener {
         }
     }
 }
-
-
-//public class MapFragment extends Fragment {
-//
-//    private MapView mapFragmentView;
-//    Context ctx;
-////    private MyLocationNewOverlay mLocationOverlay;
-////    private ItemizedOverlay<OverlayItem> itemizedOverlay;
-////    private CompassOverlay mCompassOverlay = null;
-////    private MinimapOverlay mMinimapOverlay;
-////    private ScaleBarOverlay mScaleBarOverlay;
-////    private RotationGestureOverlay mRotationGestureOverlay;
-////    private CopyrightOverlay mCopyrightOverlay;
-//
-////    public static MapFragment newInstance() {
-////        MapFragment fragment = new MapFragment();
-////        return fragment;
-////    }
-//
-//    @Override
-//    public void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//
-//        ctx = getActivity();
-//        Mapbox.getInstance(ctx, getString(R.string.access_token));
-//    }
-//
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-//                             Bundle savedInstanceState) {
-//
-//
-//        //get Application context
-//        Context ctx = getActivity();
-//
-////        Mapbox.getInstance(ctx, getString(R.string.access_token));
-//
-//
-//        if (ContextCompat.checkSelfPermission(ctx, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-//
-//            ActivityCompat.requestPermissions(getActivity(), new String[]{android.Manifest.permission.ACCESS_COARSE_LOCATION},
-//                    11);
-//        }
-//
-//        if (ContextCompat.checkSelfPermission(ctx, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-//
-//            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-//                    12);
-//        }
-//
-//
-//        View mapFragmentView = inflater.inflate(R.layout.fragment_map, container, false);
-//
-//        mapFragmentView.onCreate(savedInstanceState);
-//
-//        MapView map = (MapView) mapFragmentView.findViewById(R.id.mapView);
-////        map.setTileSource(TileSourceFactory.MAPNIK);
-////
-////        //set zoom controls
-////        map.setBuiltInZoomControls(true);
-////        map.setMultiTouchControls(true);
-////
-////        //get arguments from poi or trip fragment
-////        Bundle mapBundle = getArguments();
-////
-////        //check if bundle has any elements
-////        if (mapBundle != null) {
-////
-////            String poiName = mapBundle.getString("poi_title");
-////            double latitude = mapBundle.getDouble("poi_lat");
-////            double longitude = mapBundle.getDouble("poi_long");
-////
-////            //create marker
-////            OverlayItem marker = new OverlayItem(poiName, "", new GeoPoint(latitude, longitude));
-////
-////            //add marker to overlay list (ItemizedIconOverlay constructor needs a list)
-////            final ArrayList<OverlayItem> items = new ArrayList<>();
-////            items.add(marker);
-////
-////            //create overlay
-////            itemizedOverlay = new ItemizedIconOverlay<>(items,
-////                    new ItemizedIconOverlay.OnItemGestureListener<OverlayItem>() {
-////                        @Override
-////                        public boolean onItemSingleTapUp(final int index, final OverlayItem item) {
-////                            Toast.makeText(
-////                                    getContext(),
-////                                    "Item '" + item.getTitle() + "' (index=" + index
-////                                            + ") got single tapped up", Toast.LENGTH_LONG).show();
-////                            return true;
-////                        }
-////
-////                        @Override
-////                        public boolean onItemLongPress(final int index, final OverlayItem item) {
-////                            Toast.makeText(
-////                                    getContext(),
-////                                    "Item '" + item.getTitle() + "' (index=" + index
-////                                            + ") got long pressed", Toast.LENGTH_LONG).show();
-////                            return false;
-////                        }
-////                    }, getActivity().getApplicationContext());
-////            map.getOverlays().add(itemizedOverlay);
-////
-////
-////            //set map start point
-////            IMapController mapController = map.getController();
-////            mapController.setZoom(18);
-////            GeoPoint startPoint = new GeoPoint(latitude, longitude);
-////            mapController.setCenter(startPoint);
-////        } else {
-////
-////            //if there is no bundle, set map start point
-////            IMapController mapController = map.getController();
-////            mapController.setZoom(12);
-////            GeoPoint startPoint = new GeoPoint(48.0485, 20.4937);
-////            mapController.setCenter(startPoint);
-////        }
-////
-////
-//////        Polyline polyline;
-//////        List<List<GeoPoint>> polyLines = new ArrayList<>();
-//////        for (int i = 0; i < polyLines.size(); i++) {
-//////            polyline = new Polyline();
-//////            polyline.setPoints(polyLines.get(i));
-//////            polyline.setColor(Color.RED);
-//////            polyline.setWidth(4);
-//////            polyline.setInfoWindow(new BasicInfoWindow(R.layout.bonuspack_bubble, map));
-//////            polyline.setTitle("Polyline tapped!");
-//////            map.getOverlays().add(polyline);
-//////        }
-////
-////
-////        Polygon myNewPolygon = new Polygon();
-////        ArrayList<GeoPoint> polyLines = new ArrayList<>();
-////        polyLines.add(new GeoPoint(48.0577167, 20.6309000));
-////        polyLines.add(new GeoPoint(48.0583833, 20.6319500));
-////        polyLines.add(new GeoPoint(48.0587333, 20.6321333));
-////        polyLines.add(new GeoPoint(48.0587167, 20.6326167));
-//////        polyLines.add(new GeoPoint(48.0577167, 20.6309000));
-////        myNewPolygon.setPoints(polyLines);
-////        map.getOverlays().add(myNewPolygon);
-////
-////
-//////        RoadManager roadManager = new OSRMRoadManager(ctx);
-//////
-//////        ArrayList<GeoPoint> track = new ArrayList<>();
-//////        // TODO: Fill the list with your track points
-//////
-//////        track.add(new GeoPoint(40.796788, -73.949232));
-//////        track.add(new GeoPoint(40.796788, -73.981762));
-//////        track.add(new GeoPoint(40.768094, -73.981762));
-//////        track.add(new GeoPoint(40.768094, -73.949232));
-//////        track.add(new GeoPoint(40.796788, -73.949232));
-//////
-//////        Road road = roadManager.getRoad(track);
-//////        Polyline roadOverlay = RoadManager.buildRoadOverlay(road);
-//////        map.getOverlays().add(roadOverlay);
-//////        map.invalidate();
-////
-////
-//////        //mOsmPathOverlay = new OsmPathOverlay(context);
-//////        //mMapView.getOverlayManager().add(mOsmPathOverlay);
-//////        Polyline line = new Polyline();
-//////        line.setTitle("Central Park, NYC");
-//////        line.setWidth(20f);
-//////        List<GeoPoint> pts = new ArrayList<>();
-//////        //here, we create a polygon, note that you need 5 points in order to make a closed polygon (rectangle)
-//////        pts.add(new GeoPoint(40.796788, -73.949232));
-//////        pts.add(new GeoPoint(40.796788, -73.981762));
-//////        pts.add(new GeoPoint(40.768094, -73.981762));
-//////        pts.add(new GeoPoint(40.768094, -73.949232));
-//////        pts.add(new GeoPoint(40.796788, -73.949232));
-//////        line.setPoints(pts);
-//////        line.setGeodesic(true);
-//////        line.setInfoWindow(new BasicInfoWindow(R.layout.bonuspack_bubble, map));
-//////        //Note, the info window will not show if you set the onclick listener
-//////        //line can also attach click listeners to the line
-//////    /*
-//////        line.setOnClickListener(new Polyline.OnClickListener() {
-//////            @Override
-//////            public boolean onClick(Polyline polyline, MapView mapView, GeoPoint eventPos) {
-//////                Toast.makeText(context, "Hello world!", Toast.LENGTH_LONG).show();
-//////                return false;
-//////            }
-//////        });*/
-//////        map.getOverlayManager().add(line);
-//////        Marker marker = new Marker(map);
-//////        marker.setDraggable(false);
-//////        marker.setTitle("Central Park");
-//////        marker.setPosition(new GeoPoint(((40.796788 - 40.768094) / 2) + 40.768094, ((-73.949232 - -73.981762) / 2) + -73.981762));
-//////        marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
-//////        marker.setTitle("Start point");
-//////        marker.setDraggable(true);
-//////        map.getOverlays().add(marker);
-//////        //here, we create a polygon using polygon class, note that you need 4 points in order to make a rectangle
-//////        Polygon polygon = new Polygon();
-//////        polygon.setTitle("This is a polygon");
-//////        polygon.setSubDescription(Polygon.class.getCanonicalName());
-//////        polygon.setFillColor(Color.RED);
-//////        polygon.setVisible(true);
-//////        polygon.setStrokeColor(Color.BLACK);
-//////        polygon.setInfoWindow(new BasicInfoWindow(R.layout.bonuspack_bubble, map));
-//////        pts = new ArrayList<>();
-//////        pts.add(new GeoPoint(40.886788, -73.959232));
-//////        pts.add(new GeoPoint(40.886788, -73.971762));
-//////        pts.add(new GeoPoint(40.878094, -73.971762));
-//////        pts.add(new GeoPoint(40.878094, -73.959232));
-//////        polygon.setPoints(pts);
-//////        map.getOverlays().add(polygon);
-////
-////
-////        //allow rotation gestures
-////        mRotationGestureOverlay = new RotationGestureOverlay(getContext(), map);
-////        mRotationGestureOverlay.setEnabled(true);
-////        map.setMultiTouchControls(true);
-////        map.getOverlays().add(this.mRotationGestureOverlay);
-////
-////        //my location overlay
-////        mLocationOverlay = new MyLocationNewOverlay(new GpsMyLocationProvider(getContext()), map);
-////        mLocationOverlay.enableMyLocation();
-////        map.getOverlays().add(mLocationOverlay);
-////
-////        //compass overlay
-////        mCompassOverlay = new CompassOverlay(getContext(), new InternalCompassOrientationProvider(getContext()), map);
-////        mCompassOverlay.enableCompass();
-////        map.getOverlays().add(mCompassOverlay);
-//
-//        return mapFragmentView;
-//    }
-//
-//    @Override
-//    public void onActivityCreated(Bundle savedInstanceState) {
-//        super.onActivityCreated(savedInstanceState);
-//    }
-//
-////    @Override
-////    public void onStart() {
-////        super.onStart();
-////        mapFragmentView.onStart();
-////    }
-//
-////    @Override
-////    public void onResume() {
-////        super.onResume();
-////        mapFragmentView.onResume();
-////    }
-//
-//    @Override
-//    public void onPause() {
-//        super.onPause();
-//        mapFragmentView.onPause();
-//    }
-//
-//    @Override
-//    public void onStop() {
-//        super.onStop();
-//        mapFragmentView.onStop();
-//    }
-//
-//    @Override
-//    public void onLowMemory() {
-//        super.onLowMemory();
-//        mapFragmentView.onLowMemory();
-//    }
-//
-//    @Override
-//    public void onDestroy() {
-//        super.onDestroy();
-//        mapFragmentView.onDestroy();
-//    }
-//}
