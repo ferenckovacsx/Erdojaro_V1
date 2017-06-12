@@ -112,16 +112,17 @@ public class MapFragment extends Fragment implements PermissionsListener {
             } else if (bundleType != null && bundleType.equals("trip")){
 
                 final ArrayList<LatLng> tripWaypoints = mapBundle.getParcelableArrayList("trip_waypoints");
-
-                Log.i("waypoints debug", "long" + tripWaypoints.get(1).getLatitude());
+                final double[] latitudes = mapBundle.getDoubleArray("trip_latitudes");
+                final double[] longitudes = mapBundle.getDoubleArray("trip_longitudes");
 
                 routeCoordinates = new ArrayList<Position>();
 
-                for (int i = 0; i < tripWaypoints.size(); i++) {
-                    routeCoordinates.add(Position.fromCoordinates(tripWaypoints.get(i).getLongitude(), tripWaypoints.get(i).getLatitude()));
+                for (int i = 0; i < latitudes.length; i++) {
+                    //routeCoordinates.add(Position.fromCoordinates(tripWaypoints.get(i).getLongitude(), tripWaypoints.get(i).getLatitude()));
+                    routeCoordinates.add(Position.fromCoordinates(longitudes[i], latitudes[i]));
                 }
 
-                Log.i("routeCoord", "mapfragment" + routeCoordinates.toString());
+                Log.i("MapFragment", "route coordinates: " + routeCoordinates.toString());
 
 
                 mapView.getMapAsync(new OnMapReadyCallback() {
@@ -158,7 +159,7 @@ public class MapFragment extends Fragment implements PermissionsListener {
                         //move camera to trip start point
                         mapboxMap.moveCamera(CameraUpdateFactory.newCameraPosition(
                                 new CameraPosition.Builder()
-                                        .target(new LatLng(tripWaypoints.get(1).getLatitude(), tripWaypoints.get(1).getLongitude()))  // set the camera's center position
+                                        .target(new LatLng(latitudes[1], longitudes[1]))  // set the camera's center position
                                         .zoom(15)  // set the camera's zoom level
                                         .tilt(20)  // set the camera's tilt
                                         .build()));

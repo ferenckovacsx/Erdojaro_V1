@@ -32,8 +32,8 @@ public class Program {
     @Override
     public String toString() {
         return "Program{" +
-                "name='" + name + '\'' +
-                ", imageID=" + imageID +
+                "Name='" + name + '\'' +
+                ", ImageUrl=" + imageID +
                 '}';
     }
 }

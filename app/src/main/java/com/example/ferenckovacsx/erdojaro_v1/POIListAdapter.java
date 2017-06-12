@@ -1,16 +1,19 @@
 package com.example.ferenckovacsx.erdojaro_v1;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.example.ferenckovacsx.erdojaro_v1.JavaBeans.POI;
+import com.squareup.picasso.Picasso;
 
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -34,7 +37,6 @@ public class POIListAdapter extends ArrayAdapter<POI> {
         this.mContext = context;
 
     }
-
 
 
     private int lastPosition = -1;
@@ -67,11 +69,18 @@ public class POIListAdapter extends ArrayAdapter<POI> {
 
         lastPosition = position;
 
-        viewHolder.POIimage.setImageResource(POIitem.getImageID());
+        if (POIitem.getImageInt() != null){
+            viewHolder.POIimage.setImageResource(POIitem.getImageInt());
+        } else {
+            String bitmapFileName = "Poi_" + POIitem.getId() + ".jpg";
+            Log.i("POIListAdapter", "bitmapfile: " + bitmapFileName);
+            Bitmap poiBitmap = Utils.getBitmapFromFile(bitmapFileName, mContext);
+            viewHolder.POIimage.setImageBitmap(poiBitmap);
+            //Picasso.with(mContext).load(POIitem.getImageUrl()).into(viewHolder.POIimage);
+        }
         viewHolder.POIimage.setTag(position);
 
         // Return the completed view to render on screen
         return convertView;
     }
-
 }

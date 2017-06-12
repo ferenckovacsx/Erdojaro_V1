@@ -1,6 +1,9 @@
 package com.example.ferenckovacsx.erdojaro_v1;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.ferenckovacsx.erdojaro_v1.JavaBeans.Trip;
 
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -25,7 +29,7 @@ public class TripListAdapter
     // View lookup cache
     private static class ViewHolder {
 
-        ImageView TripImage;
+        ImageView tripImage;
         ImageView TripCyclingIcon;
         ImageView TripHikingIcon;
         ImageView TanosvenyIcon;
@@ -55,7 +59,7 @@ public class TripListAdapter
     public View getView(int position, View convertView, ViewGroup parent) {
 
         // Get the data item for this position
-        Trip TripItem = getItem(position);
+        Trip tripItem = getItem(position);
 
         // Check if an existing view is being reused, otherwise inflate the view
         ViewHolder viewHolder; // view lookup cache stored in tag
@@ -67,7 +71,7 @@ public class TripListAdapter
             viewHolder = new ViewHolder();
             LayoutInflater inflater = LayoutInflater.from(getContext());
             convertView = inflater.inflate(R.layout.custom_trip_listitem, parent, false);
-            viewHolder.TripImage = (ImageView) convertView.findViewById(R.id.trip_listitem_image);
+            viewHolder.tripImage = (ImageView) convertView.findViewById(R.id.trip_listitem_image);
             viewHolder.TripTitle = (TextView) convertView.findViewById(R.id.trip_listitem_title);
             viewHolder.TripDistance = (TextView) convertView.findViewById(R.id.trip_distance);
             viewHolder.TripFavoriteCount = (TextView) convertView.findViewById(R.id.trip_saved_count);
@@ -82,8 +86,19 @@ public class TripListAdapter
 
         lastPosition = position;
 
-        viewHolder.TripImage.setImageResource(TripItem.getImageID());
-        viewHolder.TripTitle.setText(TripItem.getName());
+        viewHolder.tripImage.setImageResource(tripItem.getImageId());
+
+        if (tripItem.getImageId() != 0){
+            viewHolder.tripImage.setImageResource(tripItem.getImageId());
+        } else {
+            String bitmapFileName = "Trip_" + tripItem.getId() + ".jpg";
+            Log.i("TripListAdapter", "bitmapfile: " + bitmapFileName);
+            Bitmap tripBitmap = Utils.getBitmapFromFile(bitmapFileName, mContext);
+            viewHolder.tripImage.setImageBitmap(tripBitmap);
+            //Picasso.with(mContext).load(POIitem.getImageUrl()).into(viewHolder.POIimage);
+        }
+
+        viewHolder.TripTitle.setText(tripItem.getName());
 
 
         // Return the completed view to render on screen

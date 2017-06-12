@@ -85,7 +85,7 @@ public class WildlifeFragment extends Fragment {
     }
 
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
+        // TODO: Update argument type and Name
         void messageFromParentFragment(Uri uri);
     }
 

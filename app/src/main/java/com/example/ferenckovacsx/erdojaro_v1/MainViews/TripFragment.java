@@ -1,5 +1,7 @@
 package com.example.ferenckovacsx.erdojaro_v1.MainViews;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,8 +14,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.ferenckovacsx.erdojaro_v1.R;
+import com.example.ferenckovacsx.erdojaro_v1.Utils;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -46,17 +50,30 @@ public class TripFragment extends Fragment {
         tripShowOnMap = (TextView) tripView.findViewById(R.id.text_show_on_map);
 
         Bundle tripBundle = getArguments();
+        int tripId = tripBundle.getInt("trip_id");
         int tripImageID = tripBundle.getInt("trip_imageid");
         final String tripTitle = tripBundle.getString("trip_title");
-        int tripDistance = tripBundle.getInt("trip_distance");
+        double tripDistance = tripBundle.getDouble("trip_distance");
         int tripFavoriteCount = tripBundle.getInt("trip_favorite_count");
         String tripDescription = tripBundle.getString("trip_description");
         final ArrayList<LatLng> tripWaypoints = tripBundle.getParcelableArrayList("trip_waypoints");
+        final double[] latitudes = tripBundle.getDoubleArray("trip_latitudes");
+        final double[] longitudes = tripBundle.getDoubleArray("trip_longitudes");
 
 
         Log.i("tripwaypoints", " from bundle: " + tripWaypoints);
 
-        tripImageView.setImageResource(tripImageID);
+        //tripImageView.setImageResource(tripImageID);
+
+        if (tripImageID != 0) {
+            tripImageView.setImageResource(tripImageID);
+        } else {
+            String bitmapFileName = "Trip_" + tripId + ".jpg";
+            Log.i("TripFragment", "bitmapfile: " + bitmapFileName);
+            Bitmap tripBitmap = Utils.getBitmapFromFile(bitmapFileName, getActivity());
+            tripImageView.setImageBitmap(tripBitmap);
+        }
+
         tripTitleTextview.setText(tripTitle);
         tripDistanceTextview.setText(String.valueOf(tripDistance) + " km");
         tripFavoritesCountTextview.setText(String.valueOf(tripFavoriteCount));
@@ -68,6 +85,8 @@ public class TripFragment extends Fragment {
                 Bundle fragmentArgs = new Bundle();
                 fragmentArgs.putString("bundle_type", "trip");
                 fragmentArgs.putString("trip_title", tripTitle);
+                fragmentArgs.putDoubleArray("trip_longitudes", longitudes);
+                fragmentArgs.putDoubleArray("trip_latitudes", latitudes);
                 fragmentArgs.putParcelableArrayList("trip_waypoints", tripWaypoints);
 
                 MapFragment mapFragment = new MapFragment();
@@ -84,9 +103,8 @@ public class TripFragment extends Fragment {
     }
 
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
+        // TODO: Update argument type and Name
         void messageFromChildFragment(Uri uri);
     }
-
 
 }

@@ -43,9 +43,9 @@ public class Flora {
     @Override
     public String toString() {
         return "Flora{" +
-                "name='" + name + '\'' +
-                ", imageID=" + imageID +
-                ", description='" + description + '\'' +
+                "Name='" + name + '\'' +
+                ", ImageUrl=" + imageID +
+                ", Description='" + description + '\'' +
                 '}';
     }
 }

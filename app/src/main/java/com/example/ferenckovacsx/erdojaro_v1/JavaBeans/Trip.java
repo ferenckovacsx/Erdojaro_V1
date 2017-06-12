@@ -1,67 +1,93 @@
 package com.example.ferenckovacsx.erdojaro_v1.JavaBeans;
 
-import com.mapbox.mapboxsdk.geometry.LatLng;
-
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by ferenckovacsx on 2017-05-15.
  */
 
-public class Trip {
 
-    public String name;
-    public int imageID;
-    public String gpsCoord;
-    public int distance;
+public class Trip implements Serializable{
+
+    private static final long serialVersionUID = 2L;
+
+    public int Id;
+    public String Name;
+    public int ImageId;
+    public String ImageUrl;
+    public double Distance;
     public int favoriteCount;
-    public boolean isItHard;
+    public boolean IsItHard;
     public boolean favorited;
-    public String description;
-    public ArrayList<LatLng> tripWaypoints;
+    public String Description;
+    double[] Latitudes;
+    double[] Longitudes;
 
-    public Trip(String name, int imageID, String gpsCoord, int distance, int favoriteCount, boolean isItHard, boolean favorited, String description, ArrayList<LatLng> tripWaypoints) {
-        this.name = name;
-        this.imageID = imageID;
-        this.gpsCoord = gpsCoord;
-        this.distance = distance;
+    public Trip(int id, String name, int imageId, double distance, int favoriteCount, boolean isItHard, boolean favorited, String description, double[] latitudes, double[] longitudes) {
+        Id = id;
+        Name = name;
+        ImageId = imageId;
+        Distance = distance;
         this.favoriteCount = favoriteCount;
-        this.isItHard = isItHard;
+        IsItHard = isItHard;
         this.favorited = favorited;
-        this.description = description;
-        this.tripWaypoints = tripWaypoints;
+        Description = description;
+        Latitudes = latitudes;
+        Longitudes = longitudes;
+    }
+
+    public Trip(int id, String name, String imageUrl, double distance, int favoriteCount, boolean isItHard, boolean favorited, String description, double[] latitudes, double[] longitudes) {
+        Id = id;
+        Name = name;
+        ImageUrl = imageUrl;
+        Distance = distance;
+        this.favoriteCount = favoriteCount;
+        IsItHard = isItHard;
+        this.favorited = favorited;
+        Description = description;
+        Latitudes = latitudes;
+        Longitudes = longitudes;
+    }
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setName(int id) {
+        Id = id;
     }
 
     public String getName() {
-        return name;
+        return Name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        Name = name;
     }
 
-    public int getImageID() {
-        return imageID;
+    public int getImageId() {
+        return ImageId;
     }
 
-    public void setImageID(int imageID) {
-        this.imageID = imageID;
+    public void setImageId(int imageId) {
+        ImageId = imageId;
     }
 
-    public String getGpsCoord() {
-        return gpsCoord;
+    public String getImageUrl() {
+        return ImageUrl;
     }
 
-    public void setGpsCoord(String gpsCoord) {
-        this.gpsCoord = gpsCoord;
+    public void setImageUrl(String imageUrl) {
+        ImageUrl = imageUrl;
     }
 
-    public int getDistance() {
-        return distance;
+    public double getDistance() {
+        return Distance;
     }
 
-    public void setDistance(int distance) {
-        this.distance = distance;
+    public void setDistance(double distance) {
+        Distance = distance;
     }
 
     public int getFavoriteCount() {
@@ -73,11 +99,11 @@ public class Trip {
     }
 
     public boolean isItHard() {
-        return isItHard;
+        return IsItHard;
     }
 
     public void setItHard(boolean itHard) {
-        isItHard = itHard;
+        IsItHard = itHard;
     }
 
     public boolean isFavorited() {
@@ -89,33 +115,42 @@ public class Trip {
     }
 
     public String getDescription() {
-        return description;
+        return Description;
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        Description = description;
     }
 
-    public ArrayList<LatLng> getTripWaypoints() {
-        return tripWaypoints;
+    public double[] getLatitudes() {
+        return Latitudes;
     }
 
-    public void setTripWaypoints(ArrayList<LatLng> tripWaypoints) {
-        this.tripWaypoints = tripWaypoints;
+    public void setLatitudes(double[] latitudes) {
+        Latitudes = latitudes;
+    }
+
+    public double[] getLongitudes() {
+        return Longitudes;
+    }
+
+    public void setLongitudes(double[] longitudes) {
+        Longitudes = longitudes;
     }
 
     @Override
     public String toString() {
         return "Trip{" +
-                "name='" + name + '\'' +
-                ", imageID=" + imageID +
-                ", gpsCoord='" + gpsCoord + '\'' +
-                ", distance=" + distance +
+                "Name='" + Name + '\'' +
+                ", ImageId=" + ImageId +
+                ", ImageUrl='" + ImageUrl + '\'' +
+                ", Distance=" + Distance +
                 ", favoriteCount=" + favoriteCount +
-                ", isItHard=" + isItHard +
+                ", IsItHard=" + IsItHard +
                 ", favorited=" + favorited +
-                ", description='" + description + '\'' +
-                ", tripWaypoints=" + tripWaypoints +
+                ", Description='" + Description + '\'' +
+                ", Latitudes=" + Latitudes +
+                ", Longitudes=" + Longitudes +
                 '}';
     }
 }

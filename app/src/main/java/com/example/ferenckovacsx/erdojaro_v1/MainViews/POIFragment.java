@@ -1,9 +1,12 @@
 package com.example.ferenckovacsx.erdojaro_v1.MainViews;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +14,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.ferenckovacsx.erdojaro_v1.R;
+import com.example.ferenckovacsx.erdojaro_v1.Utils;
+
+import java.io.File;
 
 /**
  * Created by ferenckovacsx on 2017-05-28.
@@ -40,13 +46,22 @@ public class POIFragment extends Fragment {
         POIshowOnMapIcon = (ImageView) POIView.findViewById(R.id.poi_show_on_map_icon);
 
         Bundle POIbundle = getArguments();
+        int poiID = POIbundle.getInt("poi_id");
         int poiImageID = POIbundle.getInt("poi_imageid");
         final String poiTitle = POIbundle.getString("poi_title");
         final double poiLat = POIbundle.getDouble("poi_lat");
         final double poiLong = POIbundle.getDouble("poi_long");
         String poiDescription = POIbundle.getString("poi_description");
 
-        POIImageView.setImageResource(poiImageID);
+        if (poiImageID != 0) {
+            POIImageView.setImageResource(poiImageID);
+        } else {
+            String bitmapFileName = "Poi_" + poiID + ".jpg";
+            Log.i("POIFragment", "bitmapfile: " + bitmapFileName);
+            Bitmap poiBitmap = Utils.getBitmapFromFile(bitmapFileName, getActivity());
+            POIImageView.setImageBitmap(poiBitmap);
+        }
+
         POITitleTextview.setText(poiTitle);
         POICoordinateTextview.setText("É" + String.valueOf(poiLat) + " " + "K" + String.valueOf(poiLong));
         POIDescriptionTextview.setText(poiDescription);
@@ -75,9 +90,8 @@ public class POIFragment extends Fragment {
     }
 
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
+        // TODO: Update argument type and Name
         void messageFromChildFragment(Uri uri);
     }
-
 
 }

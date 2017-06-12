@@ -12,19 +12,26 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+//import com.example.ferenckovacsx.erdojaro_v1.GetPoiList;
 import com.example.ferenckovacsx.erdojaro_v1.JavaBeans.POI;
 import com.example.ferenckovacsx.erdojaro_v1.POIListAdapter;
 import com.example.ferenckovacsx.erdojaro_v1.R;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
 
-public class DiscoverPOI extends Fragment {
+public class DiscoverPOI extends Fragment
+//        implements AsyncResponse
+{
 
     ListView poiListView;
     private static POIListAdapter adapter;
-    ArrayList<POI> POIList;
+    ArrayList<POI> poiList;
+    ArrayList<POI> poiFromFile;
 
     private OnFragmentInteractionListener mListener;
 
@@ -34,20 +41,24 @@ public class DiscoverPOI extends Fragment {
 
         View poiView = inflater.inflate(R.layout.fragment_discover_poi, container, false);
 
+        //new GetPoiList(this).execute();
+
+        poiFromFile = readPoiFromFile();
+
         poiListView = (ListView) poiView.findViewById(R.id.POI_listview);
 
-        POIList = new ArrayList<>();
-        POIList.add(new POI("Nagymező", R.drawable.poi_nagymezo, 48.0791, 20.4981, false, "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."));
-        POIList.add(new POI("blabla", R.drawable.fauna, 48.0791, 20.4981, true, "Pelda kep"));
-        POIList.add(new POI("blabla", R.drawable.trek, 48.0791, 20.4981, true, "Pelda kep"));
+        poiList = new ArrayList<>();
+        poiList.add(new POI(1, "Nagymező", R.drawable.poi_nagymezo, 48.0791, 20.4981, false, "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."));
+        poiList.add(new POI(2, "blabla", R.drawable.fauna, 48.0791, 20.4981, true, "Pelda kep"));
+        poiList.add(new POI(3, "blabla", R.drawable.trek, 48.0791, 20.4981, true, "Pelda kep"));
+        poiList.addAll(poiFromFile);
 
+        Log.i("DiscoverPOI", "POI from root" + poiList.toString());
+        Log.i("DiscoverPOI", "combined poiList" + poiList.toString());
 
-        Log.i("POIFragment", "megtortent");
-        Log.i("POIFragment", "lista" + POIList.toString());
+        poiListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
 
-        adapter = new POIListAdapter(POIList, getActivity().getApplicationContext());
-
-        poiListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        {
             @Override
             public void onItemClick(AdapterView<?> adapter, View v, int position,
                                     long arg3) {
@@ -55,21 +66,28 @@ public class DiscoverPOI extends Fragment {
                 Object POIrawObject = adapter.getAdapter().getItem(position);
                 POI poiItem = (POI) POIrawObject;
 
-                int POIimageID = poiItem.getImageID();
+                int poiID = poiItem.getId();
                 String POItitle = poiItem.getName();
-                double POIcoordLat = poiItem.getGpsCoordLat();
-                double POIcoordLong = poiItem.getGpsCoordLong();
+                double POIcoordLat = poiItem.getLatitude();
+                double POIcoordLong = poiItem.getLongitude();
                 String POIdescription = poiItem.getDescription();
                 LatLng latlong = new LatLng(POIcoordLat, POIcoordLong);
 
-                Log.i("POIclickListener", "imageID: " + POIimageID);
                 Log.i("POIclickListener", "title: " + POItitle);
                 Log.i("POIclickListener", "gps latitude: " + POIcoordLat);
                 Log.i("POIclickListener", "gps longiuted: " + POIcoordLong);
-                Log.i("POIclickListener", "description: " + POIdescription);
+                Log.i("POIclickListener", "Description: " + POIdescription);
 
                 Bundle fragmentArgs = new Bundle();
-                fragmentArgs.putInt("poi_imageid", POIimageID);
+
+                try {
+                    int POIimageID = poiItem.getImageInt();
+                    fragmentArgs.putInt("poi_imageid", POIimageID);
+                } catch (NullPointerException np) {
+                    np.printStackTrace();
+                }
+
+                fragmentArgs.putInt("poi_id", poiID);
                 fragmentArgs.putString("poi_title", POItitle);
                 fragmentArgs.putDouble("poi_lat", POIcoordLat);
                 fragmentArgs.putDouble("poi_long", POIcoordLong);
@@ -85,7 +103,9 @@ public class DiscoverPOI extends Fragment {
             }
         });
 
+        adapter = new POIListAdapter(poiList, getActivity().getApplicationContext());
         poiListView.setAdapter(adapter);
+
         return poiView;
 
     }
@@ -109,7 +129,42 @@ public class DiscoverPOI extends Fragment {
 
 
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
+        // TODO: Update argument type and Name
         void messageFromChildFragment(Uri uri);
     }
+
+    public ArrayList<POI> readPoiFromFile() {
+        ArrayList<POI> poiFromFile = null;
+
+        try {
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(new File(getActivity().getFilesDir(), "/poi.dat")));
+            poiFromFile = (ArrayList<POI>) ois.readObject();
+            Log.i("DiscoverPOI", "POI from file" + poiFromFile);
+            return poiFromFile;
+        } catch (
+                Exception ex)
+
+        {
+            ex.printStackTrace();
+        }
+        return null;
+    }
+
+
+//processFinish gets the result of the GetPoiList onPostExecute method
+//    @Override
+//    public void processFinish(List<AsyncTaskResponseContent> output){
+//        Log.i("DiscoverPOI", "Output from Async: " + output);
+//
+//        try {
+//            poiList.addAll(output);
+//            Log.i("DiscoverPOI", "Output + originallist: " + poiList);
+//        } catch (NullPointerException n) {
+//            n.printStackTrace();
+//        }
+//
+//
+//        adapter = new POIListAdapter(poiList, getActivity().getApplicationContext());
+//        poiListView.setAdapter(adapter);
+//    }
 }

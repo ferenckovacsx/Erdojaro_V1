@@ -12,23 +12,27 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.example.ferenckovacsx.erdojaro_v1.JavaBeans.POI;
 import com.example.ferenckovacsx.erdojaro_v1.JavaBeans.Trip;
 import com.example.ferenckovacsx.erdojaro_v1.R;
 import com.example.ferenckovacsx.erdojaro_v1.TripListAdapter;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 
-import org.apache.commons.lang3.ArrayUtils;
-
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Iterator;
 
 
 public class DiscoverTrips extends Fragment {
 
     ListView tripListView;
     private static TripListAdapter adapter;
-    ArrayList<Trip> TripList;
+    ArrayList<Trip> tripList;
+    ArrayList<Trip> tripListFromFile;
+    //ArrayList<LatLng> wayPointList;
+    double[] latitudesPrimitiveArray;
+    double[] longitudesPrimitiveArray;
 
     private OnFragmentInteractionListener mListener;
 
@@ -65,22 +69,28 @@ public class DiscoverTrips extends Fragment {
         waypointsLat.add(48.059534635);
         waypointsLat.add(48.059557518);
 
+        longitudesPrimitiveArray = convertDoubleToPrimitive(waypointsLong);
+        latitudesPrimitiveArray = convertDoubleToPrimitive(waypointsLat);
 
-        ArrayList<LatLng> wayPointList = new ArrayList<>();
 
-        for (int i = 0; i < waypointsLat.size(); i++) {
-                wayPointList.add(new LatLng(waypointsLat.get(i), waypointsLong.get(i)));
-            }
+//        wayPointList = new ArrayList<>();
+//
+//        for (int i = 0; i < waypointsLat.size(); i++) {
+//                wayPointList.add(new LatLng(waypointsLat.get(i), waypointsLong.get(i)));
+//            }
+//
+//        Log.i("waypoint", "list: " + wayPointList);
 
-        Log.i("waypoint", "list: " + wayPointList);
+        tripListFromFile = readTripFromFile();
 
-        TripList = new ArrayList<>();
-        TripList.add(new Trip("Bükkszentkereszt - \nHoldviola Tanösvény", R.drawable.holdviola, "123456", 3, 26, false, true, "Ez itt a nagymezo", wayPointList));
+        tripList = new ArrayList<>();
+        tripList.add(new Trip(1, "Bükkszentkereszt - \nHoldviola Tanösvény", R.drawable.holdviola, 3, 26, false, true, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
+        tripList.addAll(tripListFromFile);
 
         Log.i("TripFragment", "launched");
-        Log.i("TripFragment", "lista: " + TripList.toString());
+        Log.i("TripFragment", "lista: " + tripList.toString());
 
-        adapter = new TripListAdapter(TripList, getActivity().getApplicationContext());
+        adapter = new TripListAdapter(tripList, getActivity().getApplicationContext());
 
         tripListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -90,25 +100,29 @@ public class DiscoverTrips extends Fragment {
                 Object tripRawObject = adapter.getAdapter().getItem(position);
                 Trip tripItem = (Trip) tripRawObject;
 
-                int tripImageID = tripItem.getImageID();
+                int tripId = tripItem.getId();
+                int tripImageID = tripItem.getImageId();
                 String tripTitle = tripItem.getName();
-                int tripDistance = tripItem.getDistance();
+                double tripDistance = tripItem.getDistance();
                 int tripFavoriteCount = tripItem.getFavoriteCount();
                 String tripDescription = tripItem.getDescription();
-                ArrayList<LatLng> tripWaypoints = tripItem.getTripWaypoints();
+                double[] latitudes = tripItem.getLatitudes();
+                double[] longitudes = tripItem.getLongitudes();
 
-                Log.i("TripClickListener", "imageID: " + tripImageID);
+                Log.i("TripClickListener", "ImageUrl: " + tripImageID);
                 Log.i("TripClickListener", "title: " + tripTitle);
                 Log.i("TripClickListener", "distance: " + tripDistance);
-                Log.i("TripClickListener", "description: " + tripDescription);
+                Log.i("TripClickListener", "Description: " + tripDescription);
 
                 Bundle fragmentArgs = new Bundle();
+                fragmentArgs.putInt("trip_id", tripId);
                 fragmentArgs.putInt("trip_imageid", tripImageID);
                 fragmentArgs.putString("trip_title", tripTitle);
-                fragmentArgs.putInt("trip_distance", tripDistance);
+                fragmentArgs.putDouble("trip_distance", tripDistance);
                 fragmentArgs.putInt("trip_favorite_count", tripFavoriteCount);
                 fragmentArgs.putString("trip_description", tripDescription);
-                fragmentArgs.putParcelableArrayList("trip_waypoints", tripWaypoints);
+                fragmentArgs.putDoubleArray("trip_latitudes", latitudes);
+                fragmentArgs.putDoubleArray("trip_longitudes", longitudes);
 
                 TripFragment tripFragment = new TripFragment();
                 tripFragment.setArguments(fragmentArgs);
@@ -144,7 +158,37 @@ public class DiscoverTrips extends Fragment {
     }
 
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
+        // TODO: Update argument type and Name
         void messageFromChildFragment(Uri uri);
+    }
+
+    public static double[] convertDoubleToPrimitive(ArrayList<Double> doubles)
+    {
+        double[] ret = new double[doubles.size()];
+        Iterator<Double> iterator = doubles.iterator();
+        int i = 0;
+        while(iterator.hasNext())
+        {
+            ret[i] = iterator.next();
+            i++;
+        }
+        return ret;
+    }
+
+    public ArrayList<Trip> readTripFromFile() {
+        ArrayList<Trip> tripFromFile = null;
+
+        try {
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(new File(getActivity().getFilesDir(), "/trip.dat")));
+            tripFromFile = (ArrayList<Trip>) ois.readObject();
+            Log.i("DiscoverPOI", "POI from file" + tripFromFile);
+            return tripFromFile;
+        } catch (
+                Exception ex)
+
+        {
+            ex.printStackTrace();
+        }
+        return null;
     }
 }

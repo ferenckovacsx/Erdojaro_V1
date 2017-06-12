@@ -1,57 +1,113 @@
 package com.example.ferenckovacsx.erdojaro_v1.JavaBeans;
 
+import android.graphics.Bitmap;
+
+import java.io.Serializable;
+
 /**
  * Created by ferenckovacsx on 2017-05-15.
  */
 
-public class POI {
+public class POI implements Serializable {
 
-    public String name;
-    public int imageID;
-    public double gpsCoordLat;
-    public double gpsCoordLong;
+    private static final long serialVersionUID = 1L;
+
+    public int Id;
+    public String Name;
+    public Integer ImageInt;
+    public String ImageUrl;
+    public Bitmap ImageBitmap;
+    public double Latitude;
+    public double Longitude;
     public boolean favorited;
-    public String description;
+    public String Description;
 
-    public POI(String name, int imageID, double gpsCoordLat, double gpsCoordLong, boolean favorited, String description) {
-        this.name = name;
-        this.imageID = imageID;
-        this.gpsCoordLat = gpsCoordLat;
-        this.gpsCoordLong = gpsCoordLong;
+
+
+    public POI(int id, String name, String ImageUrl, double Latitude, double Longitude, boolean favorited, String description) {
+        this.Id = id;
+        this.Name = name;
+        this.ImageUrl = ImageUrl;
+        this.Latitude = Latitude;
+        this.Longitude = Longitude;
         this.favorited = favorited;
-        this.description = description;
+        this.Description = description;
+    }
+
+    public POI(int id, String name, Integer ImageInt, double Latitude, double Longitude, boolean favorited, String description) {
+        this.Id = id;
+        this.Name = name;
+        this.ImageInt = ImageInt;
+        this.Latitude = Latitude;
+        this.Longitude = Longitude;
+        this.favorited = favorited;
+        this.Description = description;
+    }
+
+    public POI(int id, String name, Bitmap ImageBitmap, double Latitude, double Longitude, boolean favorited, String description) {
+        this.Id = id;
+        this.Name = name;
+        this.ImageBitmap = ImageBitmap;
+        this.Latitude = Latitude;
+        this.Longitude = Longitude;
+        this.favorited = favorited;
+        this.Description = description;
+    }
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int id) {
+        Id = id;
     }
 
     public String getName() {
-        return name;
+        return Name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.Name = name;
     }
 
-    public int getImageID() {
-        return imageID;
+    public String getImageUrl() {
+        return ImageUrl;
     }
 
-    public void setImageID(int imageID) {
-        this.imageID = imageID;
+    public void setImageUrl(String imageUrl) {
+        this.ImageUrl = imageUrl;
     }
 
-    public double getGpsCoordLong() {
-        return gpsCoordLong;
+    public Integer getImageInt() {
+        return ImageInt;
     }
 
-    public void setGpsCoordLong(double gpsCoordLong) {
-        this.gpsCoordLong = gpsCoordLong;
+    public void setImageInt(Integer imageInt) {
+        this.ImageInt = imageInt;
     }
 
-    public double getGpsCoordLat() {
-        return gpsCoordLat;
+    public Bitmap getImageBitmap() {
+        return ImageBitmap;
     }
 
-    public void setGpsCoordLat(double gpsCoordLat) {
-        this.gpsCoordLat = gpsCoordLat;
+    public void setImageBitmap(Bitmap imageBitmap) {
+        this.ImageBitmap = ImageBitmap;
+    }
+
+    public double getLatitude() {
+        return Latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.Latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return Longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.Longitude = longitude;
     }
 
     public boolean isFavorited() {
@@ -63,22 +119,25 @@ public class POI {
     }
 
     public String getDescription() {
-        return description;
+        return Description;
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        this.Description = description;
     }
 
     @Override
     public String toString() {
         return "POI{" +
-                "name='" + name + '\'' +
-                ", imageID=" + imageID +
-                ", gpsCoordLong=" + gpsCoordLong +
-                ", gpsCoordLat=" + gpsCoordLat +
+                "Id=" + Id +
+                ", Name='" + Name + '\'' +
+                ", ImageInt=" + ImageInt +
+                ", ImageUrl='" + ImageUrl + '\'' +
+                ", ImageBitmap=" + ImageBitmap +
+                ", Latitude=" + Latitude +
+                ", Longitude=" + Longitude +
                 ", favorited=" + favorited +
-                ", description='" + description + '\'' +
+                ", Description='" + Description + '\'' +
                 '}';
     }
 }
