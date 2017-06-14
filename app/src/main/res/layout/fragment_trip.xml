@@ -18,10 +18,10 @@
             <ImageView
                 android:id="@+id/trip_image"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="200dp"
                 android:adjustViewBounds="true"
                 android:padding="2dp"
-                android:scaleType="fitCenter"
+                android:scaleType="centerCrop"
                 android:src="@drawable/poi_nagymezo" />
 
         </LinearLayout>
@@ -36,16 +36,17 @@
                 android:id="@+id/trip_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@string/roads_nl"
+                android:layout_toStartOf="@+id/text_show_on_map"
+                android:layout_marginEnd="10dp"
                 android:textColor="#587812"
-                android:textSize="25sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/text_show_on_map"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:drawableTop="@drawable/poi_icon"
+                android:drawableTop="@drawable/ic_trip_show_on_map"
                 android:gravity="center"
                 android:text="Mutasd a \ntérképen" />
 
@@ -67,8 +68,8 @@
                 android:layout_marginStart="30dp"
                 android:layout_toEndOf="@id/trip_distance"
                 android:drawablePadding="5dp"
-                android:drawableStart="@drawable/ic_heart_full"
-                android:gravity="start"
+                android:drawableStart="@drawable/ic_favorite_full"
+                android:gravity="center"
                 android:textSize="15sp" />
 
         </RelativeLayout>
@@ -77,8 +78,8 @@
             android:id="@+id/trip_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-            " />
+            android:layout_margin="16dp"
+            android:text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
+            android:textColor="#5C5C5C" />
     </LinearLayout>
 </ScrollView>

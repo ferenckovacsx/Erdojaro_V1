@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="15sp"
-        android:text="Élővilág"/>
+        android:textColor="#5C5C5C"/>
 
     <ImageView
         android:id="@+id/option_icon"
@@ -18,7 +18,6 @@
         android:layout_width="wrap_content"
         android:scaleType="fitCenter"
         android:adjustViewBounds="true"
-        android:layout_alignParentEnd="true"
-        android:src="@drawable/ic_wildlife"/>
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

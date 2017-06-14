@@ -1,14 +1,13 @@
 package com.example.ferenckovacsx.erdojaro_v1;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
-import com.example.ferenckovacsx.erdojaro_v1.JavaBeans.Flora;
+import com.example.ferenckovacsx.erdojaro_v1.javabeans.Flora;
 
 import java.util.ArrayList;
 

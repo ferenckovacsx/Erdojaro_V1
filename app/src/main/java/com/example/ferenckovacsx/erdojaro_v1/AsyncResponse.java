@@ -1,6 +1,6 @@
 package com.example.ferenckovacsx.erdojaro_v1;
 
-import com.example.ferenckovacsx.erdojaro_v1.JavaBeans.AsyncTaskResponseContent;
+import com.example.ferenckovacsx.erdojaro_v1.javabeans.AsyncTaskResponseContent;
 
 import java.util.List;
 

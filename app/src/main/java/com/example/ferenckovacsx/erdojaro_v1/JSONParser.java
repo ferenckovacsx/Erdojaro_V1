@@ -2,8 +2,8 @@ package com.example.ferenckovacsx.erdojaro_v1;
 
 import android.util.Log;
 
-import com.example.ferenckovacsx.erdojaro_v1.JavaBeans.POI;
-import com.example.ferenckovacsx.erdojaro_v1.JavaBeans.Trip;
+import com.example.ferenckovacsx.erdojaro_v1.javabeans.POI;
+import com.example.ferenckovacsx.erdojaro_v1.javabeans.Trip;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 

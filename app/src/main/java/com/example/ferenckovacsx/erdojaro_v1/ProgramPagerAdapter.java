@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.ferenckovacsx.erdojaro_v1.JavaBeans.Program;
+import com.example.ferenckovacsx.erdojaro_v1.javabeans.Program;
 
 import java.util.List;
 

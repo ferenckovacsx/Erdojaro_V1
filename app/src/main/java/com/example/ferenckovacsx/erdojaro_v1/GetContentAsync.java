@@ -3,20 +3,19 @@ package com.example.ferenckovacsx.erdojaro_v1;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Environment;
 import android.util.Log;
 
-import com.example.ferenckovacsx.erdojaro_v1.JavaBeans.AsyncTaskResponseContent;
-import com.example.ferenckovacsx.erdojaro_v1.JavaBeans.Fauna;
-import com.example.ferenckovacsx.erdojaro_v1.JavaBeans.Flora;
-import com.example.ferenckovacsx.erdojaro_v1.JavaBeans.Funghi;
-import com.example.ferenckovacsx.erdojaro_v1.JavaBeans.POI;
-import com.example.ferenckovacsx.erdojaro_v1.JavaBeans.Program;
-import com.example.ferenckovacsx.erdojaro_v1.JavaBeans.Trip;
-import com.example.ferenckovacsx.erdojaro_v1.MainViews.HomeActivity;
+import com.example.ferenckovacsx.erdojaro_v1.javabeans.AsyncTaskResponseContent;
+import com.example.ferenckovacsx.erdojaro_v1.javabeans.Fauna;
+import com.example.ferenckovacsx.erdojaro_v1.javabeans.Flora;
+import com.example.ferenckovacsx.erdojaro_v1.javabeans.Funghi;
+import com.example.ferenckovacsx.erdojaro_v1.javabeans.POI;
+import com.example.ferenckovacsx.erdojaro_v1.javabeans.Program;
+import com.example.ferenckovacsx.erdojaro_v1.javabeans.Trip;
+import com.example.ferenckovacsx.erdojaro_v1.mainviews.HomeActivity;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
@@ -29,9 +28,10 @@ import java.io.ObjectOutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+
+import static com.example.ferenckovacsx.erdojaro_v1.mainviews.HomeActivity.mainContext;
+import static com.example.ferenckovacsx.erdojaro_v1.mainviews.SplashActivity.splashContext;
 
 /**
  * Created by ferenckovacsx on 2017-06-09.
@@ -48,12 +48,10 @@ public class GetContentAsync extends AsyncTask<Void, Void, AsyncTaskResponseCont
     List<Fauna> faunaList;
     List<Funghi> funghiList;
 
-    AsyncTaskResponseContent allContent;
-
-    Context context;
+    private Context context;
 
     public GetContentAsync(Context context) {
-        this.context = context.getApplicationContext();
+        this.context = context;
     }
 
     public AsyncResponse delegate = null;
@@ -65,6 +63,12 @@ public class GetContentAsync extends AsyncTask<Void, Void, AsyncTaskResponseCont
     @Override
     protected AsyncTaskResponseContent doInBackground(Void... args) {
 
+        AsyncTaskResponseContent allContent;
+
+        for (int l = 0; l <= 5000; l++) {
+            Log.i("looping", ": " + l);
+        }
+
         String poiResponse = sendHTTPRequest(Constants.GET_POI);
         String tripResponse = sendHTTPRequest(Constants.GET_TRIP);
 //        String programResponse = sendHTTPRequest(Constants.GET_POI);
@@ -72,13 +76,11 @@ public class GetContentAsync extends AsyncTask<Void, Void, AsyncTaskResponseCont
 //        String faunaResponse = sendHTTPRequest(Constants.GET_POI);
 //        String funghiResponse = sendHTTPRequest(Constants.GET_POI);
 
+
         try {
             poiList = JSONParser.parsePoiJson(poiResponse);
             tripList = JSONParser.parseTripJson(tripResponse);
 
-//            for (int i = 0; i < poiList.size(); i++) {
-//                saveImageUrlToFile(poiList.get(i).getImageUrl());
-//            }
 
             allContent = new AsyncTaskResponseContent(poiList, tripList, programList, floraList, faunaList, funghiList);
 
@@ -91,6 +93,10 @@ public class GetContentAsync extends AsyncTask<Void, Void, AsyncTaskResponseCont
         return null;
     }
 
+    @Override
+    protected void onPreExecute() {
+
+    }
 
     protected void onPostExecute(AsyncTaskResponseContent contentFromJson) {
         Log.i("GetContentAsync", "data from onbackground: " + contentFromJson);
@@ -102,23 +108,21 @@ public class GetContentAsync extends AsyncTask<Void, Void, AsyncTaskResponseCont
             List<Trip> tripListOnPost = contentFromJson.getTripList();
             //List<POI> poiListWithBitmap = new ArrayList<>();
 
-
-            //save image url to local bitmap
-            for (int i = 0; i < poiListOnPost.size(); i++) {
-
-                String imageURL = poiListOnPost.get(i).getImageUrl();
-                int poiId = poiListOnPost.get(i).getId();
-                saveImageUrlToFile("Poi", imageURL, poiId);
-                Log.i("GetContentAsync", "poi bitmap saved");
-            }
-
-            for (int i = 0; i < tripListOnPost.size(); i++) {
-
-                String imageURL = tripListOnPost.get(i).getImageUrl();
-                int tripId = tripListOnPost.get(i).getId();
-                saveImageUrlToFile("Trip", imageURL, tripId);
-                Log.i("GetContentAsync", "trip bitmap saved");
-            }
+//
+//            //save image url to local bitmap
+//            for (int i = 0; i < poiListOnPost.size(); i++) {
+//
+//                String imageURL = poiListOnPost.get(i).getImageUrl();
+//                int poiId = poiListOnPost.get(i).getId();
+//                saveImageUrlToFile("Poi", imageURL, poiId);
+//            }
+//
+//            for (int i = 0; i < tripListOnPost.size(); i++) {
+//
+//                String imageURL = tripListOnPost.get(i).getImageUrl();
+//                int tripId = tripListOnPost.get(i).getId();
+//                saveImageUrlToFile("Trip", imageURL, tripId);
+//            }
 
             //save to .dat file
             savePoiToFile(poiListOnPost);
@@ -129,6 +133,7 @@ public class GetContentAsync extends AsyncTask<Void, Void, AsyncTaskResponseCont
         }
 
         Intent i = new Intent(context, HomeActivity.class);
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(i);
     }
 
@@ -167,47 +172,50 @@ public class GetContentAsync extends AsyncTask<Void, Void, AsyncTaskResponseCont
         return responseFromServer;
     }
 
-    private void saveImageUrlToFile(String type, String imageURL, int id) {
-
-        final String stringId = String.valueOf(id);
-        final String TYPE = type;
-
-        Picasso.with(context)
-                .load(imageURL)
-                .into(new Target() {
-                          @Override
-                          public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-                              try {
-                                  String root = Environment.getExternalStorageDirectory().toString();
-                                  File myDir = new File(context.getFilesDir(), "/erdojaroIMG");
-
-                                  if (!myDir.exists()) {
-                                      myDir.mkdirs();
-                                  }
-
-                                  String name = TYPE + "_" + stringId + ".jpg";
-                                  myDir = new File(myDir, name);
-                                  Log.i("GetContentAsync", "saveFilename: " + myDir);
-                                  FileOutputStream out = new FileOutputStream(myDir);
-                                  bitmap.compress(Bitmap.CompressFormat.JPEG, 90, out);
-
-                                  out.flush();
-                                  out.close();
-                              } catch (Exception e) {
-                                  Log.e("GetContenAsync", "save unsuccessful");
-                              }
-                          }
-
-                          @Override
-                          public void onBitmapFailed(Drawable errorDrawable) {
-                          }
-
-                          @Override
-                          public void onPrepareLoad(Drawable placeHolderDrawable) {
-                          }
-                      }
-                );
-    }
+//    private void saveImageUrlToFile(String type, String imageURL, int id) {
+//
+//        final String stringId = String.valueOf(id);
+//        final String TYPE = type;
+//
+//        Picasso.with(splashContext)
+//                .load(imageURL)
+//                .into(new Target() {
+//                          @Override
+//                          public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+//                              Log.i("GetContentAsync", "onBitmapLoaded" + bitmap);
+//
+//                              try {
+//                                  String root = Environment.getExternalStorageDirectory().toString();
+//                                  File myDir = new File(context.getFilesDir(), "/erdojaroIMG");
+//
+//                                  if (!myDir.exists()) {
+//                                      myDir.mkdirs();
+//                                  }
+//
+//                                  String name = TYPE + "_" + stringId + ".jpg";
+//                                  myDir = new File(myDir, name);
+//                                  Log.i("GetContentAsync", "saveFilename: " + myDir);
+//                                  FileOutputStream out = new FileOutputStream(myDir);
+//                                  bitmap.compress(Bitmap.CompressFormat.JPEG, 90, out);
+//
+//                                  out.flush();
+//                                  out.close();
+//                              } catch (Exception e) {
+//                                  Log.e("GetContenAsync", "save unsuccessful");
+//                              }
+//                          }
+//
+//                          @Override
+//                          public void onBitmapFailed(Drawable errorDrawable) {
+//                              Log.d("GetContentAsync", "onBitmapFailed");
+//                          }
+//
+//                          @Override
+//                          public void onPrepareLoad(Drawable placeHolderDrawable) {
+//                          }
+//                      }
+//                );
+//    }
 
 //    private Bitmap getBitmapFromFile(String sourceFile) {
 //

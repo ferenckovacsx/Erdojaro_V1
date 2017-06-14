@@ -2,7 +2,6 @@ package com.example.ferenckovacsx.erdojaro_v1;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,9 +10,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.ferenckovacsx.erdojaro_v1.JavaBeans.Trip;
+import com.example.ferenckovacsx.erdojaro_v1.javabeans.Trip;
 
-import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -45,7 +43,6 @@ public class TripListAdapter
         super(context, R.layout.custom_trip_listitem, data);
         this.dataSet = data;
         this.mContext = context;
-
     }
 
     @Override
@@ -95,9 +92,10 @@ public class TripListAdapter
             Log.i("TripListAdapter", "bitmapfile: " + bitmapFileName);
             Bitmap tripBitmap = Utils.getBitmapFromFile(bitmapFileName, mContext);
             viewHolder.tripImage.setImageBitmap(tripBitmap);
-            //Picasso.with(mContext).load(POIitem.getImageUrl()).into(viewHolder.POIimage);
         }
 
+        viewHolder.TripDistance.setText(String.valueOf(tripItem.getDistance()));
+        viewHolder.TripFavoriteCount.setText(String.valueOf(tripItem.getFavoriteCount()));
         viewHolder.TripTitle.setText(tripItem.getName());
 
 

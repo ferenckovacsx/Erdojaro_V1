@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.ferenckovacsx.erdojaro_v1.JavaBeans.OptionListItem;
+import com.example.ferenckovacsx.erdojaro_v1.javabeans.OptionListItem;
 
 import java.util.ArrayList;
 

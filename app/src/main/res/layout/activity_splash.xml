@@ -1,18 +1,81 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.ferenckovacsx.erdojaro_v1.MainViews.SplashActivity">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
     <ImageView
-        android:id="@+id/splash_activity_background"
+        android:id="@+id/splash_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        android:src="@drawable/splash"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_splash" />
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/erdojaro_icon_splash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:paddingBottom="60dp"
+        android:src="@drawable/ic_erdojaro_big" />
+
+    <FrameLayout
+        android:id="@+id/fake_framelayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:paddingBottom="60dp">
+
+    </FrameLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fake_framelayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="82dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_compass_frame" />
+
+        <ProgressBar
+            android:id="@+id/updateProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:drawingCacheQuality="high"
+            android:indeterminateDrawable="@drawable/custom_progress_bar" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/loading_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/loading_variable_textview"
+        android:gravity="center"
+        android:text="@string/loading_text_fixed"
+        android:textColor="#fffeff"
+        android:layout_marginBottom="10dp"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/loading_variable_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"
+        android:text="Katicabogarak elhelyezése"
+        android:textColor="#fffeff"
+        android:textSize="16sp" />
+
+</RelativeLayout>

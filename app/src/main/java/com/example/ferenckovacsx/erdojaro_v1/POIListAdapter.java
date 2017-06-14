@@ -2,7 +2,6 @@ package com.example.ferenckovacsx.erdojaro_v1;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,11 +9,12 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 
-import com.example.ferenckovacsx.erdojaro_v1.JavaBeans.POI;
+import com.example.ferenckovacsx.erdojaro_v1.javabeans.POI;
 import com.squareup.picasso.Picasso;
 
-import java.io.File;
 import java.util.ArrayList;
+
+import static com.example.ferenckovacsx.erdojaro_v1.mainviews.HomeActivity.mainContext;
 
 /**
  * Created by ferenckovacsx on 2017-05-18.
@@ -35,6 +35,7 @@ public class POIListAdapter extends ArrayAdapter<POI> {
         super(context, R.layout.custom_poi_listitem, data);
         this.dataSet = data;
         this.mContext = context;
+
 
     }
 
@@ -69,13 +70,25 @@ public class POIListAdapter extends ArrayAdapter<POI> {
 
         lastPosition = position;
 
-        if (POIitem.getImageInt() != null){
+
+        if (POIitem.getImageInt() != null) {
+            Log.i("POIListAdapter", "poi from res");
+
             viewHolder.POIimage.setImageResource(POIitem.getImageInt());
         } else {
-            String bitmapFileName = "Poi_" + POIitem.getId() + ".jpg";
-            Log.i("POIListAdapter", "bitmapfile: " + bitmapFileName);
-            Bitmap poiBitmap = Utils.getBitmapFromFile(bitmapFileName, mContext);
-            viewHolder.POIimage.setImageBitmap(poiBitmap);
+
+            Picasso picasso = Picasso.with(mainContext);
+            picasso.setIndicatorsEnabled(true);
+
+            Picasso.with(mainContext)
+                    .load(POIitem.getImageUrl())
+                    .into(viewHolder.POIimage);
+
+
+//            String bitmapFileName = "Poi_" + POIitem.getId() + ".jpg";
+//            Log.i("POIListAdapter", "bitmapfile: " + bitmapFileName);
+//            Bitmap poiBitmap = Utils.getBitmapFromFile(bitmapFileName, mContext);
+//            viewHolder.POIimage.setImageBitmap(poiBitmap);
             //Picasso.with(mContext).load(POIitem.getImageUrl()).into(viewHolder.POIimage);
         }
         viewHolder.POIimage.setTag(position);
