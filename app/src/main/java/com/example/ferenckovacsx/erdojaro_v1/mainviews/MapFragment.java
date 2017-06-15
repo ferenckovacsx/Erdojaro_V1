@@ -1,11 +1,14 @@
 package com.example.ferenckovacsx.erdojaro_v1.mainviews;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
@@ -58,6 +61,9 @@ public class MapFragment extends Fragment implements PermissionsListener {
 
     View convertView;
 
+    private OnFragmentInteractionListener mListener;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -109,16 +115,14 @@ public class MapFragment extends Fragment implements PermissionsListener {
                     }
                 });
 
-            } else if (bundleType != null && bundleType.equals("trip")){
+            } else if (bundleType != null && bundleType.equals("trip")) {
 
-                final ArrayList<LatLng> tripWaypoints = mapBundle.getParcelableArrayList("trip_waypoints");
                 final double[] latitudes = mapBundle.getDoubleArray("trip_latitudes");
                 final double[] longitudes = mapBundle.getDoubleArray("trip_longitudes");
 
                 routeCoordinates = new ArrayList<Position>();
 
                 for (int i = 0; i < latitudes.length; i++) {
-                    //routeCoordinates.add(Position.fromCoordinates(tripWaypoints.get(i).getLongitude(), tripWaypoints.get(i).getLatitude()));
                     routeCoordinates.add(Position.fromCoordinates(longitudes[i], latitudes[i]));
                 }
 
@@ -183,7 +187,7 @@ public class MapFragment extends Fragment implements PermissionsListener {
             public void onClick(View view) {
 
                 if (map != null) {
-                toggleGps(!map.isMyLocationEnabled());
+                    toggleGps(!map.isMyLocationEnabled());
                 }
             }
         });
@@ -275,5 +279,27 @@ public class MapFragment extends Fragment implements PermissionsListener {
                     Toast.LENGTH_LONG).show();
             getActivity().finish();
         }
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof OnFragmentInteractionListener) {
+            mListener = (OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+    }
+
+    public interface OnFragmentInteractionListener {
+        // TODO: Update argument type and Name
+        void messageFromChildFragment(Uri uri);
     }
 }

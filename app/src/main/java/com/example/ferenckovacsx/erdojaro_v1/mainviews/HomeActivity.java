@@ -3,9 +3,11 @@ package com.example.ferenckovacsx.erdojaro_v1.mainviews;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -24,47 +26,90 @@ public class HomeActivity
         MoreOptionsFragment.OnFragmentInteractionListener,
         WildlifeFragment.OnFragmentInteractionListener,
         WildlifeFloraFragment.OnFragmentInteractionListener,
-        POIFragment.OnFragmentInteractionListener {
+        POIFragment.OnFragmentInteractionListener,
+        TripFragment.OnFragmentInteractionListener,
+        MapFragment.OnFragmentInteractionListener {
 
     Fragment selectedFragment;
     public static Context mainContext;
+    public static BottomNavigationView bottomNavigationView;
+    public boolean replaceFragment;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
         mainContext = getApplicationContext();
-        BottomNavigationView bottomNavigationView = (BottomNavigationView)
+
+        bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+
 
         bottomNavigationView.setOnNavigationItemSelectedListener
                 (new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
                         selectedFragment = null;
+                        replaceFragment = false;
                         switch (item.getItemId()) {
                             case R.id.navigation_home:
-                                selectedFragment = new HomeFragment();
+
+                                if (!item.isChecked()) {
+                                    selectedFragment = new HomeFragment();
+                                    selectedFragment.setRetainInstance(true);
+                                    replaceFragment = true;
+                                }
                                 break;
+
                             case R.id.navigation_discover:
-                                selectedFragment = new DiscoverFragment();
+
+                                if (!item.isChecked()) {
+                                    selectedFragment = new DiscoverFragment();
+                                    selectedFragment.setRetainInstance(true);
+                                    replaceFragment = true;
+                                }
                                 break;
+
                             case R.id.navigation_map:
-                                selectedFragment = new MapFragment();
+
+                                if (!item.isChecked()) {
+                                    selectedFragment = new MapFragment();
+                                    selectedFragment.setRetainInstance(true);
+                                    replaceFragment = true;
+                                }
                                 break;
+
                             case R.id.navigation_favorites:
-                                selectedFragment = new FavoritesFragment();
+
+                                if (!item.isChecked()) {
+                                    selectedFragment = new FavoritesFragment();
+                                    selectedFragment.setRetainInstance(true);
+                                    replaceFragment = true;
+                                }
                                 break;
+
                             case R.id.navigation_more_options:
-                                selectedFragment = new MoreOptionsFragment();
+
+                                if (!item.isChecked()) {
+                                    selectedFragment = new MoreOptionsFragment();
+                                    selectedFragment.setRetainInstance(true);
+                                    replaceFragment = true;
+                                }
                                 break;
                         }
-                        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                        transaction.replace(R.id.fragment_container, selectedFragment);
-                        transaction.commit();
+
+                        if (replaceFragment) {
+                            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                            transaction.replace(R.id.fragment_container, selectedFragment);
+                            transaction.commit();
+                        }
                         return true;
                     }
+
                 });
 
         //Manually displaying the first fragment - one time only
@@ -83,13 +128,14 @@ public class HomeActivity
 
     @Override
     public void messageFromChildFragment(Uri uri) {
-        Log.i("TAG", "received communication from child fragment");
+        Log.i("TAG", "received communication from child fragment" + uri);
     }
 
     @Override
     public void onFragmentInteraction(Uri uri) {
 
     }
+
 
 //    //     @Override
 //    public void onBackPressed() {

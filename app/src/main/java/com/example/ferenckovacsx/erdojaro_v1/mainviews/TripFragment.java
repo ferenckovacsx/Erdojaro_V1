@@ -1,5 +1,6 @@
 package com.example.ferenckovacsx.erdojaro_v1.mainviews;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,6 +15,8 @@ import android.widget.TextView;
 
 import com.example.ferenckovacsx.erdojaro_v1.R;
 import com.example.ferenckovacsx.erdojaro_v1.Utils;
+
+import static com.example.ferenckovacsx.erdojaro_v1.mainviews.HomeActivity.bottomNavigationView;
 
 /**
  * Created by ferenckovacsx on 2017-05-28.
@@ -33,6 +36,8 @@ public class TripFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        bottomNavigationView.getMenu().getItem(1).setChecked(true);
 
         // Inflate the layout for this fragment
         View tripView = inflater.inflate(R.layout.fragment_trip, container, false);
@@ -82,12 +87,32 @@ public class TripFragment extends Fragment {
 
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_container, mapFragment);
-                transaction.addToBackStack(null);
+                transaction.addToBackStack("tripFragment");
                 transaction.commit();
+
+                bottomNavigationView.getMenu().getItem(2).setChecked(true);
+
             }
         });
 
         return tripView;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof OnFragmentInteractionListener) {
+            mListener = (OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
     }
 
     public interface OnFragmentInteractionListener {

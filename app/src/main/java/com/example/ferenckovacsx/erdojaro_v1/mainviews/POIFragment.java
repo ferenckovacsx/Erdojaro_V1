@@ -1,7 +1,9 @@
 package com.example.ferenckovacsx.erdojaro_v1.mainviews;
 
+import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
@@ -13,6 +15,7 @@ import android.widget.TextView;
 import com.example.ferenckovacsx.erdojaro_v1.R;
 import com.squareup.picasso.Picasso;
 
+import static com.example.ferenckovacsx.erdojaro_v1.mainviews.HomeActivity.bottomNavigationView;
 import static com.example.ferenckovacsx.erdojaro_v1.mainviews.HomeActivity.mainContext;
 
 /**
@@ -34,7 +37,9 @@ public class POIFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View POIView = inflater.inflate(R.layout.fragment_poi, container, false);
+        bottomNavigationView.getMenu().getItem(1).setChecked(true);
+
+        final View POIView = inflater.inflate(R.layout.fragment_poi, container, false);
 
         poiImageView = (ImageView) POIView.findViewById(R.id.poi_image);
         poiTitleTextview = (TextView) POIView.findViewById(R.id.poi_title);
@@ -67,6 +72,8 @@ public class POIFragment extends Fragment {
         poiCoordinateTextview.setText("É" + String.valueOf(poiLat) + "  " + "K" + String.valueOf(poiLong));
         poiDescriptionTextview.setText(poiDescription);
 
+
+        //show on map
         poiShowOnMapTextview.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
@@ -81,13 +88,36 @@ public class POIFragment extends Fragment {
 
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_container, mapFragment);
-                transaction.addToBackStack(null);
+                transaction.addToBackStack("poiFragment");
                 transaction.commit();
+
+                bottomNavigationView.getMenu().getItem(2).setChecked(true);
+
+//                BottomNavigationView bottomNavigationView;
+//                bottomNavigationView = (BottomNavigationView)getView().findViewById(R.id.navigation);
+//                bottomNavigationView.getMenu().getItem(2).setChecked(true);
             }
         });
 
 
         return POIView;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof OnFragmentInteractionListener) {
+            mListener = (OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
     }
 
     public interface OnFragmentInteractionListener {

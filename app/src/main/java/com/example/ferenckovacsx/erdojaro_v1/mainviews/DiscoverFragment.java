@@ -93,7 +93,7 @@ public class DiscoverFragment extends Fragment {
         FragmentManager fragmentManager = getChildFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.child_fragment_container, fragment);
-        transaction.addToBackStack(null);
+        transaction.addToBackStack("discoverFragment");
         transaction.commit();
     }
 

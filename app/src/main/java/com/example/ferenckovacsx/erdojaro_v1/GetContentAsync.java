@@ -135,6 +135,8 @@ public class GetContentAsync extends AsyncTask<Void, Void, AsyncTaskResponseCont
         Intent i = new Intent(context, HomeActivity.class);
         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(i);
+
+
     }
 
 

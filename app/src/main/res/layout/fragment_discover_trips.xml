@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:layout_marginStart="@dimen/activity_horizontal_margin"
     android:layout_marginEnd="@dimen/activity_horizontal_margin"
+    android:background="#FAFAFA"
     tools:context="com.example.ferenckovacsx.erdojaro_v1.mainviews.DiscoverTrips">
 
     <ListView

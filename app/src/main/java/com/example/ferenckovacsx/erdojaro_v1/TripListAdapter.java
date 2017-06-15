@@ -11,8 +11,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.ferenckovacsx.erdojaro_v1.javabeans.Trip;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+
+import static com.example.ferenckovacsx.erdojaro_v1.mainviews.HomeActivity.mainContext;
 
 /**
  * Created by ferenckovacsx on 2017-05-18.
@@ -88,10 +91,12 @@ public class TripListAdapter
         if (tripItem.getImageId() != 0){
             viewHolder.tripImage.setImageResource(tripItem.getImageId());
         } else {
-            String bitmapFileName = "Trip_" + tripItem.getId() + ".jpg";
-            Log.i("TripListAdapter", "bitmapfile: " + bitmapFileName);
-            Bitmap tripBitmap = Utils.getBitmapFromFile(bitmapFileName, mContext);
-            viewHolder.tripImage.setImageBitmap(tripBitmap);
+            Picasso picasso = Picasso.with(mainContext);
+            picasso.setIndicatorsEnabled(true);
+
+            Picasso.with(mainContext)
+                    .load(tripItem.getImageUrl())
+                    .into(viewHolder.tripImage);
         }
 
         viewHolder.TripDistance.setText(String.valueOf(tripItem.getDistance()));

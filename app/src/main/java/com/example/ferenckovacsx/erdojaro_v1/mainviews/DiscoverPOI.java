@@ -22,6 +22,8 @@ import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
+import static com.example.ferenckovacsx.erdojaro_v1.mainviews.HomeActivity.bottomNavigationView;
+
 
 public class DiscoverPOI extends Fragment
 //        implements AsyncResponse
@@ -37,6 +39,8 @@ public class DiscoverPOI extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        bottomNavigationView.getMenu().getItem(1).setChecked(true);
 
         View poiView = inflater.inflate(R.layout.fragment_discover_poi, container, false);
 
@@ -101,7 +105,7 @@ public class DiscoverPOI extends Fragment
 
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_container, poiFragment);
-                transaction.addToBackStack(null);
+                transaction.addToBackStack("discoverPoiFragment");
                 transaction.commit();
             }
         });
