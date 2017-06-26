@@ -1,4 +1,4 @@
-package com.example.ferenckovacsx.erdojaro_v1;
+package com.example.ferenckovacsx.erdojaro_v1.adapters;
 
 /**
  * Created by ferenckovacsx on 2017-05-24.
@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.ferenckovacsx.erdojaro_v1.R;
 import com.example.ferenckovacsx.erdojaro_v1.javabeans.Program;
 
 import java.util.List;

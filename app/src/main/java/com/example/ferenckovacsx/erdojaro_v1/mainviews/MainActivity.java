@@ -1,22 +1,24 @@
 package com.example.ferenckovacsx.erdojaro_v1.mainviews;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.example.ferenckovacsx.erdojaro_v1.BottomNavigationViewHelper;
 import com.example.ferenckovacsx.erdojaro_v1.R;
+import com.mapbox.mapboxsdk.Mapbox;
 
-public class HomeActivity
+public class MainActivity
         extends AppCompatActivity
         implements
         DiscoverFragment.OnFragmentInteractionListener,
@@ -28,23 +30,37 @@ public class HomeActivity
         WildlifeFloraFragment.OnFragmentInteractionListener,
         POIFragment.OnFragmentInteractionListener,
         TripFragment.OnFragmentInteractionListener,
-        MapFragment.OnFragmentInteractionListener {
+        MapFragment.OnFragmentInteractionListener,
+        DownloadMapFragment.OnFragmentInteractionListener {
 
     Fragment selectedFragment;
     public static Context mainContext;
     public static BottomNavigationView bottomNavigationView;
     public boolean replaceFragment;
+    Context context;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_main);
 
         mainContext = getApplicationContext();
+        context = this;
 
-        bottomNavigationView = (BottomNavigationView)
-                findViewById(R.id.navigation);
+        //get access token for MapBox
+        Mapbox.getInstance(this, getString(R.string.access_token));
+
+        ImageView cameraIcon = (ImageView) findViewById(R.id.toolbar_camera_icon);
+        cameraIcon.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                Intent i = new Intent(MainActivity.this, CameraPreviewActivity.class);
+                startActivity(i);
+            }
+        });
+
+        bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
 
 
@@ -56,57 +72,57 @@ public class HomeActivity
                         selectedFragment = null;
                         replaceFragment = false;
                         switch (item.getItemId()) {
-                            case R.id.navigation_home:
-
-                                if (!item.isChecked()) {
-                                    selectedFragment = new HomeFragment();
-                                    selectedFragment.setRetainInstance(true);
-                                    replaceFragment = true;
-                                }
-                                break;
+//                            case R.id.navigation_home:
+//
+//                                if (!item.isChecked()) {
+//                                    selectedFragment = new HomeFragment();
+//                                    selectedFragment.setRetainInstance(true);
+//                                    replaceFragment = true;
+//                                }
+//                                break;
 
                             case R.id.navigation_discover:
 
-                                if (!item.isChecked()) {
+                               // if (!item.isChecked()) {
                                     selectedFragment = new DiscoverFragment();
                                     selectedFragment.setRetainInstance(true);
                                     replaceFragment = true;
-                                }
+                               // }
                                 break;
 
                             case R.id.navigation_map:
 
-                                if (!item.isChecked()) {
+                                //if (!item.isChecked()) {
                                     selectedFragment = new MapFragment();
                                     selectedFragment.setRetainInstance(true);
                                     replaceFragment = true;
-                                }
+                               // }
                                 break;
 
                             case R.id.navigation_favorites:
 
-                                if (!item.isChecked()) {
+                                //if (!item.isChecked()) {
                                     selectedFragment = new FavoritesFragment();
                                     selectedFragment.setRetainInstance(true);
                                     replaceFragment = true;
-                                }
+                               // }
                                 break;
 
                             case R.id.navigation_more_options:
 
-                                if (!item.isChecked()) {
+                                //if (!item.isChecked()) {
                                     selectedFragment = new MoreOptionsFragment();
                                     selectedFragment.setRetainInstance(true);
                                     replaceFragment = true;
-                                }
+                               // }
                                 break;
                         }
 
-                        if (replaceFragment) {
+                        //if (replaceFragment) {
                             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                             transaction.replace(R.id.fragment_container, selectedFragment);
                             transaction.commit();
-                        }
+                        //}
                         return true;
                     }
 
@@ -114,11 +130,9 @@ public class HomeActivity
 
         //Manually displaying the first fragment - one time only
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragment_container, HomeFragment.newInstance());
+        transaction.replace(R.id.fragment_container, DiscoverFragment.newInstance());
         transaction.commit();
 
-        //Used to select an item programmatically
-        //bottomNavigationView.getMenu().getItem(2).setChecked(true);
     }
 
     @Override
@@ -135,7 +149,6 @@ public class HomeActivity
     public void onFragmentInteraction(Uri uri) {
 
     }
-
 
 //    //     @Override
 //    public void onBackPressed() {

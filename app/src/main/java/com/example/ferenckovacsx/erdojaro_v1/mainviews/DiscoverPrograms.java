@@ -11,10 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.ferenckovacsx.erdojaro_v1.javabeans.Program;
-import com.example.ferenckovacsx.erdojaro_v1.ProgramPagerAdapter;
+import com.example.ferenckovacsx.erdojaro_v1.adapters.ProgramPagerAdapter;
 import com.example.ferenckovacsx.erdojaro_v1.R;
 
 import java.util.ArrayList;
+
+import static android.support.design.R.id.left;
+import static android.support.design.R.id.right;
 
 
 public class DiscoverPrograms extends Fragment {
@@ -47,6 +50,10 @@ public class DiscoverPrograms extends Fragment {
 
         viewPager = (ViewPager) programView.findViewById(R.id.wiewPager);
         adapter = new ProgramPagerAdapter(ProgramList, getActivity().getApplicationContext());
+
+        viewPager.setClipToPadding(false);
+        viewPager.setPageMargin(5);
+
         viewPager.setAdapter(adapter);
 
         return programView;

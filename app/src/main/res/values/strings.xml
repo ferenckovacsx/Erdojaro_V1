@@ -6,11 +6,10 @@
     <string name="title_favorites">Kedvencek</string>
     <string name="title_more_options">Továbbiak</string>
     <string name="loading_text_fixed">BETÖLTÉS FOLYAMATBAN</string>
-    <string name="loading_text_1">Katicabogarak elhelyezése</string>
-    <string name="loading_text_2">Fotoszintézis inicializálása</string>
-    <string name="loading_text_3">Fűszálak számlálása</string>
-    <string name="loading_text_4">Madárcsicsergés kihangosítása</string>
-    <string name="loading_text_5">Továbbiak</string>
+    <string name="loading_text_1">Katicabogarak elhelyezése&#8230;</string>
+    <string name="loading_text_2">Fotoszintézis inicializálása&#8230;</string>
+    <string name="loading_text_3">Fűszálak számlálása&#8230;</string>
+    <string name="loading_text_4">Madárcsicsergés kihangosítása&#8230;</string>
 
     <string name="access_token">pk.eyJ1IjoiZmVyZW5ja292YWNzeCIsImEiOiJjajNsbGhoajYwMDc5MnFucmJseGRhNnZkIn0.0EXL-Id4VsQ6PAxK0p5lFg</string>
 

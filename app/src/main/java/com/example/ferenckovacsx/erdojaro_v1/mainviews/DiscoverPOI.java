@@ -13,24 +13,20 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.ferenckovacsx.erdojaro_v1.javabeans.POI;
-import com.example.ferenckovacsx.erdojaro_v1.POIListAdapter;
+import com.example.ferenckovacsx.erdojaro_v1.adapters.POIListAdapter;
 import com.example.ferenckovacsx.erdojaro_v1.R;
-import com.mapbox.mapboxsdk.geometry.LatLng;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
-import static com.example.ferenckovacsx.erdojaro_v1.mainviews.HomeActivity.bottomNavigationView;
+import static com.example.ferenckovacsx.erdojaro_v1.mainviews.MainActivity.bottomNavigationView;
 
 
-public class DiscoverPOI extends Fragment
-//        implements AsyncResponse
-{
+public class DiscoverPOI extends Fragment {
 
     ListView poiListView;
-    private static POIListAdapter adapter;
     ArrayList<POI> poiList;
     ArrayList<POI> poiFromFile;
 
@@ -40,11 +36,10 @@ public class DiscoverPOI extends Fragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        bottomNavigationView.getMenu().getItem(1).setChecked(true);
+        bottomNavigationView.getMenu().getItem(0).setChecked(true);
 
         View poiView = inflater.inflate(R.layout.fragment_discover_poi, container, false);
-
-        //new GetPoiList(this).execute();
+        POIListAdapter adapter;
 
         poiFromFile = readPoiFromFile();
 
@@ -55,10 +50,7 @@ public class DiscoverPOI extends Fragment
         poiList.add(new POI(2, "blabla", R.drawable.fauna, 48.0791, 20.4981, true, "Pelda kep"));
         poiList.add(new POI(3, "blabla", R.drawable.trek, 48.0791, 20.4981, true, "Pelda kep"));
 
-
         poiList.addAll(poiFromFile);
-        Log.i("DiscoverPOI", "check if bitmap exists: " + fileExistance());
-        Log.i("DiscoverPOI", "POI from root" + poiList.toString());
         Log.i("DiscoverPOI", "combined poiList" + poiList.toString());
 
         poiListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
@@ -72,12 +64,12 @@ public class DiscoverPOI extends Fragment
                 POI poiItem = (POI) POIrawObject;
 
                 int poiID = poiItem.getId();
+                int poiImageID = poiItem.getImageInt();
                 String poiTitle = poiItem.getName();
                 String poiImageUrl = poiItem.getImageUrl();
                 double poiCoordLat = poiItem.getLatitude();
                 double poiCoordLong = poiItem.getLongitude();
                 String poiDescription = poiItem.getDescription();
-                LatLng latlong = new LatLng(poiCoordLat, poiCoordLong);
 
                 Log.i("POIclickListener", "title: " + poiTitle);
                 Log.i("POIclickListener", "gps latitude: " + poiCoordLat);
@@ -86,14 +78,15 @@ public class DiscoverPOI extends Fragment
 
                 Bundle fragmentArgs = new Bundle();
 
-                try {
-                    int POIimageID = poiItem.getImageInt();
-                    fragmentArgs.putInt("poi_imageid", POIimageID);
-                } catch (NullPointerException np) {
-                    np.printStackTrace();
-                }
+//                try {
+//                    int poiImageID = poiItem.getImageInt();
+//                    fragmentArgs.putInt("poi_imageid", poiImageID);
+//                } catch (NullPointerException np) {
+//                    np.printStackTrace();
+//                }
 
                 fragmentArgs.putString("poi_imageurl", poiImageUrl);
+                fragmentArgs.putInt("poi_imageid", poiImageID);
                 fragmentArgs.putInt("poi_id", poiID);
                 fragmentArgs.putString("poi_title", poiTitle);
                 fragmentArgs.putDouble("poi_lat", poiCoordLat);
@@ -136,12 +129,11 @@ public class DiscoverPOI extends Fragment
 
 
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and Name
         void messageFromChildFragment(Uri uri);
     }
 
     public ArrayList<POI> readPoiFromFile() {
-        ArrayList<POI> poiFromFile = null;
+        ArrayList<POI> poiFromFile;
 
         try {
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream(new File(getActivity().getFilesDir(), "/poi.dat")));
@@ -156,24 +148,4 @@ public class DiscoverPOI extends Fragment
         }
         return null;
     }
-
-    public boolean fileExistance(){
-        File file = new File(getContext().getFilesDir() + "/erdojaroIMG/" + "Trip_3.jpg");
-        return file.exists();
-    }
-
-//    @Override
-//    public void onBackPressed() {
-//
-//        // If the fragment exists and has some back-stack entry
-//        if ( != null && mActivityDirectFragment.getChildFragmentManager().getBackStackEntryCount() > 0){
-//            // Get the fragment fragment manager - and pop the backstack
-//            mActivityDirectFragment.getChildFragmentManager().popBackStack();
-//        }
-//        // Else, nothing in the direct fragment back stack
-//        else{
-//            // Let super handle the back press
-//            super.onBackPressed();
-//        }
-//    }
 }

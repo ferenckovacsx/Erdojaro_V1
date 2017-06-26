@@ -14,7 +14,7 @@ public class POI implements Serializable {
 
     public int Id;
     public String Name;
-    public Integer ImageInt;
+    public int ImageInt;
     public String ImageUrl;
     public Bitmap ImageBitmap;
     public double Latitude;
@@ -22,7 +22,15 @@ public class POI implements Serializable {
     public boolean favorited;
     public String Description;
 
-
+    public POI(int id, String name, int ImageInt, double Latitude, double Longitude, boolean favorited, String description) {
+        this.Id = id;
+        this.Name = name;
+        this.ImageInt = ImageInt;
+        this.Latitude = Latitude;
+        this.Longitude = Longitude;
+        this.favorited = favorited;
+        this.Description = description;
+    }
 
     public POI(int id, String name, String ImageUrl, double Latitude, double Longitude, boolean favorited, String description) {
         this.Id = id;
@@ -34,15 +42,6 @@ public class POI implements Serializable {
         this.Description = description;
     }
 
-    public POI(int id, String name, Integer ImageInt, double Latitude, double Longitude, boolean favorited, String description) {
-        this.Id = id;
-        this.Name = name;
-        this.ImageInt = ImageInt;
-        this.Latitude = Latitude;
-        this.Longitude = Longitude;
-        this.favorited = favorited;
-        this.Description = description;
-    }
 
     public POI(int id, String name, Bitmap ImageBitmap, double Latitude, double Longitude, boolean favorited, String description) {
         this.Id = id;
@@ -78,11 +77,11 @@ public class POI implements Serializable {
         this.ImageUrl = imageUrl;
     }
 
-    public Integer getImageInt() {
+    public int getImageInt() {
         return ImageInt;
     }
 
-    public void setImageInt(Integer imageInt) {
+    public void setImageInt(int imageInt) {
         this.ImageInt = imageInt;
     }
 
@@ -136,7 +135,7 @@ public class POI implements Serializable {
                 ", ImageBitmap=" + ImageBitmap +
                 ", Latitude=" + Latitude +
                 ", Longitude=" + Longitude +
-                ", favorited=" + favorited +
+                ", Favorited=" + favorited +
                 ", Description='" + Description + '\'' +
                 '}';
     }

@@ -1,7 +1,6 @@
-package com.example.ferenckovacsx.erdojaro_v1;
+package com.example.ferenckovacsx.erdojaro_v1.adapters;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,12 +8,13 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 
+import com.example.ferenckovacsx.erdojaro_v1.R;
 import com.example.ferenckovacsx.erdojaro_v1.javabeans.POI;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-import static com.example.ferenckovacsx.erdojaro_v1.mainviews.HomeActivity.mainContext;
+import static com.example.ferenckovacsx.erdojaro_v1.mainviews.MainActivity.mainContext;
 
 /**
  * Created by ferenckovacsx on 2017-05-18.
@@ -39,14 +39,13 @@ public class POIListAdapter extends ArrayAdapter<POI> {
 
     }
 
-
     private int lastPosition = -1;
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
         // Get the data item for this position
-        POI POIitem = getItem(position);
+        POI poiItem = getItem(position);
 
         // Check if an existing view is being reused, otherwise inflate the view
         ViewHolder viewHolder; // view lookup cache stored in tag
@@ -70,18 +69,19 @@ public class POIListAdapter extends ArrayAdapter<POI> {
 
         lastPosition = position;
 
+        if (poiItem.getImageInt() != 0) {
+            Log.i("POIListAdapter", "poi from res" + poiItem.getImageInt());
+            Log.i("POIListAdapter", "poi from res" + poiItem.getId());
+            Log.i("POIListAdapter", "poi from res" + poiItem.getImageUrl());
 
-        if (POIitem.getImageInt() != null) {
-            Log.i("POIListAdapter", "poi from res");
-
-            viewHolder.POIimage.setImageResource(POIitem.getImageInt());
+            viewHolder.POIimage.setImageResource(poiItem.getImageInt());
         } else {
 
             Picasso picasso = Picasso.with(mainContext);
             picasso.setIndicatorsEnabled(true);
 
             Picasso.with(mainContext)
-                    .load(POIitem.getImageUrl())
+                    .load(poiItem.getImageUrl())
                     .into(viewHolder.POIimage);
 
 

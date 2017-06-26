@@ -1,13 +1,14 @@
 package com.example.ferenckovacsx.erdojaro_v1.javabeans;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 /**
  * Created by ferenckovacsx on 2017-05-15.
  */
 
 
-public class Trip implements Serializable{
+public class Trip implements Serializable {
 
     private static final long serialVersionUID = 2L;
 
@@ -16,34 +17,44 @@ public class Trip implements Serializable{
     public int ImageId;
     public String ImageUrl;
     public double Distance;
-    public int favoriteCount;
+    public int FavoriteCount;
     public boolean IsItHard;
-    public boolean favorited;
+    public boolean Favorited;
+    public boolean Hiking;
+    public boolean Cycling;
+    public boolean Tanosveny;
     public String Description;
     double[] Latitudes;
     double[] Longitudes;
 
-    public Trip(int id, String name, int imageId, double distance, int favoriteCount, boolean isItHard, boolean favorited, String description, double[] latitudes, double[] longitudes) {
+
+    public Trip(int id, String name, int imageId, double distance, int favoriteCount, boolean isItHard, boolean favorited, boolean hiking, boolean cycling, boolean tanosveny, String description, double[] latitudes, double[] longitudes) {
         Id = id;
         Name = name;
         ImageId = imageId;
         Distance = distance;
-        this.favoriteCount = favoriteCount;
+        FavoriteCount = favoriteCount;
         IsItHard = isItHard;
-        this.favorited = favorited;
+        Favorited = favorited;
+        Hiking = hiking;
+        Cycling = cycling;
+        Tanosveny = tanosveny;
         Description = description;
         Latitudes = latitudes;
         Longitudes = longitudes;
     }
 
-    public Trip(int id, String name, String imageUrl, double distance, int favoriteCount, boolean isItHard, boolean favorited, String description, double[] latitudes, double[] longitudes) {
+    public Trip(int id, String name, String imageUrl, double distance, int favoriteCount, boolean isItHard, boolean favorited, boolean hiking, boolean cycling, boolean tanosveny, String description, double[] latitudes, double[] longitudes) {
         Id = id;
         Name = name;
         ImageUrl = imageUrl;
         Distance = distance;
-        this.favoriteCount = favoriteCount;
+        FavoriteCount = favoriteCount;
         IsItHard = isItHard;
-        this.favorited = favorited;
+        Favorited = favorited;
+        Hiking = hiking;
+        Cycling = cycling;
+        Tanosveny = tanosveny;
         Description = description;
         Latitudes = latitudes;
         Longitudes = longitudes;
@@ -53,7 +64,7 @@ public class Trip implements Serializable{
         return Id;
     }
 
-    public void setName(int id) {
+    public void setId(int id) {
         Id = id;
     }
 
@@ -90,11 +101,11 @@ public class Trip implements Serializable{
     }
 
     public int getFavoriteCount() {
-        return favoriteCount;
+        return FavoriteCount;
     }
 
     public void setFavoriteCount(int favoriteCount) {
-        this.favoriteCount = favoriteCount;
+        this.FavoriteCount = favoriteCount;
     }
 
     public boolean isItHard() {
@@ -106,11 +117,35 @@ public class Trip implements Serializable{
     }
 
     public boolean isFavorited() {
-        return favorited;
+        return Favorited;
     }
 
     public void setFavorited(boolean favorited) {
-        this.favorited = favorited;
+        this.Favorited = favorited;
+    }
+
+    public boolean isHiking() {
+        return Hiking;
+    }
+
+    public void setHiking(boolean hiking) {
+        this.Hiking = hiking;
+    }
+
+    public boolean isCycling() {
+        return Cycling;
+    }
+
+    public void setCycling(boolean cycling) {
+        this.Cycling = cycling;
+    }
+
+    public boolean isTanosveny() {
+        return Tanosveny;
+    }
+
+    public void setTanosveny(boolean tanosveny) {
+        this.Tanosveny = tanosveny;
     }
 
     public String getDescription() {
@@ -140,16 +175,20 @@ public class Trip implements Serializable{
     @Override
     public String toString() {
         return "Trip{" +
-                "Name='" + Name + '\'' +
+                "Id=" + Id +
+                ", Name='" + Name + '\'' +
                 ", ImageId=" + ImageId +
                 ", ImageUrl='" + ImageUrl + '\'' +
                 ", Distance=" + Distance +
-                ", favoriteCount=" + favoriteCount +
+                ", FavoriteCount=" + FavoriteCount +
                 ", IsItHard=" + IsItHard +
-                ", favorited=" + favorited +
+                ", Favorited=" + Favorited +
+                ", Hiking=" + Hiking +
+                ", Cycling=" + Cycling +
+                ", Tanosveny=" + Tanosveny +
                 ", Description='" + Description + '\'' +
-                ", Latitudes=" + Latitudes +
-                ", Longitudes=" + Longitudes +
+                ", Latitudes=" + Arrays.toString(Latitudes) +
+                ", Longitudes=" + Arrays.toString(Longitudes) +
                 '}';
     }
 }

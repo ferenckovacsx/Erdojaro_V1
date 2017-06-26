@@ -12,7 +12,7 @@ import android.widget.GridView;
 
 import com.example.ferenckovacsx.erdojaro_v1.javabeans.Flora;
 import com.example.ferenckovacsx.erdojaro_v1.R;
-import com.example.ferenckovacsx.erdojaro_v1.WildlifeGridAdapter;
+import com.example.ferenckovacsx.erdojaro_v1.adapters.WildlifeGridAdapter;
 
 import java.util.ArrayList;
 

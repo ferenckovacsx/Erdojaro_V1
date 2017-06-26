@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="20dp">
+
+    <TextView
+        android:id="@+id/filter_difficulty_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="Nehézségi fok:"
+        android:textColor="@color/colorTextDark"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/filter_difficulty_selector_layout"
+        app:layout_constraintLeft_toLeftOf="@+id/filter_difficulty_selector_layout" />
+
+    <LinearLayout
+        android:id="@+id/filter_difficulty_selector_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.100000024">
+
+
+        <Button
+            android:id="@+id/filter_easy_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_difficulty_easy_button_background"
+            android:paddingBottom="20dp"
+            android:paddingEnd="30dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:paddingStart="30dp"
+            android:paddingTop="20dp"
+            android:text="Séta jellegű"
+            android:textColor="@drawable/selector_button_text_color"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/filter_hard_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_difficulty_hard_button_background"
+            android:paddingBottom="20dp"
+            android:paddingEnd="30dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:paddingStart="30dp"
+            android:paddingTop="20dp"
+            android:text="Túra jellegű"
+            android:textColor="@drawable/selector_button_text_color"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/filter_distance_rangebar_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="7dp"
+        android:text="Hossz:"
+        android:textColor="@color/colorTextDark"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/filter_distance_rangebar"
+        app:layout_constraintLeft_toLeftOf="@+id/filter_distance_rangebar" />
+
+    <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+        android:id="@+id/filter_distance_rangebar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="16dp"
+        app:bar_color="@color/colorGray"
+        app:bar_highlight_color="@color/colorPrimary"
+        app:corner_radius="5"
+        app:data_type="_integer"
+        app:gap="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filter_difficulty_selector_layout"
+        app:layout_constraintVertical_bias="0.110000014"
+        app:left_thumb_color="@color/colorPrimary"
+        app:left_thumb_color_pressed="@color/colorPrimaryDark"
+        app:max_value="30"
+        app:min_value="1"
+        app:right_thumb_color="@color/colorPrimary"
+        app:right_thumb_color_pressed="@color/colorPrimaryDark" />
+
+    <TextView
+        android:id="@+id/filter_distance_range_textMin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@+id/filter_distance_rangebar"
+        app:layout_constraintTop_toBottomOf="@+id/filter_distance_rangebar" />
+
+    <TextView
+        android:id="@+id/filter_distance_range_textMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="@+id/filter_distance_rangebar"
+        app:layout_constraintTop_toBottomOf="@+id/filter_distance_rangebar" />
+
+    <TextView
+        android:id="@+id/filter_duration_rangebar_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Időtartam:"
+        android:textColor="@color/colorTextDark"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/filter_duration_rangebar"
+        app:layout_constraintLeft_toLeftOf="@+id/filter_duration_rangebar" />
+
+    <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+        android:id="@+id/filter_duration_rangebar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="16dp"
+        app:bar_color="@color/colorGray"
+        app:bar_highlight_color="@color/colorPrimary"
+        app:corner_radius="45"
+        app:data_type="_integer"
+        app:gap="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filter_distance_rangebar"
+        app:layout_constraintVertical_bias="0.19"
+        app:left_thumb_color="@color/colorPrimary"
+        app:left_thumb_color_pressed="@color/colorPrimaryDark"
+        app:max_value="8"
+        app:min_value="1"
+        app:right_thumb_color="@color/colorPrimary"
+        app:right_thumb_color_pressed="@color/colorPrimaryDark" />
+
+    <TextView
+        android:id="@+id/filter_duration_range_textMin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@+id/filter_duration_rangebar"
+        app:layout_constraintTop_toBottomOf="@+id/filter_duration_rangebar" />
+
+    <TextView
+        android:id="@+id/filter_duration_range_textMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="@+id/filter_duration_rangebar"
+        app:layout_constraintTop_toBottomOf="@+id/filter_duration_rangebar" />
+
+    <LinearLayout
+        android:id="@+id/filter_hiking_button_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/filter_cycling_button_layout"
+        app:layout_constraintTop_toBottomOf="@+id/filter_duration_rangebar"
+        app:layout_constraintVertical_bias="0.3">
+
+        <ImageButton
+            android:id="@+id/filter_hiking_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            app:srcCompat="@drawable/selector_filter_hiking_button" />
+
+        <TextView
+            android:id="@+id/filter_hiking_button_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gyalog"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/filter_cycling_button_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filter_duration_rangebar"
+        app:layout_constraintVertical_bias="0.3">
+
+        <ImageButton
+            android:id="@+id/filter_cycling_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            app:srcCompat="@drawable/selector_filter_cycling_button" />
+
+        <TextView
+            android:id="@+id/filter_cycling_button_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kerékpárral"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/tanosveny_button_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/filter_cycling_button_layout"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filter_duration_rangebar"
+        app:layout_constraintVertical_bias="0.3">
+
+        <ImageButton
+            android:id="@+id/filter_tanosveny_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            app:srcCompat="@drawable/selector_filter_tanosveny_button" />
+
+        <TextView
+            android:id="@+id/filter_tanosveny_button_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tanösvény"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/filter_results_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/shape_filter_button"
+        android:paddingEnd="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingStart="10dp"
+        android:text="Találatok szűrése"
+        android:textColor="@color/colorTextDark"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filter_cycling_button_layout"
+        app:layout_constraintVertical_bias="0.6" />
+
+</android.support.constraint.ConstraintLayout>

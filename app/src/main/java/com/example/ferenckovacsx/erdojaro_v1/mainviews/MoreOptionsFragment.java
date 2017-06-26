@@ -12,7 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.ferenckovacsx.erdojaro_v1.javabeans.OptionListItem;
-import com.example.ferenckovacsx.erdojaro_v1.MoreOptionsListAdapter;
+import com.example.ferenckovacsx.erdojaro_v1.adapters.MoreOptionsListAdapter;
 import com.example.ferenckovacsx.erdojaro_v1.R;
 
 import java.util.ArrayList;
@@ -42,7 +42,7 @@ public class MoreOptionsFragment extends Fragment {
         OptionsList.add(new OptionListItem("Élővilág", R.drawable.ic_wildlife));
         OptionsList.add(new OptionListItem("Elsősegélynyújtás", R.drawable.ic_firstaid));
         OptionsList.add(new OptionListItem("Szálláshelyek", R.drawable.ic_accommodations));
-        OptionsList.add(new OptionListItem("Letöltések", R.drawable.ic_downloads));
+        OptionsList.add(new OptionListItem("Offline tartalom", R.drawable.ic_downloads));
         OptionsList.add(new OptionListItem("Beállítások", R.drawable.ic_settings));
 
         adapter = new MoreOptionsListAdapter(OptionsList, getActivity().getApplicationContext());
@@ -61,6 +61,16 @@ public class MoreOptionsFragment extends Fragment {
 
                     FragmentTransaction transaction = getFragmentManager().beginTransaction();
                     transaction.replace(R.id.fragment_container, wildlifeFragment);
+                    transaction.addToBackStack(null);
+                    transaction.commit();
+                }
+
+                if (position == 3) {
+
+                    Fragment offlineMapDownloader = new DownloadMapFragment();
+
+                    FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                    transaction.replace(R.id.fragment_container, offlineMapDownloader);
                     transaction.addToBackStack(null);
                     transaction.commit();
                 }

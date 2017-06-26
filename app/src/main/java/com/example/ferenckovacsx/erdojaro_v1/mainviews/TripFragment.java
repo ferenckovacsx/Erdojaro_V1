@@ -1,12 +1,10 @@
 package com.example.ferenckovacsx.erdojaro_v1.mainviews;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +12,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.ferenckovacsx.erdojaro_v1.R;
-import com.example.ferenckovacsx.erdojaro_v1.Utils;
+import com.squareup.picasso.Picasso;
 
-import static com.example.ferenckovacsx.erdojaro_v1.mainviews.HomeActivity.bottomNavigationView;
+import static com.example.ferenckovacsx.erdojaro_v1.mainviews.MainActivity.bottomNavigationView;
+import static com.example.ferenckovacsx.erdojaro_v1.mainviews.MainActivity.mainContext;
 
 /**
  * Created by ferenckovacsx on 2017-05-28.
@@ -37,7 +36,7 @@ public class TripFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        bottomNavigationView.getMenu().getItem(1).setChecked(true);
+        bottomNavigationView.getMenu().getItem(0).setChecked(true);
 
         // Inflate the layout for this fragment
         View tripView = inflater.inflate(R.layout.fragment_trip, container, false);
@@ -52,6 +51,7 @@ public class TripFragment extends Fragment {
         Bundle tripBundle = getArguments();
         int tripId = tripBundle.getInt("trip_id");
         int tripImageID = tripBundle.getInt("trip_imageid");
+        final String tripImageUrl = tripBundle.getString("trip_imageurl");
         final String tripTitle = tripBundle.getString("trip_title");
         double tripDistance = tripBundle.getDouble("trip_distance");
         int tripFavoriteCount = tripBundle.getInt("trip_favorite_count");
@@ -62,10 +62,12 @@ public class TripFragment extends Fragment {
         if (tripImageID != 0) {
             tripImageView.setImageResource(tripImageID);
         } else {
-            String bitmapFileName = "Trip_" + tripId + ".jpg";
-            Log.i("TripFragment", "bitmapfile: " + bitmapFileName);
-            Bitmap tripBitmap = Utils.getBitmapFromFile(bitmapFileName, getActivity());
-            tripImageView.setImageBitmap(tripBitmap);
+            Picasso picasso = Picasso.with(mainContext);
+            picasso.setIndicatorsEnabled(true);
+
+            Picasso.with(mainContext)
+                    .load(tripImageUrl)
+                    .into(tripImageView);
         }
 
         tripTitleTextview.setText(tripTitle);
@@ -90,7 +92,7 @@ public class TripFragment extends Fragment {
                 transaction.addToBackStack("tripFragment");
                 transaction.commit();
 
-                bottomNavigationView.getMenu().getItem(2).setChecked(true);
+                bottomNavigationView.getMenu().getItem(1).setChecked(true);
 
             }
         });

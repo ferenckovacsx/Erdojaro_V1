@@ -1,4 +1,4 @@
-package com.example.ferenckovacsx.erdojaro_v1;
+package com.example.ferenckovacsx.erdojaro_v1.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.ferenckovacsx.erdojaro_v1.R;
 import com.example.ferenckovacsx.erdojaro_v1.javabeans.OptionListItem;
 
 import java.util.ArrayList;

@@ -1,20 +1,25 @@
 package com.example.ferenckovacsx.erdojaro_v1.mainviews;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 
-import com.example.ferenckovacsx.erdojaro_v1.javabeans.Trip;
 import com.example.ferenckovacsx.erdojaro_v1.R;
-import com.example.ferenckovacsx.erdojaro_v1.TripListAdapter;
+import com.example.ferenckovacsx.erdojaro_v1.adapters.TripListAdapter;
+import com.example.ferenckovacsx.erdojaro_v1.javabeans.Trip;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -22,18 +27,36 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import static com.example.ferenckovacsx.erdojaro_v1.mainviews.TripFilterDialogFragment.FILTERDIALOG_REQUEST_CODE;
+
 
 public class DiscoverTrips extends Fragment {
 
     ListView tripListView;
-    private static TripListAdapter adapter;
     ArrayList<Trip> tripList;
     ArrayList<Trip> tripListFromFile;
-    //ArrayList<LatLng> wayPointList;
+    ArrayList<Trip> totalTripList;
     double[] latitudesPrimitiveArray;
     double[] longitudesPrimitiveArray;
+    ImageView filterTripsButton;
+    boolean hard;
+    boolean easy;
+    boolean tanosveny;
+    boolean cycling;
+    boolean hiking;
+    boolean filteringOn;
+    int distanceMin;
+    int distanceMax;
+    int durationMin;
+    int durationMax;
+    int filterCase;
 
     private OnFragmentInteractionListener mListener;
+    private Bundle savedInstanceState;
+
+    TripListAdapter adapter;
+
+    DiscoverTrips discoverTripsFragment;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,7 +64,8 @@ public class DiscoverTrips extends Fragment {
 
         View tripView = inflater.inflate(R.layout.fragment_discover_trips, container, false);
 
-        tripListView = (ListView) tripView.findViewById(R.id.TRIP_listview);
+
+        discoverTripsFragment = this;
 
         ArrayList<Double> waypointsLong = new ArrayList<>();
         waypointsLong.add(20.630893093);
@@ -54,7 +78,6 @@ public class DiscoverTrips extends Fragment {
         waypointsLong.add(20.631772103);
         waypointsLong.add(20.632852782);
         waypointsLong.add(20.632847585);
-
 
         ArrayList<Double> waypointsLat = new ArrayList<>();
         waypointsLat.add(48.057708638);
@@ -71,25 +94,28 @@ public class DiscoverTrips extends Fragment {
         longitudesPrimitiveArray = convertDoubleToPrimitive(waypointsLong);
         latitudesPrimitiveArray = convertDoubleToPrimitive(waypointsLat);
 
-
-//        wayPointList = new ArrayList<>();
-//
-//        for (int i = 0; i < waypointsLat.size(); i++) {
-//                wayPointList.add(new LatLng(waypointsLat.get(i), waypointsLong.get(i)));
-//            }
-//
-//        Log.i("waypoint", "list: " + wayPointList);
-
         tripListFromFile = readTripFromFile();
 
+        tripListView = (ListView) tripView.findViewById(R.id.TRIP_listview);
+        filterTripsButton = (ImageView) tripView.findViewById(R.id.trip_filter_button);
+
+
         tripList = new ArrayList<>();
-        tripList.add(new Trip(1, "Bükkszentkereszt - \nHoldviola Tanösvény", R.drawable.holdviola, 3, 26, false, true, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
+        totalTripList = new ArrayList<>();
+        tripList.add(new Trip(1, "Bükkszentkereszt - \nHoldviola Tanösvény", R.drawable.holdviola, 3, 26, false, true, true, false, true, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
         tripList.addAll(tripListFromFile);
 
-        Log.i("TripFragment", "launched");
         Log.i("TripFragment", "lista: " + tripList.toString());
 
         adapter = new TripListAdapter(tripList, getActivity().getApplicationContext());
+
+
+        filterTripsButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                showFilterDialog();
+            }
+        });
+
 
         tripListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -102,6 +128,7 @@ public class DiscoverTrips extends Fragment {
                 int tripId = tripItem.getId();
                 int tripImageID = tripItem.getImageId();
                 String tripTitle = tripItem.getName();
+                String tripImageUrl = tripItem.getImageUrl();
                 double tripDistance = tripItem.getDistance();
                 int tripFavoriteCount = tripItem.getFavoriteCount();
                 String tripDescription = tripItem.getDescription();
@@ -116,6 +143,7 @@ public class DiscoverTrips extends Fragment {
                 Bundle fragmentArgs = new Bundle();
                 fragmentArgs.putInt("trip_id", tripId);
                 fragmentArgs.putInt("trip_imageid", tripImageID);
+                fragmentArgs.putString("trip_imageurl", tripImageUrl);
                 fragmentArgs.putString("trip_title", tripTitle);
                 fragmentArgs.putDouble("trip_distance", tripDistance);
                 fragmentArgs.putInt("trip_favorite_count", tripFavoriteCount);
@@ -150,10 +178,46 @@ public class DiscoverTrips extends Fragment {
         }
     }
 
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
+
     @Override
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        Log.i("DiscoverTrips", "onActivityCreated");
+        //get bundle from filter fragment
+        try {
+            Bundle tripBundle = getArguments();
+            hard = tripBundle.getBoolean("hard");
+            easy = tripBundle.getBoolean("easy");
+            tanosveny = tripBundle.getBoolean("tanosveny");
+            cycling = tripBundle.getBoolean("cycling");
+            hiking = tripBundle.getBoolean("hiking");
+            filteringOn = tripBundle.getBoolean("filter");
+            Log.d("DiscoverTrips", "hard: " + String.valueOf(hard));
+            Log.d("DiscoverTrips", "easy: " + String.valueOf(easy));
+            Log.d("DiscoverTrips", "tanosveny: " + String.valueOf(tanosveny));
+            Log.d("DiscoverTrips", "cycling: " + String.valueOf(cycling));
+            Log.d("DiscoverTrips", "hiking: " + String.valueOf(hiking));
+        } catch (NullPointerException np) {
+            np.printStackTrace();
+        }
+
+        Log.i("DiscoverTrips", "onDismissHard" + hard);
+        Log.i("DiscoverTrips", "onDismissEasy" + easy);
+        Log.i("DiscoverTrips", "onDismissTanosveny" + tanosveny);
+        Log.i("DiscoverTrips", "onDismissCycling" + cycling);
+
+        super.onActivityCreated(savedInstanceState);
     }
 
     public interface OnFragmentInteractionListener {
@@ -161,13 +225,11 @@ public class DiscoverTrips extends Fragment {
         void messageFromChildFragment(Uri uri);
     }
 
-    public static double[] convertDoubleToPrimitive(ArrayList<Double> doubles)
-    {
+    public static double[] convertDoubleToPrimitive(ArrayList<Double> doubles) {
         double[] ret = new double[doubles.size()];
         Iterator<Double> iterator = doubles.iterator();
         int i = 0;
-        while(iterator.hasNext())
-        {
+        while (iterator.hasNext()) {
             ret[i] = iterator.next();
             i++;
         }
@@ -175,7 +237,7 @@ public class DiscoverTrips extends Fragment {
     }
 
     public ArrayList<Trip> readTripFromFile() {
-        ArrayList<Trip> tripFromFile = null;
+        ArrayList<Trip> tripFromFile;
 
         try {
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream(new File(getActivity().getFilesDir(), "/trip.dat")));
@@ -189,5 +251,97 @@ public class DiscoverTrips extends Fragment {
             ex.printStackTrace();
         }
         return null;
+    }
+
+    private void showFilterDialog() {
+
+        TripFilterDialogFragment dialogFragment = new TripFilterDialogFragment();
+        dialogFragment.setOnDismissListener(new DialogInterface.OnDismissListener() {
+
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+
+            }
+        });
+        dialogFragment.setTargetFragment(discoverTripsFragment, FILTERDIALOG_REQUEST_CODE);
+        dialogFragment.show(getChildFragmentManager(), "sometag");
+
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == FILTERDIALOG_REQUEST_CODE) {
+            easy = data.getBooleanExtra("easy", false);
+            hard = data.getBooleanExtra("hard", false);
+            tanosveny = data.getBooleanExtra("tanosveny", false);
+            cycling = data.getBooleanExtra("cycling", false);
+            hiking = data.getBooleanExtra("hiking", false);
+            distanceMin = data.getIntExtra("distanceMin", 0);
+            distanceMax = data.getIntExtra("distanceMax", 0);
+            durationMin = data.getIntExtra("durationMin", 0);
+            durationMax = data.getIntExtra("durationMax", 0);
+
+
+            Log.i("DiscoverTrips", "OnActResult easy: " + easy);
+            Log.i("DiscoverTrips", "OnActResult hard: " + hard);
+            Log.i("DiscoverTrips", "OnActResult tanosveny: " + tanosveny);
+            Log.i("DiscoverTrips", "OnActResult cycling: " + cycling);
+            Log.i("DiscoverTrips", "OnActResult minD: " + distanceMin);
+            Log.i("DiscoverTrips", "OnActResult maxD: " + distanceMax);
+            Log.i("DiscoverTrips", "OnActResult durationMin: " + durationMin);
+            Log.i("DiscoverTrips", "OnActResult durationMax: " + durationMax);
+
+            ArrayList<Trip> filteredTripList = new ArrayList<>();
+
+            for (Trip currentInstance : tripList) {
+
+                if (easy && hard && tanosveny && cycling && hiking &&
+                        currentInstance.getDistance() <= distanceMax && currentInstance.getDistance() >= distanceMin) {
+                    filteredTripList.add(currentInstance);
+                    Log.i("DiscoverTrips", "filter case 1");
+                }
+
+                if (easy && hard && !tanosveny && cycling && hiking &&
+                        !currentInstance.isTanosveny() &&
+                        currentInstance.getDistance() <= distanceMax && currentInstance.getDistance() >= distanceMin) {
+                    filteredTripList.add(currentInstance);
+                    Log.i("DiscoverTrips", "filter case 2");
+
+                }
+
+
+//                Log.i("DiscoverTrips", "loop: " + currentInstance);
+//                if (tanosveny & currentInstance.isTanosveny()) {
+//                    filteredTripList.add(currentInstance);
+//                    //it.remove();
+//                }
+            }
+
+            adapter = new TripListAdapter(filteredTripList, getActivity().getApplicationContext());
+
+            Log.i("DiscoverTrips", "ITERATOR list: " + filteredTripList.toString());
+            Log.i("DiscoverTrips", "ITERATOR list size: " + filteredTripList.size());
+
+            tripListView.setAdapter(adapter);
+
+        }
+    }
+
+    public int getFilterCase(boolean isItHard,
+                             boolean isItEasy,
+                             boolean isItTanosveny,
+                             boolean isItCycling,
+                             boolean isItHiking,
+                             int distanceMin,
+                             int distanceMax,
+                             int durationMin,
+                             int durationMax) {
+
+        if (isItHard && isItEasy && isItTanosveny && isItCycling && isItHiking) {
+
+        }
+
+
+        return 0;
     }
 }

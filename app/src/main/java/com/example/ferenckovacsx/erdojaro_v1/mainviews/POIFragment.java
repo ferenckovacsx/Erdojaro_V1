@@ -3,7 +3,6 @@ package com.example.ferenckovacsx.erdojaro_v1.mainviews;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
@@ -15,8 +14,8 @@ import android.widget.TextView;
 import com.example.ferenckovacsx.erdojaro_v1.R;
 import com.squareup.picasso.Picasso;
 
-import static com.example.ferenckovacsx.erdojaro_v1.mainviews.HomeActivity.bottomNavigationView;
-import static com.example.ferenckovacsx.erdojaro_v1.mainviews.HomeActivity.mainContext;
+import static com.example.ferenckovacsx.erdojaro_v1.mainviews.MainActivity.bottomNavigationView;
+import static com.example.ferenckovacsx.erdojaro_v1.mainviews.MainActivity.mainContext;
 
 /**
  * Created by ferenckovacsx on 2017-05-28.
@@ -37,7 +36,7 @@ public class POIFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        bottomNavigationView.getMenu().getItem(1).setChecked(true);
+        bottomNavigationView.getMenu().getItem(0).setChecked(true);
 
         final View POIView = inflater.inflate(R.layout.fragment_poi, container, false);
 
@@ -91,7 +90,7 @@ public class POIFragment extends Fragment {
                 transaction.addToBackStack("poiFragment");
                 transaction.commit();
 
-                bottomNavigationView.getMenu().getItem(2).setChecked(true);
+                bottomNavigationView.getMenu().getItem(1).setChecked(true);
 
 //                BottomNavigationView bottomNavigationView;
 //                bottomNavigationView = (BottomNavigationView)getView().findViewById(R.id.navigation);

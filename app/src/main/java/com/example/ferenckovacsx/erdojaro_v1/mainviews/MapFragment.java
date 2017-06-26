@@ -68,7 +68,7 @@ public class MapFragment extends Fragment implements PermissionsListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         //mapbox access token
-        Mapbox.getInstance(getActivity(), getString(R.string.access_token));
+        //Mapbox.getInstance(getActivity(), getString(R.string.access_token));
 
         convertView = inflater.inflate(R.layout.fragment_map, container, false);
 

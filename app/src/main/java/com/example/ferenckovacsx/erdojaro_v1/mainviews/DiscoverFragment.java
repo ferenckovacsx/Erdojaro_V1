@@ -20,6 +20,11 @@ public class DiscoverFragment extends Fragment {
     private TabLayout discoverTabs;
     private FrameLayout discoverChildrenFragmentContainer;
 
+    public static DiscoverFragment newInstance() {
+        DiscoverFragment fragment = new DiscoverFragment();
+        return fragment;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
