@@ -24,7 +24,7 @@ public class WildlifeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View fragmentView = inflater.inflate(R.layout.fragment_wildlife, container, false);
+        View fragmentView = inflater.inflate(R.layout.fragment_wildlife_tablayout, container, false);
 
         //generate TabLayout
         wildlifeTabs = (TabLayout) fragmentView.findViewById(R.id.wildlifeTabLayout);

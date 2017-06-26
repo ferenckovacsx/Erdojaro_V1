@@ -10,6 +10,7 @@
     <string name="loading_text_2">Fotoszintézis inicializálása&#8230;</string>
     <string name="loading_text_3">Fűszálak számlálása&#8230;</string>
     <string name="loading_text_4">Madárcsicsergés kihangosítása&#8230;</string>
+    <string name="lorem_ipsum">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isnt anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</string>
 
     <string name="access_token">pk.eyJ1IjoiZmVyZW5ja292YWNzeCIsImEiOiJjajNsbGhoajYwMDc5MnFucmJseGRhNnZkIn0.0EXL-Id4VsQ6PAxK0p5lFg</string>
 

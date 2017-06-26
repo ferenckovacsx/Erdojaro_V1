@@ -28,6 +28,9 @@ public class MainActivity
         MoreOptionsFragment.OnFragmentInteractionListener,
         WildlifeFragment.OnFragmentInteractionListener,
         WildlifeFloraFragment.OnFragmentInteractionListener,
+        WildlifeFaunaFragment.OnFragmentInteractionListener,
+        WildlifeFunghiFragment.OnFragmentInteractionListener,
+        WildlifeItemFragment.OnFragmentInteractionListener,
         POIFragment.OnFragmentInteractionListener,
         TripFragment.OnFragmentInteractionListener,
         MapFragment.OnFragmentInteractionListener,
@@ -83,45 +86,45 @@ public class MainActivity
 
                             case R.id.navigation_discover:
 
-                               // if (!item.isChecked()) {
-                                    selectedFragment = new DiscoverFragment();
-                                    selectedFragment.setRetainInstance(true);
-                                    replaceFragment = true;
-                               // }
+                                // if (!item.isChecked()) {
+                                selectedFragment = new DiscoverFragment();
+                                selectedFragment.setRetainInstance(true);
+                                replaceFragment = true;
+                                // }
                                 break;
 
                             case R.id.navigation_map:
 
                                 //if (!item.isChecked()) {
-                                    selectedFragment = new MapFragment();
-                                    selectedFragment.setRetainInstance(true);
-                                    replaceFragment = true;
-                               // }
+                                selectedFragment = new MapFragment();
+                                selectedFragment.setRetainInstance(true);
+                                replaceFragment = true;
+                                // }
                                 break;
 
                             case R.id.navigation_favorites:
 
                                 //if (!item.isChecked()) {
-                                    selectedFragment = new FavoritesFragment();
-                                    selectedFragment.setRetainInstance(true);
-                                    replaceFragment = true;
-                               // }
+                                selectedFragment = new FavoritesFragment();
+                                selectedFragment.setRetainInstance(true);
+                                replaceFragment = true;
+                                // }
                                 break;
 
                             case R.id.navigation_more_options:
 
                                 //if (!item.isChecked()) {
-                                    selectedFragment = new MoreOptionsFragment();
-                                    selectedFragment.setRetainInstance(true);
-                                    replaceFragment = true;
-                               // }
+                                selectedFragment = new MoreOptionsFragment();
+                                selectedFragment.setRetainInstance(true);
+                                replaceFragment = true;
+                                // }
                                 break;
                         }
 
                         //if (replaceFragment) {
-                            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                            transaction.replace(R.id.fragment_container, selectedFragment);
-                            transaction.commit();
+                        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.fragment_container, selectedFragment);
+                        transaction.commit();
                         //}
                         return true;
                     }

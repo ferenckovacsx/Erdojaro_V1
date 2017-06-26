@@ -102,7 +102,13 @@ public class DiscoverTrips extends Fragment {
 
         tripList = new ArrayList<>();
         totalTripList = new ArrayList<>();
-        tripList.add(new Trip(1, "Bükkszentkereszt - \nHoldviola Tanösvény", R.drawable.holdviola, 3, 26, false, true, true, false, true, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
+        tripList.add(new Trip(1, "Bükkszentkereszt - \nHoldviola Tanösvény", R.drawable.holdviola, 3, 26, false, true, true, false, true, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));        tripList.add(new Trip(1, "Bükkszentkereszt - \nHoldviola Tanösvény", R.drawable.holdviola, 3, 26, false, true, true, false, true, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
+        tripList.add(new Trip(1, "Bükkszentkereszt - \nketto", R.drawable.holdviola, 14, 26, false, true, true, false, true, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
+        tripList.add(new Trip(1, "Bükkszentkereszt - \nharom", R.drawable.holdviola, 3, 26, false, true, true, false, true, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
+        tripList.add(new Trip(1, "Bükkszentkereszt - \nnegy", R.drawable.holdviola, 13, 26, false, true, true, false, true, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
+        tripList.add(new Trip(1, "Bükkszentkereszt - \not", R.drawable.holdviola, 3, 26, false, true, true, false, true, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
+        tripList.add(new Trip(1, "Bükkszentkereszt - \nhat", R.drawable.holdviola, 1, 26, false, true, true, true, false, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
+
         tripList.addAll(tripListFromFile);
 
         Log.i("TripFragment", "lista: " + tripList.toString());
@@ -134,11 +140,6 @@ public class DiscoverTrips extends Fragment {
                 String tripDescription = tripItem.getDescription();
                 double[] latitudes = tripItem.getLatitudes();
                 double[] longitudes = tripItem.getLongitudes();
-
-                Log.i("TripClickListener", "ImageUrl: " + tripImageID);
-                Log.i("TripClickListener", "title: " + tripTitle);
-                Log.i("TripClickListener", "distance: " + tripDistance);
-                Log.i("TripClickListener", "Description: " + tripDescription);
 
                 Bundle fragmentArgs = new Bundle();
                 fragmentArgs.putInt("trip_id", tripId);
@@ -280,7 +281,7 @@ public class DiscoverTrips extends Fragment {
             distanceMax = data.getIntExtra("distanceMax", 0);
             durationMin = data.getIntExtra("durationMin", 0);
             durationMax = data.getIntExtra("durationMax", 0);
-            
+
             Log.i("DiscoverTrips", "OnActResult easy: " + easy);
             Log.i("DiscoverTrips", "OnActResult hard: " + hard);
             Log.i("DiscoverTrips", "OnActResult tanosveny: " + tanosveny);
@@ -301,7 +302,7 @@ public class DiscoverTrips extends Fragment {
                 }
 
                 if (easy && hard && !tanosveny && cycling && hiking &&
-                        !currentInstance.isTanosveny() &&
+                        !currentInstance.isTanosveny() && currentInstance.isCycling() && currentInstance.isCycling() &&
                         isBetween(currentInstance.getDistance(), distanceMin, distanceMax)) {
                     filteredTripList.add(currentInstance);
                     Log.i("DiscoverTrips", "filter case 2");
@@ -321,32 +322,46 @@ public class DiscoverTrips extends Fragment {
                     Log.i("DiscoverTrips", "filter case 4");
                 }
 
+                if (easy && hard && tanosveny && !cycling && hiking &&
+                        currentInstance.isTanosveny() && !currentInstance.isCycling() && currentInstance.isHiking() &&
+                        isBetween(currentInstance.getDistance(), distanceMin, distanceMax)) {
+                    filteredTripList.add(currentInstance);
+                    Log.i("DiscoverTrips", "filter case 5");
+                }
+
+                if (easy && hard && tanosveny && cycling && !hiking &&
+                        currentInstance.isTanosveny() && currentInstance.isCycling() && !currentInstance.isHiking() &&
+                        isBetween(currentInstance.getDistance(), distanceMin, distanceMax)) {
+                    filteredTripList.add(currentInstance);
+                    Log.i("DiscoverTrips", "filter case 6");
+                }
+
                 if (easy && !hard && tanosveny && cycling && hiking &&
                         !currentInstance.isItHard() && currentInstance.isTanosveny() && currentInstance.isCycling() && currentInstance.isHiking() &&
                         isBetween(currentInstance.getDistance(), distanceMin, distanceMax)) {
                     filteredTripList.add(currentInstance);
-                    Log.i("DiscoverTrips", "filter case 5");
+                    Log.i("DiscoverTrips", "filter case 7");
                 }
 
                 if (easy && !hard && !tanosveny && cycling && hiking &&
                         !currentInstance.isItHard() && !currentInstance.isTanosveny() && currentInstance.isCycling() && currentInstance.isHiking() &&
                         isBetween(currentInstance.getDistance(), distanceMin, distanceMax)) {
                     filteredTripList.add(currentInstance);
-                    Log.i("DiscoverTrips", "filter case 6");
+                    Log.i("DiscoverTrips", "filter case 8");
                 }
 
                 if (easy && !hard && tanosveny && !cycling && hiking &&
                         !currentInstance.isItHard() && currentInstance.isTanosveny() && !currentInstance.isCycling() && currentInstance.isHiking() &&
                         isBetween(currentInstance.getDistance(), distanceMin, distanceMax)) {
                     filteredTripList.add(currentInstance);
-                    Log.i("DiscoverTrips", "filter case 7");
+                    Log.i("DiscoverTrips", "filter case 9");
                 }
 
                 if (easy && !hard && tanosveny && cycling && !hiking &&
                         !currentInstance.isItHard() && currentInstance.isTanosveny() && currentInstance.isCycling() && !currentInstance.isHiking() &&
                         isBetween(currentInstance.getDistance(), distanceMin, distanceMax)) {
                     filteredTripList.add(currentInstance);
-                    Log.i("DiscoverTrips", "filter case 8");
+                    Log.i("DiscoverTrips", "filter case 10");
                 }
 
 
@@ -354,56 +369,56 @@ public class DiscoverTrips extends Fragment {
                         !currentInstance.isItHard() && !currentInstance.isTanosveny() && !currentInstance.isCycling() && currentInstance.isHiking() &&
                         isBetween(currentInstance.getDistance(), distanceMin, distanceMax)) {
                     filteredTripList.add(currentInstance);
-                    Log.i("DiscoverTrips", "filter case 9");
+                    Log.i("DiscoverTrips", "filter case 11");
                 }
 
                 if (easy && !hard && !tanosveny && cycling && !hiking &&
                         !currentInstance.isItHard() && !currentInstance.isTanosveny() && currentInstance.isCycling() && !currentInstance.isHiking() &&
                         isBetween(currentInstance.getDistance(), distanceMin, distanceMax)) {
                     filteredTripList.add(currentInstance);
-                    Log.i("DiscoverTrips", "filter case 10");
+                    Log.i("DiscoverTrips", "filter case 12");
                 }
 
                 if (!easy && hard && tanosveny && cycling && hiking &&
                         currentInstance.isItHard() && currentInstance.isTanosveny() && currentInstance.isCycling() && currentInstance.isHiking() &&
                         isBetween(currentInstance.getDistance(), distanceMin, distanceMax)) {
                     filteredTripList.add(currentInstance);
-                    Log.i("DiscoverTrips", "filter case 11");
+                    Log.i("DiscoverTrips", "filter case 13");
                 }
 
                 if (!easy && hard && !tanosveny && cycling && hiking &&
                         currentInstance.isItHard() && !currentInstance.isTanosveny() && currentInstance.isCycling() && currentInstance.isHiking() &&
                         isBetween(currentInstance.getDistance(), distanceMin, distanceMax)) {
                     filteredTripList.add(currentInstance);
-                    Log.i("DiscoverTrips", "filter case 12");
+                    Log.i("DiscoverTrips", "filter case 14");
                 }
 
                 if (!easy && hard && !tanosveny && !cycling && hiking &&
                         currentInstance.isItHard() && !currentInstance.isTanosveny() && !currentInstance.isCycling() && currentInstance.isHiking() &&
                         isBetween(currentInstance.getDistance(), distanceMin, distanceMax)) {
                     filteredTripList.add(currentInstance);
-                    Log.i("DiscoverTrips", "filter case 13");
+                    Log.i("DiscoverTrips", "filter case 15");
                 }
 
                 if (!easy && hard && !tanosveny && cycling && !hiking &&
                         currentInstance.isItHard() && !currentInstance.isTanosveny() && currentInstance.isCycling() && !currentInstance.isHiking() &&
                         isBetween(currentInstance.getDistance(), distanceMin, distanceMax)) {
                     filteredTripList.add(currentInstance);
-                    Log.i("DiscoverTrips", "filter case 14");
+                    Log.i("DiscoverTrips", "filter case 16");
                 }
 
                 if (!easy && hard && tanosveny && cycling && !hiking &&
                         currentInstance.isItHard() && currentInstance.isTanosveny() && currentInstance.isCycling() && !currentInstance.isHiking() &&
                         isBetween(currentInstance.getDistance(), distanceMin, distanceMax)) {
                     filteredTripList.add(currentInstance);
-                    Log.i("DiscoverTrips", "filter case 15");
+                    Log.i("DiscoverTrips", "filter case 17");
                 }
 
                 if (!easy && hard && tanosveny && !cycling && hiking &&
                         currentInstance.isItHard() && currentInstance.isTanosveny() && !currentInstance.isCycling() && currentInstance.isHiking() &&
                         isBetween(currentInstance.getDistance(), distanceMin, distanceMax)) {
                     filteredTripList.add(currentInstance);
-                    Log.i("DiscoverTrips", "filter case 16");
+                    Log.i("DiscoverTrips", "filter case 18");
                 }
             }
 

@@ -6,46 +6,68 @@ package com.example.ferenckovacsx.erdojaro_v1.javabeans;
 
 public class Flora {
 
-    public String name;
-    public int imageID;
-    public String description;
+    public int Id;
+    public String Name;
+    public String LatinName;
+    public int ImageID;
+    public String Description;
 
-    public Flora(String name, int imageID, String description) {
-        this.name = name;
-        this.imageID = imageID;
-        this.description = description;
+    public Flora(int id, String name, String latinName, int imageID, String description) {
+        Id = id;
+        Name = name;
+        LatinName = latinName;
+        ImageID = imageID;
+        Description = description;
+    }
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int id) {
+        Id = id;
     }
 
     public String getName() {
-        return name;
+        return Name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        Name = name;
+    }
+
+    public String getLatinName() {
+        return LatinName;
+    }
+
+    public void setLatinName(String latinName) {
+        LatinName = latinName;
     }
 
     public int getImageID() {
-        return imageID;
+        return ImageID;
     }
 
     public void setImageID(int imageID) {
-        this.imageID = imageID;
+        ImageID = imageID;
     }
 
     public String getDescription() {
-        return description;
+        return Description;
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        Description = description;
     }
 
     @Override
     public String toString() {
         return "Flora{" +
-                "Name='" + name + '\'' +
-                ", ImageUrl=" + imageID +
-                ", Description='" + description + '\'' +
+                "Id=" + Id +
+                ", Name='" + Name + '\'' +
+                ", LatinName='" + LatinName + '\'' +
+                ", ImageID=" + ImageID +
+                ", Description='" + Description + '\'' +
                 '}';
     }
 }
