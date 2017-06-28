@@ -16,10 +16,10 @@
         android:icon="@drawable/ic_map"
         android:title="@string/title_map" />
 
-    <item
-        android:id="@+id/navigation_favorites"
-        android:icon="@drawable/ic_favorites"
-        android:title="@string/title_favorites" />
+    <!--<item-->
+        <!--android:id="@+id/navigation_favorites"-->
+        <!--android:icon="@drawable/ic_favorites"-->
+        <!--android:title="@string/title_favorites" />-->
 
     <item
         android:id="@+id/navigation_more_options"

@@ -102,14 +102,14 @@ public class MainActivity
                                 // }
                                 break;
 
-                            case R.id.navigation_favorites:
-
-                                //if (!item.isChecked()) {
-                                selectedFragment = new FavoritesFragment();
-                                selectedFragment.setRetainInstance(true);
-                                replaceFragment = true;
-                                // }
-                                break;
+//                            case R.id.navigation_favorites:
+//
+//                                //if (!item.isChecked()) {
+//                                selectedFragment = new FavoritesFragment();
+//                                selectedFragment.setRetainInstance(true);
+//                                replaceFragment = true;
+//                                // }
+//                                break;
 
                             case R.id.navigation_more_options:
 

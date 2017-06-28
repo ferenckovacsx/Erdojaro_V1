@@ -62,11 +62,12 @@ public class WildlifeGridAdapter extends BaseAdapter {
 
             grid = new View(mContext);
             grid = inflater.inflate(R.layout.custom_grid_item, parent, false);
-            ImageView imageView = (ImageView) grid.findViewById(R.id.wildlife_grid_image);
-            imageView.setImageResource(imageId[position]);
+
         } else {
             grid = (View) convertView;
         }
+        ImageView imageView = (ImageView) grid.findViewById(R.id.wildlife_grid_image);
+        imageView.setImageResource(imageId[position]);
 
         return grid;
     }

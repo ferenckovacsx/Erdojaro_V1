@@ -38,14 +38,22 @@ public class WildlifeFloraFragment extends Fragment {
         floraGridView = (GridView) floraView.findViewById(R.id.flora_gridview);
 
         floraList = new ArrayList<>();
-        floraList.add(new Flora(5, "Csipkebogyó1", "Rosa Canis", R.drawable.csipkebogyo, getResources().getString(R.string.lorem_ipsum)));
-        floraList.add(new Flora(6, "Csipkebogyó2", "Rosa Canis", R.drawable.csipkebogyo, "@string/lorem_ipsum"));
-        floraList.add(new Flora(7, "Csipkebogyó3", "Rosa Canis", R.drawable.csipkebogyo, "Ez itt a csipkebogyó"));
-        floraList.add(new Flora(8, "Csipkebogyó4", "Rosa Canis", R.drawable.csipkebogyo, "Ez itt a csipkebogyó"));
-        floraList.add(new Flora(9, "Csipkebogyó5", "Rosa Canis", R.drawable.csipkebogyo, "Ez itt a csipkebogyó"));
-        floraList.add(new Flora(10, "Csipkebogyó6", "Rosa Canis", R.drawable.csipkebogyo, "Ez itt a csipkebogyó"));
-        floraList.add(new Flora(11, "Csipkebogyó7", "Rosa Canis", R.drawable.csipkebogyo, "Ez itt a csipkebogyó"));
-        floraList.add(new Flora(12, "Csipkebogyó8", "Rosa Canis", R.drawable.csipkebogyo, "Ez itt a csipkebogyó"));
+        floraList.add(new Flora(1, getResources().getString(R.string.flora_1_name), getResources().getString(R.string.flora_1_latin_name), R.drawable.flora_1_thumbnail, getResources().getString(R.string.flora_1_description)));
+        floraList.add(new Flora(1, getResources().getString(R.string.flora_2_name), getResources().getString(R.string.flora_2_latin_name), R.drawable.flora_2_thumbnail, getResources().getString(R.string.flora_2_description)));
+        floraList.add(new Flora(1, getResources().getString(R.string.flora_3_name), getResources().getString(R.string.flora_3_latin_name), R.drawable.flora_3_thumbnail, getResources().getString(R.string.flora_3_description)));
+        floraList.add(new Flora(1, getResources().getString(R.string.flora_4_name), getResources().getString(R.string.flora_4_latin_name), R.drawable.flora_4_thumbnail, getResources().getString(R.string.flora_4_description)));
+        floraList.add(new Flora(1, getResources().getString(R.string.flora_5_name), getResources().getString(R.string.flora_5_latin_name), R.drawable.flora_5_thumbnail, getResources().getString(R.string.flora_5_description)));
+        floraList.add(new Flora(1, getResources().getString(R.string.flora_6_name), getResources().getString(R.string.flora_6_latin_name), R.drawable.flora_6_thumbnail, getResources().getString(R.string.flora_6_description)));
+        floraList.add(new Flora(1, getResources().getString(R.string.flora_7_name), getResources().getString(R.string.flora_7_latin_name), R.drawable.flora_7_thumbnail, getResources().getString(R.string.flora_7_description)));
+        floraList.add(new Flora(1, getResources().getString(R.string.flora_8_name), getResources().getString(R.string.flora_8_latin_name), R.drawable.flora_8_thumbnail, getResources().getString(R.string.flora_8_description)));
+        floraList.add(new Flora(1, getResources().getString(R.string.flora_9_name), getResources().getString(R.string.flora_9_latin_name), R.drawable.flora_9_thumbnail, getResources().getString(R.string.flora_9_description)));
+        floraList.add(new Flora(1, getResources().getString(R.string.flora_10_name), getResources().getString(R.string.flora_10_latin_name), R.drawable.flora_10_thumbnail, getResources().getString(R.string.flora_10_description)));
+        floraList.add(new Flora(1, getResources().getString(R.string.flora_11_name), getResources().getString(R.string.flora_11_latin_name), R.drawable.flora_11_thumbnail, getResources().getString(R.string.flora_11_description)));
+        floraList.add(new Flora(1, getResources().getString(R.string.flora_12_name), getResources().getString(R.string.flora_12_latin_name), R.drawable.flora_12_thumbnail, getResources().getString(R.string.flora_12_description)));
+        floraList.add(new Flora(1, getResources().getString(R.string.flora_13_name), getResources().getString(R.string.flora_13_latin_name), R.drawable.flora_13_thumbnail, getResources().getString(R.string.flora_13_description)));
+        floraList.add(new Flora(1, getResources().getString(R.string.flora_14_name), getResources().getString(R.string.flora_14_latin_name), R.drawable.flora_14_thumbnail, getResources().getString(R.string.flora_14_description)));
+        floraList.add(new Flora(1, getResources().getString(R.string.flora_15_name), getResources().getString(R.string.flora_15_latin_name), R.drawable.flora_15_thumbnail, getResources().getString(R.string.flora_15_description)));
+
 
         floraImageList = new ArrayList<>();
         for (int i = 0; i < floraList.size(); i++){

@@ -82,7 +82,7 @@ public class GetContentAsync extends AsyncTask<Void, Void, AsyncTaskResponseCont
                 serverUpdateJsonWithoutQuotes = serverUpdateJson.substring(1, serverUpdateJson.length() - 1);
                 Log.i("GetContentAsync", "last update string json: " + serverUpdateJsonWithoutQuotes);
 
-                //parse date string to Date object then convert to time millis
+                //parseXML date string to Date object then convert to time millis
                 DateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
                 serverUpdateParsedDate = format.parse(serverUpdateJsonWithoutQuotes);
                 serverUpdateMillis = serverUpdateParsedDate.getTime();

@@ -46,9 +46,17 @@ public class DiscoverPOI extends Fragment {
         poiListView = (ListView) poiView.findViewById(R.id.POI_listview);
 
         poiList = new ArrayList<>();
-        poiList.add(new POI(1, "Nagymező", R.drawable.poi_nagymezo, 48.0791, 20.4981, false, "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."));
-        poiList.add(new POI(2, "blabla", R.drawable.fauna, 48.0791, 20.4981, true, "Pelda kep"));
-        poiList.add(new POI(3, "blabla", R.drawable.trek, 48.0791, 20.4981, true, "Pelda kep"));
+        poiList.add(new POI(1, getResources().getString(R.string.poi_1_name), R.drawable.poi_1,  Double.parseDouble(getResources().getString(R.string.poi_1_latitude)), Double.parseDouble(getResources().getString(R.string.poi_1_longitude)), false, getResources().getString(R.string.poi_1_description)));
+        poiList.add(new POI(2, getResources().getString(R.string.poi_2_name), R.drawable.poi_2,  Double.parseDouble(getResources().getString(R.string.poi_2_latitude)), Double.parseDouble(getResources().getString(R.string.poi_2_longitude)), false, getResources().getString(R.string.poi_2_description)));
+        poiList.add(new POI(3, getResources().getString(R.string.poi_3_name), R.drawable.poi_3,  Double.parseDouble(getResources().getString(R.string.poi_3_latitude)), Double.parseDouble(getResources().getString(R.string.poi_3_longitude)), false, getResources().getString(R.string.poi_3_description)));
+        poiList.add(new POI(4, getResources().getString(R.string.poi_4_name), R.drawable.poi_4,  Double.parseDouble(getResources().getString(R.string.poi_4_latitude)), Double.parseDouble(getResources().getString(R.string.poi_4_longitude)), false, getResources().getString(R.string.poi_4_description)));
+        poiList.add(new POI(5, getResources().getString(R.string.poi_5_name), R.drawable.poi_5,  Double.parseDouble(getResources().getString(R.string.poi_5_latitude)), Double.parseDouble(getResources().getString(R.string.poi_5_longitude)), false, getResources().getString(R.string.poi_5_description)));
+        poiList.add(new POI(6, getResources().getString(R.string.poi_6_name), R.drawable.poi_6,  Double.parseDouble(getResources().getString(R.string.poi_6_latitude)), Double.parseDouble(getResources().getString(R.string.poi_6_longitude)), false, getResources().getString(R.string.poi_6_description)));
+        poiList.add(new POI(7, getResources().getString(R.string.poi_7_name), R.drawable.poi_7,  Double.parseDouble(getResources().getString(R.string.poi_7_latitude)), Double.parseDouble(getResources().getString(R.string.poi_7_longitude)), false, getResources().getString(R.string.poi_7_description)));
+        poiList.add(new POI(8, getResources().getString(R.string.poi_8_name), R.drawable.poi_8,  Double.parseDouble(getResources().getString(R.string.poi_8_latitude)), Double.parseDouble(getResources().getString(R.string.poi_8_longitude)), false, getResources().getString(R.string.poi_8_description)));
+        poiList.add(new POI(9, getResources().getString(R.string.poi_9_name), R.drawable.poi_9,  Double.parseDouble(getResources().getString(R.string.poi_9_latitude)), Double.parseDouble(getResources().getString(R.string.poi_9_longitude)), false, getResources().getString(R.string.poi_9_description)));
+        poiList.add(new POI(10, getResources().getString(R.string.poi_10_name), R.drawable.poi_10,  Double.parseDouble(getResources().getString(R.string.poi_10_latitude)), Double.parseDouble(getResources().getString(R.string.poi_10_longitude)), false, getResources().getString(R.string.poi_10_description)));
+        poiList.add(new POI(11, getResources().getString(R.string.poi_11_name), R.drawable.poi_11,  Double.parseDouble(getResources().getString(R.string.poi_11_latitude)), Double.parseDouble(getResources().getString(R.string.poi_11_longitude)), false, getResources().getString(R.string.poi_11_description)));
 
         poiList.addAll(poiFromFile);
         Log.i("DiscoverPOI", "combined poiList" + poiList.toString());
@@ -104,6 +112,8 @@ public class DiscoverPOI extends Fragment {
         });
 
         adapter = new POIListAdapter(poiList, getActivity().getApplicationContext());
+        poiListView.setFastScrollEnabled(true);
+        poiListView.setScrollingCacheEnabled(false);
         poiListView.setAdapter(adapter);
 
         return poiView;

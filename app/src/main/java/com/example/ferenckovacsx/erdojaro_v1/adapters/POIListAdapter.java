@@ -1,12 +1,13 @@
 package com.example.ferenckovacsx.erdojaro_v1.adapters;
 
 import android.content.Context;
-import android.util.Log;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.ferenckovacsx.erdojaro_v1.R;
 import com.example.ferenckovacsx.erdojaro_v1.javabeans.POI;
@@ -28,7 +29,8 @@ public class POIListAdapter extends ArrayAdapter<POI> {
     // View lookup cache
     private static class ViewHolder {
 
-        ImageView POIimage;
+        ImageView poiImageView;
+        TextView poiTextView;
     }
 
     public POIListAdapter(ArrayList<POI> data, Context context) {
@@ -57,7 +59,8 @@ public class POIListAdapter extends ArrayAdapter<POI> {
             viewHolder = new ViewHolder();
             LayoutInflater inflater = LayoutInflater.from(getContext());
             convertView = inflater.inflate(R.layout.custom_poi_listitem, parent, false);
-            viewHolder.POIimage = (ImageView) convertView.findViewById(R.id.poi_listitem_image);
+            viewHolder.poiImageView = (ImageView) convertView.findViewById(R.id.poi_listitem_image);
+            viewHolder.poiTextView = (TextView) convertView.findViewById(R.id.poi_listitem_textview);
 
             result = convertView;
 
@@ -69,29 +72,34 @@ public class POIListAdapter extends ArrayAdapter<POI> {
 
         lastPosition = position;
 
-        if (poiItem.getImageInt() != 0) {
-            Log.i("POIListAdapter", "poi from res" + poiItem.getImageInt());
-            Log.i("POIListAdapter", "poi from res" + poiItem.getId());
-            Log.i("POIListAdapter", "poi from res" + poiItem.getImageUrl());
+        if (viewHolder.poiImageView != null) {
+            if (poiItem.getImageInt() != 0) {
+                Picasso.with(mainContext).load(poiItem.getImageInt()).into(viewHolder.poiImageView);
+                //viewHolder.poiImageView.setImageResource(poiItem.getImageInt());
+            } else {
 
-            viewHolder.POIimage.setImageResource(poiItem.getImageInt());
-        } else {
+                Picasso picasso = Picasso.with(mainContext);
+                //picasso.setIndicatorsEnabled(true);
 
-            Picasso picasso = Picasso.with(mainContext);
-            picasso.setIndicatorsEnabled(true);
-
-            Picasso.with(mainContext)
-                    .load(poiItem.getImageUrl())
-                    .into(viewHolder.POIimage);
+                Picasso.with(mainContext)
+                        .load(poiItem.getImageUrl())
+                        .into(viewHolder.poiImageView);
 
 
 //            String bitmapFileName = "Poi_" + POIitem.getId() + ".jpg";
 //            Log.i("POIListAdapter", "bitmapfile: " + bitmapFileName);
 //            Bitmap poiBitmap = Utils.getBitmapFromFile(bitmapFileName, mContext);
-//            viewHolder.POIimage.setImageBitmap(poiBitmap);
-            //Picasso.with(mContext).load(POIitem.getImageUrl()).into(viewHolder.POIimage);
+//            viewHolder.poiImageView.setImageBitmap(poiBitmap);
+                //Picasso.with(mContext).load(POIitem.getImageUrl()).into(viewHolder.poiImageView);
+            }
         }
-        viewHolder.POIimage.setTag(position);
+        Typeface m_typeFace = Typeface.createFromAsset(mainContext.getAssets(), "fonts/kapra.otf");
+        viewHolder.poiTextView.setTypeface(m_typeFace);
+        viewHolder.poiTextView.setText(poiItem.getName());
+
+
+
+        viewHolder.poiImageView.setTag(position);
 
         // Return the completed view to render on screen
         return convertView;

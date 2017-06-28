@@ -5,9 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,15 +16,20 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.example.ferenckovacsx.erdojaro_v1.R;
+import com.example.ferenckovacsx.erdojaro_v1.XMLParser;
 import com.example.ferenckovacsx.erdojaro_v1.adapters.TripListAdapter;
 import com.example.ferenckovacsx.erdojaro_v1.javabeans.Trip;
+import com.example.ferenckovacsx.erdojaro_v1.javabeans.XMLTripWaypoints;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import static com.example.ferenckovacsx.erdojaro_v1.mainviews.MainActivity.mainContext;
 import static com.example.ferenckovacsx.erdojaro_v1.mainviews.TripFilterDialogFragment.FILTERDIALOG_REQUEST_CODE;
 
 
@@ -64,32 +67,24 @@ public class DiscoverTrips extends Fragment {
 
         View tripView = inflater.inflate(R.layout.fragment_discover_trips, container, false);
 
-
         discoverTripsFragment = this;
 
         ArrayList<Double> waypointsLong = new ArrayList<>();
-        waypointsLong.add(20.630893093);
-        waypointsLong.add(20.631957762);
-        waypointsLong.add(20.632141661);
-        waypointsLong.add(20.632624207);
-        waypointsLong.add(20.632034624);
-        waypointsLong.add(20.632068990);
-        waypointsLong.add(20.631936388);
-        waypointsLong.add(20.631772103);
-        waypointsLong.add(20.632852782);
-        waypointsLong.add(20.632847585);
-
         ArrayList<Double> waypointsLat = new ArrayList<>();
-        waypointsLat.add(48.057708638);
-        waypointsLat.add(48.058386482);
-        waypointsLat.add(48.058727039);
-        waypointsLat.add(48.058723267);
-        waypointsLat.add(48.058644729);
-        waypointsLat.add(48.058961732);
-        waypointsLat.add(48.059180500);
-        waypointsLat.add(48.059986252);
-        waypointsLat.add(48.059534635);
-        waypointsLat.add(48.059557518);
+        XMLTripWaypoints xmlWayPointsPOJO;
+
+        try {
+            XMLParser parser = new XMLParser();
+            InputStream is = mainContext.getAssets().open("trip_20_waypoints.xml");
+            xmlWayPointsPOJO = parser.parseXML(is);
+            Log.i("DiscoverTrips", "POJO: " + xmlWayPointsPOJO.toString());
+            waypointsLat = xmlWayPointsPOJO.getLatitudesList();
+            waypointsLong = xmlWayPointsPOJO.getLongitudesList();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
 
         longitudesPrimitiveArray = convertDoubleToPrimitive(waypointsLong);
         latitudesPrimitiveArray = convertDoubleToPrimitive(waypointsLat);
@@ -102,12 +97,13 @@ public class DiscoverTrips extends Fragment {
 
         tripList = new ArrayList<>();
         totalTripList = new ArrayList<>();
-        tripList.add(new Trip(1, "Bükkszentkereszt - \nHoldviola Tanösvény", R.drawable.holdviola, 3, 26, false, true, true, false, true, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));        tripList.add(new Trip(1, "Bükkszentkereszt - \nHoldviola Tanösvény", R.drawable.holdviola, 3, 26, false, true, true, false, true, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
-        tripList.add(new Trip(1, "Bükkszentkereszt - \nketto", R.drawable.holdviola, 14, 26, false, true, true, false, true, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
-        tripList.add(new Trip(1, "Bükkszentkereszt - \nharom", R.drawable.holdviola, 3, 26, false, true, true, false, true, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
-        tripList.add(new Trip(1, "Bükkszentkereszt - \nnegy", R.drawable.holdviola, 13, 26, false, true, true, false, true, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
-        tripList.add(new Trip(1, "Bükkszentkereszt - \not", R.drawable.holdviola, 3, 26, false, true, true, false, true, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
-        tripList.add(new Trip(1, "Bükkszentkereszt - \nhat", R.drawable.holdviola, 1, 26, false, true, true, true, false, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
+        tripList.add(new Trip(1, "Bükkszentkereszt - \nHoldviola Tanösvény", R.drawable.holdviola, 3, 26, false, true, true, false, true, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
+        tripList.add(new Trip(2, "Bükkszentkereszt - \nHoldviola Tanösvény", R.drawable.holdviola, 3, 26, false, true, true, false, true, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
+        tripList.add(new Trip(3, "Bükkszentkereszt - \nketto", R.drawable.holdviola, 14, 26, false, true, true, false, true, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
+        tripList.add(new Trip(4, "Bükkszentkereszt - \nharom", R.drawable.holdviola, 3, 26, false, true, true, false, true, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
+        tripList.add(new Trip(5, "Bükkszentkereszt - \nnegy", R.drawable.holdviola, 13, 26, false, true, true, false, true, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
+        tripList.add(new Trip(6, "Bükkszentkereszt - \not", R.drawable.holdviola, 3, 26, false, true, true, false, true, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
+        tripList.add(new Trip(7, "Bükkszentkereszt - \nhat", R.drawable.holdviola, 1, 26, false, true, true, true, false, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
 
         tripList.addAll(tripListFromFile);
 

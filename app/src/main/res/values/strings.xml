@@ -14,6 +14,223 @@
 
     <string name="access_token">pk.eyJ1IjoiZmVyZW5ja292YWNzeCIsImEiOiJjajNsbGhoajYwMDc5MnFucmJseGRhNnZkIn0.0EXL-Id4VsQ6PAxK0p5lFg</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- FAUNA -->
+    <!-- FAUNA -->
+
+    <string name="fauna_1_name">Alpesi gőte</string>
+    <string name="fauna_2_name">Dámszarvas</string>
+    <string name="fauna_3_name">Farkas</string>
+    <string name="fauna_4_name">Fehérhátú fakopáncs</string>
+    <string name="fauna_5_name">Gímszarvas</string>
+    <string name="fauna_6_name">Gyepi béka</string>
+    <string name="fauna_7_name">Havasi cincér</string>
+    <string name="fauna_8_name">Havasi tűzlepke</string>
+    <string name="fauna_9_name">Hegyi billegető</string>
+    <string name="fauna_10_name">Hiúz</string>
+
+    <string name="fauna_1_latin_name">Triturus alpestris</string>
+    <string name="fauna_2_latin_name">Dama dama</string>
+    <string name="fauna_3_latin_name">Canis lupus</string>
+    <string name="fauna_4_latin_name">Dendrocopos leucotos</string>
+    <string name="fauna_5_latin_name">Cervus elaphus</string>
+    <string name="fauna_6_latin_name">Rana temporaria</string>
+    <string name="fauna_7_latin_name">Rosalia alpina</string>
+    <string name="fauna_8_latin_name">Lycaena hippothoe</string>
+    <string name="fauna_9_latin_name">Motacilla cinerea</string>
+    <string name="fauna_10_latin_name">Lynx</string>
+
+    <string name="fauna_1_description">Magyarországon csak a magasabb hegységeinkben fordul elő. Megtalálható a Mátrában, a Bükk-vidék területén, a Bakonyban és a Zempléni-hegységben. Szinte minden kicsi mélyedésben, patakban előfordul.
+A hím 8 cm, kékes alapszínű, sötétbarnás zöldes mintázattal, tarajjal, nászidőszakban színei felerősödnek. A taraj ép szélű, sötét és világos foltokkal tarkított, oldala kékes, fehér foltokkal tarkított, a hát irányában sötétebb, a has irányában világosabb színű. A hasa narancsvörös, melyen nem találunk sötét foltokat, s ezzel megkülönböztethető a tarajos gőtétől. A nőstény 10 cm, barna, világosabb narancsos hassal.
+Mindenféle gerinctelenekkel táplálkozik (rovarok, giliszták, apró csigák).
+A párzás és a peték lerakása a hideg lápforrásokban, patakokban történik nyár elején. Júliusban kimásznak a szárazföldre és mohapárnák, korhadt fák alatt keresgélnek táplálékot.
+Magyarországon a legmagasabb eszmei értékkel védett faj a kétéltűek közül.</string>
+    <string name="fauna_2_description">Alapvetően vörösesbarna színezetű, rajta fehér pöttyökkel, de fehértől a sötétbarnáig számos színváltozata létezik. Jellemzője a bika lapát alakú agancsa, amely minden más szarvasfélétől megkülönbözteti. Nászidőszaka, az ún. barcogás október-november hónapra esik, amikor a bika barcogó teknőt kapar, és e köré várja a teheneket. A május- június körül világra jövő borjút anyja az első napokban rejtekhelyen hagyja. Ivarérettségét másfél-kétévesen éri el.
+Napközben és alkonyatkor jár táplálkozni. Télen nagyobb csapatokba verődik. A nyári időszakban a bikák elhagyják a borjaikat nevelő teheneket. A legutóbbi jégkorszak előtt még Európa teljes területén előfordult, később már csak a Földközi-tenger vidékén. Az ókori rómaiak azonban újra meghonosították csaknem egész Európában. Később vadászati célból a világ számos más területére betelepítették, így most már Új-Zélandon, az Egyesült Államokban, Argentínában, Japánban és Dél-Afrikában is előfordul.</string>
+    <string name="fauna_3_description">Hazánkban az I. világháború után pusztult ki és az 1980-as években jelent meg újra,  ma már Magyarországon is védett. Magyarországon az Aggteleki Nemzeti Parkban, és a Bükki Nemzeti Parkban tudunk állandó jelenlétükről, de alkalmanként megtalálható a Zempléni-hegységben, a Mátrában, és a Gemencben is.
+Izomzata, tüdeje és szíve kiválóan alkalmazkodott a zsákmány üldözéséhez: rövid távon sebessége eléri a 60–70 km/órát. Mintegy 15–20 percig képes üldözni a prédát.
+Szaglása és hallása egyaránt kitűnő: ha megfelelő a szél iránya, akár 2–2,5 km-ről is megérzi a zsákmány szagát.
+A legintelligensebb ragadozó. Agytérfogata 150–170 cm³, különleges értelmi képességei a társas életmód eredményeként fejlődtek ki.
+ A falkában szigorú a hierarchia: az abszolút úr az alfa-hím, őt követi az alfa-nőstény. A vezérhímet legyengülése (betegség, sérülés stb.) esetén a béta-hím váltja fel. A falkák időnként feloszlanak, majd újraalakulhatnak, illetve más falkákkal is egyesülhetnek. A régi falka feloszlásával létrejött új falkák egymással barátságosan viselkednek. Területüket hevesen védik.</string>
+    <string name="fauna_4_description">Európában és Ázsia egy részén él. Az elegyes erdőket kedveli, ahol korhadó fák vannak. Magyarországon ritka, de rendszeres fészkelő, nem költöző madár. Az öreg bükkösökben fordul elő.
+Testhossza 24-26 cm, szárnyának fesztávolsága 38-40 cm, testtömege 100-112 gramm. A hím sapkája vörös, a tojóé fekete. Hátán fehér folt van, szárnyfedői csíkozottak.
+Lárvákkal és cincérekkel táplálkozik.
+Magányos fészkelő. Zárt, öreg bükkösökben, korhadó, taplós fába, saját maga által vájt odúja csupasz aljzatára rakja 4-6 tojását, melyen 14-16 napig kotlik. Április-májusban költ. Fiókái fészeklakók, 27-28 napos korukban repülnek ki.
+Hazánkban fokozottan védett, eszmei értéke 250 000 Ft. Európában biztos állományú, a Természetvédelmi Világszövetség Vörös Listáján nem fenyegetett fajnak számít.</string>
+    <string name="fauna_5_description">Magyarországon, a dél-dunántúli területeken található jelentős szarvasállomány, ahol 1996-ban a hazai állomány fele, mintegy 30 000 szarvas élt. A minőséget jelzi az évente ott elejtett 150–180 aranyérmes bika is. A legtöbb példány a Dunától nyugatra él, Zala, Somogy, Tolna és Baranya megyében.
+A tisztásokkal és rétekkel tarkított lombos- és elegyes erdők lakója. A természetes élőhelyekről a gímszarvas már szinte teljesen kiszorult.
+A gímszarvas a legnagyobb szarvasfélék közé tartozik.
+A bika hossza 175–250 cm, marmagassága 100–150 cm, és testtömege 160–300 kg; a tehén hossza 160–210 cm, testtömege 120–170 kg.
+A bikák ágas-bogas agancsot viselnek, melyet minden évben elhullajtanak és újat növesztenek.
+A természetben körülbelül 16–18 évig, fogságban a bikák körülbelül 20 évig, a tehenek 22 évig élnek.</string>
+    <string name="fauna_6_description">Magyarországon szórványosan fordul csak elő, a Zempléni-hegységben, a Bükkben, a Mátrában, a Börzsönyben, a Soproni-, és a Kőszegi-hegységben, valamint a Mecsekben.
+Színezete rendkívül változó, a sárgástól a vörhenyesen át a feketésbarnáig terjed, több vagy kevesebb sötét folttal.
+Nappal és éjszaka egyaránt tevékeny, jól alkalmazkodott a szárazföldi élethez. A talajban vagy a vízben, a meder iszapjában telel. Hangja nem feltűnő. Férgeket, csigákat, rovarokat fogyaszt. A gyepi béka fogságban 12 évig is élhet.
+A farkatlan kétéltűek közül elsőként jelenik meg a petézőhelyeken. A nőstény álló- és lassú folyású, sekély vízben egy csomóban rakja le 1500-2500 petéjét. A kocsonyás csomó a víz felszínén úszik. Az ebihalak 14-18 nap múlva bújnak ki, június végére, július elejére átalakulnak, egyesek azonban lárva állapotban telelnek át.</string>
+    <string name="fauna_7_description">A havasi cincér Közép-Európában már sok helyütt kipusztult. Rendszeresen előfordul még Magyarországon és Dél-Európában valamint Szlovákia keleti részén. Ritka, védett faj!
+Magyarországon elsősorban a Dunántúli-középhegység, a Mecsek, illetve a Dunántúli-dombság bükköseiben találkozhatunk vele.
+A havasi cincér 1,5-3,8 cm hosszú. Európa egyik legszebb bogara. Sűrű, kék vagy kékesszürke szőrzete és a szárnyfedőkön, valamint az előháton látható bársonyfekete rajzolata alapján összetéveszthetetlen. A hím csápja hosszabb, mint a teste, a nőstényé körülbelül testhosszúságú. A csápok ízeinek végét fekete szőrkoszorú övezi.
+A havasi cincér dombságok és középhegységek öreg lomberdeiben található meg. Közép-Európában bükkön él, délen kőrisen, dión és gyertyánon is.
+A nőstény elhalt, de napsütötte bükktörzsek meglazult kérge alá rakja petéit. A lárvák több év múlva néhány centiméter mélyen a törzs felszíne alatt bábozódnak be. Az imágók júniustól szeptemberig láthatók bükkfarakásokon, elhalt bükkfákon. A hímek a nappali forróságban különösen aktívak, és hevesen védelmezik a területüket. Ilyenkor repülnek is. A nőstények kevésbé mozgékonyak.</string>
+    <string name="fauna_8_description">A szárnyfesztávolsága 32-35 mm.
+A hím elülső szárnyának felszíne bronzfényű sötétvörös, némi ibolyás fénnyel, a felső és a külső szegély fekete kerete széles, a hátulsó szárnyon pedig az alapszín a szárny közepére korlátozódik. A sejtvégi foltocska mindkét szárnyon megvan.
+A nőstény sötét barnásfekete, elülső szárnyán a középtéren vörösesbarna behintés van, rendszerint jól látszik a vörös szegélyszalag is, a hátulsón ezenkívül a külső pontsor is. A fonák barnásszürke, a hím elülső szárnyán kevés, a nőstényén több sárgásvörös borítással, a szegélyfoltsorból többnyire csak a belső ívfoltokat helyettesítő pontsor látszik. A nőstény hátulsó szárnya melegebb színű, mint a hímé, azonkívül a szegélyfoltsor vörös szalagja is élénkebb és teljesebb.
+</string>
+    <string name="fauna_9_description">Svédország déli részétől kezdődően csaknem egész Európában otthonos; dél felé az Atlasz-hegységig és a Kanári-szigetekig terjed. A Kárpát-medencében rendszeres fészkelő. Dél-Ázsiáig kóborol. Gyors folyású patakoknál él.
+Testhossza 18-19 centiméter, szárnya fesztávolsága 25-27 centiméter, testtömege 14-22 gramm. Tavasszal a hím felsőteste hamuszürke, hasi része pedig kénsárga, torka fekete. A szürke színű felsőrész és a fekete torokfolt között hosszant futó fehér sáv húzódik, ugyancsak fehér sáv van a szem fölött. A szárnyakon két, alig feltűnő világosszürke szalagja van. Őszi ruházata fakóbb, torokfoltja fehéres. A szem sötétbarna, a csőr fekete, a láb szaruszínű vagy élénk világosbarna.
+Rovarokkal táplálkozik. Állandó, de télen kóborol.
+Hegyi patakok mentén, sziklafal üregeibe készíti fészkét. Fészekalja 3-6 tojásból áll, melyen 11-14 napig kotlik.
+</string>
+    <string name="fauna_10_description">A kárpáti hiúzok Magyarország, Románia, Szlovákia, Lengyelország, Ukrajna és a balkáni országok erdőségeiben élnek. A nagy kiterjedésű, sűrű erdőket kedvelik, különösen akkor, ha az erdő sziklás tisztásokat is rejt. Napjainkra Magyarország hiúzállománya katasztrofális mértékben megritkult.
+A hiúzok testhossza 1 m körül mozog, további 15-25 cm-t tesz ki az állat farka. Marmagassága átlagosan 70 cm. Pettyes bundája és sajátos szakálla mellett egyik feltűnő jellegzetessége a fülek hegyén viselt szőrbojt. Hallása, tapintása fejlett, remekül rejtőzködik. Hosszú végtagjai és izmos teste még a mély hóban is lehetővé teszi, hogy egyetlen, 3-4 m-es ugrással támadja meg áldozatát. Erős, éles karmú mancsa a sikeres zsákmányfogást segíti.
+Aktív ragadozó, különféle madarak, kisrágcsálók éppúgy szerepelnek étlapján, mint őzek, rókakölykök, szarvasborjak vagy vadmalacok. Magányosan élő állat, változatos méretű, 10-100 négyzetkilométer kiterjedésű területet birtokol. A terület központjában, földi üregekben vagy sziklahasadékokban rendezi be vackát.
+A párok csak a párzási időszakban, január és április között vannak együtt. A vemhességi idő 70 nap, az utódok száma ellésenként 2-3 szokott lenni. A kölykök 2-3 éves korukban válnak ivaréretté. Várható élettartamuk vadon 10-12 év.
+</string>
+
+
+    <!-- FLORA -->
+    <!-- FLORA -->
+
+    <string name="flora_1_name">Adriai sallangvirág</string>
+    <string name="flora_2_name">Bajuszvirág</string>
+    <string name="flora_3_name">Boldogasszony papucsa</string>
+    <string name="flora_4_name">Csipkebogyó</string>
+    <string name="flora_5_name">Elbai nőszőfű</string>
+    <string name="flora_6_name">Északi sárkányfű</string>
+    <string name="flora_7_name">Gerbics</string>
+    <string name="flora_8_name">Légybangó</string>
+    <string name="flora_9_name">Méhbangó</string>
+    <string name="flora_10_name">Moldvai sisakvirág</string>
+    <string name="flora_11_name">Sárga ibolya</string>
+    <string name="flora_12_name">Szártalan bábakalács</string>
+    <string name="flora_13_name">Szúnyoglábú bibircsvirág</string>
+    <string name="flora_14_name">Tüzes liliom</string>
+    <string name="flora_15_name">Vitézvirág</string>
+
+    <string name="flora_1_latin_name"></string>
+    <string name="flora_2_latin_name"></string>
+    <string name="flora_3_latin_name"></string>
+    <string name="flora_4_latin_name"></string>
+    <string name="flora_5_latin_name"></string>
+    <string name="flora_6_latin_name"></string>
+    <string name="flora_7_latin_name"></string>
+    <string name="flora_8_latin_name"></string>
+    <string name="flora_9_latin_name"></string>
+    <string name="flora_10_latin_name"></string>
+    <string name="flora_11_latin_name"></string>
+    <string name="flora_12_latin_name"></string>
+    <string name="flora_13_latin_name"></string>
+    <string name="flora_14_latin_name"></string>
+    <string name="flora_15_latin_name"></string>
+
+    <string name="flora_1_description"></string>
+    <string name="flora_2_description"></string>
+    <string name="flora_3_description"></string>
+    <string name="flora_4_description"></string>
+    <string name="flora_5_description"></string>
+    <string name="flora_6_description"></string>
+    <string name="flora_7_description"></string>
+    <string name="flora_8_description"></string>
+    <string name="flora_9_description"></string>
+    <string name="flora_10_description"></string>
+    <string name="flora_11_description"></string>
+    <string name="flora_12_description"></string>
+    <string name="flora_13_description"></string>
+    <string name="flora_14_description"></string>
+    <string name="flora_15_description"></string>
+
+
+    <!-- FUNGHI -->
+    <!-- FUNGHI -->
+
+    <!-- POI -->
+    <!-- POI -->
+
+    <string name="poi_1_name">Szomolyai Kaptárkövek</string>
+    <string name="poi_2_name">Nagymező</string>
+    <string name="poi_3_name">Fehérkőlápa</string>
+    <string name="poi_4_name">Hámori-tó</string>
+    <string name="poi_5_name">Anna-barlang</string>
+    <string name="poi_6_name">István-barlang</string>
+    <string name="poi_7_name">Szeleta-barlang</string>
+    <string name="poi_8_name">Függőkert, Lillafüred</string>
+    <string name="poi_9_name">Fátyol-vízesés</string>
+    <string name="poi_10_name">Istállós-kői-barlang</string>
+    <string name="poi_11_name">Bél-kő</string>
+    <string name="poi_12_name">Dédesi-vár</string>
+    <string name="poi_13_name">Jávorkút</string>
+    <string name="poi_14_name">Csipkéskút</string>
+    <string name="poi_15_name">Bánkút</string>
+    <string name="poi_16_name">Bélapátfalvi kolostorrom</string>
+    <string name="poi_17_name">Oszlai tájház, Cserépfalu</string>
+    <string name="poi_18_name">Milleniumi kilátótorony, Szilvásvárad</string>
+
+    <string name="poi_1_description"><p><strong>Asdfasdfasdf</strong></p>
+<p><strong>Asdfsad</strong></p>
+<p><strong>Asdf</strong>asdfasdfasdfas</p>
+<p>Asdfasdf</p></string>
+    <string name="poi_2_description"></string>
+    <string name="poi_3_description"></string>
+    <string name="poi_4_description"></string>
+    <string name="poi_5_description"></string>
+    <string name="poi_6_description"></string>
+    <string name="poi_7_description"></string>
+    <string name="poi_8_description"></string>
+    <string name="poi_9_description"></string>
+    <string name="poi_10_description"></string>
+    <string name="poi_11_description"></string>
+    <string name="poi_12_description"></string>
+    <string name="poi_13_description"></string>
+    <string name="poi_14_description"></string>
+    <string name="poi_15_description"></string>
+    <string name="poi_16_description"></string>
+    <string name="poi_17_description"></string>
+    <string name="poi_18_description"></string>
+
+    <string name="poi_1_latitude">47.892307</string>
+    <string name="poi_2_latitude">48.07908</string>
+    <string name="poi_3_latitude">48.0963888888888</string>
+    <string name="poi_4_latitude">48.1067</string>
+    <string name="poi_5_latitude">48.10508</string>
+    <string name="poi_6_latitude">48.09914</string>
+    <string name="poi_7_latitude">48.10817</string>
+    <string name="poi_8_latitude">48.10515</string>
+    <string name="poi_9_latitude">48.07602</string>
+    <string name="poi_10_latitude">48.07155</string>
+    <string name="poi_11_latitude">48.0457135</string>
+    <string name="poi_12_latitude">48.13385</string>
+    <string name="poi_13_latitude">48.098</string>
+    <string name="poi_14_latitude">48.095</string>
+    <string name="poi_15_latitude">48.0979</string>
+    <string name="poi_16_latitude">48.04936</string>
+    <string name="poi_17_latitude">47.97776</string>
+    <string name="poi_18_latitude">48.0961</string>
+
+    <string name="poi_1_longitude">20.478408</string>
+    <string name="poi_2_longitude">20.49809</string>
+    <string name="poi_3_longitude">20.62638889</string>
+    <string name="poi_4_longitude">20.6179</string>
+    <string name="poi_5_longitude">20.62491</string>
+    <string name="poi_6_longitude">20.6211</string>
+    <string name="poi_7_longitude">20.63162</string>
+    <string name="poi_8_longitude">20.62394</string>
+    <string name="poi_9_longitude">20.41022</string>
+    <string name="poi_10_longitude">20.41767</string>
+    <string name="poi_11_longitude">20.3823586</string>
+    <string name="poi_12_longitude">20.47439</string>
+    <string name="poi_13_longitude">20.5295</string>
+    <string name="poi_14_longitude">20.503</string>
+    <string name="poi_15_longitude">20.4806</string>
+    <string name="poi_16_longitude">20.36449</string>
+    <string name="poi_17_longitude">20.52382</string>
+    <string name="poi_18_longitude">20.40424</string>
+
+
+
+
+
+
+
+
+
+
 </resources>

@@ -164,7 +164,7 @@ public class MapFragment extends Fragment implements PermissionsListener {
                         mapboxMap.moveCamera(CameraUpdateFactory.newCameraPosition(
                                 new CameraPosition.Builder()
                                         .target(new LatLng(latitudes[1], longitudes[1]))  // set the camera's center position
-                                        .zoom(15)  // set the camera's zoom level
+                                        .zoom(14)  // set the camera's zoom level
                                         .tilt(20)  // set the camera's tilt
                                         .build()));
                     }
@@ -266,7 +266,7 @@ public class MapFragment extends Fragment implements PermissionsListener {
 
     @Override
     public void onExplanationNeeded(List<String> permissionsToExplain) {
-        Toast.makeText(getContext(), "This app needs location permissions in order to show its functionality.",
+        Toast.makeText(getContext(), "Az alkalmazás jogosultságot kér a helymeghatározáshoz.",
                 Toast.LENGTH_LONG).show();
     }
 
@@ -275,7 +275,7 @@ public class MapFragment extends Fragment implements PermissionsListener {
         if (granted) {
             enableLocation(true);
         } else {
-            Toast.makeText(getContext(), "You didn't grant location permissions.",
+            Toast.makeText(getContext(), "Megtagadtad a hozzáférést.",
                     Toast.LENGTH_LONG).show();
             getActivity().finish();
         }

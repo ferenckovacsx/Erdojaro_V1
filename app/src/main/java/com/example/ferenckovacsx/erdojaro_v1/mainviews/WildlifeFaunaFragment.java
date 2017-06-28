@@ -38,14 +38,16 @@ public class WildlifeFaunaFragment extends Fragment {
         faunaGridView = (GridView) faunaView.findViewById(R.id.fauna_gridview);
 
         faunaArrayList = new ArrayList<>();
-        faunaArrayList.add(new Fauna(1, "Csipkebogyó", "latinnev", R.drawable.csipkebogyo, "Ez itt a csipkebogyó"));
-        faunaArrayList.add(new Fauna(2, "Csipkebogyó", "latinnev", R.drawable.csipkebogyo, "Ez itt a csipkebogyó"));
-        faunaArrayList.add(new Fauna(3, "Csipkebogyó", "latinnev", R.drawable.csipkebogyo, "Ez itt a csipkebogyó"));
-        faunaArrayList.add(new Fauna(4, "Csipkebogyó", "latinnev", R.drawable.csipkebogyo, "Ez itt a csipkebogyó"));
-        faunaArrayList.add(new Fauna(5, "Csipkebogyó", "latinnev", R.drawable.csipkebogyo, "Ez itt a csipkebogyó"));
-        faunaArrayList.add(new Fauna(6, "Csipkebogyó", "latinnev", R.drawable.csipkebogyo, "Ez itt a csipkebogyó"));
-        faunaArrayList.add(new Fauna(7, "Csipkebogyó", "latinnev", R.drawable.csipkebogyo, "Ez itt a csipkebogyó"));
-        faunaArrayList.add(new Fauna(8, "Csipkebogyó", "latinnev", R.drawable.csipkebogyo, "Ez itt a csipkebogyó"));
+        faunaArrayList.add(new Fauna(1, getResources().getString(R.string.fauna_1_name), getResources().getString(R.string.fauna_1_latin_name), R.drawable.fauna_1_thumbnail, getResources().getString(R.string.fauna_1_description)));
+        faunaArrayList.add(new Fauna(2, getResources().getString(R.string.fauna_2_name), getResources().getString(R.string.fauna_2_latin_name), R.drawable.fauna_2_thumbnail, getResources().getString(R.string.fauna_2_description)));
+        faunaArrayList.add(new Fauna(3, getResources().getString(R.string.fauna_3_name), getResources().getString(R.string.fauna_3_latin_name), R.drawable.fauna_3_thumbnail, getResources().getString(R.string.fauna_3_description)));
+        faunaArrayList.add(new Fauna(4, getResources().getString(R.string.fauna_4_name), getResources().getString(R.string.fauna_4_latin_name), R.drawable.fauna_4_thumbnail, getResources().getString(R.string.fauna_4_description)));
+        faunaArrayList.add(new Fauna(5, getResources().getString(R.string.fauna_5_name), getResources().getString(R.string.fauna_5_latin_name), R.drawable.fauna_5_thumbnail, getResources().getString(R.string.fauna_5_description)));
+        faunaArrayList.add(new Fauna(6, getResources().getString(R.string.fauna_6_name), getResources().getString(R.string.fauna_6_latin_name), R.drawable.fauna_6_thumbnail, getResources().getString(R.string.fauna_6_description)));
+        faunaArrayList.add(new Fauna(7, getResources().getString(R.string.fauna_7_name), getResources().getString(R.string.fauna_7_latin_name), R.drawable.fauna_7_thumbnail, getResources().getString(R.string.fauna_7_description)));
+        faunaArrayList.add(new Fauna(8, getResources().getString(R.string.fauna_8_name), getResources().getString(R.string.fauna_8_latin_name), R.drawable.fauna_8_thumbnail, getResources().getString(R.string.fauna_8_description)));
+        faunaArrayList.add(new Fauna(9, getResources().getString(R.string.fauna_9_name), getResources().getString(R.string.fauna_9_latin_name), R.drawable.fauna_9_thumbnail, getResources().getString(R.string.fauna_9_description)));
+        faunaArrayList.add(new Fauna(10, getResources().getString(R.string.fauna_10_name), getResources().getString(R.string.fauna_10_latin_name), R.drawable.fauna_10_thumbnail, getResources().getString(R.string.fauna_10_description)));
 
         faunaImageList = new ArrayList<>();
         for (int i = 0; i < faunaArrayList.size(); i++) {
