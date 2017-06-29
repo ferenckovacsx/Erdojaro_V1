@@ -25,7 +25,9 @@ public class WildlifeFaunaFragment extends Fragment {
     private static WildlifeGridAdapter adapter;
     ArrayList<Fauna> faunaArrayList;
     ArrayList<Integer> faunaImageList;
+    ArrayList<String> faunaNameList;
     int[] faunaImageArray;
+    String[] faunaNameArray;
 
     private OnFragmentInteractionListener mListener;
 
@@ -54,14 +56,24 @@ public class WildlifeFaunaFragment extends Fragment {
             faunaImageList.add(faunaArrayList.get(i).getImageID());
         }
 
+        faunaNameList = new ArrayList<>();
+        for (int i = 0; i < faunaArrayList.size(); i++){
+            faunaNameList.add(faunaArrayList.get(i).getName());
+        }
+
         //faunaImageArray = faunaImageList.toArray(faunaImageArray);
         faunaImageArray = convertIntegers(faunaImageList);
+        faunaNameArray = faunaNameList.toArray(new String[0]);
+
 
         Log.i("fauna image", "list: " + faunaImageList);
         Log.i("fauna image", "array: " + faunaImageArray);
         Log.i("faunaFragment", "lista" + faunaArrayList.toString());
 
-        adapter = new WildlifeGridAdapter(getActivity().getApplicationContext(), faunaImageArray);
+        Log.i("fauna name", "list: " + faunaNameList);
+        Log.i("fauna name", "array: " + faunaNameArray);
+
+        adapter = new WildlifeGridAdapter(getActivity().getApplicationContext(), faunaImageArray, faunaNameArray);
 
         faunaGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -71,29 +83,26 @@ public class WildlifeFaunaFragment extends Fragment {
 
                 Log.i("selectedFaunaItem", "Item: " + selectedFloraItem);
 
-                int floraId = selectedFloraItem.getId();
-                int floraImageId = selectedFloraItem.getImageID();
-                String floraName = selectedFloraItem.getName();
-                String floraLatinName = selectedFloraItem.getLatinName();
-                String floraDescription = selectedFloraItem.getDescription();
-
-                Log.i("floraGridOnItemClick", "name: " + floraName);
-                Log.i("floraGridOnItemClick", "latin: " + floraLatinName);
-                Log.i("floraGridOnItemClick", "desc: " + floraDescription);
+                int faunaId = selectedFloraItem.getId();
+                int faunaImageId = selectedFloraItem.getImageID();
+                String faunaName = selectedFloraItem.getName();
+                String faunaLatinName = selectedFloraItem.getLatinName();
+                String faunaDescription = selectedFloraItem.getDescription();
 
                 Bundle fragmentArgs = new Bundle();
-                fragmentArgs.putInt("wildlife_id", floraId);
-                fragmentArgs.putInt("wildlife_imageId", floraImageId);
-                fragmentArgs.putString("wildlife_title", floraName);
-                fragmentArgs.putString("wildlife_latin_title", floraLatinName);
-                fragmentArgs.putString("wildlife_description", floraDescription);
+                fragmentArgs.putString("wildlife_type", "fauna");
+                fragmentArgs.putInt("wildlife_id", faunaId);
+                fragmentArgs.putInt("wildlife_imageId", faunaImageId);
+                fragmentArgs.putString("wildlife_title", faunaName);
+                fragmentArgs.putString("wildlife_latin_title", faunaLatinName);
+                fragmentArgs.putString("wildlife_description", faunaDescription);
 
                 WildlifeItemFragment wildlifeItemFragment = new WildlifeItemFragment();
                 wildlifeItemFragment.setArguments(fragmentArgs);
 
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.child_fragment_container, wildlifeItemFragment);
-                transaction.addToBackStack("discoverPoiFragment");
+                transaction.replace(R.id.child_fragment_container, wildlifeItemFragment, "faunaFragment");
+                transaction.addToBackStack("faunaFragment");
                 transaction.commit();
             }
         });

@@ -26,7 +26,9 @@ public class WildlifeFunghiFragment extends Fragment {
     private static WildlifeGridAdapter adapter;
     ArrayList<Funghi> funghiList;
     ArrayList<Integer> funghiImageList;
+    ArrayList<String> funghiNameList;
     int[] funghiImageArray;
+    String[] funghiNameArray;
 
     private OnFragmentInteractionListener mListener;
 
@@ -53,14 +55,21 @@ public class WildlifeFunghiFragment extends Fragment {
             funghiImageList.add(funghiList.get(i).getImageID());
         }
 
+        funghiNameList = new ArrayList<>();
+        for (int i = 0; i < funghiList.size(); i++){
+            funghiNameList.add(funghiList.get(i).getName());
+        }
+
         //faunaImageArray = faunaImageList.toArray(faunaImageArray);
         funghiImageArray = convertIntegers(funghiImageList);
+        funghiNameArray = funghiNameList.toArray(new String[0]);
+
 
         Log.i("funghi image", "list: " + funghiImageList);
         Log.i("funghi image", "array: " + funghiImageArray);
         Log.i("funghiGrid", "lista" + funghiList.toString());
 
-        adapter = new WildlifeGridAdapter(getActivity().getApplicationContext(), funghiImageArray);
+        adapter = new WildlifeGridAdapter(getActivity().getApplicationContext(), funghiImageArray, funghiNameArray);
 
         funghiGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -81,6 +90,7 @@ public class WildlifeFunghiFragment extends Fragment {
                 Log.i("floraGridOnItemClick", "desc: " + floraDescription);
 
                 Bundle fragmentArgs = new Bundle();
+                fragmentArgs.putString("wildlife_type", "funghi");
                 fragmentArgs.putInt("wildlife_id", floraId);
                 fragmentArgs.putInt("wildlife_imageId", floraImageId);
                 fragmentArgs.putString("wildlife_title", floraName);
@@ -91,8 +101,8 @@ public class WildlifeFunghiFragment extends Fragment {
                 wildlifeItemFragment.setArguments(fragmentArgs);
 
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.child_fragment_container, wildlifeItemFragment);
-                transaction.addToBackStack("discoverPoiFragment");
+                transaction.replace(R.id.child_fragment_container, wildlifeItemFragment, "funghiFragment");
+                transaction.addToBackStack("funghiFragment");
                 transaction.commit();
             }
         });

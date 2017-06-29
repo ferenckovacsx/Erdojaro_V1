@@ -362,7 +362,7 @@ public class DownloadMapFragment extends Fragment {
 
                 // Build a dialog containing the list of regions
                     AlertDialog dialog = new AlertDialog.Builder(getContext())
-                        .setTitle("Letöltött térképek")
+                        .setTitle("Letöltött térképeid")
                         .setSingleChoiceItems(items, 0, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {

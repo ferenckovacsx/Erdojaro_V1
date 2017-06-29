@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.ferenckovacsx.erdojaro_v1.R;
 import com.example.ferenckovacsx.erdojaro_v1.javabeans.Flora;
@@ -20,22 +21,26 @@ public class WildlifeGridAdapter extends BaseAdapter {
 
     private Context mContext;
     private ArrayList<Flora> dataSet;
-    int[] imageId;
+    int[] wildlifeImageId;
+    String[] wildlifeNames;
+    ImageView wildlifeImageView;
+    TextView wildlifeTextView;
 
     private static class ViewHolder {
 
-        ImageView floraImageView;
+
     }
 
-    public WildlifeGridAdapter(Context context, int[] floraImages) {
+    public WildlifeGridAdapter(Context context, int[] wildlifeImages, String[] wildlifeNames) {
         mContext = context;
-        this.imageId = floraImages;
+        this.wildlifeImageId = wildlifeImages;
+        this.wildlifeNames = wildlifeNames;
     }
 
     @Override
     public int getCount() {
         // TODO Auto-generated method stub
-        return imageId.length;
+        return wildlifeImageId.length;
     }
 
     @Override
@@ -66,9 +71,11 @@ public class WildlifeGridAdapter extends BaseAdapter {
         } else {
             grid = (View) convertView;
         }
-        ImageView imageView = (ImageView) grid.findViewById(R.id.wildlife_grid_image);
-        imageView.setImageResource(imageId[position]);
-
+        wildlifeImageView = (ImageView) grid.findViewById(R.id.wildlife_grid_image);
+        wildlifeTextView = grid.findViewById(R.id.wildlife_grid_textview);
+        wildlifeImageView.setImageResource(wildlifeImageId[position]);
+        wildlifeImageView.setImageResource(wildlifeImageId[position]);
+        wildlifeTextView.setText(wildlifeNames[position]);
         return grid;
     }
 }

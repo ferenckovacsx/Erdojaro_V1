@@ -4,8 +4,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -61,6 +63,13 @@ public class DiscoverTrips extends Fragment {
 
     DiscoverTrips discoverTripsFragment;
 
+    FragmentManager fragmentManager;
+
+    public static DiscoverTrips newInstance() {
+        DiscoverTrips fragment = new DiscoverTrips();
+        return fragment;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -68,26 +77,6 @@ public class DiscoverTrips extends Fragment {
         View tripView = inflater.inflate(R.layout.fragment_discover_trips, container, false);
 
         discoverTripsFragment = this;
-
-        ArrayList<Double> waypointsLong = new ArrayList<>();
-        ArrayList<Double> waypointsLat = new ArrayList<>();
-        XMLTripWaypoints xmlWayPointsPOJO;
-
-        try {
-            XMLParser parser = new XMLParser();
-            InputStream is = mainContext.getAssets().open("trip_20_waypoints.xml");
-            xmlWayPointsPOJO = parser.parseXML(is);
-            Log.i("DiscoverTrips", "POJO: " + xmlWayPointsPOJO.toString());
-            waypointsLat = xmlWayPointsPOJO.getLatitudesList();
-            waypointsLong = xmlWayPointsPOJO.getLongitudesList();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-        longitudesPrimitiveArray = convertDoubleToPrimitive(waypointsLong);
-        latitudesPrimitiveArray = convertDoubleToPrimitive(waypointsLat);
 
         tripListFromFile = readTripFromFile();
 
@@ -97,13 +86,13 @@ public class DiscoverTrips extends Fragment {
 
         tripList = new ArrayList<>();
         totalTripList = new ArrayList<>();
-        tripList.add(new Trip(1, "Bükkszentkereszt - \nHoldviola Tanösvény", R.drawable.holdviola, 3, 26, false, true, true, false, true, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
-        tripList.add(new Trip(2, "Bükkszentkereszt - \nHoldviola Tanösvény", R.drawable.holdviola, 3, 26, false, true, true, false, true, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
-        tripList.add(new Trip(3, "Bükkszentkereszt - \nketto", R.drawable.holdviola, 14, 26, false, true, true, false, true, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
-        tripList.add(new Trip(4, "Bükkszentkereszt - \nharom", R.drawable.holdviola, 3, 26, false, true, true, false, true, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
-        tripList.add(new Trip(5, "Bükkszentkereszt - \nnegy", R.drawable.holdviola, 13, 26, false, true, true, false, true, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
-        tripList.add(new Trip(6, "Bükkszentkereszt - \not", R.drawable.holdviola, 3, 26, false, true, true, false, true, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
-        tripList.add(new Trip(7, "Bükkszentkereszt - \nhat", R.drawable.holdviola, 1, 26, false, true, true, true, false, "Ez itt a nagymezo", latitudesPrimitiveArray, longitudesPrimitiveArray));
+        tripList.add(new Trip(1, getString(R.string.trip_1_name), R.drawable.trip_1, 3.2, 1, true, true, true, false, true, getString(R.string.trip_1_description), getTripLatitudes(1), getTripLongitudes(1)));
+        tripList.add(new Trip(2, getString(R.string.trip_2_name), R.drawable.trip_2, 0.8, 26, false, true, true, false, true, getString(R.string.trip_2_description), getTripLatitudes(2), getTripLongitudes(2)));
+        tripList.add(new Trip(3, getString(R.string.trip_3_name), R.drawable.trip_3, 9, 26, true, true, true, false, true, getString(R.string.trip_3_description), getTripLatitudes(3), getTripLongitudes(3)));
+        tripList.add(new Trip(4, getString(R.string.trip_4_name), R.drawable.trip_4, 2.5, 26, false, false, true, false, true, getString(R.string.trip_4_description), getTripLatitudes(4), getTripLongitudes(4)));
+        tripList.add(new Trip(5, getString(R.string.trip_5_name), R.drawable.trip_5, 4.2, 26, true, true, true, false, true, getString(R.string.trip_5_description), getTripLatitudes(5), getTripLongitudes(5)));
+        tripList.add(new Trip(6, getString(R.string.trip_6_name), R.drawable.trip_6, 3, 26, true, true, true, false, true, getString(R.string.trip_6_description), null, null));
+        tripList.add(new Trip(7, getString(R.string.trip_7_name), R.drawable.trip_7, 3, 26, true, true, true, true, false, "Ez itt a nagymezo", null, null));
 
         tripList.addAll(tripListFromFile);
 
@@ -151,9 +140,12 @@ public class DiscoverTrips extends Fragment {
                 TripFragment tripFragment = new TripFragment();
                 tripFragment.setArguments(fragmentArgs);
 
+                fragmentManager = getChildFragmentManager();
+                fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_container, tripFragment);
-                transaction.addToBackStack(null);
+                transaction.replace(R.id.fragment_container, tripFragment, "tripFragment");
+                transaction.addToBackStack("tripFragmentBackStack");
                 transaction.commit();
             }
         });
@@ -209,11 +201,6 @@ public class DiscoverTrips extends Fragment {
             np.printStackTrace();
         }
 
-        Log.i("DiscoverTrips", "onDismissHard" + hard);
-        Log.i("DiscoverTrips", "onDismissEasy" + easy);
-        Log.i("DiscoverTrips", "onDismissTanosveny" + tanosveny);
-        Log.i("DiscoverTrips", "onDismissCycling" + cycling);
-
         super.onActivityCreated(savedInstanceState);
     }
 
@@ -260,8 +247,28 @@ public class DiscoverTrips extends Fragment {
 
             }
         });
+
+
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        Fragment prev = getFragmentManager().findFragmentByTag("dialog");
+        if (prev != null) {
+            ft.remove(prev);
+        }
+        ft.addToBackStack(null);
+
+        // Create and show the dialog.
+        //DialogFragment newFragment = MyDialogFragment.newInstance(mStackLevel);
         dialogFragment.setTargetFragment(discoverTripsFragment, FILTERDIALOG_REQUEST_CODE);
-        dialogFragment.show(getChildFragmentManager(), "sometag");
+        dialogFragment.show(ft, "dialog");
+
+
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+//            getActivity().getFragmentManager().beginTransaction().show(dialogFrag, "dialog").commit();
+//        else
+//            getChildFragmentManager().beginTransaction().add(dialogFrag,"dialog").commit();
+//
+//        dialogFragment.setTargetFragment(discoverTripsFragment, FILTERDIALOG_REQUEST_CODE);
+//        dialogFragment.show(getChildFragmentManager(), null);
 
     }
 
@@ -448,5 +455,45 @@ public class DiscoverTrips extends Fragment {
 
     public static boolean isBetween(double value, int min, int max) {
         return ((value >= min) && (value <= max));
+    }
+
+    public static double[] getTripLatitudes(int tripId) {
+        // ArrayList<Double> waypointsLong = new ArrayList<>();
+        ArrayList<Double> waypointsLat = new ArrayList<>();
+        XMLTripWaypoints xmlWayPointsPOJO;
+
+        try {
+            XMLParser parser = new XMLParser();
+            InputStream is = mainContext.getAssets().open("trip_" + tripId + "_waypoints.xml");
+            xmlWayPointsPOJO = parser.parseXML(is);
+            Log.i("DiscoverTrips", "Trip Id POJO: " + xmlWayPointsPOJO.toString());
+            waypointsLat = xmlWayPointsPOJO.getLatitudesList();
+            //waypointsLong = xmlWayPointsPOJO.getLongitudesList();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return convertDoubleToPrimitive(waypointsLat);
+    }
+
+    public static double[] getTripLongitudes(int tripId) {
+        ArrayList<Double> waypointsLong = new ArrayList<>();
+        //ArrayList<Double> waypointsLat = new ArrayList<>();
+        XMLTripWaypoints xmlWayPointsPOJO;
+
+        try {
+            XMLParser parser = new XMLParser();
+            InputStream is = mainContext.getAssets().open("trip_" + tripId + "_waypoints.xml");
+            xmlWayPointsPOJO = parser.parseXML(is);
+            Log.i("DiscoverTrips", "Trip Id POJO: " + xmlWayPointsPOJO.toString());
+            //waypointsLat = xmlWayPointsPOJO.getLatitudesList();
+            waypointsLong = xmlWayPointsPOJO.getLongitudesList();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return convertDoubleToPrimitive(waypointsLong);
     }
 }

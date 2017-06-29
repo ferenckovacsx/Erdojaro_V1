@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.ferenckovacsx.erdojaro_v1.CircleTransform;
 import com.example.ferenckovacsx.erdojaro_v1.R;
 import com.example.ferenckovacsx.erdojaro_v1.javabeans.Trip;
 import com.squareup.picasso.Picasso;
@@ -104,18 +105,20 @@ public class TripListAdapter extends ArrayAdapter<Trip> {
 
         if (tripItem.getImageId() != 0) {
             Picasso.with(mainContext).cancelRequest(viewHolder.tripImage);
-            viewHolder.tripImage.setImageResource(tripItem.getImageId());
+            Picasso.with(mainContext).load(tripItem.getImageId()).transform(new CircleTransform()).into(viewHolder.tripImage);
+            //viewHolder.tripImage.setImageResource(tripItem.getImageId());
         } else {
             Picasso picasso = Picasso.with(mainContext);
-            picasso.setIndicatorsEnabled(true);
+            picasso.setIndicatorsEnabled(false);
 
             Picasso.with(mainContext)
                     .load(tripItem.getImageUrl())
                     .into(viewHolder.tripImage);
         }
 
-        viewHolder.tripDistance.setText(String.valueOf(tripItem.getDistance()));
-        viewHolder.tripFavoriteCount.setText(String.valueOf(tripItem.getFavoriteCount()));
+        String distanceText = String.valueOf(tripItem.getDistance()) + "km";
+        viewHolder.tripDistance.setText(distanceText);
+        //viewHolder.tripFavoriteCount.setText(String.valueOf(tripItem.getFavoriteCount()));
         viewHolder.tripTitle.setText(tripItem.getName());
 
 

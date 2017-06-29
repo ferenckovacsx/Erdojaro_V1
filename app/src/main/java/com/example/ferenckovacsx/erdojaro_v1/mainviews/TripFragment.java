@@ -5,11 +5,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ferenckovacsx.erdojaro_v1.R;
 import com.squareup.picasso.Picasso;
@@ -84,16 +86,20 @@ public class TripFragment extends Fragment {
                 fragmentArgs.putDoubleArray("trip_longitudes", longitudes);
                 fragmentArgs.putDoubleArray("trip_latitudes", latitudes);
 
-                MapFragment mapFragment = new MapFragment();
-                mapFragment.setArguments(fragmentArgs);
+                if (latitudes != null || longitudes != null) {
+                    MapFragment mapFragment = new MapFragment();
+                    mapFragment.setArguments(fragmentArgs);
 
-                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_container, mapFragment);
-                transaction.addToBackStack("tripFragment");
-                transaction.commit();
+                    FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                    transaction.replace(R.id.fragment_container, mapFragment, "mapTripFragment");
+                    //transaction.addToBackStack("tripFragment");
+                    transaction.commit();
 
-                bottomNavigationView.getMenu().getItem(1).setChecked(true);
-
+                    bottomNavigationView.getMenu().getItem(1).setChecked(true);
+                } else {
+                    Toast.makeText(getActivity(), "Nincs elérhető útvonaltérkép.",
+                            Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

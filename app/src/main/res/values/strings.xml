@@ -96,7 +96,7 @@ A párok csak a párzási időszakban, január és április között vannak egy�
     <string name="flora_4_name">Csipkebogyó</string>
     <string name="flora_5_name">Elbai nőszőfű</string>
     <string name="flora_6_name">Északi sárkányfű</string>
-    <string name="flora_7_name">Gerbics</string>
+    <string name="flora_7_name">Gérbics</string>
     <string name="flora_8_name">Légybangó</string>
     <string name="flora_9_name">Méhbangó</string>
     <string name="flora_10_name">Moldvai sisakvirág</string>
@@ -105,38 +105,132 @@ A párok csak a párzási időszakban, január és április között vannak egy�
     <string name="flora_13_name">Szúnyoglábú bibircsvirág</string>
     <string name="flora_14_name">Tüzes liliom</string>
     <string name="flora_15_name">Vitézvirág</string>
+    <string name="flora_16_name">Tarka Imola</string>
+    <string name="flora_17_name">Daravirág</string>
+    <string name="flora_18_name">Hóvirág</string>
+    <string name="flora_19_name">Gumós Nadálytő</string>
+    <string name="flora_20_name">Bársonyos kakukkszegfű</string>
+    <string name="flora_21_name">Tatárvirág</string>
+    <string name="flora_22_name">Széleslevelű harangvirág</string>
+    <string name="flora_23_name">Nagy pacsirtafű</string>
+    <string name="flora_24_name">Borsikafű</string>
+    <string name="flora_25_name">Parlagi rózsa</string>
+    <string name="flora_26_name">Kónya vicsorgó</string>
 
-    <string name="flora_1_latin_name"></string>
-    <string name="flora_2_latin_name"></string>
-    <string name="flora_3_latin_name"></string>
-    <string name="flora_4_latin_name"></string>
-    <string name="flora_5_latin_name"></string>
-    <string name="flora_6_latin_name"></string>
-    <string name="flora_7_latin_name"></string>
-    <string name="flora_8_latin_name"></string>
-    <string name="flora_9_latin_name"></string>
-    <string name="flora_10_latin_name"></string>
-    <string name="flora_11_latin_name"></string>
-    <string name="flora_12_latin_name"></string>
-    <string name="flora_13_latin_name"></string>
-    <string name="flora_14_latin_name"></string>
-    <string name="flora_15_latin_name"></string>
+    <string name="flora_1_latin_name">Himantoglossum adriaticum</string>
+    <string name="flora_2_latin_name">Epipogium aphyllum</string>
+    <string name="flora_3_latin_name">Salvia pratensis</string>
+    <string name="flora_4_latin_name">Rosa canina</string>
+    <string name="flora_5_latin_name">Epipactis albensis</string>
+    <string name="flora_6_latin_name">Dracocephalum ruyschiana</string>
+    <string name="flora_7_latin_name">Limodorum abortivum</string>
+    <string name="flora_8_latin_name">Ophrys insectifera</string>
+    <string name="flora_9_latin_name">Ophrys apifera</string>
+    <string name="flora_10_latin_name">Aconitum</string>
+    <string name="flora_11_latin_name">Viola biflora</string>
+    <string name="flora_12_latin_name">Carlina acaulis</string>
+    <string name="flora_13_latin_name">Gymnadenia conopsea</string>
+    <string name="flora_14_latin_name">Lilium bulbiferum</string>
+    <string name="flora_15_latin_name">Anacamptis pyramidalis</string>
+    <string name="flora_16_latin_name">Centaurea triumfettii</string>
+    <string name="flora_17_latin_name">Draba</string>
+    <string name="flora_18_latin_name">Galanthus</string>
+    <string name="flora_19_latin_name">Symphytum tuberosum</string>
+    <string name="flora_20_latin_name">Lychnis coronaria</string>
+    <string name="flora_21_latin_name">Iberis</string>
+    <string name="flora_22_latin_name">Campanula latifolia</string>
+    <string name="flora_23_latin_name">Polygala major</string>
+    <string name="flora_24_latin_name">Satureja hortensis</string>
+    <string name="flora_25_latin_name">Rosa gallica</string>
+    <string name="flora_26_latin_name">Lathraea squamaria</string>
 
-    <string name="flora_1_description"></string>
-    <string name="flora_2_description"></string>
-    <string name="flora_3_description"></string>
-    <string name="flora_4_description"></string>
-    <string name="flora_5_description"></string>
-    <string name="flora_6_description"></string>
-    <string name="flora_7_description"></string>
-    <string name="flora_8_description"></string>
-    <string name="flora_9_description"></string>
-    <string name="flora_10_description"></string>
-    <string name="flora_11_description"></string>
-    <string name="flora_12_description"></string>
-    <string name="flora_13_description"></string>
-    <string name="flora_14_description"></string>
-    <string name="flora_15_description"></string>
+    <string name="flora_1_description">30–95 cm magas évelő növény. A levelei hosszúkás-lándzsásak, 9–16 cm hosszúak, 1,5–3 cm szélesek, a felső szárlevelek felfelé kisebbednek. Virágzata laza, megnyúlt fürt. A virágok elállnak a virágzati tengelytől, számuk 10–45. A lepellevelek sisakká borulnak össze, mely kívül fehéres színű, zöld erekkel, ritkán kissé vörösesen futtatott. A mézajak mélyen háromhasábú, rendszerint halvány vörösbarna esetleg zöldesbarna, alapjánál vörösesbarna foltokkal tarkított. A középső mézajakhasáb 3,5–6 cm hosszú, csavarodott, a csúcsán 5–18 mm hosszan bevágott. A mézajak két oldalkaréja (5–) 10–25 mm hosszú. A sarkantyúja 2,5–3,5 mm hosszú, lefelé irányul. Május–júniusban virágzik.Sziklagyepek, pusztafüves lejtők, bokorerdők, száraz tölgyesek. Olaszországban, illetve Magyarországon a Keszthelyi-fennsík és a Kőszegi-hegység területén fordul elő.</string>
+    <string name="flora_2_description">"Magyarországon a Bükkben, a Bakonyban, a Kőszegi-hegységben, a Visegrádi-hegységben, a Mecsekben és a Zselicben írták le egy-egy példányát.
+A levéltelen bajuszvirág hegyvidéki növény, a nyirkos, savanyú vagy semleges kémhatású talajt kedveli. Völgyek, szurdokok aljában, patak mentén, bükkösökben, gyertyános-tölgyesekben, esetleg fenyvesekben él. Mikoheterotróf faj, vagyis a számára szükséges tápanyagokat különböző gombafajok micéliumából szerzi be, amely teljesen behálózza rizómája szöveteit. A vizsgálatok alapján a bajuszvirág susulykákhoz, fakógombákhoz, tinórukhoz, tejelőgombákhoz vagy szemölcsösgombákhoz egyaránt kapcsolódhat.
+Nagyon jó vízellátottságú helyeken évente is virágozhat, de jellemzőbb, hogy csak a csapadékos években bontja ki virágait; feljegyezték hogy akár 40-50 évig is rejtve maradhat.
+Magyarországon 1982 óta fokozottan védett"</string>
+    <string name="flora_3_description">"A mezei zsálya száraz rétek, füves lejtők, sovány gyepek, legelők, mezsgyék és cserjések lakója. A laza, bázisokban gazdag, meszet is tartalmazó talajokat kedveli. Az időszakos szárazságot is jól elviseli. Melegkedvelő faj.
+A virágzási ideje májustól júliusig, esetleg augusztusig tart. Virágait főleg méhek és poszméhek porozzák meg. Mikor nektárt keresnek a virágban, a bibeszál érintkezik a rovarok hátával, és felveszi az idegen virágról érkezett virágport.
+A mezei zsálya csaknem egész Közép-Európában igen gyakori. Ez a növény még megtalálható Európa többi részén is, Ázsia nyugati felén és Afrika északi részein is."</string>
+    <string name="flora_4_description">"A-, B1-, B2-, és K-, C-vitamin. Erősíti a vérerek falát, szilárdítja a kötőszövetet, fokozza a szervezet védekezőképességét a fertőzésekkel, betegségekkel szemben. Megelőzésként segíti a csontok erősödését, szilárdságát és a csontképződést.
+Gyűjtése:
+A csipkebogyó az első őszi fagyok idején érik be. A termés színe változó, a narancssárga színű még nem egészen érett, míg a sötét mélyvörös már puha húsú túlérett. Jóllehet a túlérett bogyó édes, C-vitamin-tartalmának nagy része ekkorra elvész.
+A csipkebogyó tápértéke akkor a legmagasabb, ha leszedése után azonnal felhasználjuk. Csipkebogyótea készítéséhez a kocsánynál vágjuk le a termést, vágjuk félbe, majd távolítsuk el a magokat és a szőrös magbelet."</string>
+    <string name="flora_5_description">"Inkább mészkerülő. Árnyas, üde, nagy légnedvességű, nyirkos talajú lomberdőkben, ligeterdőkben, telepített nyárasokban fordul elő. Ligeterdők. Patakok, folyók mellett ligeterdőkben.
+Előfordulása: Észai-középhegység, Zempléni-hegység, Cserhát, Börzsöny, Dunántúli-középhegység, Balaton-felvidék, Nyugat-Dunántúl, Kőszegi-hegység, Nagyalföld, Tiszántúl.
+"</string>
+    <string name="flora_6_description">"Az északi sárkányfű 20-60 cm magas, fűnemű évelő növény. Egy (esetenként több) szára egyenesen feláll, a szár merev, sima vagy alig pelyhes felületű, négyélű. A növény erős illatú. Egészen keskeny, ép szélű, szálas-lándzsás levelei a száron ülve, átellenesen helyezkednek el, színük mattzöld, hosszuk 3,5-6 cm. Az alsó leveleknek rövid kocsányuk lehet.
+Július-augusztusban virágzik. A virágok szárvégi, tömött álfürtben helyezkednek el. Az egyes virágok pártái 2-3 cm-esek, zigomorf, kékeslila (ritkán fehér vagy rózsaszín) színű. Az ajak sötétkéken pöttyözött, kétkaréjú. Négy porzója - két rövid és két hosszú - van.
+Termése négyosztatú makkocskatermás.Magyarországon jégkorszaki reliktum, két helyen található meg a Bükkben, ahol hidegzugos töbrök alján, szőrfüves társulásokban él.
+Száraz és hideg sztyeppék, mészköves hegyoldalak, nyílt fenyvesek és vegyes erdők, erdős sztyeppék növénye.
+Magyarországon fokozottan védett"</string>
+    <string name="flora_7_description">"20-50 (80) cm magas korhadéklakó kosborféle. A növény földfeletti részei ibolyáslila-szennyeslila futtatású, zöld színanyagot alig tartalmaz. A szár erőteljes vastag, levelei a szaprofiton életmódnak megfelelően erősen redukálódtak, pikkelyszerűek. A virágzat nyúlánk, a virágok nagyok, fürtösek. A külső lepellevelei tojásdad-lándzsásak, kívül zöldesibolyák, belül világosibolyák, sötét erekkel tarkított. A belső lepellevelek kisebbek, szálas-lándzsásak, világosibolya színűek. A mézajak hosszúkás-tojásdad és a külső leplekhez hasonlóan sötét ibolyaszínű hosszerekkel tarkított. A sarkantyú keskeny, hengeres, lefelé irányuló. Május-júniusban virágzik. A termése toktermés.
+Karsztbokorerdők, mészkedvelő tölgyesek, ritkán cseres-tölgyesek. A Balaton-felvidéki Nemzeti Parkban gyakori, valamint a Gödöllői-dombság, a Börzsöny, a Mátra és a Cserhát területén él."</string>
+    <string name="flora_8_description">"10–40 cm magas, nyúlánk növekedésű faj. A levelei hosszúkás-lándzsásak, világoszöldek. A vékony, zöld száron ülő, apró sötétbarna vagy fekete légyre emlékeztető kevés számú virágaival a legkevésbé feltűnő hazai bangófélénk. A külső lepellevelei zöldek, míg a belső szálas lepellevelek barnák. A mézajka majdnem lapos, háromkaréjú, a középső, jóval nagyobb karéj további két karéjra hasadt. A mézajak felső harmadában feltűnő, fényes, négyszögletes mintázat látható. Május-júniusban virágzik.
+Láp- és homoki rétek, sziklagyepek, lejtősztyepprétek, karsztbokorerdőkben, mészkedvelő tölgyesek tisztásain él. Szigetközben, illetve a Bükki Nemzeti Parkban is megtalálható."</string>
+    <string name="flora_9_description">"Mészkedvelő. Láprétek, pusztafüves lejtők faja. Magyarországon többek közt a Kisalföld területén él.
+20–50 cm magas, gracilis szárú faj. 6–10 cm hosszú és 2–3,5 cm széles tőlevelei hosszúkásak vagy tojásdad-lándzsásak.
+Fürtje nyúlánk, laza, 3–10 virággal. A virág külső lepellevelei rózsaszínűek vagy fehérek. A két belső, szőrös, ár alakú, zöldes rózsaszín lepellevél jóval kisebb a külsőknél (2–4 mm). Az erősen domború, barnásvörös, tojásdad mézajkat bársonyos papillák fedik; a közepén szabálytalan alakú, sárgás-barnás rajzolattal. A tövénél két rövid, tompa, szőrös púpocska nő, a mézajak erősen visszagörbült csúcsáról hegyes, kopasz függelék lóg.
+Május-júniusban virágzik."</string>
+    <string name="flora_10_description">"Fő elterjedési területük az északi félteke, és egybeesik a poszméhek (Bombus) elterjedési területével, mivel a speciális virágot csak ezek a fajok képesek beporozni. Főleg magashegységekben fordulnak elő, a Kárpátokban is több, egymáshoz nagyon hasonló fajuk él.
+Termetes, akár az egyméteres magasságot is elérő évelő növények. Leveleik szórt állásúak, tenyeresen osztottak, vagy szeldeltek. Virágaik zigomorfak, a nemzetség nevét adó sisak a színes csészelevelek összenövésével jött létre. A sisakban két hosszú nyelű mézfejtő van. A bibék a porzóknál egy héttel később érnek, ez meggátolja az önbeporzást. A poszméhek az alsóbb, idősebb virágokat termékenyítik meg először, majd a felső virágokat meglátogatva vesznek fel új virágport."</string>
+    <string name="flora_11_description">"Előfordulása: Bükk-vidék (Leány-völgy). Jégkorszaki reliktum növényünk, mely a Bükk hegység mindössze 500–700  m tszf. magasságban nő, a Kárpátokban 1500–2000  m magasságban találkozhatunk vele. Szurdokerdőben, mészkőtörmeléken él.
+Mindössze 5–12 cm-es évelő, kopasz növény. Levelei vese alakúak, hosszukkal megegyező szélesek (3–4 cm) vagy szélesebbek, csipkés szélűek. Tő- és szárlevelei is vannak, számuk viszonylag kevés. Hártyás pálhalevelei tojásdadok, ép szélűek. Rendszerint kettő (ritkábban egy) max. 1,5 cm nagyságú sarkantyús, sárga virága van, melyek alsó szirma néha barna csíkos. Csészelevelei lándzsás-hegyesek, 4–6 mm hosszúak. Termése tok.
+
+Május végétől július elejéig virágzik.
+
+Egyetlen sárga virágú ibolyánk, más fajjal nem téveszthető össze."</string>
+    <string name="flora_12_description">"Alacsony termetű növény, színével szinte beleolvad a környezetébe, a sárga fűszálak közé. Levelei mélyen hasogatottak, a karéjok csúcsa szúrós tövisben végződik. A levél széle is fogazott, teljesen a földhöz simul. A levelek között nyílik a virág: 3-5 centiméter átmérőjű, a közönséges bábakalácshoz hasonlóan az ezüstfehér fészekpikkelyek a feltűnőbbek. A szalmasárga vagy szürkésfehér csöves virágok kevésbé szembetűnőek. A virágok esős időben bezáródnak, így védve a rothadástól a növényt. Június-augusztusban virágzik. Termése kaszat.
+Sok népi hiedelem kötődik e növényhez- például a lovak nyakára kötötték, mert úgy tartották, hogy elmulasztja a fáradtságot. Időjós tulajdonsággal is felruházták: ha becsukódott, eső jött. Zsenge belsejét ették is.
+Magyarországon védett."</string>
+    <string name="flora_13_description">"Jellemzően európai növény. Magyarországon többek közt a Gödöllői-dombság, a Bükk-vidék, valamint a Cserhát területén él, valamint a Mátrában is megtalálhatóak állományai.
+20–60–(80) cm magas, évelő lágyszárú. Gumója tenyeresen hasadt.
+Szára hengeres, el nem ágazó, leveles és a többi résszel együtt kopasz. Szálas-lándzsás alsó, tőálló levelei 10–20 cm hosszúak és 8–15 mm szélesek, a szálas ár alakú szárlevelek 0,5 cm hosszúak. A levelek széle ép.
+Virágzata változatos alakú, sokvirágú, végálló fürt; hossza a szár hosszának egyharmadát is elérheti. A virágok kicsik, illatosak; színük a halvány bíborvöröstől a rózsaszínen át a fehérig változhat. A mézajak háromkaréjú; a középső karéj akkora, mint az oldalsók. A tompa csúcsú lepellevelek közül kettő oldalra eláll, három sisakszerűen összeborul. Az ívesen lefelé görbülő, sarkantyú fonalszerű; a magháznál másfél–kétszer hosszabb: 12–20 mm. Csúcsa egyenletesen elkeskenyedik, a vége hegyes (szúnyoglábszerű – erről kapta a nevét). Termése tok.
+Földön lakó, mészkedvelő orchideaféle. Lápréteken, sziklagyepekben, pusztafüves lejtőkön, kaszálókon, gesztenyésekben nő.
+Májustól júliusig nyílik; virágait lepkék porozzák be."</string>
+    <string name="flora_14_description">"Ez a növényfaj a Földközi-tenger térségéről származik. A Közép-Európában honos vad alakja, Magyarországon a Bükk-vidéken és a Szigetköz területén fordul elő, de meglehetősen ritka
+A tüzes liliom díszes virágait sötétnarancs színű vagy tűzpiros, barnásan pettyezett, sziromszerű lepellevelek alkotják. A növény magas, sűrűn leveles szárán, a fényeszöld levelek hónaljában feketésbarna sarjhagymák fejlődnek.
+A napos és a félárnyékos helyeket kedveli. Egy kissé érzékeny a fagyra."</string>
+    <string name="flora_15_description">"A vitézvirág 15-50 cm magas, lágyszárú, évelő növény. A föld alatt két megnyúlt ovális alakú gumója van, amely a többi kosborfajhoz hasonlóan gombákkal áll gyökérkapcsoltságban. Alsó levelei szálas-lándzsásak, párhuzamos erezetűek, maximum 25 cm hosszúak. A szárlevelei jóval rövidebbek, nem feltűnőek. Szára egyenes, felálló, nem elágazó.
+Apró virágainak színe a rózsaszíntől a bíborvörösig terjedhet, ritkán fehér. A virág mézajka háromkaréjú, mélyen bemetszett, karéjok épszélűek, tojásdadok. A két oldalsó karéj tövénél kis fülszerű függelék látható. A virágok hátsó részén 1,5 cm hosszú, fonálszerű, lelógó sarkantyú található. A virágokat nappali és éjjeli lepkék, valamint poszméhek porozzák be, amelyek hosszú pödörnyelvükkel elérik a sarkantyúban tárolt nektárt.
+Termése toktermés.
+Láprétek, sztyepprétek, sziklagyepek lakója a tengerparti dűnéktől 2000 méter magasságig. A meszes talajt részesíti előnyben; elviseli a lúgos kémhatású talajt is. Napigényes.
+A népi gyógyászatban kiszárított és összetört gumóját rendkívül táplálónak tartották és gyerekeknek és lábadozó betegeknek adták. Ezenkívül gyulladáscsökkentő hatással is rendelkezik.
+Magyarországon védett"</string>
+    <string name="flora_16_description">"Élőhelye: inkább mészkedvelő; száraz sziklagyepek és lejtősztyeprétek, száraz tölgyesek és cserjések, ritkán homokpusztai rétek, irtásrétek növénye.
+Előfordulása:
+Dél-eurázsiai-mediterrán flóraelem. Zemplén, Cserehát, Aggteleki-karszt, Putnoki-dombvidék, Bükk, Mátra, Pilis, Budai-hegység, Bakony, Bakonyalja, Mecsek, Soproni-hegység, Belső-Somogy, Hevesi-sík, Mezőföld, Hajdúság, Nyírség.
+ "</string>
+    <string name="flora_17_description">"A daravirág a keresztesvirágúak (Brassicales) rendjébe tartozó káposztafélék (Brassicaceae) családjának egy nemzetsége, 300-350 fajjal.
+
+Sziklás, meszes talajon, törmeléklejtőkön élnek. Egyéves vagy évelő növények, egyszerű levelek sima vagy fogazott szélű is lehet. Virágaik hímnősek, négyszirmúak. A 6 porzószálból 4 hosszabb, 2 rövidebb. Termésük elliptikus becőtermés."</string>
+    <string name="flora_18_description">"A hóvirágok élőhelyei az üde, vagy félszáraz lombos erdők, mediterrán és alhavasi cserjések, ritkábban fenyvesek. Földalatti raktározó szervük az 1-2 cm átmérőjű hagyma, amelyből két hosszúkás levél hajt ki - fajtól függően - az ősz, vagy a tél végén. A hagymából egy virágzó szár nő ki, amely egy virágot hordoz. A virág jellegzetessége a három nagy, hófehér külső lepellevél (a köznyelvben „szirom”), és az ugyancsak három kisméretű, belső lepellevél, amelyek zöld foltokat vagy rajzolatokat viselnek.
+A nagy hóvirágállományokban azonban gyakran előfordulnak az adott faj alaptípusától eltérő példányok. A virág felépítésében többféle változat is kialakulhat, így lehet 2 szárú, 2 virágú, a 2 lepelkörből az egyik hiányozhat vagy a 2 lepelkör éppen egyforma, olykor a belső lepelkör átmenetekkel porzókká alakulhat. Vagy ellenkezőleg: kettőnél több lepelkör (telt virág) alakul ki. A lepellevelek körönkénti száma 3 helyett 1-6-ig változhat. A virág színében és rajzolataiban is kialakulhatnak eltérések: a zöld virágrészek lehetnek sárgák, a fehér leplek cirmosak, foltosak is. A foltok rajzolatai változhatnak: a gyakori fordított „U” helyett lehet „X”, vagy téglalap, keskeny sáv, vagy csak 1-2 pont is.
+A kultúrába vett mintegy 6-7 hóvirágfaj változatai botanikus kertekbe, illetve a hóvirágkedvelők gyűjteményes kertjeibe kerültek, ahol közel 300 féle formát, köztük több természetes, illetve kerti hibridet is számon tartanak."</string>
+    <string name="flora_19_description">"Alig 50 centiméter magas, gumósan vastagodott, vízszintesen kúszó gyöktörzzsel rendelkező növény. Nem védett.
+Élőhelye: gyertyán- és bükkelegyes, illetve tölgyes erdőkben. Április-májusban virágzik."</string>
+    <string name="flora_20_description">"Európában és Ázsiában is előfordul, Magyarországon a szubkontinentális-szubmediterrán xerotherm tölgyesek jellemző faja.
+Legfeljebb 1 méter magas, az egész növény világosszürkén molyhos, bársonyos. A levelek keresztben átellenesek, 5–15 cm hosszúak, hegyesek, tojásdad-lándzsás alakúak. A virágok 2–3 cm átmérőjűek, a szirmok élénk bíborszínűek, épek, a tövükön sem összenőttek. Feltűnő színű virágai és egyedi megjelenése miatt más növénnyel nem téveszthető össze, talán a konkoly (Agrostemma githago) hasonlít hozzá legjobban, de az vetésekben fordul elő és csészelevelei túlnyúlnak a szirmokon. Júniustól szeptemberig virágzik."</string>
+    <string name="flora_21_description">"A tatárvirág a keresztesvirágúakhoz (Brassicales) tartozó káposztafélék (Brassicaceae) családjának egyik nemzetsége, melybe mintegy 30, nagyrészt a Mediterráneumban élő növényfaj tartozik. Virágzatukat zigomorf virágok alkotják: pártájuk két rövidebb sziromlevele sugárirányban befelé, két hosszabb és nagyobb sziromlevele sugárirányban kifelé hajlik, melynek nagy szerepe van a rovarok odacsalogatásában.
+Fajaik között előfordulnak sziklakerti dísznövények."</string>
+    <string name="flora_22_description">"A széleslevelű harangvirág csaknem egész Európában megtalálható. Írországba betelepítették. Ázsiában, Törökországtól Iránig és Kazahsztánig is megtalálható. Indiában, Nepálban és Pakisztánban is őshonos. Az Amerikai Egyesült Államokba betelepítették ezt a növényfajt.
+A széleslevelű harangvirág 1 méter magas, évelő növény. Sima vagy tompán barázdás szára kopasz, esetleg rövid szőrű. Hosszúkás, tojásdad, mindkét oldalán puha szőrös levelei egyenlőtlenül fűrészes szélűek és rövid, szárnyas nyélbe keskenyednek. A 4-5 centiméteres ibolyaszínű virágok egyesével állnak a levelek hónaljában, és egyszerű fürtöt alkotnak.
+A széleslevelű harangvirág szurdokerdők, magaskórós társulások, nyirkos cserjések lakója. Üde vagy nedves, laza, tápanyagban gazdag talajt igényel.
+A virágzási ideje június-augusztus között van."</string>
+    <string name="flora_23_description">"A magyar flórában balkáni, illetve szubmediterrán elemnek számít.
+A meszes, meleg, száraz, laza, mérsékelten humuszos talajokat kedveli. Magyarországon potenciálisan veszélyeztetett növényfaj. Hegyvidéki növény: leginkább a Magyar középhegység dolomit sziklagyepeiben, bokorerdőiben nő, többek közt a Cserhátban, a Börzsönyben fordul elő. A Budai Tájvédelmi Körzetben sziklafüves és pusztafüves lejtőkön, zárt dolomitgyepekben, irtásréteken, erdős sztyeppréteken, karsztbokorerdőkben gyakori. Az Alföldön ritka.
+Hajtásai a tavasz közepén fejlődnek ki, virágai június–augusztusban nyílnak."</string>
+    <string name="flora_24_description">"20–50 cm magas, erősen elágazó, fényigényes, szárazságot is tűrő, egyéves növény. Talaj- és termőhely- (-edény) -igénye a majoránnáéval egyező, de annál kevesebb öntözéssel is beéri.
+Magját március végén, április elején trágyázás után, 1–2 cm mélyen, 25–30 cm sortávolságra vetjük közép kötött talajba. Sűrű kelés után 8–10 cm-re ritkítjuk, virágzás idején az alsó elágazásnál vágjuk, szárítás után lemorzsoljuk, rostáljuk. A bazsalikomhoz hasonlóan többször is vágható. Szárításhoz többnyire csokrokba kötik és tövével lefelé felakasztják.
+Illóolajat (főként karvakrol), cseranyagot, nyálkát, keserű anyagot tartalmaz. A borsnál kevésbé erős, de érdekes aromája miatt kedvelt fűszer.
+Íze, illata a borsra emlékeztet, ezért diétás ételek, saláták, fűszerezésére kiváló. Felhasználható burgonya-, káposzta-, gombás ételek, kolbászáruk, vadpácok, mártások, majonéz, ecetes és vizes uborka készítésekor. Mivel csökkenti a felfúvódást, előszeretettel ízesítenek vele babos ételeket.
+Használatával vigyázni kell, mert erős aromája keserűvé teheti az ételt. Csak a főzés végén kell az ételhez keverni. A diétás főzésnél nagyon hasznos a feketebors pótlékaként. Gyomorerősítő, görcsoldó, étvágygerjesztő, bélféregirtó, felfúvódást gátló hatása van."</string>
+    <string name="flora_25_description">"Gyakori magyar neve még a bársonyrózsa, illetve az angol gallic rose tükörfordításaként ismert a gall rózsa elnevezés is. Régies elnevezései közé tartozik a tarka rózsa és a törpe rózsa. Megtalálható e növényfaj a Csanádi-háton is.
+A telt virágú, többnyire rózsaszín vagy piros fajták erősen illatosak: Franciaországban Provence környékén némelyiket olajáért nagy területeken termesztették."</string>
+    <string name="flora_26_description">"A kónya vicsorgó csaknem egész Európában megtalálható. Szurdokerdők és ligeterdők élősködő növénye. Magyarországon többek közt a Gödöllői-dombság területén él.
+A kónya vicsorgó 10-25 centiméter magas, halványpiros, ritkábban fehéres, levélzöld nélküli évelő növény. Rizómáját (gyöktörzsét) vastag pikkelyek borítják. A hengeres száron is csak levélszerű pikkelyek találhatók. Lombos fák (mogyoró, bükk, gyertyán, éger és szil) gyökerein élősködik. Halványpiros, 1-1,5 centiméter hosszú, két ajkú virágai egy oldalra néző, eleinte bókoló fürtöt alkotnak.
+A virágzási ideje március-május között van."</string>
 
 
     <!-- FUNGHI -->
@@ -152,7 +246,7 @@ A párok csak a párzási időszakban, január és április között vannak egy�
     <string name="poi_5_name">Anna-barlang</string>
     <string name="poi_6_name">István-barlang</string>
     <string name="poi_7_name">Szeleta-barlang</string>
-    <string name="poi_8_name">Függőkert, Lillafüred</string>
+    <string name="poi_8_name">Lillafüredi Függőkert és Vízesés</string>
     <string name="poi_9_name">Fátyol-vízesés</string>
     <string name="poi_10_name">Istállós-kői-barlang</string>
     <string name="poi_11_name">Bél-kő</string>
@@ -164,27 +258,51 @@ A párok csak a párzási időszakban, január és április között vannak egy�
     <string name="poi_17_name">Oszlai tájház, Cserépfalu</string>
     <string name="poi_18_name">Milleniumi kilátótorony, Szilvásvárad</string>
 
-    <string name="poi_1_description"><p><strong>Asdfasdfasdf</strong></p>
-<p><strong>Asdfsad</strong></p>
-<p><strong>Asdf</strong>asdfasdfasdfas</p>
-<p>Asdfasdf</p></string>
-    <string name="poi_2_description"></string>
-    <string name="poi_3_description"></string>
-    <string name="poi_4_description"></string>
-    <string name="poi_5_description"></string>
-    <string name="poi_6_description"></string>
-    <string name="poi_7_description"></string>
-    <string name="poi_8_description"></string>
-    <string name="poi_9_description"></string>
-    <string name="poi_10_description"></string>
-    <string name="poi_11_description"></string>
-    <string name="poi_12_description"></string>
-    <string name="poi_13_description"></string>
-    <string name="poi_14_description"></string>
-    <string name="poi_15_description"></string>
-    <string name="poi_16_description"></string>
-    <string name="poi_17_description"></string>
-    <string name="poi_18_description"></string>
+    <string name="poi_1_description">A természetvédelmi terület a Szomolya fölött emelkedő Vén-hegy nyugati lejtőjén, a Kaptár-völgyben helyezkedik el, ahol a riolittufa vonulat nyolc nagyobb, fülkés sziklára, sziklavonulatra, kőkúpra tagolódik. Ez hazánk legtöbb fülkével (117 db) rendelkező kaptárkő csoportja.
+A kaptárkövek fülkéinek rendeltetéséről, készítőik kilétéről, a fülkék koráról számos legenda, feltételezés, tudományos feltevés született. A vidéken megőrződött hagyománykincs egyik csoportja a hamvasztásos temetkezést, a másik igen elterjedt hagyománycsoport pedig a méhészkedést említi a fülkékkel kapcsolatban.
+Az eddigi régészeti feltárások sem erősítették meg ezt a feltevést. A 200-400 méter tszf-i magasságig emelkedő Bükkalja kőzetfelépítése különbözik a tőle tektonikusan lehatárolódó Déli-Bükk nagyrészt mészkőből és agyagpalából álló hegyeitől. A kaptárkövek anyaga zömében riolittufa, mely a miocénben zajló heves vulkáni tevékenység nyomán jött létre 21–13 millió évvel ezelőtt.</string>
+    <string name="poi_2_description">Hazánkban igen kevés igazán szép és fajgazdag hegyi rét található. Ezek közé tartozik a bükki Nagymező, amely „szentélyként” kiemelkedik az összes közül. Jelentőségét kiemeli, hogy 5 fokozottan védett és 77 védett növényfaj fordul elő gyeptársulásaiban. Azt lehet mondani, hogy alig van olyan négyzetmétere a rétnek, ahol ne lenne védett növényfaj.
+Ennek egyik oka az elhelyezkedésében keresendő. A Bükk-fennsík közel 800 méteres magasságában lévő karsztos formakincsekben bővelkedő fennsíkján helyezkedik el, amelynek alapkőzete triász mészkő. A másik a klímája. A domborzat tagolódása és a mély töbrök, olyan mikroklímát kölcsönöznek a területnek, amely megint csak egyedülállóvá teszi a Nagymezőt. A rétet magashegységi bükkösök ölelik körbe, a fenyvesek az erdőgazdálkodás eredményeként kerültek ide. Kialakulásában nagy szerepe volt az emberi tevékenységnek, hiszen az erdőirtások után a klimatikusan nehezen felújítható területet inkább kaszálóként, legelőként hasznosították. Azonban eredetileg is voltak olyan részei, ahol kisebb gyepfoltok előfordultak, hiszen másképp nem maradhattak volna fenn azok a kontinentális hűvös erdős-sztyepp fajok, amelyek a legértékesebb természeti értékei a területnek. Az évszázados területhasználat végeredményeként egy olyan fajközösség alakult ki, amely méltán érdemelte ki a védettséget. A legértékesebb részét 1954-ben nyilvánították védetté, majd 1976-ban lett a Bükki Nemzeti Park fokozottan védett része. Jelenleg a nemzeti parki státusz mellett a közösségi jelentőségű élőhelyek és fajok előfordulása miatt a „Bükk-fennsík és Lök-völgy” kiemelt jelentőségű természetmegőrzési terület (Natura 2000) része is lett.</string>
+    <string name="poi_3_description">A Lillafüredet rejtő völgy dél-keleti oldalán található terület elnevezése, mely nevét egy nagyszerű kilátást biztosító szikláról (Fehérkő) és az alatta fekvő, meredek esésű, a fennsíkra vezető, völgyszerű hegyoldalról (lápa) kapta.
+A fennsíkon a Fehérkőlápai turistaház található, sok kikapcsolódási lehetőséggel, továbbá Bükkszentkereszt felé hatalmas tisztás terül el, ami kedvelt kirándulóhely.</string>
+    <string name="poi_4_description">A Felső-Hámor és Lillafüred határában másfél kilométer hosszan húzódó Hámori-tó a Granada völgyében fekszik, a Bükk-hegység keleti részén. A Hámori-tó egy mesterségesen megnagyobbított tó, mely eredetileg a a Szinva patak mésztufagátjának duzzasztó hatása miatt keletkezett. A hámori-tó igen kedvelt a horgászok körében, főként az országban ritkaságnak számító pisztrángállománya miatt.
+A horgászaton kívül elsősorban a vízi sportok kedvelőinek kínál lehetőségeket, például csónakázás, vízibiciklizés helyszíneként, télen pedig korcsolyázni is lehet a befagyott tavon. A Hámori-tó természetes szépsége jelentősen növeli Lillafüred turisztikai vonzerejét.</string>
+    <string name="poi_5_description">A Lillafüredi Anna-barlang bejárata a Palotaszálló függőkertjének aljában található, közvetlenül a vízesés mellett. A barlangot 1927-ben építették ki idegenforgalmi bemutatás céljára, mely a Szinva forrás vizéből kivált mésztufában alakult ki. A víz nem kivájta a barlangot, hanem a patakból kioldódott mész fokozatosan rakódott le, a barlang fala ebből épül fel. Az Anna-barlang egyike a világon összesen három, a nagyközönség számára látogatható mésztufa barlangjának. A fokozott védelem alatt álló barlangot 1833-ban fedezték fel.
+Járatainak hossza 570 méter, melyből 208 méter látogatható túravezetők kíséretében. A forrásokat 1953-ban bekapcsolták Miskolc város vízellátásába, ekkor a forrásokat feltáró szakaszokat lefalazták az idegenforgalmi résztől. A közlekedést korlátok, lépcsők, vízmentesített egyenletes sétautak segítik, látogatható szakaszai villanyvilágítással ellátottak. A túra időtartama: 25 perc.
+A barlangot a Bükki Nemzeti Park Igazgatóság üzemelteti. Vezetett túrák minden nap indulnak.</string>
+    <string name="poi_6_description">A fokozottan védett Szent István barlang bejárata a Palotaszállótól 500 méterre található, az Eger-Miskolc műút mellett. A barlang járatainak teljes hossza 1043 méter, a bejárható szakaszok hossza 170 méter, függőleges kiterjedése 94 méter. Az üreg tulajdonképp egy forrásbarlang, melyet a Bükk Nagy-fennsíkjának keleti peremén található víznyelőkön keresztül a felszínről a mélybe jutó karsztvíz alakított ki.
+A barlangot 1913-ban fedezték fel, járóútvonalainak kialakítását 1927-ben kezdték meg, majd a nagyközönség előtt 1931 augusztusában nyitották meg, 1991-ben pedig gyógybarlanggá nyilvánították. Legmélyebb ismert szakasza a Pokol nevet viseli. A megnyitott szakaszon érdekes képződmény a Mamutfogsor, a cseppkövesebb barlangszakasz a Meseország, az Oszlopok csarnoka és a Színházterem.
+A barlang túravezető kíséretében, utcai öltözékben, egész évben látogatható. A túra időtartama: 30 perc. Vezetett túrák minden nap indulnak.</string>
+    <string name="poi_7_description">A Szeleta barlangban találtak először ősemberleleteket: a jégkor végén több tízezer éven át itt élők babérlevél alakú lándzsahegyei és más eszközei szeletai kultúra néven ismertek.
+A Miskolc, Felső-hámor feletti hegyoldalon található Szeleta-barlangot Herman Ottónak, a hazai ősemberkutatás elindítójának kezdeményezésére Kadic Ottokár tárta fel 1907-13 között.
+Már a barlang előcsarnokában nemcsak rengeteg barlangi medve csontra, hanem egy tűzhely nyomára is bukkantak. Az ásatás folytatásakor a későbbi rétegekből cserépedény-töredékek, csiszolt kőeszközök, a korábbiakból pedig összesen 40 darab paleolit kőeszköz került elő. A fokozott védelem alatt álló barlangot egy ma már nem aktív, de hajdan bővizű karsztforrás oldó hatása hozta létre.</string>
+    <string name="poi_8_description">Magyarország legmagasabb vízesését, a Lillafüredi vízesést a Palotaszálló építésekor alakították ki, a Szinva patak eredetileg a hámori-tóba torkollott. A 20 méter magasból lezúduló függőleges esésű vízesés három szakaszból áll. A télen és nyáron egyaránt lenyűgöző látványt vízesés a Palotaszálló függőkertjéből is látható. A Palotaszálló egy meredek emelkedő tetején épült, emiatt ennek megerősítésére ki kellett építeni egy támfalakkal tagolt teraszos sétányrendszert. Az így keletkezett falon jut le a patak a Hámori-tóba.
+A sétányról egy ösvényen keresztül biztonságosan le lehet jutni a vízesés alá. Az Anna barlang felől pedig közvetlenül a vízesés lábához juthatunk el.</string>
+    <string name="poi_9_description">A Fátyol-vízesés a Szilvásvárad melletti Szalajka-völgy talán leglátványosabb természeti képződménye. A vízesés kialakulása a mészkőnek és a csapadéknak köszönhető, ez a két összetevő hozta létre ugyanis azt a 17 méter hosszú, tizennyolc lépcsőből álló mésztufagátat, amelyen a Fátyol-vízesés lezubog.
+A Szalajka-forrás által táplált vízesést az erdei kisvasút végállomásáról pár perces sétával, illetve a Szilvásvárad belterületén található parkolótól egy nem túl hosszú gyalogtúrával lehet megközelíteni. Nevének eredete kétséges: egyesek szerint a vízpermet jellegzetes, fehér fátyláról, mások szerint a fehér, csipkéhez hasonlóan mintás mésztufáról kapta a Fátyol-vízesés elnevezést. A szélsőséges vízjárás miatt néha előfordul, hogy elapad."</string>
+    <string name="poi_10_description">Szilvásvárad környékén az ember megjelenésének legrégibb nyoma több mint 200.000 éves.
+A Szalajka-völgyben nyíló Istálós-kői-barlangban 44.000 évvel ezelőttiek a legrégibb leletek.
+Az Istállós-kői-barlang a Bükk legmagasabb csúcsa, a 959 méter magas Istállós-kő oldalában nyílik 609 méter magasan. A barlanghoz szerpentin jellegű turistaút vezet föl a Szalajka-forrás mellől. A barlang több világkülönlegességgel rendelkezik: eddigi ismereteik szerint a világon először itt használtak íjat és a hasított alapú csont lándzsahegyeket, de itt került elő a világ legrégibb fuvolája is.</string>
+    <string name="poi_11_description">A Bél-kő a Bükk-fennsíkot körülölelő sziklasornak, az úgynevezett „kövek vonulatának” meghatározó indító tagja a Bükk-vidék központi részének nyugati felén. A hegy fehérlő szikláit a középső és késő triász korban képződött mészkő alkotja.
+Magasba törő, éles peremű sziklák tövében ritka, védett növények bújnak meg. Hazánkban egyedül itt található meg a fokozottan védett szirti pereszlény, emellett a Bél-kő az egyik előfordulási helye az országosan csak két másik helyszínről ismert, fokozottan védett korai szegfűnek és a Kárpát-medence mindössze öt másik területén előforduló, preglaciális pannóniai reliktum-endemizmusnak számító magyarföldi husángnak.
+A hegy eredeti csúcsa áldozatul esett a cementgyártásnak, azonban egyik épen maradt ormáról fantasztikus panorámában lehet része a túrázóknak. Ez egy mesterségesen kialakított orom a csúcsra vezető Bélkő Tanösvény végén. Jól belátható innen a Bélapátfalvát körülvevő dombvidék, a Bükk-vidék csúcsrégiójának vonulatai Szarvaskő irányába, a távolban kéklő Mátra, valamint az alattunk elterülő felhagyott felső kőbánya. A tanösvényen visszaindulva pár száz méter után a Bükk-vidék csúcsrégiójának északi lejtőit és csúcsait vehetjük szemügyre, tiszta időben pedig akár a Tisza és a Tátra is látszik innen. 2003-ban adták át a Bélkő Tanösvényt."</string>
+    <string name="poi_12_description">A Bükk-hegység északi vidékén, Dédestapolcsánytól jó órányi, sok helyen meredek kapaszkodókkal tarkított gyaloglás után kereshetjük fel az 597 méteres sziklacsúcson emelkedő Dédes várának romjait.
+A Bükk hegység északi oldalának egyik legjellegzetesebb hegye a Dédesi-Vár-hegy, valamint a tőle délre elhelyezkedő Dédesi Kis-vár.
+Ez utóbbi hegyen csak a legutóbbi évek megfigyelései igazolták a vár létét. Mindkettőt azonban közrefogja egy időben korábbi, késő-bronzkori sáncvár, a Verebce-vár hatalmas sáncrendszere és teraszai. Dédes várának kialakításáról ásatások hiányában nem sokat tudunk. A megfigyelhető maradványok alapján a vár egy kelet-nyugati irányú gerinc mentén, kb. 120 m hosszan helyezkedik el. Ennek nyugati végén egy kb. 4 m magas L alakú armírozott falsarok csonkja maradt meg saroktámpillérekkel.</string>
+    <string name="poi_13_description">A közeli Kis-Csipkés az Északi-Bükk és a Déli-Bükk határán fekszik. Lillafüred felől érkezve előbb a Garadna-völgyön, majd a Savós-völgyön kell átkelni, hogy Jávorkútra jussunk.
+Jávorkút nevét az itt fakadó forrásról és a juhar régies elnevezéséről kapta nevét. A település Hámor külterülete volt, Miskolchoz csatolásáig. A 19. századtól a hely kedvelt vadászhely volt. Gróf Bethlen István 1920-ban vadászkastélyt építtetett itt, ami ma étteremként működik. Később a Tiszai Vegyi Kombinát bővíttette ki a komplexumot, hogy a dolgozói számára megfelelő kikapcsolódási lehetőséget nyújtson.
+1876-ban telepítették a nyolc hektáros bükkelegyest a területen.</string>
+    <string name="poi_14_description">Az első lipicai ménest 1580-ban Lipizzán alapították a Habsburg uralkodóház számára, hogy itt a legjobb lovakat tenyésszék, melyek a császári udvar számára lesznek elővezetve. A barokk kor ízlésvilága szerint kitenyésztett lófajtát 1806 óta tenyésztik Magyarországon.A lipicai ménesnek 1952 óta Szilvásvárad és Csipkéskút.E hegyi lófajta fejlődéséhez jelentősen járul hozzá a Bükk-fennsík köves hegyvidéki talaja. Jelenleg Szilvásváradon 80 anyakanca és a fedezőmének biztosítják e páratlanul értékes fajta továbbfejlődését. A jelenlegi lóállomány 250 körül alakul. A csikók három éves korukig a Bükk-fennsík kiemelten védett helyén nevelkednek. Így válnak erős, jó tűrőképességű lovakká.A szilvási lipicai ló, főként fogatos használatra alkalmas fajta. A fogatsportban elért hazai és nemzetközi sikerei is ezt bizonyítják. A faluban a lovas tanyán, és a legszebb apaállatok Palavichini őrgróf parádés istállójában tekinthetők meg.</string>
+    <string name="poi_15_description">1930 áprilisában Pallavicini Alfonz Károly őrgróf 1045 négyszögöl területet menedékház építésének céljára 25 évi használatra átengedett a Diósgyőri Egyesületnek a bánkúti turistaház megépítésére, ami 33 000 pengőbe került, úgy, hogy Pallavicini építőanyaggal és fuvarral, a vasgyár építőanyaggal segítette az építkezést. Ennek eredményeként a házat 1930. október 26-án használatba vették, 1931 pünkösd vasárnapján pedig ünnepélyesen felavatták. A második világháború után a turistaházat bezárták, ezt követően követően a Bánkút Síklub vette át a területgazda szerepét, és a Borsod-Abaúj-Zemplén megyei sporthivatalok mellett mozgósította idegenforgalma koordinátorát, a Mátra-Bükki Intéző Bizottságot is fejlesztési céljainak elérése érdekében. Az összefogás eredményeként megépültek a sífelvonók, a Mályinkát és Bánkutat összekötő út, megoldódott a télisport-létesítmények energia-és ivóvíz ellátása, valamint csatornázása és szennyvíztisztítása is. A mályinkai út megépülése lehetővé tette a Bükki Nemzeti Park védett területeinek elkerülését.</string>
+    <string name="poi_16_description">Magyarország egyetlen épen megmaradt román stílusú ciszterci apátsági temploma a Bükk legjellegzetesebb hegycsúcsa, a Bél-kő sziklái alatt áll, az ott fakadó forrás (Háromkút) mellett. A templom nemzetközi szinten is elismert kultúrtörténeti műemlék, építészeti szempontból egyedülálló a késő román és gótikus stíluselemeket is ötvöző épület.
+A 781 méter magas Bél-kő lábánál, 1232-ben – alapítólevele szerint május 16-án – létesített apátságot II. Kilit egri püspök, azzal a céllal, hogy a környékbeli kunokat és besenyőket a keresztény hitre térítsék.
+Az apátsági templom mellett egy korábban megépült, ciszterci monostor is állt, de ennek mára már csak a romjai láthatóak. Az építés két korszakra különíthető. A tatárjárásig elkészült részek (a szentély, a főhajó nagy része, a főhomlokzat) román, az utána épültek (a kereszthajók, a keresztboltozat) már gótikus stílusúak.
+1495-ben az apátság Bakócz Tamás egri püspök fennhatósága alá került. A középkor vége felé a kolostor, mint sok más ciszterci apátság, kezdett elnéptelenedni. A XVI. század elején már csak néhányan éltek a falai között, a XVIII. század elejére pedig elhagyott rommá vált a kolostor. Az 1700-as évek közepén a templomot az eredeti állapotnak megfelelően helyreállították, ami meglehetősen szokatlan volt a barokk kor tobzódása idején.
+A bútorzat, ill. az oltárok nagy része barokk kori alkotás. Az elmúlt évtizedekben szépen restaurálták a templomot, jól megkülönböztethetővé tették az eredeti román és gótikus részeket a barokk kori részektől."</string>
+    <string name="poi_17_description">Cserépfalutól északra, az Ódorvár bérce alatt, a Hór-völgyben, festői környezetben találjuk az Oszlai tájházat. A 18-19. század fordulóján épült egykori erdészház, majdan munkásszállás, 1981 óta múzeumi kiállítást rejt, a környékbeli népekre jellemző tárgyi kultúrát, népművészetet, mindennapi használati tárgyakat őrzi.</string>
+    <string name="poi_18_description">A 2000. augusztus 20-ra, Szent István napjára készült Milleniumi Kilátó méretével és páratlan szépségű faszerkezetével uralkodik a környező hegycsúcsok felett, mintha figyelné és vigyázná e festői vidéket.
+A szibériai fenyőből épült kilátó felső teraszáról gyönyörű körpanoráma nyílik a Bükk északi vonulatain, a Szalajka-völgyön át Szilvásváradra, illetve tiszta időben a Mátráig, Szlovákia hegyein át egészen a Tátráig.
+Megközelíthető gyalog a Millenniumi tanösvényen, illetve gépkocsival és kerékpáron az Olasz-kapuhoz vezető fizetős műúton. Az autót a kalapati kilátónál kell hagyni, innen kb. 5 perc séta. A Kilátó 20 méter magasan lévő teraszáról lenyűgöző látványt nyújt a Bükk minden évszakban más-más színben pompázó domborzata, a patakvölgyek, erdők rajzolata, a 13 hegyvidéki falu háztetői. Tiszta, napos időben a távoli Tátra hegcsúcsai is láthatóak."</string>
 
     <string name="poi_1_latitude">47.892307</string>
     <string name="poi_2_latitude">48.07908</string>
@@ -225,12 +343,30 @@ A párok csak a párzási időszakban, január és április között vannak egy�
     <string name="poi_18_longitude">20.40424</string>
 
 
+    <!-- Trip-->
+    <!-- Trip -->
 
+    <string name="trip_1_name">Bükk-fennsík - \nJávorkút Tanösvény</string>
+    <string name="trip_2_name">Rejteki tanösvény \n(kis kör)</string>
+    <string name="trip_3_name">Rejteki tanösvény \n(nagy kör)</string>
+    <string name="trip_4_name">Répáshuta - \nKőbalta Tanösvény</string>
+    <string name="trip_5_name">Répáshuta - \nTárnics Tanösvény</string>
+    <string name="trip_6_name">Miskolc - \nPisztráng Tanösvény</string>
+    <string name="trip_7_name">Varbó - Andó-kút \nTanösvény</string>
+    <string name="trip_8_name">Miskolc - Forrás-völgy \nTanösvény</string>
+    <string name="trip_9_name">Miskolc - Szinva \nTanösvény</string>
+    <string name="trip_10_name">Bükkszentkereszt - \nHoldviola Tanösvény</string>
 
-
-
-
-
+    <string name="trip_1_description">A Jávorkúti Tanösvény geológiai, felszínalaktani, botanikai, zoológiai és kultúrtörténeti ismereteket egyaránt nyújt. Tájékoztat a jávorkúti tó faunájáról, az őslucos madárvilágáról, az Ősfenyves 1876-ban telepített 8 hektáros bükkelegyes állományáról, a töbörsorok kialakulásáról és felhívja a figyelmet a Kis-Csipkésnél húzódó sziklafalra, mely az Északi-Bükki és a Déli-Bükki Egység szerkezeti határa.</string>
+    <string name="trip_2_description">A Kutatóház körüli rövid sétaút a hegység növény- és állatvilágát mutatja be. Egy-egy tábla szemlélteti a fenyőerdőt, a bükkösök világát, a nagyvadakat, erdeink kisragadozóit és a vízi biotópot. Elsősorban erdei iskolai programokhoz kapcsolható a tanösvény ismeretanyaga.</string>
+    <string name="trip_3_description">Az út során megtekinthető három ősrégészeti szempontból fontos barlang (a Rejteki 1. számú kőfülke, a Balla-barlang és a Pongor-lyuk), két szurdokvölgy, szurdokerdő társulással (a Szarvaskúti-Csúnya- és a Balla-völgy), a Hór-völgy ipartörténeti emlékhelye (a gyertyán-völgyi üveghuta maradványai), a Bükk egyetlen katavotrája (időszakosan működő váltóforrása, amely néha víznyelő) és két állandó víznyelő (a Diós-pataki- és a Pénz-pataki-víznyelőbarlang).</string>
+    <string name="trip_4_description">Az indítóállomás az elegyes bükkösre hívja fel a figyelmet, a 2. állomás az erdei munkalehetőségeket sorolja fel, a harmadik állomás az erdőszegélyek kialakításának erdőművelési (ápolás, tisztítóvágás, gyérítés) jelentőségét mutatja be. Az indítóállomás után egy kis kitérővel felkapaszkodhatunk az ősrégészeti jelentőségű Balla-barlanghoz, ahol a BNPI által kihelyezett tájékoztatótábla található.</string>
+    <string name="trip_5_description">A Diós-patak és a Pénz-patak völgyeit 8 állomásra felfűző tanösvény az erdészeti tevékenységről, az erdőgazdálkodásról (ember és erdő"", erdőrészletek határjelei, erdőterv szerinti erdőgazdálkodás, az erdő fejlődési szakaszai az újulattól a vágásérett korig, a véderdő) nyújt bőséges ismereteket. ""Az erdő és a vad"" az erdőben élő vadászható vadfajokkal ismertet meg. Egy-egy állomás bemutatja a szubmontán bükkös aljnövényzetét, a fiatalos lucfenyvest és az erdei mesterségeket. A tanösvény egyébként kapcsolódik a BNPI által régebben kialakított Rejteki Tanösvény nagy köréhez (B-14). Míg ez utóbbi a Csúnya-völgy környéki fokozottan védett terület határán, jobbára jelzett turistautakon lett kijelölve, a Tárnics Tanösvény 2 kilométer hosszú szakasza mélyen behatol a fokozottan védett területre, ezért kérjük az erdőjárás szabályainak és a természetvédelmi törvény előírásainak fokozott betartását!"</string>
+    <string name="trip_6_description">A csak nyitótáblával rendelkező tanösvény a Garadna-völgy erdei kisvasútjának végállomásától indul, érinti a Magyar Királyi Erdőgazdaság pisztrángtelepét, visszafelé pedig a völgy baloldalán a Turista emlékparkot (a magyar turistamozgalom turistáinak emléktáblái láthatók itt). Közben megismerkedhetünk az erdőgazdálkodás lényegével, a vizes biotópok élővilágával, az erdő vadállományával és egy természetes felújítás során létrejött fiatal állományú erdővel. Az útvonal mentén két kőzetfeltárásra is felhívja a figyelmet a kiadvány (a felső-karbon korú Mályinkai Formáció Kapubérci típusú mészkövére).</string>
+    <string name="trip_7_description">Az Andó-bikk alatt, a Barátság-forrás és a Dobrica-kút nevű karsztforrás körül kialakított 15 állomásra felfűzött tanösvény az erdészeti tevékenységről, az erdőgazdálkodásról (erdőrészletek határjeleiről, erdőfeltáró utakról, fatermesztésről"" és az erdő közjóléti szerepéről, mesterséges felújításról, az erdei faállomány koráról, a vidéken nem őshonos fenyőfajokról, a fák korának meghatározásáról), a vadgazdálkodásról (""vadászható fajokról"") nyújt bőséges ismereteket. Egy állomás bemutatja a hegységre legjellemzőbb fafajokat, egy másik a Bükk hegység geológiáját. A 14. állomásnál (Dobrica-kút karsztforrásánál érdemes lett volna a forrás darázskőkúpját és a patak mésztufa-képződményeit is megemlíteni és bemutatni!"</string>
+    <string name="trip_8_description">A Csanyik-völgy elejénél, az ipartelep kapujától indul a 10 táblával ellátott tanösvény (P+ turistajelzés), mely kifejezetten az erdőgazdálkodás témaköreit járja körül. Az ismertetőtáblák általános információkat nyújtanak az erdei életközösségekről (tápláléklánc), az erdőgazdálkodásról (erdősítések, fakitermelés), a barna erdőtalajról, a vadgazdálkodásról (vadászható vadfajok), az erdészeti klímaövekről, a magyar erdőgazdálkodás főbb célkitűzéseiről, a Bükk állatvilágáról (felsorolás), az erdő és a víz kapcsolatáról, a faanyag tulajdonságairól, a fafeldolgozásról. Érdemes lett volna egy-két tábla erejéig a Kis-fennsík keleti oldalának karsztjelenségeiről, a Forrás-völgy fokozottan védett, de látogatható barlangjairól (Kecske-lyuk, Büdös-pest) is tájékoztatást adni, ezáltal a helyi értékeket is bemutatni.</string>
+    <string name="trip_9_description">A tanösvény a Herman Ottó emlékparktól a Szeleta-tetőn át Felsőhámor fölött Lillafüredre vezet, s a Szinva-völgy, a Kis-fennsík és a Garadna-völgy legfontosabb természeti és kultúrtörténeti értékeit mutatja be. Az állomások a Szinva-patak mentén kialakult égeres, valamint a Molnár-sziklán lévő gyertyános tölgyes és mészkő-sziklagyep növény és állatvilágát, valamint a karsztjelenségeket tárják fel. Megismerkedhetünk a Szeleta-zsombollyal és a Szeleta-barlanggal, mely Magyarország egyik legfontosabb őskőkori (a paleolitikumi Szeleta-kultúra) régészeti lelőhelye.</string>
+    <string name="trip_10_description">A bükkszentkereszti ifjúsági tábortól induló és oda visszakötő közepesen nehéz útvonalon fára festett római számok jelzik az állomásokat, melyekhez az ismeretanyag a vezetőfüzetben található meg. A kilenc állomás megismertet az erdei mesterségekkel (mészégető), egy II. világháborús emlékhely történetével (Gizella-védővonal), a névadó növény (erdei holdviola) élőhelyével, különböző karsztformákkal és az erdő fafajaival. Ugyanakkor erdészeti és vadászati ismeretekkel is gazdagít.</string>
 
 
 </resources>

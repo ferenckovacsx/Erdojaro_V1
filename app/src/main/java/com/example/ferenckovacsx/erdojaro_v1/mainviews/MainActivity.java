@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -37,6 +38,7 @@ public class MainActivity
         DownloadMapFragment.OnFragmentInteractionListener {
 
     Fragment selectedFragment;
+    String selectedFragmentTag;
     public static Context mainContext;
     public static BottomNavigationView bottomNavigationView;
     public boolean replaceFragment;
@@ -86,20 +88,23 @@ public class MainActivity
 
                             case R.id.navigation_discover:
 
-                                // if (!item.isChecked()) {
+//                                if (!item.isChecked()) {
                                 selectedFragment = new DiscoverFragment();
                                 selectedFragment.setRetainInstance(true);
                                 replaceFragment = true;
-                                // }
+                                selectedFragmentTag = "discoverFragment";
+//                                }
                                 break;
 
                             case R.id.navigation_map:
 
-                                //if (!item.isChecked()) {
-                                selectedFragment = new MapFragment();
-                                selectedFragment.setRetainInstance(true);
-                                replaceFragment = true;
-                                // }
+                                if (!item.isChecked()) {
+                                    selectedFragment = new MapFragment();
+                                    selectedFragment.setRetainInstance(true);
+                                    replaceFragment = true;
+                                    selectedFragmentTag = "mapFragment";
+
+                                }
                                 break;
 
 //                            case R.id.navigation_favorites:
@@ -113,19 +118,21 @@ public class MainActivity
 
                             case R.id.navigation_more_options:
 
-                                //if (!item.isChecked()) {
+//                                if (!item.isChecked()) {
                                 selectedFragment = new MoreOptionsFragment();
                                 selectedFragment.setRetainInstance(true);
                                 replaceFragment = true;
-                                // }
+                                selectedFragmentTag = "moreOptionsFragment";
+
+//                                }
                                 break;
                         }
 
-                        //if (replaceFragment) {
-                        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                        transaction.replace(R.id.fragment_container, selectedFragment);
-                        transaction.commit();
-                        //}
+                        if (replaceFragment) {
+                            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                            transaction.replace(R.id.fragment_container, selectedFragment, selectedFragmentTag);
+                            transaction.commit();
+                        }
                         return true;
                     }
 
@@ -133,7 +140,7 @@ public class MainActivity
 
         //Manually displaying the first fragment - one time only
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragment_container, DiscoverFragment.newInstance());
+        transaction.replace(R.id.fragment_container, DiscoverFragment.newInstance("poi"), "discoverFragment");
         transaction.commit();
 
     }
@@ -151,6 +158,68 @@ public class MainActivity
     @Override
     public void onFragmentInteraction(Uri uri) {
 
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        try {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentManager childFragmentManager = getSupportFragmentManager();
+            Fragment currentFragment = fragmentManager.findFragmentById(R.id.fragment_container);
+            Fragment currentChildFragment = childFragmentManager.findFragmentById(R.id.child_fragment_container);
+
+            //Log.i("currentFragment", "is:" + currentFragment.getTag());
+            //Log.i("currentChildFragment", "is:" + currentChildFragment.getTag());
+
+            //if (currentFragment.getTag() != null) {
+            if (currentFragment.getTag() != null && currentFragment.getTag().equals("tripFragment")) {
+                Log.i("newInstance", "tripFragment");
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container, DiscoverFragment.newInstance("trip"), "discoverTrip");
+                transaction.commit();
+            } else
+            if (currentFragment.getTag() != null && currentFragment.getTag().equals("poiFragment")) {
+                Log.i("newInstance", "poiFragment");
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container, DiscoverFragment.newInstance("poi"), "discoverPoi");
+                transaction.commit();
+            } else
+            if (currentFragment.getTag() != null && currentFragment.getTag().equals("poiFragment")) {
+                Log.i("newInstance", "poiFragment");
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container, DiscoverFragment.newInstance("poi"), "discoverPoi");
+                transaction.commit();
+            } else
+            if (currentChildFragment.getTag() != null && currentChildFragment.getTag().equals("floraFragment")) {
+                Log.i("newInstance", "floraFragment");
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container, WildlifeFragment.newInstance("flora"), "wildlifeFlora");
+                transaction.commit();
+            } else
+            if (currentChildFragment.getTag() != null && currentChildFragment.getTag().equals("faunaFragment")) {
+                Log.i("newInstance", "faunaFragment");
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container, WildlifeFragment.newInstance("fauna"), "wildlifeFauna");
+                transaction.commit();
+            } else
+            if (currentChildFragment.getTag() != null && currentChildFragment.getTag().equals("funghiFragment")) {
+                Log.i("newInstance", "funghiFragment");
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container, WildlifeFragment.newInstance("funghi"), "funghiFragment");
+                transaction.commit();
+            }
+            //}
+        } catch (NullPointerException np) {
+            np.printStackTrace();
+        }
+
+
+//        if (getFragmentManager().getBackStackEntryCount() > 0) {
+//            getFragmentManager().popBackStack();
+//        } else {
+//            super.onBackPressed();
+//        }
     }
 
 //    //     @Override

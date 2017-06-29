@@ -19,9 +19,11 @@ public class DiscoverFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
     private TabLayout discoverTabs;
     private FrameLayout discoverChildrenFragmentContainer;
+    static String tagFromBackStack;
 
-    public static DiscoverFragment newInstance() {
+    public static DiscoverFragment newInstance(String TAG) {
         DiscoverFragment fragment = new DiscoverFragment();
+        tagFromBackStack = TAG;
         return fragment;
     }
 
@@ -38,7 +40,16 @@ public class DiscoverFragment extends Fragment {
         discoverTabs.addTab(discoverTabs.newTab().setText("Programok"));
 
         //set default fragment
-        replaceFragment(new DiscoverPOI());
+        if (tagFromBackStack != null) {
+            if (tagFromBackStack.equals("trip")){
+                replaceFragment(new DiscoverTrips(), "discoverTrip");
+                discoverTabs.getTabAt(1).select();
+            } else if (tagFromBackStack.equals("poi")) {
+                replaceFragment(new DiscoverPOI(), "discoverPoi");
+            }
+        } else {
+            replaceFragment(new DiscoverPOI(), "discoverPoi");
+        }
 
         return fragmentView;
     }
@@ -51,11 +62,11 @@ public class DiscoverFragment extends Fragment {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 if (tab.getPosition() == 0) {
-                    replaceFragment(new DiscoverPOI());
+                    replaceFragment(new DiscoverPOI(), "discoverPoi");
                 } else if (tab.getPosition() == 1) {
-                    replaceFragment(new DiscoverTrips());
+                    replaceFragment(new DiscoverTrips(), "discoverTrip");
                 } else if (tab.getPosition() == 2) {
-                    replaceFragment(new DiscoverPrograms());
+                    replaceFragment(new DiscoverPrograms(), "discoverProgram");
                 }
             }
 
@@ -94,11 +105,11 @@ public class DiscoverFragment extends Fragment {
         void messageFromParentFragment(Uri uri);
     }
 
-    private void replaceFragment(Fragment fragment) {
+    private void replaceFragment(Fragment fragment, String TAG) {
         FragmentManager fragmentManager = getChildFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.child_fragment_container, fragment);
-        transaction.addToBackStack("discoverFragment");
+        transaction.replace(R.id.child_fragment_container, fragment, TAG);
+        transaction.addToBackStack(TAG);
         transaction.commit();
     }
 

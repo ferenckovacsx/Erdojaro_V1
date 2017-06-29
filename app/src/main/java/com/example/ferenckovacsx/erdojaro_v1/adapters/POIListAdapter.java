@@ -52,7 +52,7 @@ public class POIListAdapter extends ArrayAdapter<POI> {
         // Check if an existing view is being reused, otherwise inflate the view
         ViewHolder viewHolder; // view lookup cache stored in tag
 
-        final View result;
+        final View resultView;
 
         if (convertView == null) {
 
@@ -62,12 +62,12 @@ public class POIListAdapter extends ArrayAdapter<POI> {
             viewHolder.poiImageView = (ImageView) convertView.findViewById(R.id.poi_listitem_image);
             viewHolder.poiTextView = (TextView) convertView.findViewById(R.id.poi_listitem_textview);
 
-            result = convertView;
+            resultView = convertView;
 
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
-            result = convertView;
+            resultView = convertView;
         }
 
         lastPosition = position;

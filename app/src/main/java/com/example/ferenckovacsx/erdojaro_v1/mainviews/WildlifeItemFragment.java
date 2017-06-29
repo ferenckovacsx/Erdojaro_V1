@@ -4,8 +4,11 @@ import android.content.Context;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -24,15 +27,18 @@ import static com.example.ferenckovacsx.erdojaro_v1.mainviews.MainActivity.mainC
  * Created by ferenckovacsx on 2017-05-28.
  */
 
-public class WildlifeItemFragment extends Fragment {
+public class WildlifeItemFragment extends Fragment implements AppBarLayout.OnOffsetChangedListener {
 
     ImageView wildlifeImageView;
+    ImageView wildlifeFilterImageView;
+    ImageView wildlifeBackButton;
     TextView wildlifeTitleTextview;
     TextView wildlifeTitleLatinTextview;
     TextView wildlifeDescriptionTextview;
     TextView wildlifeItemToolbarText;
     CollapsingToolbarLayout collapsingToolbarLayout;
-
+    private boolean appBarIsExpanded = true;
+    private AppBarLayout appBarLayout;
     private OnFragmentInteractionListener mListener;
 
     @Override
@@ -48,8 +54,11 @@ public class WildlifeItemFragment extends Fragment {
         wildlifeDescriptionTextview = (TextView) wildlifeItemView.findViewById(R.id.wildlife_item_description);
         //wildlifeItemToolbarText = (TextView) wildlifeItemView.findViewById(R.id.wildlife_toolbar_textview);
         collapsingToolbarLayout = (CollapsingToolbarLayout) wildlifeItemView.findViewById(R.id.collapsing);
+        wildlifeFilterImageView = wildlifeItemView.findViewById(R.id.wildlife_filter);
+        wildlifeBackButton = wildlifeItemView.findViewById(R.id.wildlife_toolbar_back_icon);
 
         Bundle wildlifeBundle = getArguments();
+        final String wildlifeType = wildlifeBundle.getString("wildlife_type");
         int wildlifeId = wildlifeBundle.getInt("wildlife_id");
         int wildlifeImageId = wildlifeBundle.getInt("wildlife_imageId");
         String wildlifeImageUrl = wildlifeBundle.getString("wildlife_imageUrl");
@@ -75,6 +84,38 @@ public class WildlifeItemFragment extends Fragment {
         wildlifeTitleLatinTextview.setText(wildlifeItemLatinTitle);
         wildlifeDescriptionTextview.setText(wildlifeItemDescription);
         //wildlifeItemToolbarText.setText(wildlifeItemTitle);
+        appBarLayout = wildlifeItemView.findViewById(R.id.appbar);
+
+        wildlifeBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container, WildlifeFragment.newInstance(wildlifeType), "wildlifeFauna");
+                transaction.commit();
+                Log.i("wildlife", "onclick");
+            }
+        });
+
+        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+
+                if (Math.abs(verticalOffset) - appBarLayout.getTotalScrollRange() == 0) {
+                    Log.i("appbar", "collapsed");
+                    wildlifeFilterImageView.setVisibility(View.VISIBLE);
+                    wildlifeBackButton.setColorFilter(R.color.colorTextDark);
+
+                } else {
+                    //Expanded
+                    Log.i("appbar", "expanded");
+                    wildlifeFilterImageView.setVisibility(View.GONE);
+                    wildlifeBackButton.setColorFilter(Color.argb(255, 255, 255, 255));
+                }
+            }
+        });
+
+
         collapsingToolbarLayout.setTitle(wildlifeItemTitle);
         collapsingToolbarLayout.setExpandedTitleColor(ContextCompat.getColor(mainContext, android.R.color.transparent));
         collapsingToolbarLayout.setCollapsedTitleTextColor(ContextCompat.getColor(mainContext, R.color.colorTextDark));
@@ -102,6 +143,11 @@ public class WildlifeItemFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and Name
         void messageFromChildFragment(Uri uri);
+    }
+
+    @Override
+    public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+        Log.i("wildlife", "offset chanced" + verticalOffset);
     }
 
 }

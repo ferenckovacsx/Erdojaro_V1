@@ -42,7 +42,7 @@ public class MoreOptionsFragment extends Fragment {
         OptionsList.add(new OptionListItem("Élővilág", R.drawable.ic_wildlife));
         OptionsList.add(new OptionListItem("Elsősegélynyújtás", R.drawable.ic_firstaid));
         OptionsList.add(new OptionListItem("Szálláshelyek", R.drawable.ic_accommodations));
-        OptionsList.add(new OptionListItem("Offline tartalom", R.drawable.ic_downloads));
+        OptionsList.add(new OptionListItem("Offline térképek", R.drawable.ic_downloads));
         OptionsList.add(new OptionListItem("Beállítások", R.drawable.ic_settings));
 
         adapter = new MoreOptionsListAdapter(OptionsList, getActivity().getApplicationContext());

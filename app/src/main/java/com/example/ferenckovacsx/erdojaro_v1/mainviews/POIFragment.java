@@ -86,8 +86,8 @@ public class POIFragment extends Fragment {
                 mapFragment.setArguments(fragmentArgs);
 
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_container, mapFragment);
-                transaction.addToBackStack("poiFragment");
+                transaction.replace(R.id.fragment_container, mapFragment, "mapPoiFragment");
+                //transaction.addToBackStack("poiFragment");
                 transaction.commit();
 
                 bottomNavigationView.getMenu().getItem(1).setChecked(true);

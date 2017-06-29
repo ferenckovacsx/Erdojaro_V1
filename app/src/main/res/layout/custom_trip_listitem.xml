@@ -28,7 +28,6 @@
         android:layout_marginTop="8dp"
         android:gravity="start"
         android:lines="2"
-        android:text="Bükkszentkereszt - \nHoldviola Tanösvény"
         android:textColor="#5C5C5C"
         android:textSize="15sp"
         app:layout_constraintLeft_toRightOf="@+id/trip_listitem_image"

@@ -105,8 +105,8 @@ public class DiscoverPOI extends Fragment {
                 poiFragment.setArguments(fragmentArgs);
 
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_container, poiFragment);
-                transaction.addToBackStack("discoverPoiFragment");
+                transaction.replace(R.id.fragment_container, poiFragment, "poiFragment");
+                transaction.addToBackStack("poiFragment");
                 transaction.commit();
             }
         });
