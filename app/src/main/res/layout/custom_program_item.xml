@@ -9,7 +9,7 @@
     <RelativeLayout
         android:id="@+id/content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/program_image"
@@ -17,17 +17,102 @@
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:padding="2dp"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:id="@+id/program_favorite_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/program_image"
+            android:adjustViewBounds="true"
+            android:padding="5dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/poi_nagymezo" />
+            android:src="@drawable/ic_heart_empty" />
+
+        <TextView
+            android:id="@+id/program_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/program_image"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:lineSpacingMultiplier="1.2"
+            android:paddingTop="10dp"
+            android:textColor="@color/colorTextDark"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/program_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/program_title"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:lineSpacingMultiplier="1.2"
+            android:paddingBottom="10dp"
+            android:textColor="@color/colorTextDark"
+            android:textSize="16sp"
+            android:textStyle="italic" />
+
+        <LinearLayout
+            android:id="@+id/program_icons_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/program_subtitle"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/program_icon_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_program_train_schedule"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.2"
+                android:text="Menetrend"
+                android:textColor="@color/colorTextDark"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/program_icon_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_train_route"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.2"
+                android:text="Útvonal"
+                android:textColor="@color/colorTextDark"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/program_icon_3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_program_ticket"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.2"
+                android:text="Jegyárak"
+                android:textColor="@color/colorTextDark"
+                android:textSize="12sp" />
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/program_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/program_image"
-            android:lineSpacingMultiplier="1.2"
-            android:textColor="#5C5C5C"
-            android:padding="16dp" />
+            android:layout_below="@+id/program_icons_layout"
+            android:layout_marginTop="10dp"
+            android:padding="16dp"
+            android:textColor="@color/colorTextDark"
+            android:textSize="15sp" />
+
 
     </RelativeLayout>
 

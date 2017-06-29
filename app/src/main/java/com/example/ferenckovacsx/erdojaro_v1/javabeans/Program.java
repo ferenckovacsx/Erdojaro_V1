@@ -5,35 +5,67 @@ package com.example.ferenckovacsx.erdojaro_v1.javabeans;
  */
 
 public class Program {
-    public String name;
-    public int imageID;
+    public int Id;
+    public String Title;
+    public String SubTitle;
+    public int ImageId;
+    public String Description;
 
-    public Program(String name, int imageID) {
-        this.name = name;
-        this.imageID = imageID;
+    public Program(int id, String title, String subTitle, int imageId, String description) {
+        Id = id;
+        Title = title;
+        SubTitle = subTitle;
+        ImageId = imageId;
+        Description = description;
     }
 
-    public String getName() {
-        return name;
+    public int getId() {
+        return Id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setId(int id) {
+        Id = id;
     }
 
-    public int getImageID() {
-        return imageID;
+    public String getTitle() {
+        return Title;
     }
 
-    public void setImageID(int imageID) {
-        this.imageID = imageID;
+    public void setTitle(String title) {
+        this.Title = title;
+    }
+
+    public String getSubTitle() {
+        return SubTitle;
+    }
+
+    public void setSubTitle(String subTitle) {
+        this.SubTitle = subTitle;
+    }
+
+    public int getImageId() {
+        return ImageId;
+    }
+
+    public void setImageId(int imageId) {
+        this.ImageId = imageId;
+    }
+
+    public String getDescription() {
+        return Description;
+    }
+
+    public void setDescription(String description) {
+        Description = description;
     }
 
     @Override
     public String toString() {
         return "Program{" +
-                "Name='" + name + '\'' +
-                ", ImageUrl=" + imageID +
+                "Title='" + Title + '\'' +
+                ", SubTitle='" + SubTitle + '\'' +
+                ", ImageId=" + ImageId +
+                ", Description='" + Description + '\'' +
                 '}';
     }
 }

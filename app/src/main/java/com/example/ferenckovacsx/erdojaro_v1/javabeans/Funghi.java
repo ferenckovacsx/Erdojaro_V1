@@ -9,13 +9,15 @@ public class Funghi {
     public int Id;
     public String Name;
     public String LatinName;
+    public int Fogyasztas; //1 - ehető , 2 - nem ehető, 3 - mérgező
     public int ImageID;
     public String Description;
 
-    public Funghi(int id, String name, String latinName, int imageID, String description) {
+    public Funghi(int id, String name, String latinName, int fogyasztas, int imageID, String description) {
         Id = id;
         Name = name;
         LatinName = latinName;
+        Fogyasztas = fogyasztas;
         ImageID = imageID;
         Description = description;
     }
@@ -44,6 +46,14 @@ public class Funghi {
         LatinName = latinName;
     }
 
+    public int getFogyasztas() {
+        return Fogyasztas;
+    }
+
+    public void setFogyasztas(int fogyasztas) {
+        Fogyasztas = fogyasztas;
+    }
+
     public int getImageID() {
         return ImageID;
     }
@@ -66,6 +76,7 @@ public class Funghi {
                 "Id=" + Id +
                 ", Name='" + Name + '\'' +
                 ", LatinName='" + LatinName + '\'' +
+                ", Fogyaszthato?='" + Fogyasztas + '\'' +
                 ", ImageID=" + ImageID +
                 ", Description='" + Description + '\'' +
                 '}';

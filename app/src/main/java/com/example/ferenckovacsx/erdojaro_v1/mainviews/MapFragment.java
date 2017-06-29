@@ -2,6 +2,8 @@ package com.example.ferenckovacsx.erdojaro_v1.mainviews;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
@@ -13,6 +15,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,6 +49,8 @@ import com.mapbox.services.commons.models.Position;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.ferenckovacsx.erdojaro_v1.mainviews.MainActivity.mainContext;
+
 
 public class MapFragment extends Fragment implements PermissionsListener {
 
@@ -58,6 +63,9 @@ public class MapFragment extends Fragment implements PermissionsListener {
     private PermissionsManager permissionsManager;
 
     private List<Position> routeCoordinates;
+
+    SharedPreferences sharedpreferences;
+    boolean firstRun;
 
     View convertView;
 
@@ -79,6 +87,29 @@ public class MapFragment extends Fragment implements PermissionsListener {
         mapView = (MapView) convertView.findViewById(R.id.mapView);
 
         mapView.onCreate(savedInstanceState);
+
+        sharedpreferences = mainContext.getSharedPreferences("appPreferences", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+        editor.putBoolean("firstRun", true);
+        editor.apply();
+
+        //firstRun = true;
+
+        if (sharedpreferences.getBoolean("firstrun", true)) {
+
+            AlertDialog.Builder alertDialog = new AlertDialog.Builder(getContext(), R.style.CustomAlertDialog);
+            alertDialog.setTitle("Offline térképek");
+            alertDialog.setMessage("Böngészd a térképet az erdő közepén, internet kapcsolat nélkül! \nTölts le térképeket a \"Továbbiak/Offline Térképek\" menüből!");
+            alertDialog.setIcon(R.drawable.ic_launcher);
+            alertDialog.setNegativeButton("Rendben", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
+
+            alertDialog.show();
+            sharedpreferences.edit().putBoolean("firstrun", false).apply();
+        }
 
 
         //get arguments from poi or trip fragment

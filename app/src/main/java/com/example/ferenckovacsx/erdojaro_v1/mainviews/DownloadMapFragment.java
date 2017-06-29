@@ -263,7 +263,7 @@ public class DownloadMapFragment extends Fragment {
         OfflineTilePyramidRegionDefinition definition = new OfflineTilePyramidRegionDefinition(
                 styleUrl, bounds, minZoom, maxZoom, pixelRatio);
 
-        // Build a JSONObject using the user-defined offline region title,
+        // Build a JSONObject using the user-defined offline region Title,
         // convert it into string, and use it to create a metadata variable.
         // The metadata varaible will later be passed to createOfflineRegion()
         byte[] metadata;

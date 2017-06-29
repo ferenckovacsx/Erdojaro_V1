@@ -1,14 +1,18 @@
 package com.example.ferenckovacsx.erdojaro_v1.mainviews;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
@@ -60,6 +64,20 @@ public class MainActivity
         cameraIcon.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
+                //check for camera permission
+                if (ContextCompat.checkSelfPermission(mainContext, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+
+                    ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.CAMERA},
+                            11);
+                }
+
+                //check for storage permission
+                if (ContextCompat.checkSelfPermission(mainContext, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+
+                    ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                            12);
+                }
+
                 Intent i = new Intent(MainActivity.this, CameraPreviewActivity.class);
                 startActivity(i);
             }
@@ -107,14 +125,12 @@ public class MainActivity
                                 }
                                 break;
 
-//                            case R.id.navigation_favorites:
-//
-//                                //if (!item.isChecked()) {
-//                                selectedFragment = new FavoritesFragment();
-//                                selectedFragment.setRetainInstance(true);
-//                                replaceFragment = true;
-//                                // }
-//                                break;
+                            case R.id.navigation_favorites:
+
+                                selectedFragment = new FavoritesFragment();
+                                selectedFragment.setRetainInstance(true);
+                                replaceFragment = true;
+                                break;
 
                             case R.id.navigation_more_options:
 
@@ -169,7 +185,7 @@ public class MainActivity
             Fragment currentFragment = fragmentManager.findFragmentById(R.id.fragment_container);
             Fragment currentChildFragment = childFragmentManager.findFragmentById(R.id.child_fragment_container);
 
-            //Log.i("currentFragment", "is:" + currentFragment.getTag());
+            Log.i("currentFragment", "is:" + currentFragment.getTag());
             //Log.i("currentChildFragment", "is:" + currentChildFragment.getTag());
 
             //if (currentFragment.getTag() != null) {
@@ -191,19 +207,19 @@ public class MainActivity
                 transaction.replace(R.id.fragment_container, DiscoverFragment.newInstance("poi"), "discoverPoi");
                 transaction.commit();
             } else
-            if (currentChildFragment.getTag() != null && currentChildFragment.getTag().equals("floraFragment")) {
+            if (currentFragment.getTag() != null && currentFragment.getTag().equals("floraFragment")) {
                 Log.i("newInstance", "floraFragment");
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_container, WildlifeFragment.newInstance("flora"), "wildlifeFlora");
                 transaction.commit();
             } else
-            if (currentChildFragment.getTag() != null && currentChildFragment.getTag().equals("faunaFragment")) {
+            if (currentFragment.getTag() != null && currentFragment.getTag().equals("faunaFragment")) {
                 Log.i("newInstance", "faunaFragment");
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_container, WildlifeFragment.newInstance("fauna"), "wildlifeFauna");
                 transaction.commit();
             } else
-            if (currentChildFragment.getTag() != null && currentChildFragment.getTag().equals("funghiFragment")) {
+            if (currentFragment.getTag() != null && currentFragment.getTag().equals("funghiFragment")) {
                 Log.i("newInstance", "funghiFragment");
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_container, WildlifeFragment.newInstance("funghi"), "funghiFragment");

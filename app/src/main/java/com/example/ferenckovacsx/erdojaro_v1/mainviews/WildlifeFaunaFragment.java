@@ -40,16 +40,29 @@ public class WildlifeFaunaFragment extends Fragment {
         faunaGridView = (GridView) faunaView.findViewById(R.id.fauna_gridview);
 
         faunaArrayList = new ArrayList<>();
-        faunaArrayList.add(new Fauna(1, getResources().getString(R.string.fauna_1_name), getResources().getString(R.string.fauna_1_latin_name), R.drawable.fauna_1_thumbnail, getResources().getString(R.string.fauna_1_description)));
-        faunaArrayList.add(new Fauna(2, getResources().getString(R.string.fauna_2_name), getResources().getString(R.string.fauna_2_latin_name), R.drawable.fauna_2_thumbnail, getResources().getString(R.string.fauna_2_description)));
-        faunaArrayList.add(new Fauna(3, getResources().getString(R.string.fauna_3_name), getResources().getString(R.string.fauna_3_latin_name), R.drawable.fauna_3_thumbnail, getResources().getString(R.string.fauna_3_description)));
-        faunaArrayList.add(new Fauna(4, getResources().getString(R.string.fauna_4_name), getResources().getString(R.string.fauna_4_latin_name), R.drawable.fauna_4_thumbnail, getResources().getString(R.string.fauna_4_description)));
-        faunaArrayList.add(new Fauna(5, getResources().getString(R.string.fauna_5_name), getResources().getString(R.string.fauna_5_latin_name), R.drawable.fauna_5_thumbnail, getResources().getString(R.string.fauna_5_description)));
-        faunaArrayList.add(new Fauna(6, getResources().getString(R.string.fauna_6_name), getResources().getString(R.string.fauna_6_latin_name), R.drawable.fauna_6_thumbnail, getResources().getString(R.string.fauna_6_description)));
-        faunaArrayList.add(new Fauna(7, getResources().getString(R.string.fauna_7_name), getResources().getString(R.string.fauna_7_latin_name), R.drawable.fauna_7_thumbnail, getResources().getString(R.string.fauna_7_description)));
-        faunaArrayList.add(new Fauna(8, getResources().getString(R.string.fauna_8_name), getResources().getString(R.string.fauna_8_latin_name), R.drawable.fauna_8_thumbnail, getResources().getString(R.string.fauna_8_description)));
-        faunaArrayList.add(new Fauna(9, getResources().getString(R.string.fauna_9_name), getResources().getString(R.string.fauna_9_latin_name), R.drawable.fauna_9_thumbnail, getResources().getString(R.string.fauna_9_description)));
-        faunaArrayList.add(new Fauna(10, getResources().getString(R.string.fauna_10_name), getResources().getString(R.string.fauna_10_latin_name), R.drawable.fauna_10_thumbnail, getResources().getString(R.string.fauna_10_description)));
+        faunaArrayList.add(new Fauna(1, getResources().getString(R.string.fauna_1_name), getResources().getString(R.string.fauna_1_latin_name), R.drawable.fauna_1, getResources().getString(R.string.fauna_1_description)));
+        faunaArrayList.add(new Fauna(2, getResources().getString(R.string.fauna_2_name), getResources().getString(R.string.fauna_2_latin_name), R.drawable.fauna_2, getResources().getString(R.string.fauna_2_description)));
+        faunaArrayList.add(new Fauna(3, getResources().getString(R.string.fauna_3_name), getResources().getString(R.string.fauna_3_latin_name), R.drawable.fauna_3, getResources().getString(R.string.fauna_3_description)));
+        faunaArrayList.add(new Fauna(4, getResources().getString(R.string.fauna_4_name), getResources().getString(R.string.fauna_4_latin_name), R.drawable.fauna_4, getResources().getString(R.string.fauna_4_description)));
+        faunaArrayList.add(new Fauna(5, getResources().getString(R.string.fauna_5_name), getResources().getString(R.string.fauna_5_latin_name), R.drawable.fauna_5, getResources().getString(R.string.fauna_5_description)));
+        faunaArrayList.add(new Fauna(6, getResources().getString(R.string.fauna_6_name), getResources().getString(R.string.fauna_6_latin_name), R.drawable.fauna_6, getResources().getString(R.string.fauna_6_description)));
+        faunaArrayList.add(new Fauna(7, getResources().getString(R.string.fauna_7_name), getResources().getString(R.string.fauna_7_latin_name), R.drawable.fauna_7, getResources().getString(R.string.fauna_7_description)));
+        faunaArrayList.add(new Fauna(8, getResources().getString(R.string.fauna_8_name), getResources().getString(R.string.fauna_8_latin_name), R.drawable.fauna_8, getResources().getString(R.string.fauna_8_description)));
+        faunaArrayList.add(new Fauna(9, getResources().getString(R.string.fauna_9_name), getResources().getString(R.string.fauna_9_latin_name), R.drawable.fauna_9, getResources().getString(R.string.fauna_9_description)));
+        faunaArrayList.add(new Fauna(10, getResources().getString(R.string.fauna_10_name), getResources().getString(R.string.fauna_10_latin_name), R.drawable.fauna_10, getResources().getString(R.string.fauna_10_description)));
+        faunaArrayList.add(new Fauna(11, getResources().getString(R.string.fauna_11_name), getResources().getString(R.string.fauna_11_latin_name), R.drawable.fauna_11, getResources().getString(R.string.fauna_11_description)));
+        faunaArrayList.add(new Fauna(12, getResources().getString(R.string.fauna_12_name), getResources().getString(R.string.fauna_12_latin_name), R.drawable.fauna_12, getResources().getString(R.string.fauna_12_description)));
+        faunaArrayList.add(new Fauna(13, getResources().getString(R.string.fauna_13_name), getResources().getString(R.string.fauna_13_latin_name), R.drawable.fauna_13, getResources().getString(R.string.fauna_13_description)));
+        faunaArrayList.add(new Fauna(14, getResources().getString(R.string.fauna_14_name), getResources().getString(R.string.fauna_14_latin_name), R.drawable.fauna_14, getResources().getString(R.string.fauna_14_description)));
+        faunaArrayList.add(new Fauna(15, getResources().getString(R.string.fauna_15_name), getResources().getString(R.string.fauna_15_latin_name), R.drawable.fauna_15, getResources().getString(R.string.fauna_15_description)));
+        faunaArrayList.add(new Fauna(16, getResources().getString(R.string.fauna_16_name), getResources().getString(R.string.fauna_16_latin_name), R.drawable.fauna_16, getResources().getString(R.string.fauna_16_description)));
+        faunaArrayList.add(new Fauna(17, getResources().getString(R.string.fauna_17_name), getResources().getString(R.string.fauna_17_latin_name), R.drawable.fauna_17, getResources().getString(R.string.fauna_17_description)));
+        faunaArrayList.add(new Fauna(18, getResources().getString(R.string.fauna_18_name), getResources().getString(R.string.fauna_18_latin_name), R.drawable.fauna_18, getResources().getString(R.string.fauna_18_description)));
+        faunaArrayList.add(new Fauna(19, getResources().getString(R.string.fauna_19_name), getResources().getString(R.string.fauna_19_latin_name), R.drawable.fauna_19, getResources().getString(R.string.fauna_19_description)));
+        faunaArrayList.add(new Fauna(20, getResources().getString(R.string.fauna_20_name), getResources().getString(R.string.fauna_20_latin_name), R.drawable.fauna_20, getResources().getString(R.string.fauna_20_description)));
+        faunaArrayList.add(new Fauna(21, getResources().getString(R.string.fauna_21_name), getResources().getString(R.string.fauna_21_latin_name), R.drawable.fauna_21, getResources().getString(R.string.fauna_21_description)));
+        faunaArrayList.add(new Fauna(22, getResources().getString(R.string.fauna_22_name), getResources().getString(R.string.fauna_22_latin_name), R.drawable.fauna_22, getResources().getString(R.string.fauna_22_description)));
+        faunaArrayList.add(new Fauna(23, getResources().getString(R.string.fauna_23_name), getResources().getString(R.string.fauna_23_latin_name), R.drawable.fauna_23, getResources().getString(R.string.fauna_23_description)));
 
         faunaImageList = new ArrayList<>();
         for (int i = 0; i < faunaArrayList.size(); i++) {
@@ -101,7 +114,7 @@ public class WildlifeFaunaFragment extends Fragment {
                 wildlifeItemFragment.setArguments(fragmentArgs);
 
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.child_fragment_container, wildlifeItemFragment, "faunaFragment");
+                transaction.replace(R.id.fragment_container, wildlifeItemFragment, "faunaFragment");
                 transaction.addToBackStack("faunaFragment");
                 transaction.commit();
             }

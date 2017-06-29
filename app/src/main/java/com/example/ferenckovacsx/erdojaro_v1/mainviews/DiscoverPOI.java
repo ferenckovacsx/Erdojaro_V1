@@ -41,7 +41,7 @@ public class DiscoverPOI extends Fragment {
         View poiView = inflater.inflate(R.layout.fragment_discover_poi, container, false);
         POIListAdapter adapter;
 
-        poiFromFile = readPoiFromFile();
+        //poiFromFile = readPoiFromFile();
 
         poiListView = (ListView) poiView.findViewById(R.id.POI_listview);
 
@@ -58,7 +58,7 @@ public class DiscoverPOI extends Fragment {
         poiList.add(new POI(10, getResources().getString(R.string.poi_10_name), R.drawable.poi_10,  Double.parseDouble(getResources().getString(R.string.poi_10_latitude)), Double.parseDouble(getResources().getString(R.string.poi_10_longitude)), false, getResources().getString(R.string.poi_10_description)));
         poiList.add(new POI(11, getResources().getString(R.string.poi_11_name), R.drawable.poi_11,  Double.parseDouble(getResources().getString(R.string.poi_11_latitude)), Double.parseDouble(getResources().getString(R.string.poi_11_longitude)), false, getResources().getString(R.string.poi_11_description)));
 
-        poiList.addAll(poiFromFile);
+        //poiList.addAll(poiFromFile);
         Log.i("DiscoverPOI", "combined poiList" + poiList.toString());
 
         poiListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
@@ -79,7 +79,7 @@ public class DiscoverPOI extends Fragment {
                 double poiCoordLong = poiItem.getLongitude();
                 String poiDescription = poiItem.getDescription();
 
-                Log.i("POIclickListener", "title: " + poiTitle);
+                Log.i("POIclickListener", "Title: " + poiTitle);
                 Log.i("POIclickListener", "gps latitude: " + poiCoordLat);
                 Log.i("POIclickListener", "gps longiuted: " + poiCoordLong);
                 Log.i("POIclickListener", "Description: " + poiDescription);

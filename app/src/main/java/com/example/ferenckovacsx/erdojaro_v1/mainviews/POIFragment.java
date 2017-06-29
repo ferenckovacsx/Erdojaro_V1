@@ -1,6 +1,7 @@
 package com.example.ferenckovacsx.erdojaro_v1.mainviews;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,6 +9,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -69,7 +71,26 @@ public class POIFragment extends Fragment {
 
         poiTitleTextview.setText(poiTitle);
         poiCoordinateTextview.setText("É" + String.valueOf(poiLat) + "  " + "K" + String.valueOf(poiLong));
+        //poiDescriptionTextview.setJustificationMode(1);
         poiDescriptionTextview.setText(poiDescription);
+
+//        String htmlText = " %s ";
+//
+//        String justifyTag = "<html><body style='text-align:justify;'>%s</body></html>";
+//
+//        String myData = "Ismertetőjegyek:\n" +
+//                "Kalap: 3-10 cm átmérőjű, fehér, idősen vöröses, barnás színű, felszínén finom pikkelyekkel, ritkán sima.\n" +
+//                "Lemezek: fiatalon élénk rózsaszínek, késöbb barnásvörösek, végül feketék, sűrűn állnak, hasasak. A csiperkék lemezei fiatalon rózsaszínűek, amely szín később barnássá, barnává, illetve akár feketévé változik.\n" +
+//                "Tönk: fehér, hengeres, vékony. A gallér múlékony. A tönkalap néha sárga foltos. \n" +
+//                "Hús: fehér, puha, vágás helyén enyhén vörösödő, törékeny, puha. Illata, íze kellemes.\n" +
+//                "Termőhely és idő: Trágyázott talajon, mezőkön, réteken terem. Főként augusztustól októberig jelenik meg. \n" +
+//                "Jó tudni: Ugyanazon az élőhelyen nő az elsárguló húsú mérgező karbolszagú csiperke.";
+//
+//        WebView webView = (WebView) POIView.findViewById(R.id.webView1);
+//        webView.getSettings();
+//        webView.setBackgroundColor(Color.TRANSPARENT);
+//
+//        webView.loadDataWithBaseURL("", String.format(justifyTag, poiDescription), "text/html", "utf-8", "");
 
 
         //show on map

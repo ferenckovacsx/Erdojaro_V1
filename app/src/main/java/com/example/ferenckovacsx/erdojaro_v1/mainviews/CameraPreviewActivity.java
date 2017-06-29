@@ -55,19 +55,7 @@ public class CameraPreviewActivity extends AppCompatActivity {
             np.printStackTrace();
         }
 
-        //check for camera permission
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
 
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA},
-                    11);
-        }
-
-        //check for storage permission
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                    12);
-        }
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
@@ -136,6 +124,10 @@ public class CameraPreviewActivity extends AppCompatActivity {
                 return;
             }
             Toast.makeText(CameraPreviewActivity.this, "Pic saved in: " + photoPath, Toast.LENGTH_SHORT).show();
+
+            Camera.Parameters parameters = camera.getParameters();
+            parameters.setPreviewSize(mImageSurfaceView.getWidth(), mImageSurfaceView.getHeight());
+            camera.setParameters(parameters);
 
             camera.startPreview();
             newImage.recycle();

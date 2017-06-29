@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.ferenckovacsx.erdojaro_v1.R;
 import com.example.ferenckovacsx.erdojaro_v1.XMLParser;
@@ -38,6 +39,7 @@ import static com.example.ferenckovacsx.erdojaro_v1.mainviews.TripFilterDialogFr
 public class DiscoverTrips extends Fragment {
 
     ListView tripListView;
+    TextView noResultsTextView;
     ArrayList<Trip> tripList;
     ArrayList<Trip> tripListFromFile;
     ArrayList<Trip> totalTripList;
@@ -78,10 +80,12 @@ public class DiscoverTrips extends Fragment {
 
         discoverTripsFragment = this;
 
-        tripListFromFile = readTripFromFile();
+        //tripListFromFile = readTripFromFile();
 
         tripListView = (ListView) tripView.findViewById(R.id.TRIP_listview);
         filterTripsButton = (ImageView) tripView.findViewById(R.id.trip_filter_button);
+        noResultsTextView = tripView.findViewById(R.id.discover_trips_no_results_textview);
+        noResultsTextView.setVisibility(View.GONE);
 
 
         tripList = new ArrayList<>();
@@ -94,7 +98,7 @@ public class DiscoverTrips extends Fragment {
         tripList.add(new Trip(6, getString(R.string.trip_6_name), R.drawable.trip_6, 3, 26, true, true, true, false, true, getString(R.string.trip_6_description), null, null));
         tripList.add(new Trip(7, getString(R.string.trip_7_name), R.drawable.trip_7, 3, 26, true, true, true, true, false, "Ez itt a nagymezo", null, null));
 
-        tripList.addAll(tripListFromFile);
+        //tripList.addAll(tripListFromFile);
 
         Log.i("TripFragment", "lista: " + tripList.toString());
 
@@ -430,7 +434,15 @@ public class DiscoverTrips extends Fragment {
             Log.i("DiscoverTrips", "ITERATOR list: " + filteredTripList.toString());
             Log.i("DiscoverTrips", "ITERATOR list size: " + filteredTripList.size());
 
-            tripListView.setAdapter(adapter);
+            if (filteredTripList.size() < 1) {
+                noResultsTextView.setVisibility(View.VISIBLE);
+                tripListView.setVisibility(View.GONE);
+            } else {
+                noResultsTextView.setVisibility(View.GONE);
+                tripListView.setVisibility(View.VISIBLE);
+                tripListView.setAdapter(adapter);
+            }
+
 
         }
     }

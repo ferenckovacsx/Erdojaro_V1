@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,6 +13,8 @@ import com.example.ferenckovacsx.erdojaro_v1.R;
 import com.example.ferenckovacsx.erdojaro_v1.javabeans.Flora;
 
 import java.util.ArrayList;
+
+import static com.example.ferenckovacsx.erdojaro_v1.mainviews.MainActivity.mainContext;
 
 /**
  * Created by ferenckovacsx on 2017-05-26.
@@ -55,27 +58,63 @@ public class WildlifeGridAdapter extends BaseAdapter {
         return 0;
     }
 
-    @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        View grid;
-        Object object = getItem(position);
-        Flora floraItem = (Flora) object;
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        View gridView;
 
         if (convertView == null) {
 
-            grid = new View(mContext);
-            grid = inflater.inflate(R.layout.custom_grid_item, parent, false);
+            gridView = new View(mContext);
+            gridView = inflater.inflate(R.layout.custom_grid_item, null);
+
+            GridView grid = (GridView)parent;
+            int size = grid.getRequestedColumnWidth();
+
+            wildlifeImageView = gridView.findViewById(R.id.wildlife_grid_image);
+            wildlifeTextView = gridView.findViewById(R.id.wildlife_grid_textview);
+            wildlifeImageView.setImageResource(wildlifeImageId[position]);
+            wildlifeTextView.setText(wildlifeNames[position]);
 
         } else {
-            grid = (View) convertView;
+
+            gridView = convertView;
         }
-        wildlifeImageView = (ImageView) grid.findViewById(R.id.wildlife_grid_image);
-        wildlifeTextView = grid.findViewById(R.id.wildlife_grid_textview);
-        wildlifeImageView.setImageResource(wildlifeImageId[position]);
-        wildlifeImageView.setImageResource(wildlifeImageId[position]);
-        wildlifeTextView.setText(wildlifeNames[position]);
-        return grid;
+
+        return gridView;
     }
+
+//    @Override
+//    public View getView(int position, View convertView, ViewGroup parent) {
+//
+////        GridView gridP = (GridView)parent;
+////        int size = gridP.getRequestedColumnWidth();
+////
+////        TextView text = new TextView(mainContext);
+////        text.setLayoutParams(new GridView.LayoutParams(size, size));
+//
+//
+//        View grid;
+//        Object object = getItem(position);
+//        Flora floraItem = (Flora) object;
+//        LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//
+//        if (convertView == null) {
+//
+//
+//
+//            grid = new View(mContext);
+//            grid = inflater.inflate(R.layout.custom_grid_item, parent, false);
+//
+//        } else {
+//            grid = (View) convertView;
+//        }
+//        wildlifeImageView = (ImageView) grid.findViewById(R.id.wildlife_grid_image);
+//        wildlifeTextView = grid.findViewById(R.id.wildlife_grid_textview);
+//        wildlifeImageView.setImageResource(wildlifeImageId[position]);
+//        wildlifeImageView.setImageResource(wildlifeImageId[position]);
+//        wildlifeTextView.setText(wildlifeNames[position]);
+//        return grid;
+//    }
 }

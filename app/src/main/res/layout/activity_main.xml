@@ -39,14 +39,14 @@
                 android:layout_alignParentLeft="true"
                 android:scaleType="fitCenter"
                 android:padding="10dp"
-                android:src="@drawable/ic_compass_frame" />
+                android:src="@drawable/ic_camera" />
 
             <ImageView
                 android:id="@+id/toolbar_erdojaro_logo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="8dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_erdojaro_icon" />
 

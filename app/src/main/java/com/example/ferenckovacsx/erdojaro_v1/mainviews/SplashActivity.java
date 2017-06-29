@@ -34,8 +34,11 @@ public class SplashActivity extends AppCompatActivity {
                 getString(R.string.loading_text_1),
                 getString(R.string.loading_text_2),
                 getString(R.string.loading_text_3),
-                getString(R.string.loading_text_4)};
-
+                getString(R.string.loading_text_4),
+                getString(R.string.loading_text_5),
+                getString(R.string.loading_text_6),
+                getString(R.string.loading_text_7),
+                getString(R.string.loading_text_8)};
 
         final Handler h = new Handler();
         h.postDelayed(new Runnable() {
@@ -44,7 +47,7 @@ public class SplashActivity extends AppCompatActivity {
                 if (count < 3) {
                     String randomStr = loadingTextArray[new Random().nextInt(loadingTextArray.length)];
                     loadingTextView.setText(randomStr);
-                    h.postDelayed(this, 500);
+                    h.postDelayed(this, 1000);
                 } else {
                     new GetContentAsync(getApplicationContext()).execute();
                 }
@@ -52,7 +55,7 @@ public class SplashActivity extends AppCompatActivity {
 
             }
 
-        }, 2000);
+        }, 3000);
 
     }
 }

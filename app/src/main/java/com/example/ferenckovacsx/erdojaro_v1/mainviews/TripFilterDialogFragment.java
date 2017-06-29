@@ -65,7 +65,7 @@ public class TripFilterDialogFragment extends DialogFragment {
 
         TripFilterDialogFragment frag = new TripFilterDialogFragment();
         Bundle args = new Bundle();
-        args.putString("title", title);
+        args.putString("Title", title);
         frag.setArguments(args);
         return frag;
     }

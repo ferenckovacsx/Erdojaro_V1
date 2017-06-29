@@ -115,7 +115,7 @@ public class WildlifeFloraFragment extends Fragment {
                 wildlifeItemFragment.setArguments(fragmentArgs);
 
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.child_fragment_container, wildlifeItemFragment, "floraFragment");
+                transaction.replace(R.id.fragment_container, wildlifeItemFragment, "floraFragment");
 
                 transaction.addToBackStack("floraFragment");
                 transaction.commit();

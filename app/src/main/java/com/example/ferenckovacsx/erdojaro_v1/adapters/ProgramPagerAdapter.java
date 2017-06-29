@@ -44,10 +44,14 @@ public class ProgramPagerAdapter extends PagerAdapter {
 
         View view = this.layoutInflater.inflate(R.layout.custom_program_item, container, false);
         ImageView displayImage = (ImageView) view.findViewById(R.id.program_image);
-        TextView imageText = (TextView) view.findViewById(R.id.program_description);
+        TextView programTitle = (TextView) view.findViewById(R.id.program_title);
+        TextView programDescription = (TextView) view.findViewById(R.id.program_description);
+        TextView programSubTitle = (TextView) view.findViewById(R.id.program_subtitle);
 
-        displayImage.setImageResource(this.dataObjectList.get(position).getImageID());
-        imageText.setText(this.dataObjectList.get(position).getName());
+        displayImage.setImageResource(this.dataObjectList.get(position).getImageId());
+        programTitle.setText(this.dataObjectList.get(position).getTitle());
+        programDescription.setText(this.dataObjectList.get(position).getDescription());
+        programSubTitle.setText(this.dataObjectList.get(position).getSubTitle());
         container.addView(view);
         return view;
     }

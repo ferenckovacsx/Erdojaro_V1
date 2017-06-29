@@ -48,10 +48,20 @@
         <item name="android:textColorPrimary">#212121</item>
         <item name="android:textColorHint">#212121</item>
         <item name="android:background">#FAFAFA</item>
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
     </style>
 
     <style name="CustomButton" parent="Base.Widget.AppCompat.Button" theme="@style/Widget.AppCompat.Button">
         <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="NegativeButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="PositiveButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
 </resources>

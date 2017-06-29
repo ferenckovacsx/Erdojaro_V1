@@ -33,7 +33,7 @@ public class OptionListItem {
     @Override
     public String toString() {
         return "OptionListItem{" +
-                "title='" + title + '\'' +
+                "Title='" + title + '\'' +
                 ", iconID=" + iconID +
                 '}';
     }

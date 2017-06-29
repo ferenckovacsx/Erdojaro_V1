@@ -40,7 +40,7 @@ public class WildlifeFragment extends Fragment {
 
         Log.i("WildlifeFragment", "tagFromBackStack" + tagFromBackStack);
 
-        bottomNavigationView.getMenu().getItem(2).setChecked(true);
+        bottomNavigationView.getMenu().getItem(3).setChecked(true);
 
         //generate TabLayout
         wildlifeTabs = (TabLayout) fragmentView.findViewById(R.id.wildlifeTabLayout);

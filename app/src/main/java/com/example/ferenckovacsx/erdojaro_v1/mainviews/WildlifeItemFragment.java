@@ -30,7 +30,7 @@ import static com.example.ferenckovacsx.erdojaro_v1.mainviews.MainActivity.mainC
 public class WildlifeItemFragment extends Fragment implements AppBarLayout.OnOffsetChangedListener {
 
     ImageView wildlifeImageView;
-    ImageView wildlifeFilterImageView;
+    TextView funghiEatabilityTextView;
     ImageView wildlifeBackButton;
     TextView wildlifeTitleTextview;
     TextView wildlifeTitleLatinTextview;
@@ -44,18 +44,22 @@ public class WildlifeItemFragment extends Fragment implements AppBarLayout.OnOff
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
 
+        // Inflate the layout for this fragment
         final View wildlifeItemView = inflater.inflate(R.layout.fragment_wildlife_item, container, false);
 
         wildlifeImageView = (ImageView) wildlifeItemView.findViewById(R.id.wildlife_image);
         wildlifeTitleTextview = (TextView) wildlifeItemView.findViewById(R.id.wildlife_item_title);
         wildlifeTitleLatinTextview = (TextView) wildlifeItemView.findViewById(R.id.wildlife_item_latin);
         wildlifeDescriptionTextview = (TextView) wildlifeItemView.findViewById(R.id.wildlife_item_description);
-        //wildlifeItemToolbarText = (TextView) wildlifeItemView.findViewById(R.id.wildlife_toolbar_textview);
+        wildlifeItemToolbarText = (TextView) wildlifeItemView.findViewById(R.id.wildlife_toolbar_textview);
         collapsingToolbarLayout = (CollapsingToolbarLayout) wildlifeItemView.findViewById(R.id.collapsing);
-        wildlifeFilterImageView = wildlifeItemView.findViewById(R.id.wildlife_filter);
         wildlifeBackButton = wildlifeItemView.findViewById(R.id.wildlife_toolbar_back_icon);
+        funghiEatabilityTextView = wildlifeItemView.findViewById(R.id.funghi_eatability_textview);
+
+
+        //only show this if the current item is Funghi type
+        funghiEatabilityTextView.setVisibility(View.GONE);
 
         Bundle wildlifeBundle = getArguments();
         final String wildlifeType = wildlifeBundle.getString("wildlife_type");
@@ -65,9 +69,36 @@ public class WildlifeItemFragment extends Fragment implements AppBarLayout.OnOff
         final String wildlifeItemTitle = wildlifeBundle.getString("wildlife_title");
         final String wildlifeItemLatinTitle = wildlifeBundle.getString("wildlife_latin_title");
         String wildlifeItemDescription = wildlifeBundle.getString("wildlife_description");
+        final int wildlifeGombaEatability = wildlifeBundle.getInt("funghi_eatability"); //1-eheto, 2-nem etkezesi, 3-mergezo
 
         Log.i("WildlifeItemFragment", "Bundle" + wildlifeItemTitle);
 
+
+        //if the instance is a Funghi, set icon VISIBLE and set icon according to bundle
+        if (wildlifeGombaEatability != 0) {
+            if (wildlifeGombaEatability == 1) {
+                funghiEatabilityTextView.setText("Ehető");
+                funghiEatabilityTextView.setTextColor(ContextCompat.getColor(mainContext, R.color.colorPrimary));
+                funghiEatabilityTextView.setVisibility(View.VISIBLE);
+                funghiEatabilityTextView.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_mushroom_edible, 0, 0);
+
+            } else if (wildlifeGombaEatability == 2) {
+                funghiEatabilityTextView.setText("Nem étkezési");
+                funghiEatabilityTextView.setTextColor(ContextCompat.getColor(mainContext, R.color.colorTextDark));
+                funghiEatabilityTextView.setVisibility(View.VISIBLE);
+                funghiEatabilityTextView.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_mushroom_non_edible, 0, 0);
+
+            } else if (wildlifeGombaEatability == 3) {
+                funghiEatabilityTextView.setText("Mérgező");
+                funghiEatabilityTextView.setTextColor(ContextCompat.getColor(mainContext, R.color.colorToxicRed));
+                funghiEatabilityTextView.setVisibility(View.VISIBLE);
+                funghiEatabilityTextView.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_mushroom_toxic, 0, 0);
+
+
+            }
+        }
+
+        //set image
         if (wildlifeImageId != 0) {
             wildlifeImageView.setImageResource(wildlifeImageId);
         } else {
@@ -83,7 +114,7 @@ public class WildlifeItemFragment extends Fragment implements AppBarLayout.OnOff
         wildlifeTitleTextview.setText(wildlifeItemTitle);
         wildlifeTitleLatinTextview.setText(wildlifeItemLatinTitle);
         wildlifeDescriptionTextview.setText(wildlifeItemDescription);
-        //wildlifeItemToolbarText.setText(wildlifeItemTitle);
+        wildlifeItemToolbarText.setText(wildlifeItemTitle);
         appBarLayout = wildlifeItemView.findViewById(R.id.appbar);
 
         wildlifeBackButton.setOnClickListener(new View.OnClickListener() {
@@ -103,22 +134,22 @@ public class WildlifeItemFragment extends Fragment implements AppBarLayout.OnOff
 
                 if (Math.abs(verticalOffset) - appBarLayout.getTotalScrollRange() == 0) {
                     Log.i("appbar", "collapsed");
-                    wildlifeFilterImageView.setVisibility(View.VISIBLE);
-                    wildlifeBackButton.setColorFilter(R.color.colorTextDark);
+                    wildlifeItemToolbarText.setVisibility(View.VISIBLE);
+                    wildlifeBackButton.setColorFilter(Color.argb(255, 255, 255, 255));
 
                 } else {
                     //Expanded
                     Log.i("appbar", "expanded");
-                    wildlifeFilterImageView.setVisibility(View.GONE);
+                    wildlifeItemToolbarText.setVisibility(View.GONE);
                     wildlifeBackButton.setColorFilter(Color.argb(255, 255, 255, 255));
                 }
             }
         });
 
 
-        collapsingToolbarLayout.setTitle(wildlifeItemTitle);
-        collapsingToolbarLayout.setExpandedTitleColor(ContextCompat.getColor(mainContext, android.R.color.transparent));
-        collapsingToolbarLayout.setCollapsedTitleTextColor(ContextCompat.getColor(mainContext, R.color.colorTextDark));
+        //collapsingToolbarLayout.setTitle(wildlifeItemTitle);
+        //collapsingToolbarLayout.setExpandedTitleColor(ContextCompat.getColor(mainContext, android.R.color.transparent));
+        //collapsingToolbarLayout.setCollapsedTitleTextColor(ContextCompat.getColor(mainContext, R.color.colorTextDark));
 
         return wildlifeItemView;
     }
