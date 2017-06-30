@@ -30,7 +30,7 @@ public class MoreOptionsListAdapter extends ArrayAdapter<OptionListItem> impleme
     }
 
     public MoreOptionsListAdapter(ArrayList<OptionListItem> data, Context context) {
-        super(context, R.layout.custom_moreoptions_listitem, data);
+        super(context, R.layout.listitem_more_options, data);
         this.dataSet = data;
         this.mContext = context;
 
@@ -58,7 +58,7 @@ public class MoreOptionsListAdapter extends ArrayAdapter<OptionListItem> impleme
 
             viewHolder = new ViewHolder();
             LayoutInflater inflater = LayoutInflater.from(getContext());
-            convertView = inflater.inflate(R.layout.custom_moreoptions_listitem, parent, false);
+            convertView = inflater.inflate(R.layout.listitem_more_options, parent, false);
             viewHolder.optionText = (TextView) convertView.findViewById(R.id.option_textview);
             viewHolder.optionIcon = (ImageView) convertView.findViewById(R.id.option_icon);
 

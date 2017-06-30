@@ -34,7 +34,7 @@ public class POIListAdapter extends ArrayAdapter<POI> {
     }
 
     public POIListAdapter(ArrayList<POI> data, Context context) {
-        super(context, R.layout.custom_poi_listitem, data);
+        super(context, R.layout.listitem_poi, data);
         this.dataSet = data;
         this.mContext = context;
 
@@ -58,7 +58,7 @@ public class POIListAdapter extends ArrayAdapter<POI> {
 
             viewHolder = new ViewHolder();
             LayoutInflater inflater = LayoutInflater.from(getContext());
-            convertView = inflater.inflate(R.layout.custom_poi_listitem, parent, false);
+            convertView = inflater.inflate(R.layout.listitem_poi, parent, false);
             viewHolder.poiImageView = (ImageView) convertView.findViewById(R.id.poi_listitem_image);
             viewHolder.poiTextView = (TextView) convertView.findViewById(R.id.poi_listitem_textview);
 

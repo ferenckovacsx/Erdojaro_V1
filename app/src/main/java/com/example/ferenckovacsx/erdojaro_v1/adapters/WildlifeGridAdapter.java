@@ -72,15 +72,15 @@ public class WildlifeGridAdapter extends BaseAdapter {
             GridView grid = (GridView)parent;
             int size = grid.getRequestedColumnWidth();
 
-            wildlifeImageView = gridView.findViewById(R.id.wildlife_grid_image);
-            wildlifeTextView = gridView.findViewById(R.id.wildlife_grid_textview);
-            wildlifeImageView.setImageResource(wildlifeImageId[position]);
-            wildlifeTextView.setText(wildlifeNames[position]);
-
         } else {
 
             gridView = convertView;
         }
+
+        wildlifeImageView = gridView.findViewById(R.id.wildlife_grid_image);
+        wildlifeTextView = gridView.findViewById(R.id.wildlife_grid_textview);
+        wildlifeImageView.setImageResource(wildlifeImageId[position]);
+        wildlifeTextView.setText(wildlifeNames[position]);
 
         return gridView;
     }

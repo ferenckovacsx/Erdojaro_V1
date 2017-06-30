@@ -3,23 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FAFAFA"
-    tools:context="com.example.ferenckovacsx.erdojaro_v1.mainviews.FavoritesFragment">
+    tools:context="com.example.ferenckovacsx.erdojaro_v1.mainviews.DiscoverPOI">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ListView
+        android:id="@+id/favorites_listview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/title_favorites" />
-
-    <ImageView
-        android:id="@+id/demo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginEnd="10dp"
-        android:layout_marginStart="10dp"
-        android:adjustViewBounds="true"
-        android:padding="10dp"
-        android:scaleType="fitCenter" />
+        android:layout_height="match_parent" />
 
 </FrameLayout>

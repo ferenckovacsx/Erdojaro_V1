@@ -1,11 +1,13 @@
 package com.example.ferenckovacsx.erdojaro_v1.mainviews;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +17,9 @@ import android.widget.TextView;
 
 import com.example.ferenckovacsx.erdojaro_v1.R;
 import com.squareup.picasso.Picasso;
+
+import java.util.HashSet;
+import java.util.Set;
 
 import static com.example.ferenckovacsx.erdojaro_v1.mainviews.MainActivity.bottomNavigationView;
 import static com.example.ferenckovacsx.erdojaro_v1.mainviews.MainActivity.mainContext;
@@ -27,9 +32,14 @@ public class POIFragment extends Fragment {
 
     ImageView poiImageView;
     TextView poiShowOnMapTextview;
+    TextView poiAddToFavorites;
     TextView poiTitleTextview;
     TextView poiCoordinateTextview;
     TextView poiDescriptionTextview;
+    Set<String> favoritedItems;
+    SharedPreferences sharedpreferences;
+    boolean isItFavorited;
+    String poiIdentifierString;
 
     private OnFragmentInteractionListener mListener;
 
@@ -42,14 +52,15 @@ public class POIFragment extends Fragment {
 
         final View POIView = inflater.inflate(R.layout.fragment_poi, container, false);
 
-        poiImageView = (ImageView) POIView.findViewById(R.id.poi_image);
-        poiTitleTextview = (TextView) POIView.findViewById(R.id.poi_title);
-        poiCoordinateTextview = (TextView) POIView.findViewById(R.id.poi_gps_coord);
-        poiDescriptionTextview = (TextView) POIView.findViewById(R.id.textview_poi_description);
-        poiShowOnMapTextview = (TextView) POIView.findViewById(R.id.poi_text_show_on_map);
+        poiImageView = POIView.findViewById(R.id.poi_image);
+        poiTitleTextview = POIView.findViewById(R.id.poi_title);
+        poiCoordinateTextview = POIView.findViewById(R.id.poi_gps_coord);
+        poiDescriptionTextview = POIView.findViewById(R.id.textview_poi_description);
+        poiShowOnMapTextview = POIView.findViewById(R.id.poi_text_show_on_map);
+        poiAddToFavorites = POIView.findViewById(R.id.poi_text_favorite);
 
         Bundle POIbundle = getArguments();
-        int poiID = POIbundle.getInt("poi_id");
+        final int poiID = POIbundle.getInt("poi_id");
         int poiImageID = POIbundle.getInt("poi_imageid");
         String poiImageUrl = POIbundle.getString("poi_imageurl");
         final String poiTitle = POIbundle.getString("poi_title");
@@ -74,23 +85,20 @@ public class POIFragment extends Fragment {
         //poiDescriptionTextview.setJustificationMode(1);
         poiDescriptionTextview.setText(poiDescription);
 
-//        String htmlText = " %s ";
-//
-//        String justifyTag = "<html><body style='text-align:justify;'>%s</body></html>";
-//
-//        String myData = "Ismertetőjegyek:\n" +
-//                "Kalap: 3-10 cm átmérőjű, fehér, idősen vöröses, barnás színű, felszínén finom pikkelyekkel, ritkán sima.\n" +
-//                "Lemezek: fiatalon élénk rózsaszínek, késöbb barnásvörösek, végül feketék, sűrűn állnak, hasasak. A csiperkék lemezei fiatalon rózsaszínűek, amely szín később barnássá, barnává, illetve akár feketévé változik.\n" +
-//                "Tönk: fehér, hengeres, vékony. A gallér múlékony. A tönkalap néha sárga foltos. \n" +
-//                "Hús: fehér, puha, vágás helyén enyhén vörösödő, törékeny, puha. Illata, íze kellemes.\n" +
-//                "Termőhely és idő: Trágyázott talajon, mezőkön, réteken terem. Főként augusztustól októberig jelenik meg. \n" +
-//                "Jó tudni: Ugyanazon az élőhelyen nő az elsárguló húsú mérgező karbolszagú csiperke.";
-//
-//        WebView webView = (WebView) POIView.findViewById(R.id.webView1);
-//        webView.getSettings();
-//        webView.setBackgroundColor(Color.TRANSPARENT);
-//
-//        webView.loadDataWithBaseURL("", String.format(justifyTag, poiDescription), "text/html", "utf-8", "");
+
+        //check if item is already favorited. If yes, set favorite icon active
+        //get list of favorited items from sharedpreferences
+        sharedpreferences = mainContext.getSharedPreferences("favoritePrefs", Context.MODE_PRIVATE);
+        favoritedItems = new HashSet<>(sharedpreferences.getStringSet("favoritedPoi", new HashSet<String>()));
+        //check if list of favorited items contains current item
+        poiIdentifierString = "POI" + poiID;
+        if (favoritedItems.contains(String.valueOf(poiID))) {
+            poiAddToFavorites.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_poi_heart_full, 0, 0);
+            poiAddToFavorites.setText("Kedvelve");
+            isItFavorited = true;
+        } else {
+            isItFavorited = false;
+        }
 
 
         //show on map
@@ -112,10 +120,37 @@ public class POIFragment extends Fragment {
                 transaction.commit();
 
                 bottomNavigationView.getMenu().getItem(1).setChecked(true);
+            }
+        });
 
-//                BottomNavigationView bottomNavigationView;
-//                bottomNavigationView = (BottomNavigationView)getView().findViewById(R.id.navigation);
-//                bottomNavigationView.getMenu().getItem(2).setChecked(true);
+        poiAddToFavorites.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                Log.i("POIFragment", "isItFav: " + isItFavorited);
+
+                Set<String> feedbackSet = favoritedItems;
+                SharedPreferences.Editor editor = sharedpreferences.edit();
+
+                if (isItFavorited) {
+                    //if it's already favorited, change icon
+                    poiAddToFavorites.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_poi_heart_empty, 0, 0);
+                    poiAddToFavorites.setText("Kedvencek közé");
+                    //remove item from favoritedlist
+                    favoritedItems.remove(String.valueOf(poiID));
+                    //update sharedpref with new list
+                    editor.putStringSet("favoritedPoi", favoritedItems);
+                    editor.apply();
+                    isItFavorited = false;
+                } else {
+                    //if it's not favorited, change icon and add item to favorites set
+                    poiAddToFavorites.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_poi_heart_full, 0, 0);
+                    poiAddToFavorites.setText("Kedvelve");
+                    //add new item to favoritedItems
+                    favoritedItems.add(String.valueOf(poiID));
+                    editor.putStringSet("favoritedPoi", favoritedItems);
+                    editor.apply();
+                    isItFavorited = true;
+                }
             }
         });
 

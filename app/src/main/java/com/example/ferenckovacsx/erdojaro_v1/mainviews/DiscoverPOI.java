@@ -1,6 +1,7 @@
 package com.example.ferenckovacsx.erdojaro_v1.mainviews;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -20,21 +21,31 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
+import static android.content.Context.MODE_APPEND;
+import static android.content.Context.MODE_PRIVATE;
 import static com.example.ferenckovacsx.erdojaro_v1.mainviews.MainActivity.bottomNavigationView;
+import static com.example.ferenckovacsx.erdojaro_v1.mainviews.MainActivity.mainContext;
 
 
 public class DiscoverPOI extends Fragment {
 
     ListView poiListView;
-    ArrayList<POI> poiList;
+    public static ArrayList<POI> poiList;
     ArrayList<POI> poiFromFile;
+    SharedPreferences sharedPreferences;
 
     private OnFragmentInteractionListener mListener;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        sharedPreferences = mainContext.getSharedPreferences("favoritePrefs", MODE_PRIVATE);
+        Set<String> favoritedItems = sharedPreferences.getStringSet("favoritedPoi", new HashSet<String>());
+        Log.i("favoritedPoi", "id: " + favoritedItems);
 
         bottomNavigationView.getMenu().getItem(0).setChecked(true);
 
@@ -46,20 +57,20 @@ public class DiscoverPOI extends Fragment {
         poiListView = (ListView) poiView.findViewById(R.id.POI_listview);
 
         poiList = new ArrayList<>();
-        poiList.add(new POI(1, getResources().getString(R.string.poi_1_name), R.drawable.poi_1,  Double.parseDouble(getResources().getString(R.string.poi_1_latitude)), Double.parseDouble(getResources().getString(R.string.poi_1_longitude)), false, getResources().getString(R.string.poi_1_description)));
-        poiList.add(new POI(2, getResources().getString(R.string.poi_2_name), R.drawable.poi_2,  Double.parseDouble(getResources().getString(R.string.poi_2_latitude)), Double.parseDouble(getResources().getString(R.string.poi_2_longitude)), false, getResources().getString(R.string.poi_2_description)));
-        poiList.add(new POI(3, getResources().getString(R.string.poi_3_name), R.drawable.poi_3,  Double.parseDouble(getResources().getString(R.string.poi_3_latitude)), Double.parseDouble(getResources().getString(R.string.poi_3_longitude)), false, getResources().getString(R.string.poi_3_description)));
-        poiList.add(new POI(4, getResources().getString(R.string.poi_4_name), R.drawable.poi_4,  Double.parseDouble(getResources().getString(R.string.poi_4_latitude)), Double.parseDouble(getResources().getString(R.string.poi_4_longitude)), false, getResources().getString(R.string.poi_4_description)));
-        poiList.add(new POI(5, getResources().getString(R.string.poi_5_name), R.drawable.poi_5,  Double.parseDouble(getResources().getString(R.string.poi_5_latitude)), Double.parseDouble(getResources().getString(R.string.poi_5_longitude)), false, getResources().getString(R.string.poi_5_description)));
-        poiList.add(new POI(6, getResources().getString(R.string.poi_6_name), R.drawable.poi_6,  Double.parseDouble(getResources().getString(R.string.poi_6_latitude)), Double.parseDouble(getResources().getString(R.string.poi_6_longitude)), false, getResources().getString(R.string.poi_6_description)));
-        poiList.add(new POI(7, getResources().getString(R.string.poi_7_name), R.drawable.poi_7,  Double.parseDouble(getResources().getString(R.string.poi_7_latitude)), Double.parseDouble(getResources().getString(R.string.poi_7_longitude)), false, getResources().getString(R.string.poi_7_description)));
-        poiList.add(new POI(8, getResources().getString(R.string.poi_8_name), R.drawable.poi_8,  Double.parseDouble(getResources().getString(R.string.poi_8_latitude)), Double.parseDouble(getResources().getString(R.string.poi_8_longitude)), false, getResources().getString(R.string.poi_8_description)));
-        poiList.add(new POI(9, getResources().getString(R.string.poi_9_name), R.drawable.poi_9,  Double.parseDouble(getResources().getString(R.string.poi_9_latitude)), Double.parseDouble(getResources().getString(R.string.poi_9_longitude)), false, getResources().getString(R.string.poi_9_description)));
-        poiList.add(new POI(10, getResources().getString(R.string.poi_10_name), R.drawable.poi_10,  Double.parseDouble(getResources().getString(R.string.poi_10_latitude)), Double.parseDouble(getResources().getString(R.string.poi_10_longitude)), false, getResources().getString(R.string.poi_10_description)));
-        poiList.add(new POI(11, getResources().getString(R.string.poi_11_name), R.drawable.poi_11,  Double.parseDouble(getResources().getString(R.string.poi_11_latitude)), Double.parseDouble(getResources().getString(R.string.poi_11_longitude)), false, getResources().getString(R.string.poi_11_description)));
+        poiList.add(new POI(1, getResources().getString(R.string.poi_1_name), R.drawable.poi_1, Double.parseDouble(getResources().getString(R.string.poi_1_latitude)), Double.parseDouble(getResources().getString(R.string.poi_1_longitude)), false, getResources().getString(R.string.poi_1_description)));
+        poiList.add(new POI(2, getResources().getString(R.string.poi_2_name), R.drawable.poi_2, Double.parseDouble(getResources().getString(R.string.poi_2_latitude)), Double.parseDouble(getResources().getString(R.string.poi_2_longitude)), false, getResources().getString(R.string.poi_2_description)));
+        poiList.add(new POI(3, getResources().getString(R.string.poi_3_name), R.drawable.poi_3, Double.parseDouble(getResources().getString(R.string.poi_3_latitude)), Double.parseDouble(getResources().getString(R.string.poi_3_longitude)), false, getResources().getString(R.string.poi_3_description)));
+        poiList.add(new POI(4, getResources().getString(R.string.poi_4_name), R.drawable.poi_4, Double.parseDouble(getResources().getString(R.string.poi_4_latitude)), Double.parseDouble(getResources().getString(R.string.poi_4_longitude)), false, getResources().getString(R.string.poi_4_description)));
+        poiList.add(new POI(5, getResources().getString(R.string.poi_5_name), R.drawable.poi_5, Double.parseDouble(getResources().getString(R.string.poi_5_latitude)), Double.parseDouble(getResources().getString(R.string.poi_5_longitude)), false, getResources().getString(R.string.poi_5_description)));
+        poiList.add(new POI(6, getResources().getString(R.string.poi_6_name), R.drawable.poi_6, Double.parseDouble(getResources().getString(R.string.poi_6_latitude)), Double.parseDouble(getResources().getString(R.string.poi_6_longitude)), false, getResources().getString(R.string.poi_6_description)));
+        poiList.add(new POI(7, getResources().getString(R.string.poi_7_name), R.drawable.poi_7, Double.parseDouble(getResources().getString(R.string.poi_7_latitude)), Double.parseDouble(getResources().getString(R.string.poi_7_longitude)), false, getResources().getString(R.string.poi_7_description)));
+        poiList.add(new POI(8, getResources().getString(R.string.poi_8_name), R.drawable.poi_8, Double.parseDouble(getResources().getString(R.string.poi_8_latitude)), Double.parseDouble(getResources().getString(R.string.poi_8_longitude)), false, getResources().getString(R.string.poi_8_description)));
+        poiList.add(new POI(9, getResources().getString(R.string.poi_9_name), R.drawable.poi_9, Double.parseDouble(getResources().getString(R.string.poi_9_latitude)), Double.parseDouble(getResources().getString(R.string.poi_9_longitude)), false, getResources().getString(R.string.poi_9_description)));
+        poiList.add(new POI(10, getResources().getString(R.string.poi_10_name), R.drawable.poi_10, Double.parseDouble(getResources().getString(R.string.poi_10_latitude)), Double.parseDouble(getResources().getString(R.string.poi_10_longitude)), false, getResources().getString(R.string.poi_10_description)));
+        poiList.add(new POI(11, getResources().getString(R.string.poi_11_name), R.drawable.poi_11, Double.parseDouble(getResources().getString(R.string.poi_11_latitude)), Double.parseDouble(getResources().getString(R.string.poi_11_longitude)), false, getResources().getString(R.string.poi_11_description)));
 
         //poiList.addAll(poiFromFile);
-        Log.i("DiscoverPOI", "combined poiList" + poiList.toString());
+        //Log.i("DiscoverPOI", "combined poiList" + poiList.toString());
 
         poiListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
 
