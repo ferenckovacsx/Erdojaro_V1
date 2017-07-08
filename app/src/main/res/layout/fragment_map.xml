@@ -1,11 +1,14 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:mapbox="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FAFAFA"
-    tools:context="com.example.ferenckovacsx.erdojaro_v1.mainviews.MapFragment">
+    tools:context="com.erdojaro.ferenckovacsx.erdojaro_v1.mainviews.MapFragment"
+    android:id="@+id/map_framelayout">
+
 
     <com.mapbox.mapboxsdk.maps.MapView
         android:id="@+id/mapView"
@@ -17,14 +20,78 @@
         mapbox:mapbox_styleUrl="mapbox://styles/mapbox/outdoors-v9" />
 
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/location_toggle_fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <!--<android.support.design.widget.FloatingActionButton-->
+    <!--android:id="@+id/location_toggle_fab"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="end|bottom"-->
+    <!--android:layout_margin="16dp"-->
+    <!--app:backgroundTint="@color/colorAccent"-->
+    <!--app:srcCompat="@drawable/ic_show_location"-->
+    <!--tools:ignore="VectorDrawableCompat" />-->
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/floating_action_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_gravity="end|bottom"
-        android:layout_margin="16dp"
-        app:srcCompat="@drawable/ic_show_location"
-        tools:ignore="VectorDrawableCompat"
-        app:backgroundTint="@color/colorAccent"/>
+        app:menu_backgroundColor="#99FFFFFF"
+        fab:menu_animationDelayPerItem="50"
+        android:padding="10dp"
+        fab:menu_buttonSpacing="0dp"
+        fab:menu_colorNormal="#66FFFFFF"
+        fab:menu_colorPressed="@color/colorPrimary"
+        fab:menu_colorRipple="#66FFFFFF"
+        fab:menu_fab_size="normal"
+        fab:menu_icon="@drawable/ic_filter"
+
+        fab:menu_labels_colorNormal="#66FFFFFF"
+        fab:menu_labels_colorPressed="@android:color/transparent"
+        fab:menu_labels_colorRipple="@android:color/transparent"
+        fab:menu_labels_cornerRadius="3dp"
+        fab:menu_labels_ellipsize="none"
+        fab:menu_labels_hideAnimation="@anim/fab_slide_out_to_right"
+        fab:menu_labels_margin="0dp"
+        fab:menu_labels_maxLines="-1"
+        fab:menu_labels_position="left"
+        fab:menu_labels_showAnimation="@anim/fab_slide_in_from_right"
+        fab:menu_labels_showShadow="false"
+        fab:menu_labels_singleLine="false"
+        fab:menu_labels_textColor="@color/colorTextDark"
+        fab:menu_labels_textSize="14sp"
+        fab:menu_openDirection="up">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/floating_menu_show_poi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGray"
+            fab:fab_label="Látnivalók"
+            fab:fab_size="mini"
+            mapbox:fab_colorNormal="@color/colorGray"
+            mapbox:fab_colorPressed="@color/colorPrimary" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/floating_menu_fireplaces"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGray"
+            fab:fab_label="Pihenők, tűzrakóhelyek"
+            fab:fab_size="mini"
+            mapbox:fab_colorNormal="@color/colorGray"
+            mapbox:fab_colorPressed="@color/colorPrimary" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/location_toggle_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGray"
+            fab:fab_label="Saját helyzet"
+            fab:fab_size="mini"
+            mapbox:fab_colorNormal="@color/colorGray"
+            mapbox:fab_colorPressed="@color/colorPrimary" />
+
+    </com.github.clans.fab.FloatingActionMenu>
+
 
 </FrameLayout>

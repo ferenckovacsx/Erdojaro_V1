@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FAFAFA"
-    tools:context="com.example.ferenckovacsx.erdojaro_v1.mainviews.HomeFragment">
+    tools:context="com.erdojaro.ferenckovacsx.erdojaro_v1.mainviews.HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

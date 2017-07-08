@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<POI_XML>
+    <poi>
+        <id>1</id>
+        <name>Szomolyai Kaptárkövek</name>
+        <latitude>47.892307</latitude>
+        <longitude>20.478408</longitude>
+        <description>poi_1_description</description>
+    </poi>
+
+    <poi>
+        <id>2</id>
+        <name>Nagymező</name>
+        <latitude>48.07908</latitude>
+        <longitude>20.49809</longitude>
+        <description>poi_2_description</description>
+    </poi>
+
+    <poi>
+        <id>3</id>
+        <name>Fehérkőlápa</name>
+        <latitude>48.09638889</latitude>
+        <longitude>20.62638889</longitude>
+        <description>poi_3_description</description>
+    </poi>
+
+    <poi>
+        <id>4</id>
+        <name>Hámori-tó</name>
+        <latitude>48.1067</latitude>
+        <longitude>20.6179</longitude>
+        <description>poi_4_description</description>
+    </poi>
+
+    <poi>
+        <id>5</id>
+        <name>Anna-barlang</name>
+        <latitude>48.10508</latitude>
+        <longitude>20.62491</longitude>
+        <description>poi_5_description</description>
+    </poi>
+
+    <poi>
+        <id>6</id>
+        <name>Szent István barlang</name>
+        <latitude>48.09914</latitude>
+        <longitude>20.6211</longitude>
+        <description>poi_6_description</description>
+    </poi>
+
+    <poi>
+        <id>7</id>
+        <name>Szeleta-barlang</name>
+        <latitude>48.10817</latitude>
+        <longitude>20.63162</longitude>
+        <description>poi_7_description</description>
+    </poi>
+
+    <poi>
+        <id>8</id>
+        <name>Lillafüredi Függőkert és Vízesés</name>
+        <latitude>48.10515</latitude>
+        <longitude>20.62394</longitude>
+        <description>poi_8_description</description>
+    </poi>
+
+    <poi>
+        <id>9</id>
+        <name>Fátyol-vízesés</name>
+        <latitude>48.07602</latitude>
+        <longitude>20.41022</longitude>
+        <description>poi_9_description</description>
+    </poi>
+
+    <poi>
+        <id>10</id>
+        <name>Istállós-kői-barlang</name>
+        <latitude>48.07155</latitude>
+        <longitude>20.41767</longitude>
+        <description>poi_10_description</description>
+    </poi>
+
+    <poi>
+        <id>11</id>
+        <name>Bél-kő</name>
+        <latitude>48.0457135</latitude>
+        <longitude>20.3823586</longitude>
+        <description>poi_11_description</description>
+    </poi>
+
+    <poi>
+        <id>12</id>
+        <name>Dédesi-vár</name>
+        <latitude>48.13385</latitude>
+        <longitude>20.47439</longitude>
+        <description>poi_12_description</description>
+    </poi>
+
+    <poi>
+        <id>13</id>
+        <name>Jávorkút</name>
+        <latitude>48.098</latitude>
+        <longitude>20.5295</longitude>
+        <description>poi_13_description</description>
+    </poi>
+
+    <poi>
+        <id>14</id>
+        <name>Csipkéskút</name>
+        <latitude>48.095</latitude>
+        <longitude>20.503</longitude>
+        <description>poi_14_description</description>
+    </poi>
+
+    <poi>
+        <id>15</id>
+        <name>Bánkút</name>
+        <latitude>48.0979</latitude>
+        <longitude>20.4806</longitude>
+        <description>poi_15_description</description>
+    </poi>
+
+    <poi>
+        <id>16</id>
+        <name>Bélapátfalvi kolostorrom</name>
+        <latitude>48.04936</latitude>
+        <longitude>20.36449</longitude>
+        <description>poi_16_description</description>
+    </poi>
+
+    <poi>
+        <id>17</id>
+        <name>Oszlai tájház, Cserépfalu</name>
+        <latitude>47.97776</latitude>
+        <longitude>20.52382</longitude>
+        <description>poi_17_description</description>
+    </poi>
+
+    <poi>
+        <id>18</id>
+        <name>Milleniumi kilátótorony, Szilvásvárad</name>
+        <latitude>48.0961</latitude>
+        <longitude>20.40424</longitude>
+        <description>poi_18_description</description>
+    </poi>
+
+
+
+</POI_XML>

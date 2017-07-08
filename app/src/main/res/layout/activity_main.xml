@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.ferenckovacsx.erdojaro_v1.mainviews.MainActivity">
+    tools:context="com.erdojaro.ferenckovacsx.erdojaro_v1.mainviews.MainActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
@@ -31,17 +31,18 @@
             android:layout_height="match_parent"
             android:layout_weight="2.29">
 
-            <ImageView
-                android:id="@+id/toolbar_camera_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:scaleType="fitCenter"
-                android:padding="10dp"
-                android:src="@drawable/ic_camera" />
+            <!--<ImageView-->
+                <!--android:id="@+id/toolbar_camera_icon"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_alignParentStart="true"-->
+                <!--android:layout_alignParentLeft="true"-->
+                <!--android:scaleType="fitCenter"-->
+                <!--android:padding="10dp"-->
+                <!--android:src="@drawable/ic_camera" />-->
 
             <ImageView
+                android:contentDescription="@string/default_imageview_contentdescription"
                 android:id="@+id/toolbar_erdojaro_logo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

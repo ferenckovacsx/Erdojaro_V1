@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/poi_listitem_image"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="130dp"
         android:layout_marginLeft="0dp"
         android:layout_marginRight="0dp"
         android:layout_marginTop="0dp"
         android:adjustViewBounds="false"
-        android:scaleType="centerCrop"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:contentDescription="@string/default_imageview_contentdescription"
+        android:scaleType="centerCrop" />
 
     <TextView
         android:id="@+id/poi_listitem_textview"
@@ -24,12 +22,10 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="12dp"
+        android:layout_margin="16dp"
+        android:textAlignment="textEnd"
+        android:gravity="bottom|end"
         android:textColor="@color/colorTextLight"
-        android:textSize="45sp"
-        app:layout_constraintBottom_toBottomOf="@+id/poi_listitem_image"
-        app:layout_constraintRight_toRightOf="parent" />
+        android:textSize="45sp" />
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

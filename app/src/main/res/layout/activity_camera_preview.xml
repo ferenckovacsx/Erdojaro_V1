@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="#000000"
     android:baselineAligned="false"
-    tools:context=".mainviews.MainActivity">
+    tools:context="com.erdojaro.ferenckovacsx.erdojaro_v1.mainviews.MainActivity">
 
     <FrameLayout
         android:id="@+id/camera_preview"
@@ -42,6 +42,7 @@
         android:layout_marginEnd="8dp" />
 
     <ImageView
+        android:contentDescription="@string/default_imageview_contentdescription"
         android:id="@+id/captured_image"
         android:layout_width="0dp"
         android:layout_height="643dp"

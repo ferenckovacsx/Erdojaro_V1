@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/scrollview_border"
@@ -12,24 +13,57 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            android:contentDescription="@string/default_imageview_contentdescription"
             android:id="@+id/program_image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:adjustViewBounds="true"
-            android:padding="2dp"
             android:scaleType="fitCenter" />
 
-        <ImageView
-            android:id="@+id/program_favorite_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/program_image"
-            android:adjustViewBounds="true"
-            android:padding="5dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_heart_empty" />
+        <!--<ImageView-->
+        <!--android:contentDescription="@string/default_imageview_contentdescription"-->
+        <!--android:id="@+id/ic_left"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignBottom="@+id/program_image"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_alignTop="@+id/program_image"-->
+        <!--android:adjustViewBounds="true"-->
+        <!--android:paddingLeft="15dp"-->
+        <!--android:paddingStart="15dp"-->
+        <!--android:scaleType="fitCenter"-->
+        <!--android:tint="#80FAFAFA"-->
+        <!--android:src="@drawable/ic_left" />-->
+
+        <!--<ImageView-->
+        <!--android:contentDescription="@string/default_imageview_contentdescription"-->
+        <!--android:id="@+id/ic_right"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignBottom="@+id/program_image"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignTop="@+id/program_image"-->
+        <!--android:adjustViewBounds="true"-->
+        <!--android:paddingEnd="15dp"-->
+        <!--android:paddingRight="15dp"-->
+        <!--android:scaleType="fitCenter"-->
+        <!--android:tint="#20FAFAFA"-->
+        <!--android:src="@drawable/ic_right" />-->
+
+        <!--<ImageView-->
+        <!--android:id="@+id/program_favorite_icon"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_below="@id/program_image"-->
+        <!--android:adjustViewBounds="true"-->
+        <!--android:padding="5dp"-->
+        <!--android:scaleType="fitCenter"-->
+        <!--android:src="@drawable/ic_heart_empty" />-->
 
         <TextView
             android:id="@+id/program_title"
@@ -38,8 +72,7 @@
             android:layout_below="@+id/program_image"
             android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
-            android:lineSpacingMultiplier="1.2"
-            android:paddingTop="10dp"
+            android:layout_marginTop="8dp"
             android:textColor="@color/colorTextDark"
             android:textSize="24sp" />
 
@@ -50,70 +83,67 @@
             android:layout_below="@+id/program_title"
             android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
-            android:lineSpacingMultiplier="1.2"
-            android:paddingBottom="10dp"
+            android:layout_marginTop="6dp"
             android:textColor="@color/colorTextDark"
             android:textSize="16sp"
             android:textStyle="italic" />
 
-        <LinearLayout
-            android:id="@+id/program_icons_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/program_subtitle"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            android:weightSum="3">
+        <!--<LinearLayout-->
+        <!--android:id="@+id/program_icons_layout"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/program_subtitle"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:weightSum="3">-->
 
-            <TextView
-                android:id="@+id/program_icon_1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:drawableTop="@drawable/ic_program_train_schedule"
-                android:gravity="center"
-                android:lineSpacingMultiplier="1.2"
-                android:text="Menetrend"
-                android:textColor="@color/colorTextDark"
-                android:textSize="12sp" />
+        <!--<TextView-->
+        <!--android:id="@+id/program_icon_1"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:drawableTop="@drawable/ic_program_train_schedule"-->
+        <!--android:gravity="center"-->
+        <!--android:lineSpacingMultiplier="1.2"-->
+        <!--android:text="Menetrend"-->
+        <!--android:textColor="@color/colorTextDark"-->
+        <!--android:textSize="12sp" />-->
 
-            <TextView
-                android:id="@+id/program_icon_2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:drawableTop="@drawable/ic_train_route"
-                android:gravity="center"
-                android:lineSpacingMultiplier="1.2"
-                android:text="Útvonal"
-                android:textColor="@color/colorTextDark"
-                android:textSize="12sp" />
+        <!--<TextView-->
+        <!--android:id="@+id/program_icon_2"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:drawableTop="@drawable/ic_train_route"-->
+        <!--android:gravity="center"-->
+        <!--android:lineSpacingMultiplier="1.2"-->
+        <!--android:text="Útvonal"-->
+        <!--android:textColor="@color/colorTextDark"-->
+        <!--android:textSize="12sp" />-->
 
-            <TextView
-                android:id="@+id/program_icon_3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:drawableTop="@drawable/ic_program_ticket"
-                android:gravity="center"
-                android:lineSpacingMultiplier="1.2"
-                android:text="Jegyárak"
-                android:textColor="@color/colorTextDark"
-                android:textSize="12sp" />
+        <!--<TextView-->
+        <!--android:id="@+id/program_icon_3"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:drawableTop="@drawable/ic_program_ticket"-->
+        <!--android:gravity="center"-->
+        <!--android:lineSpacingMultiplier="1.2"-->
+        <!--android:text="Jegyárak"-->
+        <!--android:textColor="@color/colorTextDark"-->
+        <!--android:textSize="12sp" />-->
 
-        </LinearLayout>
+        <!--</LinearLayout>-->
 
         <TextView
             android:id="@+id/program_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/program_icons_layout"
+            android:layout_below="@+id/program_subtitle"
             android:layout_marginTop="10dp"
+            android:lineSpacingMultiplier="1.2"
             android:padding="16dp"
             android:textColor="@color/colorTextDark"
             android:textSize="15sp" />
-
-
     </RelativeLayout>
-
 </ScrollView>

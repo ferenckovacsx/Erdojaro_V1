@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FAFAFA"
-    tools:context="com.example.ferenckovacsx.erdojaro_v1.mainviews.DiscoverPrograms">
+    tools:context="com.erdojaro.ferenckovacsx.erdojaro_v1.mainviews.DiscoverPrograms">
 
     <android.support.v4.view.ViewPager
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/wiewPager"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.ferenckovacsx.erdojaro_v1.mainviews.DownloadMapFragment">
+    tools:context="com.erdojaro.ferenckovacsx.erdojaro_v1.mainviews.DownloadMapFragment">
 
     <com.mapbox.mapboxsdk.maps.MapView
         android:id="@+id/mapView"
