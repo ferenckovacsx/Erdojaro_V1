@@ -186,6 +186,7 @@
         app:layout_constraintVertical_bias="0.3">
 
         <ImageButton
+            android:contentDescription="@string/default_imageview_contentdescription"
             android:id="@+id/filter_hiking_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -219,6 +220,7 @@
         app:layout_constraintVertical_bias="0.3">
 
         <ImageButton
+            android:contentDescription="@string/default_imageview_contentdescription"
             android:id="@+id/filter_cycling_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -251,6 +253,7 @@
         app:layout_constraintVertical_bias="0.3">
 
         <ImageButton
+            android:contentDescription="@string/default_imageview_contentdescription"
             android:id="@+id/filter_tanosveny_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

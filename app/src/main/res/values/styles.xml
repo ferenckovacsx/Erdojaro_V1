@@ -64,4 +64,14 @@
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
+    <style name="PreferenceScreen" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
+        <item name="android:buttonStyle">@style/RobotoButtonStyle</item>
+        <item name="android:fontFamily">casual</item>
+
+    </style>
+
 </resources>

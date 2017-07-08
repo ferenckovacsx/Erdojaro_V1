@@ -5,7 +5,7 @@
     android:background="#FAFAFA"
     android:paddingEnd="10dp"
     android:paddingStart="10dp"
-    tools:context="com.example.ferenckovacsx.erdojaro_v1.mainviews.DiscoverTrips">
+    tools:context="com.erdojaro.ferenckovacsx.erdojaro_v1.mainviews.DiscoverTrips">
 
 
     <ListView
@@ -28,6 +28,7 @@
         android:textSize="18sp" />
 
     <ImageView
+        android:contentDescription="@string/default_imageview_contentdescription"
         android:id="@+id/trip_filter_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

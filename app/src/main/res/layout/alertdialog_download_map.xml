@@ -7,7 +7,7 @@
     android:background="#fafafa"
     android:padding="20dp"
     android:layout_margin="16dp"
-    tools:context=".mainviews.MainActivity">
+    tools:context="com.erdojaro.ferenckovacsx.erdojaro_v1.mainviews.MainActivity">
 
     <TextView
         android:id="@+id/dialog_title"

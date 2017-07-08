@@ -1,0 +1,1455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tripwaypoints name="komloska_teler">
+    <waypoint>
+        <latitude>48.34721</latitude>
+        <longitude> 21.45184</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34841</latitude>
+        <longitude> 21.45307</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34892</latitude>
+        <longitude> 21.45459</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34890</latitude>
+        <longitude> 21.45490</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34721</latitude>
+        <longitude> 21.45184</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34710</latitude>
+        <longitude> 21.45184</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34706</latitude>
+        <longitude> 21.45189</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34697</latitude>
+        <longitude> 21.45184</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34685</latitude>
+        <longitude> 21.45167</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34697</latitude>
+        <longitude> 21.45184</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34706</latitude>
+        <longitude> 21.45189</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34710</latitude>
+        <longitude> 21.45184</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34721</latitude>
+        <longitude> 21.45184</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34153</latitude>
+        <longitude> 21.45689</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34157</latitude>
+        <longitude> 21.45674</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34170</latitude>
+        <longitude> 21.45665</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34213</latitude>
+        <longitude> 21.45654</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34281</latitude>
+        <longitude> 21.45618</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34385</latitude>
+        <longitude> 21.45614</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34435</latitude>
+        <longitude> 21.45587</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34503</latitude>
+        <longitude> 21.45590</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34592</latitude>
+        <longitude> 21.45580</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34624</latitude>
+        <longitude> 21.45570</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34636</latitude>
+        <longitude> 21.45556</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34644</latitude>
+        <longitude> 21.45522</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34676</latitude>
+        <longitude> 21.45449</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34684</latitude>
+        <longitude> 21.45411</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34689</latitude>
+        <longitude> 21.45361</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34719</latitude>
+        <longitude> 21.45264</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34721</latitude>
+        <longitude> 21.45184</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32948</latitude>
+        <longitude> 21.45269</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32952</latitude>
+        <longitude> 21.45259</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32948</latitude>
+        <longitude> 21.45269</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33253</latitude>
+        <longitude> 21.45697</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33242</latitude>
+        <longitude> 21.45668</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33236</latitude>
+        <longitude> 21.45625</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33239</latitude>
+        <longitude> 21.45559</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33261</latitude>
+        <longitude> 21.45483</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33221</latitude>
+        <longitude> 21.45479</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33209</latitude>
+        <longitude> 21.45471</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33089</latitude>
+        <longitude> 21.45425</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33087</latitude>
+        <longitude> 21.45404</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33082</latitude>
+        <longitude> 21.45395</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33072</latitude>
+        <longitude> 21.45388</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33067</latitude>
+        <longitude> 21.45374</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33067</latitude>
+        <longitude> 21.45348</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33059</latitude>
+        <longitude> 21.45297</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33054</latitude>
+        <longitude> 21.45261</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33059</latitude>
+        <longitude> 21.45201</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33062</latitude>
+        <longitude> 21.45184</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33060</latitude>
+        <longitude> 21.45179</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33058</latitude>
+        <longitude> 21.45174</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33051</latitude>
+        <longitude> 21.45166</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33045</latitude>
+        <longitude> 21.45166</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33039</latitude>
+        <longitude> 21.45170</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33034</latitude>
+        <longitude> 21.45179</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33033</latitude>
+        <longitude> 21.45199</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33027</latitude>
+        <longitude> 21.45218</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33012</latitude>
+        <longitude> 21.45239</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33009</latitude>
+        <longitude> 21.45254</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33008</latitude>
+        <longitude> 21.45263</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33006</latitude>
+        <longitude> 21.45265</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33002</latitude>
+        <longitude> 21.45265</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32993</latitude>
+        <longitude> 21.45259</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32987</latitude>
+        <longitude> 21.45242</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32982</latitude>
+        <longitude> 21.45237</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32974</latitude>
+        <longitude> 21.45235</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32965</latitude>
+        <longitude> 21.45235</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32954</latitude>
+        <longitude> 21.45241</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32942</latitude>
+        <longitude> 21.45261</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32944</latitude>
+        <longitude> 21.45267</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32948</latitude>
+        <longitude> 21.45269</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33253</latitude>
+        <longitude> 21.45697</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33217</latitude>
+        <longitude> 21.45703</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33207</latitude>
+        <longitude> 21.45696</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33197</latitude>
+        <longitude> 21.45679</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33189</latitude>
+        <longitude> 21.45673</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33180</latitude>
+        <longitude> 21.45669</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33148</latitude>
+        <longitude> 21.45661</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33135</latitude>
+        <longitude> 21.45674</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33125</latitude>
+        <longitude> 21.45680</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33103</latitude>
+        <longitude> 21.45697</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33096</latitude>
+        <longitude> 21.45701</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33090</latitude>
+        <longitude> 21.45703</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33062</latitude>
+        <longitude> 21.45702</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33049</latitude>
+        <longitude> 21.45705</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33034</latitude>
+        <longitude> 21.45710</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33019</latitude>
+        <longitude> 21.45710</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32998</latitude>
+        <longitude> 21.45705</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32980</latitude>
+        <longitude> 21.45707</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32950</latitude>
+        <longitude> 21.45698</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32920</latitude>
+        <longitude> 21.45696</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32908</latitude>
+        <longitude> 21.45690</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32900</latitude>
+        <longitude> 21.45679</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32893</latitude>
+        <longitude> 21.45666</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32888</latitude>
+        <longitude> 21.45655</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32885</latitude>
+        <longitude> 21.45640</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32880</latitude>
+        <longitude> 21.45625</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32874</latitude>
+        <longitude> 21.45618</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32867</latitude>
+        <longitude> 21.45603</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32860</latitude>
+        <longitude> 21.45591</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32856</latitude>
+        <longitude> 21.45589</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32851</latitude>
+        <longitude> 21.45585</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32850</latitude>
+        <longitude> 21.45578</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32852</latitude>
+        <longitude> 21.45564</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32852</latitude>
+        <longitude> 21.45553</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32848</latitude>
+        <longitude> 21.45529</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32847</latitude>
+        <longitude> 21.45508</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32846</latitude>
+        <longitude> 21.45501</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32848</latitude>
+        <longitude> 21.45488</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32850</latitude>
+        <longitude> 21.45482</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32856</latitude>
+        <longitude> 21.45473</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32861</latitude>
+        <longitude> 21.45462</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32866</latitude>
+        <longitude> 21.45447</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32864</latitude>
+        <longitude> 21.45438</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32862</latitude>
+        <longitude> 21.45422</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32863</latitude>
+        <longitude> 21.45416</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32864</latitude>
+        <longitude> 21.45411</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32868</latitude>
+        <longitude> 21.45395</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32873</latitude>
+        <longitude> 21.45377</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32875</latitude>
+        <longitude> 21.45375</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32877</latitude>
+        <longitude> 21.45374</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32880</latitude>
+        <longitude> 21.45374</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32883</latitude>
+        <longitude> 21.45373</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32885</latitude>
+        <longitude> 21.45357</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32883</latitude>
+        <longitude> 21.45345</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32881</latitude>
+        <longitude> 21.45335</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32879</latitude>
+        <longitude> 21.45330</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32879</latitude>
+        <longitude> 21.45327</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32882</latitude>
+        <longitude> 21.45324</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32894</latitude>
+        <longitude> 21.45325</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32899</latitude>
+        <longitude> 21.45329</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32903</latitude>
+        <longitude> 21.45332</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32905</latitude>
+        <longitude> 21.45332</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32908</latitude>
+        <longitude> 21.45330</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32911</latitude>
+        <longitude> 21.45325</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32915</latitude>
+        <longitude> 21.45321</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32915</latitude>
+        <longitude> 21.45317</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32917</latitude>
+        <longitude> 21.45313</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32922</latitude>
+        <longitude> 21.45307</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32926</latitude>
+        <longitude> 21.45304</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32929</latitude>
+        <longitude> 21.45299</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32932</latitude>
+        <longitude> 21.45294</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32934</latitude>
+        <longitude> 21.45290</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32939</latitude>
+        <longitude> 21.45285</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32944</latitude>
+        <longitude> 21.45282</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32946</latitude>
+        <longitude> 21.45280</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32948</latitude>
+        <longitude> 21.45269</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34890</latitude>
+        <longitude> 21.45490</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34882</latitude>
+        <longitude> 21.45491</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34876</latitude>
+        <longitude> 21.45490</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34872</latitude>
+        <longitude> 21.45487</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34876</latitude>
+        <longitude> 21.45490</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34882</latitude>
+        <longitude> 21.45491</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34890</latitude>
+        <longitude> 21.45490</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34890</latitude>
+        <longitude> 21.45490</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34859</latitude>
+        <longitude> 21.45645</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34845</latitude>
+        <longitude> 21.45659</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34683</latitude>
+        <longitude> 21.45753</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34561</latitude>
+        <longitude> 21.45798</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34555</latitude>
+        <longitude> 21.45798</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34532</latitude>
+        <longitude> 21.45800</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34507</latitude>
+        <longitude> 21.45802</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33374</latitude>
+        <longitude> 21.45701</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33411</latitude>
+        <longitude> 21.45699</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33455</latitude>
+        <longitude> 21.45696</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33507</latitude>
+        <longitude> 21.45679</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33538</latitude>
+        <longitude> 21.45682</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33566</latitude>
+        <longitude> 21.45690</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33576</latitude>
+        <longitude> 21.45690</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33583</latitude>
+        <longitude> 21.45690</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33592</latitude>
+        <longitude> 21.45687</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33595</latitude>
+        <longitude> 21.45684</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33597</latitude>
+        <longitude> 21.45679</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33598</latitude>
+        <longitude> 21.45678</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33600</latitude>
+        <longitude> 21.45679</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33602</latitude>
+        <longitude> 21.45679</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33609</latitude>
+        <longitude> 21.45677</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33613</latitude>
+        <longitude> 21.45676</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33624</latitude>
+        <longitude> 21.45676</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34077</latitude>
+        <longitude> 21.46220</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34079</latitude>
+        <longitude> 21.46201</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34078</latitude>
+        <longitude> 21.46191</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34075</latitude>
+        <longitude> 21.46188</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34068</latitude>
+        <longitude> 21.46189</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34067</latitude>
+        <longitude> 21.46186</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34067</latitude>
+        <longitude> 21.46182</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34073</latitude>
+        <longitude> 21.46167</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34095</latitude>
+        <longitude> 21.46146</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34100</latitude>
+        <longitude> 21.46144</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34103</latitude>
+        <longitude> 21.46142</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34107</latitude>
+        <longitude> 21.46134</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34120</latitude>
+        <longitude> 21.46123</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34122</latitude>
+        <longitude> 21.46120</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34123</latitude>
+        <longitude> 21.46115</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34127</latitude>
+        <longitude> 21.46109</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34128</latitude>
+        <longitude> 21.46101</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34124</latitude>
+        <longitude> 21.46099</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34123</latitude>
+        <longitude> 21.46095</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34124</latitude>
+        <longitude> 21.46090</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34126</latitude>
+        <longitude> 21.46083</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34125</latitude>
+        <longitude> 21.46078</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34106</latitude>
+        <longitude> 21.46051</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34098</latitude>
+        <longitude> 21.46019</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34119</latitude>
+        <longitude> 21.45903</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34152</latitude>
+        <longitude> 21.45775</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34160</latitude>
+        <longitude> 21.45760</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34160</latitude>
+        <longitude> 21.45750</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34153</latitude>
+        <longitude> 21.45726</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34153</latitude>
+        <longitude> 21.45689</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34153</latitude>
+        <longitude> 21.45689</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34171</latitude>
+        <longitude> 21.45680</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34153</latitude>
+        <longitude> 21.45689</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33374</latitude>
+        <longitude> 21.45701</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33310</latitude>
+        <longitude> 21.45698</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33279</latitude>
+        <longitude> 21.45701</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33253</latitude>
+        <longitude> 21.45697</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33374</latitude>
+        <longitude> 21.45701</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33310</latitude>
+        <longitude> 21.45698</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33279</latitude>
+        <longitude> 21.45701</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33253</latitude>
+        <longitude> 21.45697</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32605</latitude>
+        <longitude> 21.47175</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32601</latitude>
+        <longitude> 21.47171</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32601</latitude>
+        <longitude> 21.47154</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32601</latitude>
+        <longitude> 21.47129</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32608</latitude>
+        <longitude> 21.47105</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32616</latitude>
+        <longitude> 21.47092</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32643</latitude>
+        <longitude> 21.47050</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32682</latitude>
+        <longitude> 21.46994</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32702</latitude>
+        <longitude> 21.46964</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32743</latitude>
+        <longitude> 21.46926</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32795</latitude>
+        <longitude> 21.46870</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32831</latitude>
+        <longitude> 21.46839</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32885</latitude>
+        <longitude> 21.46798</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32914</latitude>
+        <longitude> 21.46769</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32954</latitude>
+        <longitude> 21.46711</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33090</latitude>
+        <longitude> 21.46500</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33161</latitude>
+        <longitude> 21.46358</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33187</latitude>
+        <longitude> 21.46305</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33208</latitude>
+        <longitude> 21.46264</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33248</latitude>
+        <longitude> 21.46194</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33251</latitude>
+        <longitude> 21.46182</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33268</latitude>
+        <longitude> 21.46098</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33301</latitude>
+        <longitude> 21.45922</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33326</latitude>
+        <longitude> 21.45830</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33356</latitude>
+        <longitude> 21.45753</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33374</latitude>
+        <longitude> 21.45701</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34507</latitude>
+        <longitude> 21.45802</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34489</latitude>
+        <longitude> 21.45813</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34485</latitude>
+        <longitude> 21.45814</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34482</latitude>
+        <longitude> 21.45811</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34481</latitude>
+        <longitude> 21.45806</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34481</latitude>
+        <longitude> 21.45795</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34479</latitude>
+        <longitude> 21.45782</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34481</latitude>
+        <longitude> 21.45795</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34481</latitude>
+        <longitude> 21.45806</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34482</latitude>
+        <longitude> 21.45811</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34485</latitude>
+        <longitude> 21.45814</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34489</latitude>
+        <longitude> 21.45813</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34507</latitude>
+        <longitude> 21.45802</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32605</latitude>
+        <longitude> 21.47175</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32616</latitude>
+        <longitude> 21.47162</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32638</latitude>
+        <longitude> 21.47134</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32651</latitude>
+        <longitude> 21.47119</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32692</latitude>
+        <longitude> 21.47096</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32710</latitude>
+        <longitude> 21.47079</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32857</latitude>
+        <longitude> 21.47022</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32923</latitude>
+        <longitude> 21.46981</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32962</latitude>
+        <longitude> 21.46956</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33013</latitude>
+        <longitude> 21.46931</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33046</latitude>
+        <longitude> 21.46910</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33108</latitude>
+        <longitude> 21.46850</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33135</latitude>
+        <longitude> 21.46818</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33157</latitude>
+        <longitude> 21.46794</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33183</latitude>
+        <longitude> 21.46786</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33210</latitude>
+        <longitude> 21.46781</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33228</latitude>
+        <longitude> 21.46772</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33247</latitude>
+        <longitude> 21.46754</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33282</latitude>
+        <longitude> 21.46727</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33297</latitude>
+        <longitude> 21.46715</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33323</latitude>
+        <longitude> 21.46701</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33336</latitude>
+        <longitude> 21.46693</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33348</latitude>
+        <longitude> 21.46681</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33379</latitude>
+        <longitude> 21.46623</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33404</latitude>
+        <longitude> 21.46595</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33430</latitude>
+        <longitude> 21.46573</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33446</latitude>
+        <longitude> 21.46551</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33455</latitude>
+        <longitude> 21.46537</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33466</latitude>
+        <longitude> 21.46513</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33492</latitude>
+        <longitude> 21.46470</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33517</latitude>
+        <longitude> 21.46438</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33522</latitude>
+        <longitude> 21.46430</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33540</latitude>
+        <longitude> 21.46407</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33554</latitude>
+        <longitude> 21.46397</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33569</latitude>
+        <longitude> 21.46389</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33587</latitude>
+        <longitude> 21.46386</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33618</latitude>
+        <longitude> 21.46377</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33624</latitude>
+        <longitude> 21.46373</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33628</latitude>
+        <longitude> 21.46366</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33632</latitude>
+        <longitude> 21.46355</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33657</latitude>
+        <longitude> 21.46296</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33675</latitude>
+        <longitude> 21.46254</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33688</latitude>
+        <longitude> 21.46234</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33699</latitude>
+        <longitude> 21.46239</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33713</latitude>
+        <longitude> 21.46248</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33744</latitude>
+        <longitude> 21.46272</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33758</latitude>
+        <longitude> 21.46283</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33760</latitude>
+        <longitude> 21.46279</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33765</latitude>
+        <longitude> 21.46272</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33773</latitude>
+        <longitude> 21.46258</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33787</latitude>
+        <longitude> 21.46243</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33798</latitude>
+        <longitude> 21.46228</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33809</latitude>
+        <longitude> 21.46215</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33823</latitude>
+        <longitude> 21.46210</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33831</latitude>
+        <longitude> 21.46209</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33883</latitude>
+        <longitude> 21.46221</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33902</latitude>
+        <longitude> 21.46220</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33913</latitude>
+        <longitude> 21.46221</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33933</latitude>
+        <longitude> 21.46225</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.33988</latitude>
+        <longitude> 21.46241</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34000</latitude>
+        <longitude> 21.46241</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34011</latitude>
+        <longitude> 21.46238</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34045</latitude>
+        <longitude> 21.46214</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34056</latitude>
+        <longitude> 21.46210</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34068</latitude>
+        <longitude> 21.46214</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34077</latitude>
+        <longitude> 21.46220</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34093</latitude>
+        <longitude> 21.46234</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34103</latitude>
+        <longitude> 21.46240</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34114</latitude>
+        <longitude> 21.46244</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34131</latitude>
+        <longitude> 21.46245</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34144</latitude>
+        <longitude> 21.46247</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34210</latitude>
+        <longitude> 21.46243</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34242</latitude>
+        <longitude> 21.46241</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34286</latitude>
+        <longitude> 21.46238</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34293</latitude>
+        <longitude> 21.46238</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34298</latitude>
+        <longitude> 21.46241</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34301</latitude>
+        <longitude> 21.46238</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34308</latitude>
+        <longitude> 21.46230</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34319</latitude>
+        <longitude> 21.46220</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34331</latitude>
+        <longitude> 21.46209</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34341</latitude>
+        <longitude> 21.46203</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34353</latitude>
+        <longitude> 21.46199</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34383</latitude>
+        <longitude> 21.46194</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34412</latitude>
+        <longitude> 21.46188</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34434</latitude>
+        <longitude> 21.46179</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34449</latitude>
+        <longitude> 21.46175</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34462</latitude>
+        <longitude> 21.46170</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34459</latitude>
+        <longitude> 21.46130</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34458</latitude>
+        <longitude> 21.46115</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34460</latitude>
+        <longitude> 21.46108</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34474</latitude>
+        <longitude> 21.46091</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34480</latitude>
+        <longitude> 21.46073</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34480</latitude>
+        <longitude> 21.46058</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34464</latitude>
+        <longitude> 21.46024</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34483</latitude>
+        <longitude> 21.45860</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.34507</latitude>
+        <longitude> 21.45802</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32605</latitude>
+        <longitude> 21.47175</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32610</latitude>
+        <longitude> 21.47180</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32624</latitude>
+        <longitude> 21.47176</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32637</latitude>
+        <longitude> 21.47168</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32624</latitude>
+        <longitude> 21.47176</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32610</latitude>
+        <longitude> 21.47180</longitude>
+    </waypoint>
+    <waypoint>
+        <latitude>48.32605</latitude>
+        <longitude> 21.47175</longitude>
+    </waypoint>
+</tripwaypoints>
